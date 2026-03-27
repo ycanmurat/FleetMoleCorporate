@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="FleetMole">
+  <defs>
+    <linearGradient id="fm-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563EB" />
+      <stop offset="100%" stop-color="#10B981" />
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="32" fill="#0F172A" />
+  <path d="M30 36h68v14H46v15h44v14H46v19H30V36z" fill="url(#fm-gradient)" />
+</svg>

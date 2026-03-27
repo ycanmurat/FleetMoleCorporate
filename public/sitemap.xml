@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://fleetmole.com/tr</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fleetmole.com/tr" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://fleetmole.com/en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fleetmole.com/tr" />
+  </url>
+  <url>
+    <loc>https://fleetmole.com/en</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fleetmole.com/tr" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://fleetmole.com/en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fleetmole.com/tr" />
+  </url>
+  <url>
+    <loc>https://fleetmole.com/tr/contact</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fleetmole.com/tr/contact" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://fleetmole.com/en/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fleetmole.com/tr/contact" />
+  </url>
+  <url>
+    <loc>https://fleetmole.com/en/contact</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fleetmole.com/tr/contact" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://fleetmole.com/en/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fleetmole.com/tr/contact" />
+  </url>
+  <url>
+    <loc>https://fleetmole.com/tr/manager</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fleetmole.com/tr/manager" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://fleetmole.com/en/manager" />
+  </url>
+  <url>
+    <loc>https://fleetmole.com/en/manager</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fleetmole.com/tr/manager" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://fleetmole.com/en/manager" />
+  </url>
+  <url>
+    <loc>https://fleetmole.com/tr/rent</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fleetmole.com/tr/rent" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://fleetmole.com/en/rent" />
+  </url>
+  <url>
+    <loc>https://fleetmole.com/en/rent</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fleetmole.com/tr/rent" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://fleetmole.com/en/rent" />
+  </url>
+  <url>
+    <loc>https://fleetmole.com/tr/partner</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fleetmole.com/tr/partner" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://fleetmole.com/en/partner" />
+  </url>
+  <url>
+    <loc>https://fleetmole.com/en/partner</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fleetmole.com/tr/partner" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://fleetmole.com/en/partner" />
+  </url>
+  <url>
+    <loc>https://fleetmole.com/tr/tyre</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fleetmole.com/tr/tyre" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://fleetmole.com/en/tyre" />
+  </url>
+  <url>
+    <loc>https://fleetmole.com/en/tyre</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fleetmole.com/tr/tyre" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://fleetmole.com/en/tyre" />
+  </url>
+  <url>
+    <loc>https://fleetmole.com/tr/tracker</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fleetmole.com/tr/tracker" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://fleetmole.com/en/tracker" />
+  </url>
+  <url>
+    <loc>https://fleetmole.com/en/tracker</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fleetmole.com/tr/tracker" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://fleetmole.com/en/tracker" />
+  </url>
+  <url>
+    <loc>https://fleetmole.com/tr/ai</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fleetmole.com/tr/ai" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://fleetmole.com/en/ai" />
+  </url>
+  <url>
+    <loc>https://fleetmole.com/en/ai</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fleetmole.com/tr/ai" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://fleetmole.com/en/ai" />
+  </url>
+  <url>
+    <loc>https://fleetmole.com/tr/trader</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fleetmole.com/tr/trader" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://fleetmole.com/en/trader" />
+  </url>
+  <url>
+    <loc>https://fleetmole.com/en/trader</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fleetmole.com/tr/trader" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://fleetmole.com/en/trader" />
+  </url>
+</urlset>

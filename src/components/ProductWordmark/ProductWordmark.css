@@ -1,0 +1,7 @@
+.product-wordmark {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: var(--product-wordmark-height, 28px);
+  object-fit: contain;
+}

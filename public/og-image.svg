@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#1E3A8A" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#10B981" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <circle cx="920" cy="160" r="180" fill="rgba(56,189,248,0.15)" />
+  <circle cx="1040" cy="420" r="220" fill="rgba(16,185,129,0.14)" />
+  <g transform="translate(92 120)">
+    <rect width="118" height="118" rx="28" fill="#020617" />
+    <path d="M26 30h66v14H42v16h42v14H42v24H26V30z" fill="url(#accent)" />
+  </g>
+  <text x="92" y="330" fill="#FFFFFF" font-size="72" font-family="Outfit, Arial, sans-serif" font-weight="700">
+    FleetMole
+  </text>
+  <text x="92" y="412" fill="#CBD5E1" font-size="34" font-family="Outfit, Arial, sans-serif">
+    Data-powered fleet management, leasing, telemetry and AI analytics
+  </text>
+</svg>

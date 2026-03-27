@@ -1,0 +1,594 @@
+.contact-page {
+  position: relative;
+  padding: 0 0 var(--section-space);
+}
+
+.contact-hero {
+  padding: 1.35rem 0 calc(var(--section-space-tight) + 0.4rem);
+}
+
+.contact-hero-grid,
+.contact-section-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.contact-hero-grid {
+  grid-template-columns: minmax(0, 1.18fr) minmax(21rem, 0.82fr);
+  align-items: stretch;
+}
+
+.contact-section-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.contact-copy,
+.contact-card,
+.contact-detail {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  border: 1px solid var(--border-light);
+  border-radius: 1.9rem;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  box-shadow: var(--shadow-md);
+  padding: clamp(1.45rem, 2vw, 2rem);
+}
+
+.contact-copy::before,
+.contact-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.contact-copy::before {
+  background:
+    radial-gradient(circle at 12% 14%, rgba(96, 165, 250, 0.14), transparent 30%),
+    radial-gradient(circle at 84% 0%, rgba(45, 87, 167, 0.08), transparent 26%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 36%);
+}
+
+.contact-card::before {
+  background:
+    radial-gradient(circle at 100% 0%, rgba(32, 58, 116, 0.14), transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 34%);
+}
+
+.contact-copy > *,
+.contact-card > *,
+.contact-detail > * {
+  position: relative;
+  z-index: 1;
+}
+
+.contact-copy {
+  display: grid;
+  align-content: start;
+  gap: clamp(1rem, 1.8vw, 1.25rem);
+}
+
+.contact-chip {
+  display: inline-flex;
+  width: fit-content;
+  border-radius: 999px;
+  padding: 0.58rem 0.92rem;
+  margin-bottom: 0.15rem;
+  background: color-mix(in srgb, var(--primary) 10%, transparent);
+  color: var(--primary);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28);
+}
+
+.contact-copy h1,
+.contact-detail h2 {
+  margin-bottom: 0.1rem;
+  font-size: clamp(2.2rem, 4.4vw, 4.2rem);
+  line-height: 0.95;
+  letter-spacing: -0.065em;
+}
+
+.contact-copy h1 {
+  max-width: 12.6ch;
+}
+
+.contact-copy p,
+.contact-detail p,
+.contact-card-head p,
+.contact-card-row span,
+.contact-card-row a,
+.contact-product-card span:last-child,
+.contact-links span {
+  color: var(--text-muted);
+  line-height: 1.78;
+}
+
+.contact-copy p {
+  max-width: 46rem;
+  font-size: 1.03rem;
+}
+
+.contact-action-shell {
+  display: grid;
+  gap: 0.95rem;
+  padding: 1rem;
+  border: 1px solid var(--border-light);
+  border-radius: 1.45rem;
+}
+
+.contact-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.contact-btn {
+  min-height: 3.85rem;
+  justify-content: center;
+  font-size: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.contact-btn--primary {
+  box-shadow: 0 18px 32px -24px rgba(32, 58, 116, 0.36);
+}
+
+.contact-btn--secondary {
+  background: transparent;
+}
+
+.contact-action-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  min-height: 2rem;
+}
+
+.contact-action-meta::before {
+  content: '';
+  width: 0.56rem;
+  height: 0.56rem;
+  flex-shrink: 0;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  box-shadow: 0 0 0 0.34rem var(--primary-glow);
+}
+
+.contact-action-meta span {
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--primary) 72%, #475569);
+}
+
+.contact-action-meta strong {
+  font-size: 0.92rem;
+  font-weight: 720;
+  letter-spacing: -0.02em;
+  color: var(--text-main);
+}
+
+.contact-product-group {
+  display: grid;
+  gap: 0.95rem;
+}
+
+.contact-product-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.contact-product-head span {
+  display: block;
+  margin-bottom: 0.22rem;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--primary) 68%, #475569);
+}
+
+.contact-product-head strong {
+  display: block;
+  font-size: 1.02rem;
+  font-weight: 720;
+  letter-spacing: -0.03em;
+  color: var(--text-main);
+}
+
+.contact-product-head small {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2rem;
+  padding: 0 0.78rem;
+  border: 1px solid var(--border-light);
+  border-radius: 999px;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.contact-product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.contact-product-card {
+  --product-accent: var(--primary);
+  --product-soft: rgba(32, 58, 116, 0.14);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  display: grid;
+  align-content: start;
+  gap: 0.78rem;
+  min-height: 10rem;
+  padding: 1rem;
+  border: 1px solid var(--border-light);
+  border-radius: 1.35rem;
+  transition:
+    transform 0.24s ease,
+    border-color 0.24s ease,
+    box-shadow 0.24s ease,
+    background 0.24s ease;
+}
+
+.contact-product-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 100% 0%, color-mix(in srgb, var(--product-soft) 92%, transparent), transparent 38%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 44%);
+  opacity: 0.95;
+  pointer-events: none;
+}
+
+.contact-product-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.contact-product-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.contact-product-wordmark {
+  height: 1.75rem;
+  width: auto;
+  max-width: min(100%, 10rem);
+}
+
+.contact-product-arrow {
+  display: inline-grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  color: color-mix(in srgb, var(--product-accent) 72%, #334155);
+  background: color-mix(in srgb, var(--product-soft) 68%, rgba(255, 255, 255, 0.42));
+}
+
+.contact-product-card strong {
+  font-size: 1.22rem;
+  line-height: 1;
+  letter-spacing: -0.045em;
+  color: var(--text-main);
+}
+
+.contact-product-card span:last-child {
+  font-size: 0.8rem;
+  line-height: 1.48;
+  text-wrap: pretty;
+}
+
+.contact-product-card:hover,
+.contact-links a:hover,
+.contact-card-row:hover {
+  transform: translateY(-3px);
+}
+
+.contact-product-card:hover {
+  border-color: color-mix(in srgb, var(--product-accent) 24%, rgba(148, 163, 184, 0.18));
+  box-shadow: 0 24px 38px -30px color-mix(in srgb, var(--product-accent) 28%, transparent);
+}
+
+.contact-card {
+  display: grid;
+  align-content: start;
+  gap: 0.95rem;
+}
+
+.contact-card-head {
+  display: grid;
+  gap: 0.55rem;
+  padding-bottom: 0.35rem;
+}
+
+.contact-card-kicker {
+  display: inline-flex;
+  width: fit-content;
+  padding: 0.48rem 0.72rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--primary) 10%, transparent);
+  color: var(--primary);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.contact-card-head strong {
+  font-size: clamp(1.25rem, 2vw, 1.58rem);
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+  color: var(--text-main);
+}
+
+.contact-card-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.95rem;
+  padding: 1rem;
+  border: 1px solid var(--border-light);
+  border-radius: 1.15rem;
+  transition:
+    transform 0.22s ease,
+    border-color 0.22s ease,
+    background 0.22s ease;
+}
+
+.contact-card-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 2.8rem;
+  height: 2.8rem;
+  flex-shrink: 0;
+  border-radius: 0.98rem;
+  background: color-mix(in srgb, var(--primary) 12%, transparent);
+  color: var(--primary);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.contact-card-copy {
+  min-width: 0;
+}
+
+.contact-card-row strong,
+.contact-links strong {
+  display: block;
+  margin-bottom: 0.2rem;
+  color: var(--text-main);
+}
+
+.contact-card-row a {
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.contact-detail ul {
+  display: grid;
+  gap: 0.85rem;
+  margin-top: 1rem;
+  list-style: none;
+}
+
+.contact-detail li {
+  position: relative;
+  padding: 1rem 1.05rem 1rem 1.85rem;
+  border: 1px solid var(--border-light);
+  border-radius: 1.05rem;
+}
+
+.contact-detail li::before {
+  content: '';
+  position: absolute;
+  top: 1.34rem;
+  left: 1rem;
+  width: 0.38rem;
+  height: 0.38rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  box-shadow: 0 0 0 0.28rem var(--primary-glow);
+}
+
+.contact-links {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1.1rem;
+}
+
+.contact-links a {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.85rem;
+  padding: 1rem 1.05rem;
+  border: 1px solid var(--border-light);
+  border-radius: 1.05rem;
+  transition:
+    transform 0.22s ease,
+    border-color 0.22s ease,
+    background 0.22s ease;
+}
+
+.contact-links svg {
+  flex-shrink: 0;
+  color: var(--primary);
+  margin-top: 0.18rem;
+}
+
+@media (max-width: 1180px) {
+  .contact-product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 980px) {
+  .contact-hero-grid,
+  .contact-section-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .contact-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-action-meta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contact-product-head {
+    display: grid;
+    align-items: start;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-copy,
+  .contact-card,
+  .contact-detail {
+    border-radius: 1.25rem;
+    padding: 1.2rem;
+  }
+
+  .contact-copy h1,
+  .contact-detail h2 {
+    font-size: clamp(2rem, 10vw, 3.1rem);
+  }
+
+  .contact-action-shell,
+  .contact-product-card,
+  .contact-card-row,
+  .contact-links a,
+  .contact-detail li {
+    border-radius: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-product-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+:root:not(.dark) .contact-copy,
+:root:not(.dark) .contact-card,
+:root:not(.dark) .contact-detail {
+  border-color: rgba(148, 163, 184, 0.18);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(248, 250, 252, 0.9)),
+    rgba(255, 255, 255, 0.9);
+  box-shadow: 0 18px 36px -32px rgba(15, 23, 42, 0.14);
+}
+
+:root:not(.dark) .contact-action-shell,
+:root:not(.dark) .contact-product-card,
+:root:not(.dark) .contact-links a,
+:root:not(.dark) .contact-card-row,
+:root:not(.dark) .contact-detail li,
+:root:not(.dark) .contact-product-head small {
+  border-color: rgba(148, 163, 184, 0.18);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(248, 250, 252, 0.82)),
+    rgba(255, 255, 255, 0.82);
+  box-shadow: 0 18px 34px -32px rgba(15, 23, 42, 0.1);
+}
+
+:root:not(.dark) .contact-card-head p,
+:root:not(.dark) .contact-card-row span,
+:root:not(.dark) .contact-card-row a,
+:root:not(.dark) .contact-copy p,
+:root:not(.dark) .contact-detail p,
+:root:not(.dark) .contact-links span,
+:root:not(.dark) .contact-product-card span:last-child,
+:root:not(.dark) .contact-product-head small {
+  color: color-mix(in srgb, var(--text-main) 74%, #475569);
+}
+
+:root:not(.dark) .contact-btn--secondary {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(248, 250, 252, 0.88)),
+    rgba(255, 255, 255, 0.9);
+}
+
+.dark .contact-copy,
+.dark .contact-card,
+.dark .contact-detail {
+  border-color: rgba(148, 163, 184, 0.14);
+  background:
+    linear-gradient(180deg, rgba(11, 17, 32, 0.94), rgba(15, 23, 42, 0.84)),
+    rgba(15, 23, 42, 0.76);
+  box-shadow: 0 22px 42px -36px rgba(2, 6, 23, 0.82);
+}
+
+.dark .contact-action-shell,
+.dark .contact-product-card,
+.dark .contact-links a,
+.dark .contact-card-row,
+.dark .contact-detail li,
+.dark .contact-product-head small {
+  border-color: rgba(148, 163, 184, 0.14);
+  background:
+    linear-gradient(180deg, rgba(11, 17, 32, 0.8), rgba(15, 23, 42, 0.66)),
+    rgba(15, 23, 42, 0.58);
+  box-shadow: 0 22px 38px -34px rgba(2, 6, 23, 0.74);
+}
+
+.dark .contact-chip,
+.dark .contact-card-kicker {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.dark .contact-copy p,
+.dark .contact-card-head p,
+.dark .contact-card-row span,
+.dark .contact-links span,
+.dark .contact-product-card span:last-child,
+.dark .contact-product-head small {
+  color: color-mix(in srgb, var(--text-main) 72%, #94a3b8);
+}
+
+.dark .contact-card-head strong,
+.dark .contact-card-row strong,
+.dark .contact-card-row a,
+.dark .contact-product-card strong,
+.dark .contact-product-head strong,
+.dark .contact-detail h2 {
+  color: #f8fafc;
+}
+
+.dark .contact-product-mark {
+  background:
+    linear-gradient(180deg, rgba(15, 23, 42, 0.74), rgba(15, 23, 42, 0.42)),
+    color-mix(in srgb, var(--product-soft) 24%, transparent);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.dark .contact-product-arrow {
+  color: color-mix(in srgb, var(--product-accent) 74%, #e2e8f0);
+  background: color-mix(in srgb, var(--product-soft) 30%, rgba(15, 23, 42, 0.74));
+}
+
+.dark .contact-card-icon {
+  background: color-mix(in srgb, var(--primary) 14%, rgba(15, 23, 42, 0.72));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}

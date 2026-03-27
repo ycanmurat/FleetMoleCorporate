@@ -1,0 +1,15 @@
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--bg-base);
+}
+
+.main-content {
+  flex: 1;
+  --page-top-offset: calc(var(--header-offset) + clamp(0.95rem, 1.5vw, 1.3rem));
+  position: relative;
+  overflow-x: clip;
+  background: var(--bg-base);
+  padding-top: var(--page-top-offset);
+}

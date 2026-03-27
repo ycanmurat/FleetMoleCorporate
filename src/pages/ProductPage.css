@@ -1,0 +1,275 @@
+.product-wrapper {
+  --product-primary: var(--primary);
+  --product-secondary: var(--secondary);
+  --product-soft: rgba(32, 58, 116, 0.14);
+  overflow-x: clip;
+}
+
+.product-hero {
+  padding: clamp(2rem, 3vw, 2.8rem) 0 var(--section-space);
+  background:
+    radial-gradient(circle at 12% 10%, var(--product-soft), transparent 22%),
+    radial-gradient(circle at 88% 10%, color-mix(in srgb, var(--product-secondary) 18%, transparent), transparent 20%),
+    var(--bg-base);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.product-hero-container,
+.product-details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.2rem, 4vw, 3rem);
+  align-items: start;
+}
+
+.product-brand {
+  display: grid;
+  margin-bottom: 1.25rem;
+}
+
+.product-badge {
+  display: inline-flex;
+  margin-bottom: 0.85rem;
+  padding: 0.5rem 0.85rem;
+  border-radius: 999px;
+  background: var(--product-soft);
+  color: var(--product-primary);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.product-title {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.07em;
+  text-wrap: balance;
+}
+
+.product-title--logo {
+  display: inline-flex;
+  align-items: center;
+}
+
+.product-title-wordmark {
+  height: clamp(3.2rem, 7vw, 4.5rem);
+  width: auto;
+}
+
+.product-desc,
+.product-detail {
+  max-width: 60ch;
+  color: var(--text-muted);
+  line-height: 1.82;
+}
+
+.product-desc {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+
+.product-detail {
+  margin-bottom: 1.4rem;
+}
+
+.product-benefits {
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: 1.7rem;
+}
+
+.product-benefits li {
+  display: flex;
+  gap: 0.7rem;
+  align-items: flex-start;
+  padding: 0.95rem 1rem;
+  border: 1px solid color-mix(in srgb, var(--product-primary) 18%, transparent);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.product-benefits svg {
+  color: var(--product-primary);
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.product-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+
+.product-visual-panel {
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--product-primary) 18%, var(--border-light));
+  border-radius: var(--radius-xl);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(248, 250, 252, 0.96)),
+    var(--bg-surface);
+  box-shadow: 0 32px 60px -42px rgba(15, 23, 42, 0.5);
+}
+
+.product-visual-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.15rem;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.product-visual-dots {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.product-visual-dots span {
+  width: 0.72rem;
+  height: 0.72rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.12);
+}
+
+.product-visual-dots span:nth-child(1) {
+  background: #f97316;
+}
+
+.product-visual-dots span:nth-child(2) {
+  background: #eab308;
+}
+
+.product-visual-dots span:nth-child(3) {
+  background: var(--product-primary);
+}
+
+.product-visual-head strong {
+  color: var(--product-primary);
+  font-size: 0.88rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.product-visual-stack {
+  display: grid;
+  gap: 0.9rem;
+  padding: 1.15rem;
+}
+
+.product-visual-card {
+  padding: 1rem;
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(circle at 100% 0%, color-mix(in srgb, var(--product-soft) 100%, white), transparent 35%),
+    rgba(255, 255, 255, 0.88);
+  border: 1px solid color-mix(in srgb, var(--product-primary) 14%, transparent);
+}
+
+.product-visual-card h3,
+.product-detail-card h2 {
+  margin-bottom: 0.55rem;
+  font-size: 1.08rem;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+}
+
+.product-visual-card p,
+.product-detail-card p {
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.product-details {
+  padding: var(--section-space) 0;
+}
+
+.product-detail-card {
+  padding: 1.45rem;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  background: var(--bg-surface);
+}
+
+.detail-index {
+  display: inline-flex;
+  margin-bottom: 0.9rem;
+  color: var(--product-primary);
+  font-size: 0.88rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+@media (max-width: 960px) {
+  .product-hero-container,
+  .product-details-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .product-brand {
+    align-items: flex-start;
+  }
+
+  .product-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .product-actions .btn-primary,
+  .product-actions .btn-outline {
+    justify-content: center;
+  }
+}
+
+:root:not(.dark) .product-badge {
+  background: color-mix(in srgb, var(--product-primary) 10%, white);
+}
+
+:root:not(.dark) .product-desc,
+:root:not(.dark) .product-detail,
+:root:not(.dark) .product-visual-card p,
+:root:not(.dark) .product-detail-card p {
+  color: color-mix(in srgb, var(--text-main) 74%, #475569);
+}
+
+:root:not(.dark) .product-benefits li,
+:root:not(.dark) .product-visual-panel,
+:root:not(.dark) .product-visual-card,
+:root:not(.dark) .product-detail-card {
+  border-color: color-mix(in srgb, var(--product-primary) 12%, rgba(148, 163, 184, 0.18));
+  box-shadow: 0 20px 40px -34px rgba(15, 23, 42, 0.18);
+}
+
+:root:not(.dark) .product-benefits li,
+:root:not(.dark) .product-visual-card,
+:root:not(.dark) .product-detail-card {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(248, 250, 252, 0.92)),
+    color-mix(in srgb, var(--product-soft) 16%, transparent);
+}
+
+:root:not(.dark) .product-visual-panel {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.97), rgba(248, 250, 252, 0.96)),
+    rgba(255, 255, 255, 0.92);
+}
+
+.dark .product-benefits li,
+.dark .product-visual-panel,
+.dark .product-visual-card,
+.dark .product-detail-card {
+  border-color: color-mix(in srgb, var(--product-primary) 16%, rgba(148, 163, 184, 0.14));
+  background:
+    linear-gradient(180deg, rgba(11, 17, 32, 0.92), rgba(15, 23, 42, 0.84)),
+    color-mix(in srgb, var(--product-soft) 12%, transparent);
+  box-shadow: 0 24px 44px -36px rgba(2, 6, 23, 0.82);
+}
+
+.dark .product-desc,
+.dark .product-detail,
+.dark .product-visual-card p,
+.dark .product-detail-card p {
+  color: rgba(148, 163, 184, 0.92);
+}
