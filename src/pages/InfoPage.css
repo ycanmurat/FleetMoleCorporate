@@ -1,10 +1,50 @@
 .info-page {
   --page-accent: var(--primary);
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
   padding-bottom: calc(var(--section-space) + 1rem);
 }
 
+.info-page::before,
+.info-page::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.info-page::before {
+  inset: 0 0 auto;
+  height: clamp(24rem, 46vw, 36rem);
+  background:
+    radial-gradient(circle at 14% 8%, color-mix(in srgb, var(--page-accent) 20%, transparent), transparent 28%),
+    radial-gradient(circle at 84% 10%, color-mix(in srgb, var(--page-accent) 14%, transparent), transparent 24%),
+    linear-gradient(180deg, color-mix(in srgb, var(--page-accent) 8%, transparent), transparent 100%);
+  opacity: 0.88;
+}
+
+.info-page::after {
+  background:
+    radial-gradient(circle at 50% 26%, color-mix(in srgb, var(--page-accent) 10%, transparent), transparent 40%),
+    linear-gradient(180deg, transparent, color-mix(in srgb, var(--page-accent) 5%, transparent) 60%, transparent);
+  opacity: 0.74;
+}
+
 .info-hero {
-  padding: 1.75rem 0 var(--section-space-tight);
+  position: relative;
+  z-index: 1;
+  padding: 1.05rem 0 calc(var(--section-space-tight) + 0.2rem);
+}
+
+.info-hero::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 -1px;
+  height: clamp(4rem, 10vw, 7rem);
+  background: linear-gradient(180deg, transparent, color-mix(in srgb, var(--page-accent) 12%, transparent));
+  pointer-events: none;
 }
 
 .info-hero-grid {
@@ -19,6 +59,8 @@
 .info-card,
 .info-product-link,
 .info-sibling-link {
+  position: relative;
+  z-index: 1;
   border: 1px solid var(--border-light);
   background: var(--glass-bg);
   backdrop-filter: var(--glass-blur);
@@ -133,7 +175,12 @@
 }
 
 .info-section {
+  position: relative;
+  z-index: 1;
   padding-top: var(--section-space-tight);
+  background:
+    radial-gradient(circle at 50% 0, color-mix(in srgb, var(--page-accent) 8%, transparent), transparent 34%),
+    linear-gradient(180deg, color-mix(in srgb, var(--page-accent) 4%, transparent), transparent 36%);
 }
 
 .info-grid {
@@ -200,7 +247,11 @@
   gap: 0.9rem;
   padding: 1rem;
   border-radius: 1.2rem;
-  transition: transform 0.24s ease, border-color 0.24s ease, background 0.24s ease;
+  transition:
+    transform 0.24s ease,
+    border-color 0.24s ease,
+    background 0.24s ease,
+    box-shadow 0.24s ease;
 }
 
 .info-product-wordmark {
@@ -212,8 +263,9 @@
 
 .info-product-link:hover,
 .info-sibling-link:hover {
-  transform: translateY(-2px);
+  transform: translateY(-1px);
   border-color: color-mix(in srgb, var(--page-accent) 28%, var(--border-hover));
+  box-shadow: var(--interactive-shadow-soft);
 }
 
 .info-product-link strong,

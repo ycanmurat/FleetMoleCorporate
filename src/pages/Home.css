@@ -1257,16 +1257,30 @@
 .impact-section,
 .faq-section,
 .cta-section {
+  position: relative;
+  overflow: clip;
   padding: var(--section-space) 0;
 }
 
 .proofs-section {
   margin-top: clamp(1.2rem, 2vw, 1.8rem);
-  border-top: 1px solid var(--border-light);
-  border-bottom: 1px solid var(--border-light);
-  background: rgba(255, 255, 255, 0.58);
+  border: 1px solid color-mix(in srgb, var(--border-light) 82%, transparent);
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--primary-glow) 10%, transparent), transparent 70%),
+    rgba(255, 255, 255, 0.58);
   border-radius: 2rem;
   backdrop-filter: blur(18px);
+}
+
+.proofs-section::before,
+.platform-section::before,
+.faq-section::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: clamp(4rem, 10vw, 7rem);
+  background: linear-gradient(180deg, var(--page-transition-veil), transparent 78%);
+  pointer-events: none;
 }
 
 :root:not(.dark) .chip,
@@ -1657,9 +1671,9 @@
 }
 
 .product-card:hover {
-  transform: translateY(-4px);
-  border-color: color-mix(in srgb, var(--product-primary) 42%, white);
-  box-shadow: 0 30px 54px -30px rgba(15, 23, 42, 0.38);
+  transform: translateY(-1px);
+  border-color: color-mix(in srgb, var(--product-primary) 30%, white);
+  box-shadow: 0 24px 42px -32px rgba(15, 23, 42, 0.28);
 }
 
 .product-card-top {
@@ -1724,9 +1738,11 @@
 
 .platform-section,
 .faq-section {
-  background: var(--bg-surface-light);
-  border-top: 1px solid var(--border-light);
-  border-bottom: 1px solid var(--border-light);
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--primary-glow) 8%, transparent), transparent 24%),
+    var(--bg-surface-light);
+  border-top: 0;
+  border-bottom: 0;
 }
 
 .platform-grid,

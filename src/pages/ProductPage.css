@@ -2,16 +2,54 @@
   --product-primary: var(--primary);
   --product-secondary: var(--secondary);
   --product-soft: rgba(32, 58, 116, 0.14);
+  position: relative;
+  isolation: isolate;
   overflow-x: clip;
 }
 
+.product-wrapper::before,
+.product-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.product-wrapper::before {
+  inset: 0 0 auto;
+  height: clamp(24rem, 46vw, 36rem);
+  background:
+    radial-gradient(circle at 14% 10%, color-mix(in srgb, var(--product-soft) 96%, transparent), transparent 26%),
+    radial-gradient(circle at 84% 8%, color-mix(in srgb, var(--product-secondary) 22%, transparent), transparent 24%),
+    linear-gradient(180deg, color-mix(in srgb, var(--product-soft) 18%, transparent), transparent 100%);
+  opacity: 0.96;
+}
+
+.product-wrapper::after {
+  background:
+    radial-gradient(circle at 50% 24%, color-mix(in srgb, var(--product-soft) 18%, transparent), transparent 38%),
+    linear-gradient(180deg, transparent 0%, color-mix(in srgb, var(--product-soft) 12%, transparent) 52%, transparent 100%);
+  opacity: 0.82;
+}
+
 .product-hero {
-  padding: clamp(2rem, 3vw, 2.8rem) 0 var(--section-space);
+  position: relative;
+  z-index: 1;
+  padding: clamp(1rem, 1.9vw, 1.65rem) 0 calc(var(--section-space) - clamp(0.35rem, 0.9vw, 0.6rem));
   background:
     radial-gradient(circle at 12% 10%, var(--product-soft), transparent 22%),
     radial-gradient(circle at 88% 10%, color-mix(in srgb, var(--product-secondary) 18%, transparent), transparent 20%),
-    var(--bg-base);
-  border-bottom: 1px solid var(--border-light);
+    linear-gradient(180deg, color-mix(in srgb, var(--product-soft) 10%, transparent), transparent 72%);
+}
+
+.product-hero::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 -1px;
+  height: clamp(4rem, 10vw, 7rem);
+  background: linear-gradient(180deg, transparent, color-mix(in srgb, var(--product-soft) 24%, transparent));
+  pointer-events: none;
 }
 
 .product-hero-container,
@@ -87,6 +125,11 @@
   border: 1px solid color-mix(in srgb, var(--product-primary) 18%, transparent);
   border-radius: var(--radius-md);
   background: rgba(255, 255, 255, 0.7);
+  transition:
+    border-color 0.26s ease,
+    background 0.26s ease,
+    box-shadow 0.26s ease,
+    transform 0.26s ease;
 }
 
 .product-benefits svg {
@@ -109,6 +152,10 @@
     linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(248, 250, 252, 0.96)),
     var(--bg-surface);
   box-shadow: 0 32px 60px -42px rgba(15, 23, 42, 0.5);
+  transition:
+    border-color 0.28s ease,
+    box-shadow 0.28s ease,
+    transform 0.28s ease;
 }
 
 .product-visual-head {
@@ -164,6 +211,11 @@
     radial-gradient(circle at 100% 0%, color-mix(in srgb, var(--product-soft) 100%, white), transparent 35%),
     rgba(255, 255, 255, 0.88);
   border: 1px solid color-mix(in srgb, var(--product-primary) 14%, transparent);
+  transition:
+    border-color 0.26s ease,
+    background 0.26s ease,
+    box-shadow 0.26s ease,
+    transform 0.26s ease;
 }
 
 .product-visual-card h3,
@@ -181,7 +233,12 @@
 }
 
 .product-details {
-  padding: var(--section-space) 0;
+  position: relative;
+  z-index: 1;
+  padding: calc(var(--section-space) - clamp(0.2rem, 0.5vw, 0.35rem)) 0 var(--section-space);
+  background:
+    radial-gradient(circle at 50% 0%, color-mix(in srgb, var(--product-soft) 16%, transparent), transparent 34%),
+    linear-gradient(180deg, color-mix(in srgb, var(--product-soft) 8%, transparent), transparent 28%);
 }
 
 .product-detail-card {
@@ -189,6 +246,11 @@
   border: 1px solid var(--border-light);
   border-radius: var(--radius-lg);
   background: var(--bg-surface);
+  transition:
+    border-color 0.26s ease,
+    background 0.26s ease,
+    box-shadow 0.26s ease,
+    transform 0.26s ease;
 }
 
 .detail-index {
@@ -198,6 +260,20 @@
   font-size: 0.88rem;
   font-weight: 800;
   letter-spacing: 0.12em;
+}
+
+.product-benefits li:hover,
+.product-visual-card:hover,
+.product-detail-card:hover {
+  transform: translateY(-1px);
+  border-color: color-mix(in srgb, var(--product-primary) 24%, rgba(148, 163, 184, 0.18));
+  box-shadow: var(--interactive-shadow-accent);
+}
+
+.product-visual-panel:hover {
+  transform: translateY(-1px);
+  border-color: color-mix(in srgb, var(--product-primary) 22%, var(--border-light));
+  box-shadow: 0 34px 64px -42px color-mix(in srgb, var(--product-primary) 22%, rgba(15, 23, 42, 0.48));
 }
 
 @media (max-width: 960px) {

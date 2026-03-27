@@ -1,15 +1,45 @@
 .layout-container {
+  position: relative;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  isolation: isolate;
+  overflow-x: clip;
   background: var(--bg-base);
 }
 
 .main-content {
   flex: 1;
-  --page-top-offset: calc(var(--header-offset) + clamp(0.95rem, 1.5vw, 1.3rem));
+  --page-top-offset: calc(var(--header-offset) - clamp(0.3rem, 0.7vw, 0.48rem));
   position: relative;
-  overflow-x: clip;
+  overflow: clip;
   background: var(--bg-base);
   padding-top: var(--page-top-offset);
+}
+
+.main-content::before,
+.main-content::after {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.main-content::before {
+  height: clamp(24rem, 46vw, 36rem);
+  background: var(--page-top-surface);
+}
+
+.main-content::after {
+  height: calc(var(--page-top-offset) + clamp(4rem, 9vw, 7rem));
+  background:
+    linear-gradient(180deg, var(--page-transition-veil), transparent 74%),
+    var(--page-section-surface);
+  opacity: 0.92;
+}
+
+.main-content > * {
+  position: relative;
+  z-index: 1;
 }
