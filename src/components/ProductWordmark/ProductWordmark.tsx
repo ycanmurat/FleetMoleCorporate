@@ -17,7 +17,7 @@ const PRODUCT_WORDMARK_MAP: Record<ProductSlug, string> = {
   trader: 'trader',
   partner: 'partner',
   tyre: 'tyre',
-  ai: 'smart',
+  smart: 'smart',
 };
 
 const ProductWordmark = ({

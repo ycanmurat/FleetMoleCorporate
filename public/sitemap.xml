@@ -75,14 +75,14 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://fleetmole.com/en/tracker" />
   </url>
   <url>
-    <loc>https://fleetmole.com/tr/ai</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fleetmole.com/tr/ai" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://fleetmole.com/en/ai" />
+    <loc>https://fleetmole.com/tr/smart</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fleetmole.com/tr/smart" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://fleetmole.com/en/smart" />
   </url>
   <url>
-    <loc>https://fleetmole.com/en/ai</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fleetmole.com/tr/ai" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://fleetmole.com/en/ai" />
+    <loc>https://fleetmole.com/en/smart</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fleetmole.com/tr/smart" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://fleetmole.com/en/smart" />
   </url>
   <url>
     <loc>https://fleetmole.com/tr/trader</loc>

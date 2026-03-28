@@ -2,7 +2,7 @@
 
 /* --- LIGHT MODE (DEFAULT) --- */
 :root {
-  --container-max-width: 1300px;
+  --container-max-width: 1320px;
   --container-gutter: clamp(20px, 2.3vw, 24px);
   --bg-base: #F8FAFC;
   --bg-surface: #FFFFFF;
@@ -248,5 +248,6 @@ button {
 @media (max-width: 640px) {
   :root {
     --header-offset: 118px;
+    --container-gutter: 14px;
   }
 }

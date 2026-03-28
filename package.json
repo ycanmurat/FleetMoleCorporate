@@ -1,13 +1,35 @@
 {
   "name": "fleetmole-corporate",
+  "private": true,
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "workspaces": [
+    "sites/*"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "vite",
+    "dev": "vite --host 0.0.0.0 --port 5173 --strictPort",
+    "dev:corporate": "vite --host 0.0.0.0 --port 5173 --strictPort",
+    "dev:manager": "npm --workspace sites/manager run dev",
+    "dev:rent": "npm --workspace sites/rent run dev",
+    "dev:tracker": "npm --workspace sites/tracker run dev",
+    "dev:trader": "npm --workspace sites/trader run dev",
+    "dev:partner": "npm --workspace sites/partner run dev",
+    "dev:tyre": "npm --workspace sites/tyre run dev",
+    "dev:smart": "npm --workspace sites/smart run dev",
+    "dev:all": "node scripts/dev-all.mjs",
+    "smoke:local": "node scripts/smoke-check.mjs",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "build:manager": "npm --workspace sites/manager run build",
+    "build:rent": "npm --workspace sites/rent run build",
+    "build:tracker": "npm --workspace sites/tracker run build",
+    "build:trader": "npm --workspace sites/trader run build",
+    "build:partner": "npm --workspace sites/partner run build",
+    "build:tyre": "npm --workspace sites/tyre run build",
+    "build:smart": "npm --workspace sites/smart run build",
+    "build:all": "node scripts/build-all.mjs",
+    "preview": "vite preview --host 0.0.0.0 --port 5173 --strictPort"
   },
   "keywords": [],
   "author": "",

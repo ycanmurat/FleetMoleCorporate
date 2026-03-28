@@ -13,33 +13,17 @@
   --page-top-offset: calc(var(--header-offset) - clamp(0.3rem, 0.7vw, 0.48rem));
   position: relative;
   overflow: clip;
-  background: var(--bg-base);
+  background: transparent;
   padding-top: var(--page-top-offset);
-}
-
-.main-content::before,
-.main-content::after {
-  content: '';
-  position: absolute;
-  inset: 0 0 auto;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.main-content::before {
-  height: clamp(24rem, 46vw, 36rem);
-  background: var(--page-top-surface);
-}
-
-.main-content::after {
-  height: calc(var(--page-top-offset) + clamp(4rem, 9vw, 7rem));
-  background:
-    linear-gradient(180deg, var(--page-transition-veil), transparent 74%),
-    var(--page-section-surface);
-  opacity: 0.92;
 }
 
 .main-content > * {
   position: relative;
   z-index: 1;
+}
+
+@media (max-width: 640px) {
+  .main-content {
+    --page-top-offset: calc(var(--header-offset) + 0.72rem);
+  }
 }

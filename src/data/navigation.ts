@@ -71,7 +71,7 @@ const services: ContentSection = {
     tr: 'FleetMole servis başlıkları; bakım, hasar, ikame, eğitim ve tedarik zinciri süreçlerini tek operasyon omurgasına bağlamak için kurgulandı.',
     en: 'FleetMole service lines are designed to connect maintenance, damage, replacement, training, and supplier workflows to one operating backbone.',
   },
-  accent: '#F97316',
+  accent: '#20ABE3',
   icon: Briefcase,
   items: [
     {
@@ -94,7 +94,7 @@ const services: ContentSection = {
         ],
       },
       icon: ShieldAlert,
-      relatedProducts: ['ai', 'manager'],
+      relatedProducts: ['smart', 'manager'],
     },
     {
       slug: 'mekanik-bakim-yonetimi',
@@ -204,7 +204,7 @@ const services: ContentSection = {
         ],
       },
       icon: BadgePercent,
-      relatedProducts: ['trader', 'ai'],
+      relatedProducts: ['trader', 'smart'],
     },
     {
       slug: 'rucu-yonetimi',
@@ -226,7 +226,7 @@ const services: ContentSection = {
         ],
       },
       icon: Scale,
-      relatedProducts: ['manager', 'ai'],
+      relatedProducts: ['manager', 'smart'],
     },
     {
       slug: 'asistans-hizmetleri',

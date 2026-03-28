@@ -7,40 +7,23 @@
   overflow-x: clip;
 }
 
-.product-wrapper::before,
-.product-wrapper::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.product-wrapper::before {
-  inset: 0 0 auto;
-  height: clamp(24rem, 46vw, 36rem);
-  background:
-    radial-gradient(circle at 14% 10%, color-mix(in srgb, var(--product-soft) 96%, transparent), transparent 26%),
-    radial-gradient(circle at 84% 8%, color-mix(in srgb, var(--product-secondary) 22%, transparent), transparent 24%),
-    linear-gradient(180deg, color-mix(in srgb, var(--product-soft) 18%, transparent), transparent 100%);
-  opacity: 0.96;
-}
-
-.product-wrapper::after {
-  background:
-    radial-gradient(circle at 50% 24%, color-mix(in srgb, var(--product-soft) 18%, transparent), transparent 38%),
-    linear-gradient(180deg, transparent 0%, color-mix(in srgb, var(--product-soft) 12%, transparent) 52%, transparent 100%);
-  opacity: 0.82;
-}
-
 .product-hero {
   position: relative;
   z-index: 1;
-  padding: clamp(1rem, 1.9vw, 1.65rem) 0 calc(var(--section-space) - clamp(0.35rem, 0.9vw, 0.6rem));
+  margin-top: calc(var(--page-top-offset, 0px) * -1);
+  padding:
+    calc(var(--page-top-offset, 0px) + clamp(1rem, 1.9vw, 1.65rem))
+    0
+    calc(var(--section-space) - clamp(0.35rem, 0.9vw, 0.6rem));
   background:
-    radial-gradient(circle at 12% 10%, var(--product-soft), transparent 22%),
-    radial-gradient(circle at 88% 10%, color-mix(in srgb, var(--product-secondary) 18%, transparent), transparent 20%),
-    linear-gradient(180deg, color-mix(in srgb, var(--product-soft) 10%, transparent), transparent 72%);
+    radial-gradient(circle at 14% 10%, color-mix(in srgb, var(--product-soft) 96%, transparent), transparent 26%),
+    radial-gradient(circle at 84% 8%, color-mix(in srgb, var(--product-secondary) 22%, transparent), transparent 24%),
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--product-soft) 22%, transparent) 0%,
+      color-mix(in srgb, var(--product-soft) 12%, transparent) 42%,
+      transparent 100%
+    );
 }
 
 .product-hero::after {

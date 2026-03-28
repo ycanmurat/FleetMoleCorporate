@@ -2,7 +2,8 @@
   position: relative;
   isolation: isolate;
   overflow: clip;
-  padding: 0 0 var(--section-space);
+  margin-top: calc(var(--page-top-offset, 0px) * -1);
+  padding: var(--page-top-offset, 0px) 0 var(--section-space);
 }
 
 .contact-page::before,

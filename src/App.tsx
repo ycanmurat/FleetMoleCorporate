@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import InfoPage from './pages/InfoPage';
 import NotFoundPage from './pages/NotFoundPage';
 import ProductPage from './pages/ProductPage';
+import ServicesLandingPage from './pages/ServicesLandingPage';
 
 const LocalizedLayout = () => {
   const { locale } = useParams();
@@ -25,6 +26,7 @@ const App = () => {
       <Route path=":locale" element={<LocalizedLayout />}>
         <Route index element={<Home />} />
         <Route path="contact" element={<ContactPage />} />
+        <Route path="services" element={<ServicesLandingPage />} />
         <Route path="services/:pageSlug" element={<InfoPage section="services" />} />
         <Route path="leasing/:pageSlug" element={<InfoPage section="leasing" />} />
         <Route path="resources/:pageSlug" element={<InfoPage section="resources" />} />

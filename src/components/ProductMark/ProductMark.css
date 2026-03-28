@@ -16,10 +16,11 @@
   flex-shrink: 0;
 }
 
-.product-mark svg {
-  width: calc(var(--mark-size) * 0.62);
-  height: calc(var(--mark-size) * 0.62);
+.product-mark img {
+  width: calc(var(--mark-size) * 0.76);
+  height: calc(var(--mark-size) * 0.76);
   display: block;
+  object-fit: contain;
 }
 
 .product-mark--topbar {
@@ -42,7 +43,7 @@
   box-shadow: none;
 }
 
-.product-mark--rail svg {
+.product-mark--rail img {
   width: 100%;
   height: 100%;
 }

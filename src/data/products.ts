@@ -351,7 +351,7 @@ const PRODUCT_DEFINITIONS = [
     theme: buildTheme('#20ABE3', '#54C3EF', '#0F4564'),
   },
   {
-    slug: 'ai',
+    slug: 'smart',
     name: 'FleetMole Smart',
     shortName: 'Smart',
     category: {
@@ -577,7 +577,7 @@ const PRODUCT_DEFINITIONS = [
 export type ProductData = (typeof PRODUCT_DEFINITIONS)[number];
 export type ProductSlug = ProductData['slug'];
 
-const PRODUCT_ORDER: ProductSlug[] = ['manager', 'rent', 'tracker', 'trader', 'partner', 'tyre', 'ai'];
+const PRODUCT_ORDER: ProductSlug[] = ['manager', 'rent', 'tracker', 'trader', 'partner', 'tyre', 'smart'];
 
 export const PRODUCTS: readonly ProductData[] = [...PRODUCT_DEFINITIONS].sort(
   (left, right) => PRODUCT_ORDER.indexOf(left.slug) - PRODUCT_ORDER.indexOf(right.slug),
@@ -587,5 +587,15 @@ export const PRODUCT_MAP = Object.fromEntries(
   PRODUCTS.map((product) => [product.slug, product]),
 ) as Record<ProductSlug, ProductData>;
 
-export const getProductBySlug = (slug?: string) =>
-  slug && slug in PRODUCT_MAP ? PRODUCT_MAP[slug as ProductSlug] : undefined;
+const PRODUCT_SLUG_ALIASES: Record<string, ProductSlug> = {
+  ai: 'smart',
+};
+
+export const getProductBySlug = (slug?: string) => {
+  if (!slug) {
+    return undefined;
+  }
+
+  const normalizedSlug = (PRODUCT_SLUG_ALIASES[slug] ?? slug) as ProductSlug;
+  return normalizedSlug in PRODUCT_MAP ? PRODUCT_MAP[normalizedSlug] : undefined;
+};

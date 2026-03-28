@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, type CSSProperties } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import {
   ArrowUpRight,
+  Briefcase,
   ChevronDown,
   House,
   Mail,
@@ -13,7 +14,9 @@ import {
   X,
 } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
+import CommonTopBanner from '../CommonTopBanner/CommonTopBanner';
 import ProductMark from '../ProductMark/ProductMark';
+import ProductSiteLink from '../ProductSiteLink/ProductSiteLink';
 import ProductWordmark from '../ProductWordmark/ProductWordmark';
 import { useApp } from '../../context/AppContext';
 import { COMPANY_INFO, getCompanyAddress } from '../../data/company';
@@ -34,9 +37,10 @@ type DesktopDropdownId = (typeof TOP_NAV_ORDER)[number];
 const Header = () => {
   const headerRef = useRef<HTMLElement | null>(null);
   const desktopCloseTimerRef = useRef<number | null>(null);
+  const restingHeaderOffsetRef = useRef<number | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<DesktopDropdownId | null>(null);
-  const [mobileSection, setMobileSection] = useState<DesktopDropdownId>('products');
+  const [mobileSection, setMobileSection] = useState<DesktopDropdownId | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
   const productLinkRefs = useRef<Partial<Record<ProductSlug, HTMLAnchorElement | null>>>({});
   const { isDark, toggleTheme, lang, toggleLang, t, localizePath } = useApp();
@@ -142,7 +146,20 @@ const Header = () => {
       }
 
       const nextOffset = Math.ceil(headerRef.current.getBoundingClientRect().height + 12);
-      document.documentElement.style.setProperty('--header-offset', `${nextOffset}px`);
+      const lockedOffset = restingHeaderOffsetRef.current ?? nextOffset;
+
+      if (!isScrolled && !mobileOpen) {
+        restingHeaderOffsetRef.current = nextOffset;
+        document.documentElement.style.setProperty('--header-offset', `${nextOffset}px`);
+        return;
+      }
+
+      if (mobileOpen) {
+        document.documentElement.style.setProperty('--header-offset', `${Math.max(nextOffset, lockedOffset)}px`);
+        return;
+      }
+
+      document.documentElement.style.setProperty('--header-offset', `${lockedOffset}px`);
     };
 
     syncHeaderOffset();
@@ -165,11 +182,12 @@ const Header = () => {
 
   useEffect(() => {
     if (!mobileOpen) {
-      setMobileSection('products');
+      setMobileSection(null);
     }
   }, [mobileOpen]);
 
   const isSectionCurrent = (section: ContentSectionId) =>
+    location.pathname === localizePath(`/${section}`) ||
     location.pathname.startsWith(localizePath(`/${section}/`));
 
   const desktopGroups = TOP_NAV_ORDER.map((id) => {
@@ -201,14 +219,15 @@ const Header = () => {
       isCurrent: isSectionCurrent(id),
     };
   });
+  const desktopNavGroups = isHomePage ? desktopGroups.filter((group) => group.id !== 'products') : desktopGroups;
   const activeDesktopGroup =
-    activeDropdown !== null ? desktopGroups.find((group) => group.id === activeDropdown) ?? null : null;
+    activeDropdown !== null ? desktopNavGroups.find((group) => group.id === activeDropdown) ?? null : null;
 
   return (
     <header ref={headerRef} className="site-header">
       <div className="container header-stack">
         <motion.div
-          className={`header-shell ${isScrolled ? 'is-scrolled' : ''} ${isHomePage && !isScrolled ? 'is-hero-overlap' : ''}`}
+          className={`header-shell ${isScrolled ? 'is-scrolled' : ''} ${isHomePage && !isScrolled ? 'is-hero-overlap' : ''} ${isHomePage ? 'is-home-layout' : ''}`}
           initial={{ opacity: 0, y: -18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.54, ease: HEADER_EASE }}
@@ -224,72 +243,45 @@ const Header = () => {
             }
           }}
         >
-          <div className={`header-rail-shell ${isScrolled ? 'is-scrolled' : ''}`}>
-            <div className="header-products-track" aria-label={t.misc.allProducts}>
-              {PRODUCTS.map((product) => {
-                const path = localizePath(`/${product.slug}`);
+          <CommonTopBanner to={localizePath('/')} className="header-common-banner" />
 
-                return (
-                  <Link
-                    key={product.slug}
-                    to={path}
-                    ref={(node) => {
-                      productLinkRefs.current[product.slug] = node;
-                    }}
-                    className="header-product-link"
-                    aria-label={product.name}
-                    aria-current={location.pathname === path ? 'page' : undefined}
-                    title={product.name}
-                    style={
-                      {
-                        '--link-primary': product.theme.primary,
-                        '--link-soft': product.theme.soft,
-                      } as CSSProperties
-                    }
-                  >
-                    <ProductMark product={product} variant="rail" />
-                    <span className="header-product-name">{product.shortName}</span>
-                  </Link>
-                );
-              })}
-            </div>
-          </div>
+          <div className={`header-main-row ${isHomePage ? 'is-home' : ''}`}>
+            {!isHomePage ? (
+              <div className="header-primary-cluster">
+                <Link
+                  to={localizePath('/')}
+                  className={`brand-logo ${currentProduct ? 'is-product' : 'is-home'}`}
+                  onClick={closeAll}
+                  style={brandStyle}
+                >
+                  <AnimatePresence initial={false} mode="wait">
+                    <motion.span
+                      key={currentProduct?.slug ?? 'corporate'}
+                      className="brand-lockup"
+                      initial={{ opacity: 0, y: 8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -6 }}
+                      transition={{ duration: 0.42, ease: HEADER_EASE }}
+                    >
+                      {currentProduct ? (
+                        <ProductWordmark product={currentProduct} className="brand-product-wordmark" />
+                      ) : (
+                        <span className="brand-copy brand-copy--home">
+                          <img
+                            className="brand-wordmark brand-wordmark--home"
+                            src={corporateLogoSrc}
+                            alt="FleetMole Corporate"
+                          />
+                        </span>
+                      )}
+                    </motion.span>
+                  </AnimatePresence>
+                </Link>
+              </div>
+            ) : null}
 
-          <div className="header-main-row">
-            <div className="header-primary-cluster">
-              <Link
-                to={localizePath('/')}
-                className={`brand-logo ${currentProduct ? 'is-product' : 'is-home'}`}
-                onClick={closeAll}
-                style={brandStyle}
-              >
-                <AnimatePresence initial={false} mode="wait">
-                  <motion.span
-                    key={currentProduct?.slug ?? 'corporate'}
-                    className="brand-lockup"
-                    initial={{ opacity: 0, y: 8 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -6 }}
-                    transition={{ duration: 0.42, ease: HEADER_EASE }}
-                  >
-                    {currentProduct ? (
-                      <ProductWordmark product={currentProduct} className="brand-product-wordmark" />
-                    ) : (
-                      <span className="brand-copy brand-copy--home">
-                        <img
-                          className="brand-wordmark brand-wordmark--home"
-                          src={corporateLogoSrc}
-                          alt="FleetMole Corporate"
-                        />
-                      </span>
-                    )}
-                  </motion.span>
-                </AnimatePresence>
-              </Link>
-            </div>
-
-            <nav className="desktop-nav">
-              {desktopGroups.map((group) => {
+            <nav className={`desktop-nav ${isHomePage ? 'is-home' : ''}`.trim()}>
+              {desktopNavGroups.map((group) => {
                 const navAccent =
                   group.id === 'products' ? currentProduct?.theme.primary ?? group.accent : group.accent;
 
@@ -331,18 +323,15 @@ const Header = () => {
               <Link
                 to={localizePath('/')}
                 className={`top-ctrl top-ctrl--home ${isHomePage ? 'is-active-home' : ''}`}
-                title={lang === 'tr' ? 'Ana Sayfa' : 'Home'}
                 aria-label={lang === 'tr' ? 'Ana Sayfa' : 'Home'}
                 onClick={closeAll}
                 style={homeControlStyle}
               >
-                <House size={14} />
-                <span className="top-ctrl-label">{lang === 'tr' ? 'Ana Sayfa' : 'Home'}</span>
+                <House size={17} />
               </Link>
               <button
                 className="top-ctrl top-ctrl--lang"
                 onClick={toggleLang}
-                title={lang === 'tr' ? 'English' : 'Turkce'}
                 aria-label={lang === 'tr' ? 'Switch to English' : 'Turkceye gec'}
               >
                 <span className="lang-flag" aria-hidden="true">
@@ -352,16 +341,48 @@ const Header = () => {
               <button
                 className="top-ctrl top-ctrl--icon"
                 onClick={toggleTheme}
-                title="Toggle Theme"
                 aria-label="Toggle Theme"
               >
-                {isDark ? <Sun size={14} /> : <Moon size={14} />}
+                {isDark ? <Sun size={17} /> : <Moon size={17} />}
               </button>
               <button className="hamburger" onClick={() => setMobileOpen(true)} aria-label={t.misc.menu}>
                 <Menu size={19} />
               </button>
             </div>
           </div>
+
+          {isHomePage ? (
+            <div className={`header-rail-shell ${isScrolled ? 'is-scrolled' : ''}`}>
+              <div className="header-products-track" aria-label={t.misc.allProducts}>
+                {PRODUCTS.map((product) => {
+                  const path = localizePath(`/${product.slug}`);
+
+                  return (
+                    <ProductSiteLink
+                      key={product.slug}
+                      productSlug={product.slug}
+                      ref={(node) => {
+                        productLinkRefs.current[product.slug] = node;
+                      }}
+                      className="header-product-link"
+                      aria-label={product.name}
+                      aria-current={location.pathname === path ? 'page' : undefined}
+                      title={product.name}
+                      style={
+                        {
+                          '--link-primary': product.theme.primary,
+                          '--link-soft': product.theme.soft,
+                        } as CSSProperties
+                      }
+                    >
+                      <ProductMark product={product} variant="rail" />
+                      <span className="header-product-name">{product.shortName}</span>
+                    </ProductSiteLink>
+                  );
+                })}
+              </div>
+            </div>
+          ) : null}
 
           <AnimatePresence>
             {activeDesktopGroup ? (
@@ -386,9 +407,9 @@ const Header = () => {
                   {activeDesktopGroup.id === 'products' ? (
                     <div className="dropdown-grid dropdown-grid--products">
                       {PRODUCTS.map((product) => (
-                        <Link
+                        <ProductSiteLink
                           key={product.slug}
-                          to={localizePath(`/${product.slug}`)}
+                          productSlug={product.slug}
                           className={`dd-product ${activeProductSlug === product.slug ? 'is-current' : ''}`}
                           style={{ '--dd-accent': product.theme.primary } as CSSProperties}
                           onClick={closeAll}
@@ -398,13 +419,33 @@ const Header = () => {
                             <strong>{product.name}</strong>
                             <span>{product.summary[lang]}</span>
                           </div>
-                        </Link>
+                        </ProductSiteLink>
                       ))}
                     </div>
                   ) : (
                     <div
                       className={`dropdown-grid dropdown-grid--list dropdown-grid--${activeDesktopGroup.id}`}
                     >
+                      {activeDesktopGroup.id === 'services' ? (
+                        <Link
+                          to={localizePath('/services')}
+                          className="dd-item dd-item--overview"
+                          onClick={closeAll}
+                        >
+                          <span className="dd-icon">
+                            <Briefcase size={16} />
+                          </span>
+                          <span className="dd-copy">
+                            <strong>{lang === 'tr' ? 'Tüm Hizmetler' : 'All Services'}</strong>
+                            <span>
+                              {lang === 'tr'
+                                ? 'Servis portfoyunu tek landing sayfasinda inceleyin.'
+                                : 'Review the full service portfolio on one landing page.'}
+                            </span>
+                          </span>
+                          <ArrowUpRight size={16} className="dd-arrow" />
+                        </Link>
+                      ) : null}
                       {CONTENT_SECTION_MAP[activeDesktopGroup.id].items.map((item) => (
                         <Link
                           key={item.slug}
@@ -449,11 +490,18 @@ const Header = () => {
               transition={{ type: 'spring', damping: 28, stiffness: 210 }}
             >
               <div className="mob-header">
-                <div className="mob-brand">
-                  <img className="mob-brand-logo" src={corporateLogoSrc} alt="FleetMole Corporate" />
-                  <strong>{currentProduct?.shortName ?? 'Corporate'}</strong>
+                <div className="mob-brand" style={brandStyle}>
+                  {currentProduct ? (
+                    <ProductWordmark
+                      product={currentProduct}
+                      className="mob-brand-wordmark mob-brand-wordmark--product"
+                      height={34}
+                    />
+                  ) : (
+                    <img className="mob-brand-logo" src={corporateLogoSrc} alt="FleetMole Corporate" />
+                  )}
                 </div>
-                <button onClick={closeAll} aria-label={t.misc.menu}>
+                <button className="mob-close" onClick={closeAll} aria-label={t.misc.menu}>
                   <X size={22} />
                 </button>
               </div>
@@ -462,26 +510,27 @@ const Header = () => {
                 <div className="mob-actions">
                   <Link
                     to={localizePath('/')}
-                    className={`mob-chip top-ctrl--home ${isHomePage ? 'is-active-home' : ''}`}
+                    className={`mob-chip mob-chip--home top-ctrl--home ${isHomePage ? 'is-active-home' : ''}`}
                     onClick={closeAll}
                     style={homeControlStyle}
                   >
-                    <House size={16} />
+                    <House size={17} />
                     <span>{lang === 'tr' ? 'Ana Sayfa' : 'Home'}</span>
                   </Link>
-                  <button
-                    className="mob-chip mob-chip--lang"
-                    onClick={toggleLang}
-                    title={lang === 'tr' ? 'English' : 'Turkce'}
-                    aria-label={lang === 'tr' ? 'Switch to English' : 'Turkceye gec'}
-                  >
-                    <span className="lang-flag" aria-hidden="true">
-                      {currentLangFlag}
-                    </span>
-                  </button>
-                  <button className="mob-chip mob-chip--icon" onClick={toggleTheme}>
-                    {isDark ? <Sun size={16} /> : <Moon size={16} />}
-                  </button>
+                  <div className="mob-action-icons">
+                    <button
+                      className="mob-chip mob-chip--lang"
+                      onClick={toggleLang}
+                      aria-label={lang === 'tr' ? 'Switch to English' : 'Turkceye gec'}
+                    >
+                      <span className="lang-flag" aria-hidden="true">
+                        {currentLangFlag}
+                      </span>
+                    </button>
+                    <button className="mob-chip mob-chip--icon" onClick={toggleTheme} aria-label="Toggle Theme">
+                      {isDark ? <Sun size={17} /> : <Moon size={17} />}
+                    </button>
+                  </div>
                 </div>
 
                 <div className="mob-sections">
@@ -493,9 +542,9 @@ const Header = () => {
                       <button
                         type="button"
                         className="mob-section-trigger"
-                        onClick={() =>
-                          setMobileSection((current) => (current === group.id ? 'products' : group.id))
-                        }
+                        aria-expanded={mobileSection === group.id}
+                        aria-controls={`mob-section-${group.id}`}
+                        onClick={() => setMobileSection((current) => (current === group.id ? null : group.id))}
                       >
                         <span>{group.label}</span>
                         <ChevronDown size={18} />
@@ -504,6 +553,7 @@ const Header = () => {
                       <AnimatePresence initial={false}>
                         {mobileSection === group.id ? (
                           <motion.div
+                            id={`mob-section-${group.id}`}
                             className="mob-section-panel"
                             initial={{ opacity: 0, height: 0 }}
                             animate={{ opacity: 1, height: 'auto' }}
@@ -512,9 +562,9 @@ const Header = () => {
                           >
                             {group.id === 'products'
                               ? PRODUCTS.map((product) => (
-                                  <Link
+                                  <ProductSiteLink
                                     key={product.slug}
-                                    to={localizePath(`/${product.slug}`)}
+                                    productSlug={product.slug}
                                     className={`mob-link ${activeProductSlug === product.slug ? 'active' : ''}`}
                                     onClick={closeAll}
                                     style={
@@ -529,24 +579,47 @@ const Header = () => {
                                       <strong>{product.name}</strong>
                                       <span>{product.category[lang]}</span>
                                     </div>
-                                  </Link>
+                                  </ProductSiteLink>
                                 ))
-                              : CONTENT_SECTION_MAP[group.id].items.map((item) => (
-                                  <Link
-                                    key={item.slug}
-                                    to={localizePath(getContentPath(group.id, item.slug))}
-                                    className="mob-link mob-link--nav"
-                                    onClick={closeAll}
-                                  >
-                                    <span className="mob-link-icon">
-                                      <item.icon size={17} />
-                                    </span>
-                                    <div>
-                                      <strong>{item.title[lang]}</strong>
-                                      <span>{item.description[lang]}</span>
-                                    </div>
-                                  </Link>
-                                ))}
+                              : (
+                                  <>
+                                    {group.id === 'services' ? (
+                                      <Link
+                                        to={localizePath('/services')}
+                                        className="mob-link mob-link--nav"
+                                        onClick={closeAll}
+                                      >
+                                        <span className="mob-link-icon">
+                                          <Briefcase size={17} />
+                                        </span>
+                                        <div>
+                                          <strong>{lang === 'tr' ? 'Tüm Hizmetler' : 'All Services'}</strong>
+                                          <span>
+                                            {lang === 'tr'
+                                              ? 'Servis portfoyunun tamamina tek sayfadan ulasin.'
+                                              : 'Reach the complete service portfolio from one page.'}
+                                          </span>
+                                        </div>
+                                      </Link>
+                                    ) : null}
+                                    {CONTENT_SECTION_MAP[group.id].items.map((item) => (
+                                      <Link
+                                        key={item.slug}
+                                        to={localizePath(getContentPath(group.id, item.slug))}
+                                        className="mob-link mob-link--nav"
+                                        onClick={closeAll}
+                                      >
+                                        <span className="mob-link-icon">
+                                          <item.icon size={17} />
+                                        </span>
+                                        <div>
+                                          <strong>{item.title[lang]}</strong>
+                                          <span>{item.description[lang]}</span>
+                                        </div>
+                                      </Link>
+                                    ))}
+                                  </>
+                                )}
                           </motion.div>
                         ) : null}
                       </AnimatePresence>

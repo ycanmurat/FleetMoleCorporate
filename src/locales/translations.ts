@@ -10,7 +10,7 @@ export const translations = {
     services_dropdown: {
       consulting: 'Filo Operasyon Danışmanlığı',
       telemetry: 'Araç Takip ve Telemetri',
-      ai: 'Smart Hasar ve Belge Analitiği',
+      smart: 'Smart Hasar ve Belge Analitiği',
     },
     rental_dropdown: {
       longTerm: 'Uzun Dönem Kiralama',
@@ -189,7 +189,7 @@ export const translations = {
     services_dropdown: {
       consulting: 'Fleet Operations Consulting',
       telemetry: 'Vehicle Tracking and Telematics',
-      ai: 'Smart Damage and Document Analytics',
+      smart: 'Smart Damage and Document Analytics',
     },
     rental_dropdown: {
       longTerm: 'Long-Term Leasing',

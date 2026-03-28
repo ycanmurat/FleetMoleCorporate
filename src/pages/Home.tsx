@@ -15,6 +15,7 @@ import {
   ShieldCheck,
 } from 'lucide-react';
 import ProductMark from '../components/ProductMark/ProductMark';
+import ProductSiteLink from '../components/ProductSiteLink/ProductSiteLink';
 import ProductWordmark from '../components/ProductWordmark/ProductWordmark';
 import SeoHead from '../components/Seo/SeoHead';
 import { COMPANY_NAME, type Locale } from '../config/site';
@@ -113,7 +114,7 @@ const HERO_SLOGANS = {
       subtitle:
         'Araç kullanımı, sürüş davranışı ve risk sinyallerini gerçek zamanlı olarak izleyin.',
     },
-    ai: {
+    smart: {
       chip: 'Akıllı karar motoru',
       title: ['Belge ve Hasarı', 'Smart Katmanla', 'Yorumlayın'],
       subtitle:
@@ -157,7 +158,7 @@ const HERO_SLOGANS = {
       subtitle:
         'Monitor vehicle usage, driver behavior, and risk signals continuously across the fleet.',
     },
-    ai: {
+    smart: {
       chip: 'Intelligent decision engine',
       title: ['Interpret Damage', 'And Documents', 'With Smart'],
       subtitle:
@@ -498,6 +499,180 @@ const Home = () => {
                       {heroProduct.detail[lang]}
                     </motion.p>
 
+                    <motion.div className="hero-mobile-carousel" variants={HERO_COPY_ITEM_ANIM}>
+                      <div className="hero-mobile-shell">
+                        <div className="hero-mobile-progress" aria-hidden="true">
+                          <span
+                            key={heroProduct.slug}
+                            className={`hero-mobile-progress-fill ${heroPaused ? 'paused' : ''}`}
+                          />
+                        </div>
+
+                        <div className="hero-mobile-slider">
+                          <div className="hero-mobile-stack" aria-hidden="true">
+                            <span className="hero-mobile-stack-card hero-mobile-stack-card--mid" />
+                            <span className="hero-mobile-stack-card hero-mobile-stack-card--rear" />
+                          </div>
+
+                          <motion.div
+                            className="hero-mobile-track"
+                            drag="x"
+                            dragConstraints={{ left: 0, right: 0 }}
+                            dragElastic={0.14}
+                            animate={{ x: `-${heroIndex * 100}%` }}
+                            transition={{ duration: 0.86, ease: HERO_EASE }}
+                            onDragEnd={(_, info) => {
+                              if (info.offset.x <= -56 || info.velocity.x <= -320) {
+                                cycleHeroProduct(1);
+                              } else if (info.offset.x >= 56 || info.velocity.x >= 320) {
+                                cycleHeroProduct(-1);
+                              }
+                            }}
+                          >
+                            {PRODUCTS.map((product, index) => {
+                              const mobileNarrative = HERO_SLOGANS[lang][product.slug];
+                              const mobileOrder = String(index + 1).padStart(2, '0');
+                              const mobileFeatures = product.features.slice(0, 2);
+                              const mobileBenefits = product.benefits[lang].slice(0, 2);
+
+                              return (
+                                <article
+                                  key={product.slug}
+                                  className={`hero-mobile-card ${product.slug === heroProduct.slug ? 'is-active' : ''}`}
+                                  style={
+                                    {
+                                      '--hero-card-primary': product.theme.primary,
+                                      '--hero-card-secondary': product.theme.secondary,
+                                      '--hero-card-soft': product.theme.soft,
+                                    } as CSSProperties
+                                  }
+                                >
+                                  <div className="hero-mobile-card-meta">
+                                    <span className="hero-mobile-chip">{mobileNarrative.chip}</span>
+                                    <div className="hero-mobile-card-controls">
+                                      <button
+                                        type="button"
+                                        className="hero-mobile-arrow hero-mobile-arrow--top"
+                                        aria-label={heroUi.previous}
+                                        onClick={() => cycleHeroProduct(-1)}
+                                      >
+                                        <ChevronLeft size={17} />
+                                      </button>
+                                      <div className="hero-mobile-counter">
+                                        <strong>{mobileOrder}</strong>
+                                        <span>{`/ ${heroTotal}`}</span>
+                                      </div>
+                                      <button
+                                        type="button"
+                                        className="hero-mobile-arrow hero-mobile-arrow--top"
+                                        aria-label={heroUi.next}
+                                        onClick={() => cycleHeroProduct(1)}
+                                      >
+                                        <ChevronRight size={17} />
+                                      </button>
+                                    </div>
+                                  </div>
+
+                                  <div className="hero-mobile-card-brand">
+                                    <div className="hero-mobile-brand-row">
+                                      <span className="hero-mobile-brand-mark">
+                                        <ProductWordmark
+                                          product={product}
+                                          className="hero-mobile-wordmark hero-mobile-wordmark--badge"
+                                          height={48}
+                                          alt=""
+                                        />
+                                      </span>
+                                    </div>
+                                    <span className="hero-mobile-category">{product.category[lang]}</span>
+                                  </div>
+
+                                  <div className="hero-mobile-top-cta">
+                                    <ProductSiteLink
+                                      productSlug={product.slug}
+                                      className="btn-outline hero-mobile-btn hero-mobile-btn--secondary hero-mobile-btn--inline"
+                                    >
+                                      {heroUi.explore} <ChevronRight size={18} />
+                                    </ProductSiteLink>
+                                  </div>
+
+                                  <div className="hero-mobile-title">
+                                    {mobileNarrative.title.map((line, titleIndex) => (
+                                      <span key={line} className="hero-mobile-title-line">
+                                        <span className={titleIndex === 1 ? 'hero-mobile-title-accent' : undefined}>
+                                          {line}
+                                        </span>
+                                      </span>
+                                    ))}
+                                  </div>
+
+                                  <div className="hero-mobile-copy">
+                                    <p className="hero-mobile-subtitle">{mobileNarrative.subtitle}</p>
+                                    <p className="hero-mobile-detail">{product.description[lang]}</p>
+                                    <p className="hero-mobile-note">{product.detail[lang]}</p>
+                                  </div>
+
+                                  <div className="hero-mobile-feature-grid">
+                                    {mobileFeatures.map((feature, featureIndex) => (
+                                      <article key={feature.title[lang]} className="hero-mobile-feature">
+                                        <span className="hero-mobile-feature-index">{`0${featureIndex + 1}`}</span>
+                                        <strong>{feature.title[lang]}</strong>
+                                        <p>{feature.description[lang]}</p>
+                                      </article>
+                                    ))}
+                                  </div>
+
+                                  <div className="hero-mobile-benefits">
+                                    {mobileBenefits.map((benefit) => (
+                                      <span key={benefit} className="hero-mobile-benefit">
+                                        <CheckCircle2 size={14} />
+                                        <span>{benefit}</span>
+                                      </span>
+                                    ))}
+                                  </div>
+
+                                  <div className="hero-mobile-cta">
+                                    <Link to={localizePath('/contact')} className="btn-primary hero-mobile-btn">
+                                      {t.hero.cta} <ArrowRight size={18} />
+                                    </Link>
+                                  </div>
+
+                                  <span className="hero-mobile-card-watermark" aria-hidden="true">
+                                    {mobileOrder}
+                                  </span>
+                                </article>
+                              );
+                            })}
+                          </motion.div>
+                        </div>
+
+                        <div className="hero-mobile-nav">
+                          <div className="hero-mobile-nav-status" aria-live="polite">
+                            <strong>{heroProduct.name}</strong>
+                            <span>{heroUi.activeLabel}</span>
+                          </div>
+                        </div>
+
+                        <div className="hero-mobile-dots" aria-label={heroUi.tabsLabel}>
+                          {PRODUCTS.map((product) => (
+                            <button
+                              key={product.slug}
+                              type="button"
+                              className={`hero-mobile-dot ${product.slug === heroProduct.slug ? 'is-active' : ''}`}
+                              aria-label={product.name}
+                              aria-current={product.slug === heroProduct.slug ? 'true' : undefined}
+                              onClick={() => setFeaturedProductSlug(product.slug)}
+                              style={
+                                {
+                                  '--dot-color': product.theme.primary,
+                                } as CSSProperties
+                              }
+                            />
+                          ))}
+                        </div>
+                      </div>
+                    </motion.div>
+
                     <motion.div className="hero-copy-meter" variants={HERO_COPY_ITEM_ANIM}>
                       <div className="hero-copy-counter">
                         <strong>{heroOrder}</strong>
@@ -536,12 +711,12 @@ const Home = () => {
                         </Link>
                       </motion.div>
                       <motion.div variants={HERO_COPY_ITEM_ANIM}>
-                        <Link
-                          to={localizePath(`/${heroProduct.slug}`)}
+                        <ProductSiteLink
+                          productSlug={heroProduct.slug}
                           className="btn-outline hero-btn hero-btn--secondary"
                         >
                           {heroUi.explore} <ChevronRight size={18} />
-                        </Link>
+                        </ProductSiteLink>
                       </motion.div>
                     </motion.div>
                   </motion.div>
@@ -599,7 +774,12 @@ const Home = () => {
                             <span className="hero-tab-frame">
                               <span className="hero-tab-top">
                                 <span className="hero-tab-mark-wrap">
-                                  <ProductMark product={product} variant="topbar" />
+                                  <ProductWordmark
+                                    product={product}
+                                    className="hero-tab-wordmark"
+                                    height={46}
+                                    alt=""
+                                  />
                                 </span>
                                 <span className="hero-tab-order">{order}</span>
                               </span>
@@ -652,7 +832,7 @@ const Home = () => {
                       >
                         <motion.div className="hero-stage-intro" variants={HERO_STAGE_SECTION_ANIM}>
                           <div className="hero-stage-mark-wrap">
-                            <ProductMark product={heroProduct} size={70} variant="hero" className="hero-stage-mark" />
+                            <ProductMark product={heroProduct} variant="rail" size={48} className="hero-stage-mark" />
                           </div>
 
                           <div className="hero-stage-copy">
@@ -742,8 +922,8 @@ const Home = () => {
             >
               {PRODUCTS.map((product) => (
                 <motion.div key={product.slug} variants={itemAnim}>
-                  <Link
-                    to={localizePath(`/${product.slug}`)}
+                  <ProductSiteLink
+                    productSlug={product.slug}
                     className="product-card"
                     style={
                       {
@@ -772,7 +952,7 @@ const Home = () => {
                     <span className="prod-arrow">
                       {t.misc.explore} <ArrowRight size={18} />
                     </span>
-                  </Link>
+                  </ProductSiteLink>
                 </motion.div>
               ))}
             </motion.div>
@@ -860,7 +1040,7 @@ const Home = () => {
   "partner": ["supplierNetwork", "sla", "workOrders"],
   "rent": ["quotes", "tenders", "replacementVehicles"],
   "tracker": ["telematics", "driverScore", "alerts"],
-  "ai": ["damageAnalysis", "documentParsing", "estimation"],
+  "smart": ["damageAnalysis", "documentParsing", "estimation"],
   "trader": ["valuation", "portfolio", "pricingSignals"]
 }`}</pre>
             </motion.div>

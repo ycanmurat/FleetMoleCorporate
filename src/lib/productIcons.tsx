@@ -17,7 +17,7 @@ const PRODUCT_ICON_MAP = {
   rent: CarFront,
   tyre: RefreshCcw,
   tracker: MapPinned,
-  ai: Cpu,
+  smart: Cpu,
   trader: MonitorSmartphone,
 } satisfies Record<ProductSlug, ComponentType<LucideProps>>;
 

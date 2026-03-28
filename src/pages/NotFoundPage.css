@@ -1,10 +1,11 @@
 .not-found-page {
   position: relative;
   isolation: isolate;
+  margin-top: calc(var(--page-top-offset, 0px) * -1);
   min-height: 60vh;
   display: flex;
   align-items: center;
-  padding: 1rem 0 96px;
+  padding: calc(var(--page-top-offset, 0px) + 1rem) 0 96px;
 }
 
 .not-found-page::before {

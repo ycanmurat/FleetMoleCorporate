@@ -1,0 +1,10 @@
+{
+  "name": "@fleetmole/site-tyre",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite --config ../../vite.product.config.ts --host 0.0.0.0 --port 4106 --strictPort",
+    "build": "tsc -p ../../tsconfig.product-site.json && vite build --config ../../vite.product.config.ts",
+    "preview": "vite preview --config ../../vite.product.config.ts --host 0.0.0.0 --port 4106 --strictPort"
+  }
+}

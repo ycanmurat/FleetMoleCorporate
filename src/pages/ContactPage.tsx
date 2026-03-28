@@ -1,6 +1,7 @@
 import type { CSSProperties } from 'react';
 import { ArrowRight, Mail, MapPin, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import ProductSiteLink from '../components/ProductSiteLink/ProductSiteLink';
 import ProductWordmark from '../components/ProductWordmark/ProductWordmark';
 import SeoHead from '../components/Seo/SeoHead';
 import { COMPANY_NAME, SITE_URL } from '../config/site';
@@ -104,9 +105,9 @@ const ContactPage = () => {
 
                 <div className="contact-product-grid">
                   {PRODUCTS.slice(0, 4).map((product) => (
-                    <Link
+                    <ProductSiteLink
                       key={product.slug}
-                      to={localizePath(`/${product.slug}`)}
+                      productSlug={product.slug}
                       className="contact-product-card"
                       style={
                         {
@@ -123,7 +124,7 @@ const ContactPage = () => {
                       </div>
                       <strong className="sr-only">{product.name}</strong>
                       <span>{product.category[lang]}</span>
-                    </Link>
+                    </ProductSiteLink>
                   ))}
                 </div>
               </div>
