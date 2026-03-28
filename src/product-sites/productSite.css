@@ -41,17 +41,21 @@
 }
 
 .ps-header-shell {
+  --common-top-banner-height: clamp(0.92rem, 1.28vw, 1.2rem);
+  --ps-brand-wordmark-height: 52px;
   display: grid;
-  gap: 0.9rem;
-  padding: 0.9rem 1rem 1rem;
-  border-radius: 1.65rem;
-  border: 1px solid color-mix(in srgb, var(--site-primary) 12%, var(--border-light));
+  gap: 0.12rem;
+  padding: 0.3rem 0.34rem 0.26rem;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 1.7rem;
   background:
-    linear-gradient(180deg, color-mix(in srgb, var(--glass-bg) 92%, white 8%), color-mix(in srgb, var(--glass-bg) 86%, transparent)),
-    rgba(255, 255, 255, 0.9);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.76)),
+    linear-gradient(135deg, color-mix(in srgb, var(--site-soft) 10%, white), rgba(255, 255, 255, 0.56));
   box-shadow:
-    0 26px 54px -40px color-mix(in srgb, var(--site-primary) 18%, rgba(15, 23, 42, 0.36)),
-    0 10px 24px -18px rgba(15, 23, 42, 0.12);
+    0 22px 40px -36px color-mix(in srgb, var(--site-primary) 14%, transparent),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(16px) saturate(132%);
+  -webkit-backdrop-filter: blur(16px) saturate(132%);
   transition:
     transform 0.24s ease,
     padding 0.24s ease,
@@ -61,8 +65,81 @@
 
 .ps-header.is-scrolled .ps-header-shell {
   transform: translateY(-0.08rem);
-  padding-top: 0.78rem;
-  padding-bottom: 0.82rem;
+  --common-top-banner-height: clamp(0.86rem, 1.14vw, 1.08rem);
+  --ps-brand-wordmark-height: 50px;
+  gap: 0.08rem;
+  padding: 0.22rem 0.26rem 0.18rem;
+}
+
+.ps-brand-stack {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: 0.22rem;
+  width: min(100%, 42rem);
+  margin-inline: auto;
+  padding: 0.08rem 0.28rem 0.08rem;
+  border-radius: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  overflow: visible;
+}
+
+.ps-brand-stack > * {
+  position: relative;
+  z-index: 1;
+}
+
+.ps-product-rail {
+  --product-rail-track-gap: 0.18rem;
+  --product-rail-track-min-height: 1.78rem;
+  --product-rail-track-padding-y: 0.08rem;
+  --product-rail-track-padding-x: 0.1rem;
+  --product-rail-link-gap: 0.16rem;
+  --product-rail-link-min-height: 1.56rem;
+  --product-rail-link-padding-x: 0.16rem;
+  --product-rail-mark-size: 23px;
+  --product-rail-name-max: 5.4rem;
+  --product-rail-track-bg: transparent;
+  --product-rail-track-shadow: none;
+  --product-rail-text-color: color-mix(in srgb, var(--text-main) 72%, #475569);
+  --product-rail-hover-color: var(--product-rail-link-primary);
+  --product-rail-hover-bg:
+    linear-gradient(180deg, color-mix(in srgb, var(--product-rail-link-soft) 12%, white), rgba(255, 255, 255, 0.72)),
+    color-mix(in srgb, var(--product-rail-link-soft) 32%, rgba(255, 255, 255, 0.44));
+  --product-rail-hover-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--product-rail-link-primary) 14%, rgba(148, 163, 184, 0.16));
+  --product-rail-active-color: color-mix(in srgb, var(--product-rail-link-primary) 80%, #0f172a);
+  --product-rail-active-bg:
+    linear-gradient(180deg, color-mix(in srgb, var(--product-rail-link-primary) 11%, white), rgba(255, 255, 255, 0.8)),
+    color-mix(in srgb, var(--product-rail-link-soft) 58%, rgba(255, 255, 255, 0.52));
+  --product-rail-active-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--product-rail-link-primary) 16%, rgba(148, 163, 184, 0.16)),
+    0 12px 22px -20px color-mix(in srgb, var(--product-rail-link-primary) 24%, transparent);
+  width: 100%;
+}
+
+.ps-header.is-scrolled .ps-product-rail {
+  --product-rail-track-gap: 0.12rem;
+  --product-rail-track-min-height: 1.52rem;
+  --product-rail-track-padding-y: 0.05rem;
+  --product-rail-track-padding-x: 0.06rem;
+  --product-rail-link-gap: 0.1rem;
+  --product-rail-link-min-height: 1.38rem;
+  --product-rail-link-padding-x: 0.1rem;
+  --product-rail-mark-size: 21px;
+  --product-rail-name-max: 4.5rem;
+  --product-rail-name-opacity: 0.82;
+}
+
+.ps-header.is-scrolled .ps-product-rail .product-rail-link:hover,
+.ps-header.is-scrolled .ps-product-rail .product-rail-link:focus-visible,
+.ps-header.is-scrolled .ps-product-rail .product-rail-link[aria-current='page'],
+.ps-header.is-scrolled .ps-product-rail .product-rail-link[aria-current='page']:hover,
+.ps-header.is-scrolled .ps-product-rail .product-rail-link[aria-current='page']:focus-visible {
+  gap: 0.12rem;
+  padding-inline: 0.14rem;
 }
 
 .ps-mobile-backlink,
@@ -79,10 +156,34 @@
 }
 
 .ps-header-main {
+  position: relative;
   display: grid;
   grid-template-columns: minmax(max-content, auto) minmax(0, 1fr) max-content;
   gap: 1rem;
   align-items: center;
+  margin-top: 0;
+  padding: 0.28rem 0.14rem 0 0.18rem;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.ps-header-main::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0.08rem;
+  right: 0.08rem;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in srgb, var(--site-soft) 42%, rgba(148, 163, 184, 0.22)) 14%,
+    color-mix(in srgb, var(--site-soft) 42%, rgba(148, 163, 184, 0.22)) 86%,
+    transparent
+  );
+  opacity: 0.9;
+  pointer-events: none;
 }
 
 .ps-brand {
@@ -95,6 +196,8 @@
   display: block;
   width: auto;
   max-width: 100%;
+  --product-wordmark-height: var(--ps-brand-wordmark-height);
+  transition: height 0.24s ease;
 }
 
 .ps-nav {
@@ -133,6 +236,10 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 .ps-header-cta {
@@ -157,11 +264,24 @@
   width: 2.4rem;
   height: 2.4rem;
   border-radius: 999px;
-  border: 1px solid color-mix(in srgb, var(--site-primary) 12%, var(--border-light));
-  background: color-mix(in srgb, var(--bg-surface) 90%, white 10%);
+  border: 0;
+  background: transparent;
   color: var(--text-main);
   font-size: 0.78rem;
   font-weight: 700;
+  box-shadow: none;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.ps-header-icon:hover,
+.ps-header-icon:focus-visible,
+.ps-header-menu:hover,
+.ps-header-menu:focus-visible {
+  background: color-mix(in srgb, var(--site-soft) 74%, transparent);
+  transform: translateY(-1px);
 }
 
 .ps-header-menu {
@@ -650,10 +770,6 @@
 }
 
 @media (max-width: 1080px) {
-  :root {
-    --header-offset: 110px;
-  }
-
   .ps-header-main {
     grid-template-columns: minmax(0, 1fr) max-content;
   }
@@ -685,12 +801,27 @@
 }
 
 @media (max-width: 760px) {
-  :root {
-    --header-offset: 98px;
+  .ps-header-shell {
+    gap: 0.08rem;
+    padding: 0.2rem 0.22rem 0.16rem;
   }
 
-  .ps-header-shell {
-    padding-inline: 0.85rem;
+  .ps-brand-stack {
+    width: 100%;
+    padding: 0.04rem 0.16rem 0.04rem;
+    border-radius: 0;
+  }
+
+  .ps-product-rail {
+    --product-rail-track-gap: 0.12rem;
+    --product-rail-track-min-height: 1.5rem;
+    --product-rail-track-padding-y: 0.05rem;
+    --product-rail-track-padding-x: 0.06rem;
+    --product-rail-link-gap: 0.1rem;
+    --product-rail-link-min-height: 1.36rem;
+    --product-rail-link-padding-x: 0.1rem;
+    --product-rail-mark-size: 20px;
+    --product-rail-name-max: 4.4rem;
   }
 
   .ps-header-backlink {
@@ -722,6 +853,12 @@
     gap: 0.36rem;
   }
 
+  .ps-header-main {
+    margin-top: 0;
+    padding: 0.22rem 0 0 0.04rem;
+    border-radius: 0;
+  }
+
   .ps-header-icon,
   .ps-header-menu {
     width: 2.22rem;
@@ -747,14 +884,34 @@
 .dark .ps-workflow-card,
 .dark .ps-detail-card,
 .dark .ps-topic-card,
-.dark .ps-header-icon,
-.dark .ps-header-menu,
 .dark .ps-mobile-link {
   border-color: rgba(148, 163, 184, 0.16);
   background:
     linear-gradient(180deg, rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.82)),
     rgba(15, 23, 42, 0.78);
   box-shadow: 0 22px 42px -32px rgba(2, 6, 23, 0.72);
+}
+
+.dark .ps-brand-stack,
+.dark .ps-header-main {
+  border-color: transparent;
+  background: transparent;
+  box-shadow: none;
+}
+
+.dark .ps-header-actions,
+.dark .ps-header-icon,
+.dark .ps-header-menu {
+  border-color: transparent;
+  background: transparent;
+  box-shadow: none;
+}
+
+.dark .ps-header-icon:hover,
+.dark .ps-header-icon:focus-visible,
+.dark .ps-header-menu:hover,
+.dark .ps-header-menu:focus-visible {
+  background: color-mix(in srgb, var(--site-soft) 18%, rgba(255, 255, 255, 0.04));
 }
 
 .dark .ps-header-backlink,
@@ -782,4 +939,9 @@
 .dark .ps-card-badge,
 .dark .ps-chip {
   background: color-mix(in srgb, var(--site-primary) 26%, rgba(15, 23, 42, 0.52));
+}
+
+:root:not(.dark) .ps-product-rail {
+  --product-rail-link-opacity: 0.95;
+  --product-rail-text-color: color-mix(in srgb, var(--text-main) 92%, #1e293b);
 }

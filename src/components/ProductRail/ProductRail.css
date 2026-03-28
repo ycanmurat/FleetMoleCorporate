@@ -1,0 +1,194 @@
+.product-rail {
+  --product-rail-track-gap: 0.14rem;
+  --product-rail-track-min-height: 1.74rem;
+  --product-rail-track-padding-y: 0;
+  --product-rail-track-padding-x: 0;
+  --product-rail-link-gap: 0.16rem;
+  --product-rail-link-min-height: 1.58rem;
+  --product-rail-link-padding-x: 0.18rem;
+  --product-rail-link-opacity: 0.84;
+  --product-rail-mark-size: 24px;
+  --product-rail-name-max: 5rem;
+  --product-rail-name-opacity: 1;
+  --product-rail-name-shift: 0rem;
+  --product-rail-text-color: rgba(226, 232, 240, 0.82);
+  --product-rail-hover-color: var(--product-rail-link-primary);
+  --product-rail-hover-bg:
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--product-rail-link-soft) 12%, rgba(255, 255, 255, 0.05)),
+      transparent
+    ),
+    color-mix(in srgb, var(--product-rail-link-soft) 18%, rgba(255, 255, 255, 0.04));
+  --product-rail-hover-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--product-rail-link-primary) 14%, rgba(148, 163, 184, 0.12));
+  --product-rail-track-bg: transparent;
+  --product-rail-track-shadow: none;
+  --product-rail-active-color: color-mix(in srgb, var(--product-rail-link-primary) 78%, white);
+  --product-rail-active-bg:
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--product-rail-link-primary) 14%, rgba(255, 255, 255, 0.08)),
+      transparent
+    ),
+    color-mix(in srgb, var(--product-rail-link-soft) 52%, rgba(255, 255, 255, 0.04));
+  --product-rail-active-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--product-rail-link-primary) 18%, rgba(148, 163, 184, 0.14)),
+    0 12px 18px -20px color-mix(in srgb, var(--product-rail-link-primary) 36%, transparent);
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  min-width: 0;
+  width: 100%;
+}
+
+.product-rail-track {
+  position: relative;
+  width: fit-content;
+  max-width: min(100%, 44rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--product-rail-track-gap);
+  overflow-x: auto;
+  margin-inline: auto;
+  padding: var(--product-rail-track-padding-y) var(--product-rail-track-padding-x);
+  min-height: var(--product-rail-track-min-height);
+  border-radius: 0;
+  background: var(--product-rail-track-bg);
+  box-shadow: var(--product-rail-track-shadow);
+  scrollbar-width: none;
+  transition:
+    gap 0.34s cubic-bezier(0.22, 1, 0.36, 1),
+    padding 0.34s cubic-bezier(0.22, 1, 0.36, 1),
+    min-height 0.34s cubic-bezier(0.22, 1, 0.36, 1),
+    background 0.34s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.34s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.product-rail-track::-webkit-scrollbar {
+  display: none;
+}
+
+.product-rail-link {
+  --product-rail-link-primary: #203a74;
+  --product-rail-link-soft: rgba(32, 58, 116, 0.14);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  gap: var(--product-rail-link-gap);
+  min-height: var(--product-rail-link-min-height);
+  padding: 0 calc(var(--product-rail-link-padding-x) + 5px) 0 var(--product-rail-link-padding-x);
+  border-radius: 999px;
+  color: var(--product-rail-text-color);
+  opacity: var(--product-rail-link-opacity);
+  scroll-snap-align: center;
+  transition:
+    color 0.32s ease,
+    opacity 0.32s ease,
+    gap 0.34s cubic-bezier(0.22, 1, 0.36, 1),
+    padding 0.34s cubic-bezier(0.22, 1, 0.36, 1),
+    background 0.32s ease,
+    box-shadow 0.32s ease,
+    border-color 0.32s ease,
+    transform 0.24s ease;
+}
+
+.product-rail-link .product-mark {
+  --mark-size: var(--product-rail-mark-size);
+  opacity: 0.92;
+  transition:
+    width 0.34s cubic-bezier(0.22, 1, 0.36, 1),
+    height 0.34s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.4s ease,
+    transform 0.34s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.28s ease;
+}
+
+.product-rail-link:hover,
+.product-rail-link:focus-visible {
+  color: var(--product-rail-hover-color);
+  opacity: 1;
+  background: var(--product-rail-hover-bg);
+  box-shadow: var(--product-rail-hover-shadow);
+  transform: translateY(-1px);
+}
+
+.product-rail-link:hover .product-mark,
+.product-rail-link:focus-visible .product-mark {
+  opacity: 1;
+  transform: translateY(-1px) scale(1.06);
+  filter: drop-shadow(0 6px 12px color-mix(in srgb, var(--product-rail-link-primary) 22%, transparent));
+}
+
+.product-rail-link[aria-current='page'] {
+  color: var(--product-rail-active-color);
+  opacity: 1;
+  padding-inline: 0.16rem;
+  background: var(--product-rail-active-bg);
+  box-shadow: var(--product-rail-active-shadow);
+}
+
+.product-rail-link[aria-current='page'] .product-mark {
+  opacity: 1;
+  transform: scale(1.04);
+  filter: drop-shadow(0 6px 12px color-mix(in srgb, var(--product-rail-link-primary) 18%, transparent));
+}
+
+.product-rail-name {
+  display: block;
+  min-width: 0;
+  flex: 0 1 auto;
+  max-width: var(--product-rail-name-max);
+  overflow: hidden;
+  opacity: var(--product-rail-name-opacity);
+  transform: translateX(var(--product-rail-name-shift));
+  font-size: 0.7rem;
+  font-weight: 640;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  white-space: nowrap;
+  transition:
+    max-width 0.34s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.4s ease,
+    transform 0.34s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (max-width: 900px) {
+  .product-rail {
+    --product-rail-track-gap: 0.12rem;
+    --product-rail-track-min-height: 1.54rem;
+    --product-rail-track-padding-y: 0;
+    --product-rail-track-padding-x: 0;
+    --product-rail-link-gap: 0.12rem;
+    --product-rail-link-min-height: 1.44rem;
+    --product-rail-link-padding-x: 0.12rem;
+    --product-rail-mark-size: 22px;
+    --product-rail-name-max: 4.8rem;
+  }
+
+  .product-rail-track {
+    justify-content: flex-start;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .product-rail {
+    --product-rail-track-gap: 0.1rem;
+    --product-rail-track-min-height: 1.46rem;
+    --product-rail-track-padding-y: 0;
+    --product-rail-track-padding-x: 0;
+    --product-rail-link-gap: 0.1rem;
+    --product-rail-link-min-height: 1.34rem;
+    --product-rail-link-padding-x: 0.1rem;
+    --product-rail-mark-size: 20px;
+    --product-rail-name-max: 4.4rem;
+  }
+
+  .product-rail-name {
+    font-size: 0.68rem;
+  }
+}

@@ -1,14 +1,16 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ArrowUpRight, Menu, Moon, Sun, X } from 'lucide-react';
 import CommonTopBanner from '../components/CommonTopBanner/CommonTopBanner';
+import ProductRail from '../components/ProductRail/ProductRail';
 import ProductWordmark from '../components/ProductWordmark/ProductWordmark';
 import { useApp } from '../context/AppContext';
 import { getCorporateSiteUrl } from './siteConfig';
 import { useProductSite } from './ProductSiteContext';
 
 const ProductSiteHeader = () => {
+  const headerRef = useRef<HTMLElement | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
@@ -28,6 +30,34 @@ const ProductSiteHeader = () => {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  useEffect(() => {
+    const syncHeaderOffset = () => {
+      if (!headerRef.current) {
+        return;
+      }
+
+      const nextOffset = Math.ceil(headerRef.current.getBoundingClientRect().height + 12);
+      document.documentElement.style.setProperty('--header-offset', `${nextOffset}px`);
+    };
+
+    syncHeaderOffset();
+
+    const frameId = window.requestAnimationFrame(syncHeaderOffset);
+    const observer = new ResizeObserver(syncHeaderOffset);
+
+    if (headerRef.current) {
+      observer.observe(headerRef.current);
+    }
+
+    window.addEventListener('resize', syncHeaderOffset, { passive: true });
+
+    return () => {
+      window.cancelAnimationFrame(frameId);
+      observer.disconnect();
+      window.removeEventListener('resize', syncHeaderOffset);
+    };
+  }, [isScrolled, lang, mobileOpen, product.slug]);
+
   const corporateUrl = useMemo(() => getCorporateSiteUrl(lang), [lang]);
 
   const resolveHref = (href: string) => (href.startsWith('#') ? `${localizePath('/')}#${href.slice(1)}` : localizePath(href));
@@ -41,14 +71,18 @@ const ProductSiteHeader = () => {
   };
 
   return (
-    <header className={`ps-header ${isScrolled ? 'is-scrolled' : ''}`}>
+    <header ref={headerRef} className={`ps-header ${isScrolled ? 'is-scrolled' : ''}`}>
       <div className="container">
         <div className="ps-header-shell glass-panel">
-          <CommonTopBanner href={corporateUrl} external className="ps-common-banner" />
+          <div className="ps-brand-stack">
+            <CommonTopBanner href={corporateUrl} external className="ps-common-banner" />
+
+            <ProductRail activeProductSlug={product.slug} className="ps-product-rail" />
+          </div>
 
           <div className="ps-header-main">
             <Link to={localizePath('/')} className="ps-brand">
-              <ProductWordmark product={product} className="ps-brand-wordmark" height={42} alt="" />
+              <ProductWordmark product={product} className="ps-brand-wordmark" alt="" />
             </Link>
 
             <nav className="ps-nav">

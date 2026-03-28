@@ -16,6 +16,7 @@ import {
 import { AnimatePresence, motion } from 'framer-motion';
 import CommonTopBanner from '../CommonTopBanner/CommonTopBanner';
 import ProductMark from '../ProductMark/ProductMark';
+import ProductRail from '../ProductRail/ProductRail';
 import ProductSiteLink from '../ProductSiteLink/ProductSiteLink';
 import ProductWordmark from '../ProductWordmark/ProductWordmark';
 import { useApp } from '../../context/AppContext';
@@ -27,7 +28,7 @@ import {
   getContentPath,
   type ContentSectionId,
 } from '../../data/navigation';
-import { PRODUCTS, type ProductSlug } from '../../data/products';
+import { PRODUCTS } from '../../data/products';
 import './Header.css';
 
 const HEADER_EASE = [0.22, 1, 0.36, 1] as const;
@@ -42,7 +43,6 @@ const Header = () => {
   const [activeDropdown, setActiveDropdown] = useState<DesktopDropdownId | null>(null);
   const [mobileSection, setMobileSection] = useState<DesktopDropdownId | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
-  const productLinkRefs = useRef<Partial<Record<ProductSlug, HTMLAnchorElement | null>>>({});
   const { isDark, toggleTheme, lang, toggleLang, t, localizePath } = useApp();
   const location = useLocation();
 
@@ -50,6 +50,7 @@ const Header = () => {
     PRODUCTS.find((product) => location.pathname === localizePath(`/${product.slug}`)) ?? null;
   const isHomePage = location.pathname === localizePath('/');
   const activeProductSlug = currentProduct?.slug ?? null;
+  const showPrimaryCluster = Boolean(currentProduct);
   const corporateLogoSrc = `${import.meta.env.BASE_URL}${isDark ? 'logo-white.png' : 'logo-black.png'}`;
 
   const brandStyle = currentProduct
@@ -121,23 +122,6 @@ const Header = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-
-  useEffect(() => {
-    if (!activeProductSlug) {
-      return;
-    }
-
-    const activeLink = productLinkRefs.current[activeProductSlug];
-    if (!activeLink) {
-      return;
-    }
-
-    activeLink.scrollIntoView({
-      behavior: 'auto',
-      block: 'nearest',
-      inline: 'nearest',
-    });
-  }, [activeProductSlug]);
 
   useEffect(() => {
     const syncHeaderOffset = () => {
@@ -243,10 +227,17 @@ const Header = () => {
             }
           }}
         >
-          <CommonTopBanner to={localizePath('/')} className="header-common-banner" />
+          <div className="header-brand-stack">
+            <CommonTopBanner to={localizePath('/')} className="header-common-banner" />
 
-          <div className={`header-main-row ${isHomePage ? 'is-home' : ''}`}>
-            {!isHomePage ? (
+            <ProductRail
+              activeProductSlug={activeProductSlug}
+              className={`header-product-rail ${isScrolled ? 'is-scrolled' : ''}`}
+            />
+          </div>
+
+          <div className={`header-main-row ${showPrimaryCluster ? '' : 'is-compact'}`.trim()}>
+            {showPrimaryCluster ? (
               <div className="header-primary-cluster">
                 <Link
                   to={localizePath('/')}
@@ -280,7 +271,20 @@ const Header = () => {
               </div>
             ) : null}
 
-            <nav className={`desktop-nav ${isHomePage ? 'is-home' : ''}`.trim()}>
+            <nav className={`desktop-nav ${showPrimaryCluster ? '' : 'is-compact'}`.trim()}>
+              {isHomePage ? (
+                <Link
+                  to={localizePath('/')}
+                  className="nav-link plain nav-link--home"
+                  aria-label={lang === 'tr' ? 'Ana Sayfa' : 'Home'}
+                  onClick={closeAll}
+                  style={{ '--nav-accent': '#203A74' } as CSSProperties}
+                >
+                  <House size={16} />
+                  <span>{lang === 'tr' ? 'Ana Sayfa' : 'Home'}</span>
+                </Link>
+              ) : null}
+
               {desktopNavGroups.map((group) => {
                 const navAccent =
                   group.id === 'products' ? currentProduct?.theme.primary ?? group.accent : group.accent;
@@ -320,15 +324,17 @@ const Header = () => {
             </nav>
 
             <div className="header-actions">
-              <Link
-                to={localizePath('/')}
-                className={`top-ctrl top-ctrl--home ${isHomePage ? 'is-active-home' : ''}`}
-                aria-label={lang === 'tr' ? 'Ana Sayfa' : 'Home'}
-                onClick={closeAll}
-                style={homeControlStyle}
-              >
-                <House size={17} />
-              </Link>
+              {!isHomePage ? (
+                <Link
+                  to={localizePath('/')}
+                  className={`top-ctrl top-ctrl--home ${isHomePage ? 'is-active-home' : ''}`}
+                  aria-label={lang === 'tr' ? 'Ana Sayfa' : 'Home'}
+                  onClick={closeAll}
+                  style={homeControlStyle}
+                >
+                  <House size={17} />
+                </Link>
+              ) : null}
               <button
                 className="top-ctrl top-ctrl--lang"
                 onClick={toggleLang}
@@ -350,39 +356,6 @@ const Header = () => {
               </button>
             </div>
           </div>
-
-          {isHomePage ? (
-            <div className={`header-rail-shell ${isScrolled ? 'is-scrolled' : ''}`}>
-              <div className="header-products-track" aria-label={t.misc.allProducts}>
-                {PRODUCTS.map((product) => {
-                  const path = localizePath(`/${product.slug}`);
-
-                  return (
-                    <ProductSiteLink
-                      key={product.slug}
-                      productSlug={product.slug}
-                      ref={(node) => {
-                        productLinkRefs.current[product.slug] = node;
-                      }}
-                      className="header-product-link"
-                      aria-label={product.name}
-                      aria-current={location.pathname === path ? 'page' : undefined}
-                      title={product.name}
-                      style={
-                        {
-                          '--link-primary': product.theme.primary,
-                          '--link-soft': product.theme.soft,
-                        } as CSSProperties
-                      }
-                    >
-                      <ProductMark product={product} variant="rail" />
-                      <span className="header-product-name">{product.shortName}</span>
-                    </ProductSiteLink>
-                  );
-                })}
-              </div>
-            </div>
-          ) : null}
 
           <AnimatePresence>
             {activeDesktopGroup ? (
