@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import ProductMark from '../components/ProductMark/ProductMark';
 import ProductWordmark from '../components/ProductWordmark/ProductWordmark';
 import SeoHead from '../components/Seo/SeoHead';
+import { getProductFaviconPath, getProductSitePath } from '../config/productSites';
 import { useApp } from '../context/AppContext';
 import { toAbsoluteUrl } from '../lib/i18n';
 import { useProductSite } from './ProductSiteContext';
@@ -14,23 +15,26 @@ const reveal = {
 };
 
 const ProductSiteHome = () => {
-  const { lang, localizePath } = useApp();
+  const { lang } = useApp();
   const { product, content } = useProductSite();
   const title = product.seoTitle[lang];
   const description = content.hero.lead[lang];
   const heroTitle = content.hero.title[lang];
+  const productHomePath = getProductSitePath(product.slug, lang);
+  const productContactPath = getProductSitePath(product.slug, lang, '/contact');
 
   return (
     <>
       <SeoHead
         title={title}
         description={description}
-        pathname={localizePath('/')}
+        pathname={productHomePath}
         locale={lang}
+        favicon={getProductFaviconPath(product.slug)}
         alternates={{
-          tr: '/tr',
-          en: '/en',
-          'x-default': '/tr',
+          tr: getProductSitePath(product.slug, 'tr'),
+          en: getProductSitePath(product.slug, 'en'),
+          'x-default': getProductSitePath(product.slug, 'tr'),
         }}
         schema={{
           '@context': 'https://schema.org',
@@ -39,7 +43,7 @@ const ProductSiteHome = () => {
           applicationCategory: product.category[lang],
           description,
           operatingSystem: 'Web',
-          url: toAbsoluteUrl(localizePath('/')),
+          url: toAbsoluteUrl(productHomePath),
         }}
         themeColor={product.theme.primary}
       />
@@ -59,10 +63,10 @@ const ProductSiteHome = () => {
               <p className="ps-hero-lead">{content.hero.lead[lang]}</p>
 
               <div className="ps-hero-actions">
-                <Link to={localizePath('/contact')} className="btn-primary">
+                <Link to={productContactPath} className="btn-primary">
                   {content.hero.primaryCta[lang]} <ArrowRight size={18} />
                 </Link>
-                <a href={`${localizePath('/')}#overview`} className="btn-outline">
+                <a href={`${productHomePath}#overview`} className="btn-outline">
                   {content.hero.secondaryCta[lang]}
                 </a>
               </div>
@@ -232,7 +236,7 @@ const ProductSiteHome = () => {
                 ))}
               </div>
               <div className="ps-impact-actions">
-                <Link to={localizePath('/contact')} className="btn-primary">
+                <Link to={productContactPath} className="btn-primary">
                   {lang === 'tr' ? 'Ürün ekibiyle konuşun' : 'Talk to the product team'} <ArrowRight size={18} />
                 </Link>
               </div>

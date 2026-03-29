@@ -1,9 +1,10 @@
-import { forwardRef, type AnchorHTMLAttributes } from 'react';
+import { forwardRef } from 'react';
+import { Link, type LinkProps } from 'react-router-dom';
 import { useApp } from '../../context/AppContext';
-import { getProductSiteUrl } from '../../config/productSites';
+import { getProductSitePath } from '../../config/productSites';
 import type { ProductSlug } from '../../data/products';
 
-interface ProductSiteLinkProps extends Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'href'> {
+interface ProductSiteLinkProps extends Omit<LinkProps, 'to'> {
   productSlug: ProductSlug;
   pathname?: string;
 }
@@ -12,7 +13,7 @@ const ProductSiteLink = forwardRef<HTMLAnchorElement, ProductSiteLinkProps>(
   ({ productSlug, pathname = '/', ...props }, ref) => {
     const { lang } = useApp();
 
-    return <a ref={ref} href={getProductSiteUrl(productSlug, lang, pathname)} {...props} />;
+    return <Link ref={ref} to={getProductSitePath(productSlug, lang, pathname)} {...props} />;
   },
 );
 

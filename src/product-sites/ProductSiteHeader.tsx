@@ -1,12 +1,13 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ArrowUpRight, Menu, Moon, Sun, X } from 'lucide-react';
 import CommonTopBanner from '../components/CommonTopBanner/CommonTopBanner';
 import ProductRail from '../components/ProductRail/ProductRail';
 import ProductWordmark from '../components/ProductWordmark/ProductWordmark';
+import { getProductSitePath } from '../config/productSites';
 import { useApp } from '../context/AppContext';
-import { getCorporateSiteUrl } from './siteConfig';
+import { getCorporateSitePath } from './siteConfig';
 import { useProductSite } from './ProductSiteContext';
 
 const ProductSiteHeader = () => {
@@ -15,7 +16,7 @@ const ProductSiteHeader = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
   const { product, content } = useProductSite();
-  const { lang, localizePath, toggleLang, toggleTheme, isDark } = useApp();
+  const { lang, toggleLang, toggleTheme, isDark } = useApp();
 
   useEffect(() => {
     setMobileOpen(false);
@@ -58,16 +59,20 @@ const ProductSiteHeader = () => {
     };
   }, [isScrolled, lang, mobileOpen, product.slug]);
 
-  const corporateUrl = useMemo(() => getCorporateSiteUrl(lang), [lang]);
-
-  const resolveHref = (href: string) => (href.startsWith('#') ? `${localizePath('/')}#${href.slice(1)}` : localizePath(href));
+  const corporatePath = getCorporateSitePath(lang);
+  const productHomePath = getProductSitePath(product.slug, lang);
+  const productContactPath = getProductSitePath(product.slug, lang, '/contact');
+  const resolveHref = (href: string) =>
+    href.startsWith('#')
+      ? `${productHomePath}#${href.slice(1)}`
+      : getProductSitePath(product.slug, lang, href);
 
   const isActive = (href: string) => {
     if (href.startsWith('#')) {
-      return location.pathname === localizePath('/') && location.hash === href;
+      return location.pathname === productHomePath && location.hash === href;
     }
 
-    return location.pathname === localizePath(href);
+    return location.pathname === getProductSitePath(product.slug, lang, href);
   };
 
   return (
@@ -75,13 +80,13 @@ const ProductSiteHeader = () => {
       <div className="container">
         <div className="ps-header-shell glass-panel">
           <div className="ps-brand-stack">
-            <CommonTopBanner href={corporateUrl} external className="ps-common-banner" />
+            <CommonTopBanner to={corporatePath} className="ps-common-banner" />
 
             <ProductRail activeProductSlug={product.slug} className="ps-product-rail" />
           </div>
 
           <div className="ps-header-main">
-            <Link to={localizePath('/')} className="ps-brand">
+            <Link to={productHomePath} className="ps-brand">
               <ProductWordmark product={product} className="ps-brand-wordmark" alt="" />
             </Link>
 
@@ -108,7 +113,7 @@ const ProductSiteHeader = () => {
             </nav>
 
             <div className="ps-header-actions">
-              <Link to={localizePath('/contact')} className="ps-header-cta">
+              <Link to={productContactPath} className="ps-header-cta">
                 {lang === 'tr' ? 'Demo' : 'Demo'}
               </Link>
               <button className="ps-header-icon" onClick={toggleLang} aria-label={lang === 'tr' ? 'Switch to English' : 'Turkceye gec'}>
@@ -158,10 +163,10 @@ const ProductSiteHeader = () => {
 
                 <div className="ps-mobile-meta">
                   <span>{product.name}</span>
-                  <a href={corporateUrl} className="ps-mobile-backlink">
+                  <Link to={corporatePath} className="ps-mobile-backlink">
                     {lang === 'tr' ? 'Corporate siteye don' : 'Back to corporate'}
                     <ArrowUpRight size={14} />
-                  </a>
+                  </Link>
                 </div>
               </motion.div>
             ) : null}

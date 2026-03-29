@@ -2,16 +2,19 @@ import { ArrowRight, Mail, MapPin, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import ProductWordmark from '../components/ProductWordmark/ProductWordmark';
 import SeoHead from '../components/Seo/SeoHead';
+import { getProductFaviconPath, getProductSitePath } from '../config/productSites';
 import { useApp } from '../context/AppContext';
 import { COMPANY_INFO, getCompanyAddress } from '../data/company';
 import { toAbsoluteUrl } from '../lib/i18n';
-import { getCorporateSiteUrl } from './siteConfig';
+import { getCorporateSitePath } from './siteConfig';
 import { useProductSite } from './ProductSiteContext';
 
 const ProductSiteContact = () => {
-  const { lang, localizePath } = useApp();
+  const { lang } = useApp();
   const { product, content } = useProductSite();
-  const corporateUrl = getCorporateSiteUrl(lang);
+  const corporatePath = getCorporateSitePath(lang);
+  const productHomePath = getProductSitePath(product.slug, lang);
+  const productContactPath = getProductSitePath(product.slug, lang, '/contact');
   const title =
     lang === 'tr' ? `${product.name} | İletişim` : `${product.name} | Contact`;
   const description = content.contact.lead[lang];
@@ -21,19 +24,20 @@ const ProductSiteContact = () => {
       <SeoHead
         title={title}
         description={description}
-        pathname={localizePath('/contact')}
+        pathname={productContactPath}
         locale={lang}
+        favicon={getProductFaviconPath(product.slug)}
         alternates={{
-          tr: '/tr/contact',
-          en: '/en/contact',
-          'x-default': '/tr/contact',
+          tr: getProductSitePath(product.slug, 'tr', '/contact'),
+          en: getProductSitePath(product.slug, 'en', '/contact'),
+          'x-default': getProductSitePath(product.slug, 'tr', '/contact'),
         }}
         schema={{
           '@context': 'https://schema.org',
           '@type': 'ContactPage',
           name: title,
           description,
-          url: toAbsoluteUrl(localizePath('/contact')),
+          url: toAbsoluteUrl(productContactPath),
         }}
         themeColor={product.theme.primary}
       />
@@ -90,9 +94,9 @@ const ProductSiteContact = () => {
                 </div>
               </div>
 
-              <a href={corporateUrl} className="ps-contact-corporate">
+              <Link to={corporatePath} className="ps-contact-corporate">
                 {lang === 'tr' ? 'FleetMole Corporate’a dön' : 'Back to FleetMole Corporate'}
-              </a>
+              </Link>
             </aside>
           </div>
         </section>
@@ -133,7 +137,7 @@ const ProductSiteContact = () => {
                 <p>{product.summary[lang]}</p>
               </div>
               <div className="ps-inline-cta-actions">
-                <Link to={localizePath('/')} className="btn-outline">
+                <Link to={productHomePath} className="btn-outline">
                   {lang === 'tr' ? 'Ana Sayfa' : 'Home'}
                 </Link>
               </div>

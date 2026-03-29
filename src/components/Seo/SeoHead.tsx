@@ -9,12 +9,25 @@ interface SeoHeadProps {
   pathname: string;
   locale: Locale;
   image?: string;
+  favicon?: string;
   robots?: string;
   type?: 'website' | 'article';
   themeColor?: string;
   alternates?: Partial<Record<Locale | 'x-default', string>>;
   schema?: Record<string, unknown> | Array<Record<string, unknown>>;
 }
+
+const getFaviconType = (href: string) => {
+  if (href.endsWith('.png')) {
+    return 'image/png';
+  }
+
+  if (href.endsWith('.svg')) {
+    return 'image/svg+xml';
+  }
+
+  return 'image/x-icon';
+};
 
 const ensureMetaTag = (selector: string, attributes: Record<string, string>) => {
   let element = document.head.querySelector<HTMLMetaElement>(selector);
@@ -57,6 +70,7 @@ const SeoHead = ({
   pathname,
   locale,
   image = '/og-image.svg',
+  favicon = '/favicon.svg',
   robots = 'index,follow',
   type = 'website',
   themeColor = '#203A74',
@@ -66,6 +80,7 @@ const SeoHead = ({
   useEffect(() => {
     const canonicalUrl = toAbsoluteUrl(pathname);
     const imageUrl = image.startsWith('http') ? image : toAbsoluteUrl(image);
+    const faviconUrl = favicon.startsWith('http') ? favicon : toAbsoluteUrl(favicon);
 
     document.title = title;
 
@@ -87,6 +102,11 @@ const SeoHead = ({
     ensureMetaTag('meta[name="twitter:image"]', { name: 'twitter:image', content: imageUrl });
 
     ensureLinkTag('link[rel="canonical"]', { rel: 'canonical', href: canonicalUrl });
+    ensureLinkTag('link[rel="icon"]', {
+      rel: 'icon',
+      href: faviconUrl,
+      type: getFaviconType(faviconUrl),
+    });
     removeMissingAlternates(alternates);
 
     Object.entries(alternates ?? {}).forEach(([hrefLang, href]) => {
@@ -112,7 +132,7 @@ const SeoHead = ({
     } else {
       existingSchema?.remove();
     }
-  }, [alternates, description, image, locale, pathname, robots, schema, themeColor, title, type]);
+  }, [alternates, description, favicon, image, locale, pathname, robots, schema, themeColor, title, type]);
 
   return null;
 };

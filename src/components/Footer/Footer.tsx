@@ -1,14 +1,15 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Mail, MapPin, Phone, Sparkles } from 'lucide-react';
+import ProductSiteLink from '../ProductSiteLink/ProductSiteLink';
 import { useApp } from '../../context/AppContext';
 import { COMPANY_INFO, getCompanyAddress } from '../../data/company';
 import {
   FOOTER_CORPORATE_LINKS,
-  FOOTER_FEATURE_LINKS,
   FOOTER_LEGAL_LINKS,
   getContentPage,
   getContentPath,
 } from '../../data/navigation';
+import { PRODUCTS } from '../../data/products';
 import './Footer.css';
 
 const Footer = () => {
@@ -16,10 +17,6 @@ const Footer = () => {
   const corporateLogoSrc = `${import.meta.env.BASE_URL}${isDark ? 'logo-white.png' : 'logo-black.png'}`;
 
   const corporateLinks = FOOTER_CORPORATE_LINKS.flatMap((entry) => {
-    const page = getContentPage(entry.section, entry.slug);
-    return page ? [{ ...entry, page }] : [];
-  });
-  const featureLinks = FOOTER_FEATURE_LINKS.flatMap((entry) => {
     const page = getContentPage(entry.section, entry.slug);
     return page ? [{ ...entry, page }] : [];
   });
@@ -92,11 +89,11 @@ const Footer = () => {
           </div>
 
           <div className="footer-col footer-col--links">
-            <h4 className="footer-heading">{t.footer.features}</h4>
+            <h4 className="footer-heading">{t.footer.solutions}</h4>
             <ul className="footer-links">
-              {featureLinks.map(({ section, slug, page }) => (
-                <li key={slug}>
-                  <Link to={localizePath(getContentPath(section, slug))}>{page.title[lang]}</Link>
+              {PRODUCTS.map((product) => (
+                <li key={product.slug}>
+                  <ProductSiteLink productSlug={product.slug}>{product.name}</ProductSiteLink>
                 </li>
               ))}
             </ul>
