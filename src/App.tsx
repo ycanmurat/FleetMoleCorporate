@@ -10,6 +10,11 @@ import ProductSiteContact from './product-sites/ProductSiteContact';
 import ProductSiteHome from './product-sites/ProductSiteHome';
 import ProductSiteNotFound from './product-sites/ProductSiteNotFound';
 import ProductSiteRoute from './product-sites/ProductSiteRoute';
+import ProductSiteProducts from './product-sites/ProductSiteProducts';
+import ProductSiteProductDetail from './product-sites/ProductSiteProductDetail';
+import ProductSiteCompare from './product-sites/ProductSiteCompare';
+import ProductSiteDemo from './product-sites/ProductSiteDemo';
+import ProductSiteContactsAdmin from './product-sites/ProductSiteContactsAdmin';
 
 const LocalizedOutlet = () => {
   const { locale } = useParams();
@@ -30,6 +35,11 @@ const App = () => {
         <Route path=":productSlug" element={<ProductSiteRoute />}>
           <Route index element={<ProductSiteHome />} />
           <Route path="contact" element={<ProductSiteContact />} />
+          <Route path="products" element={<ProductSiteProducts />} />
+          <Route path="products/compare" element={<ProductSiteCompare />} />
+          <Route path="products/:productId" element={<ProductSiteProductDetail />} />
+          <Route path="demo" element={<ProductSiteDemo />} />
+          <Route path="admin/contacts" element={<ProductSiteContactsAdmin />} />
           <Route path="*" element={<ProductSiteNotFound />} />
         </Route>
 

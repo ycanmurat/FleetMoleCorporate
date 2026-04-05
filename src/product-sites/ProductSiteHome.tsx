@@ -170,79 +170,83 @@ const ProductSiteHome = () => {
           </div>
         </section>
 
-        <section id="workflow" className="ps-section">
-          <div className="container">
-            <div className="ps-section-head">
-              <span>{content.workflow.eyebrow[lang]}</span>
-              <h2>{content.workflow.title[lang]}</h2>
-              <p>{content.workflow.body[lang]}</p>
-            </div>
-
-            <div className="ps-workflow-grid">
-              {content.workflow.cards.map((item, index) => (
-                <motion.article
-                  key={item.title[lang]}
-                  className="ps-workflow-card"
-                  initial={{ opacity: 0, y: 18 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.08 }}
-                >
-                  <span className="ps-workflow-index">{`0${index + 1}`}</span>
-                  <h3>{item.title[lang]}</h3>
-                  <p>{item.body[lang]}</p>
-                </motion.article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section id="impact" className="ps-section ps-section--impact">
-          <div className="container ps-impact-grid">
-            <div>
-              <div className="ps-section-head ps-section-head--left">
-                <span>{content.impact.eyebrow[lang]}</span>
-                <h2>{content.impact.title[lang]}</h2>
-                <p>{content.impact.body[lang]}</p>
+        {content.workflow && (
+          <section id="workflow" className="ps-section">
+            <div className="container">
+              <div className="ps-section-head">
+                <span>{content.workflow.eyebrow[lang]}</span>
+                <h2>{content.workflow.title[lang]}</h2>
+                <p>{content.workflow.body[lang]}</p>
               </div>
 
-              <div className="ps-card-grid ps-card-grid--impact">
-                {content.impact.cards.map((item, index) => (
+              <div className="ps-workflow-grid">
+                {content.workflow.cards.map((item, index) => (
                   <motion.article
                     key={item.title[lang]}
-                    className="ps-card"
+                    className="ps-workflow-card"
                     initial={{ opacity: 0, y: 18 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: index * 0.06 }}
+                    transition={{ delay: index * 0.08 }}
                   >
-                    {item.badge ? <span className="ps-card-badge">{item.badge[lang]}</span> : null}
+                    <span className="ps-workflow-index">{`0${index + 1}`}</span>
                     <h3>{item.title[lang]}</h3>
                     <p>{item.body[lang]}</p>
                   </motion.article>
                 ))}
               </div>
             </div>
+          </section>
+        )}
 
-            <aside className="ps-impact-panel glass-panel">
-              <strong>{product.name}</strong>
-              <p>{product.detail[lang]}</p>
-              <div className="ps-impact-benefits">
-                {product.benefits[lang].map((benefit) => (
-                  <div key={benefit} className="ps-impact-benefit">
-                    <CheckCircle2 size={16} />
-                    <span>{benefit}</span>
-                  </div>
-                ))}
+        {content.impact && (
+          <section id="impact" className="ps-section ps-section--impact">
+            <div className="container ps-impact-grid">
+              <div>
+                <div className="ps-section-head ps-section-head--left">
+                  <span>{content.impact.eyebrow[lang]}</span>
+                  <h2>{content.impact.title[lang]}</h2>
+                  <p>{content.impact.body[lang]}</p>
+                </div>
+
+                <div className="ps-card-grid ps-card-grid--impact">
+                  {content.impact.cards.map((item, index) => (
+                    <motion.article
+                      key={item.title[lang]}
+                      className="ps-card"
+                      initial={{ opacity: 0, y: 18 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.06 }}
+                    >
+                      {item.badge ? <span className="ps-card-badge">{item.badge[lang]}</span> : null}
+                      <h3>{item.title[lang]}</h3>
+                      <p>{item.body[lang]}</p>
+                    </motion.article>
+                  ))}
+                </div>
               </div>
-              <div className="ps-impact-actions">
-                <Link to={productContactPath} className="btn-primary">
-                  {lang === 'tr' ? 'Ürün ekibiyle konuşun' : 'Talk to the product team'} <ArrowRight size={18} />
-                </Link>
-              </div>
-            </aside>
-          </div>
-        </section>
+
+              <aside className="ps-impact-panel glass-panel">
+                <strong>{product.name}</strong>
+                <p>{product.detail[lang]}</p>
+                <div className="ps-impact-benefits">
+                  {product.benefits[lang].map((benefit) => (
+                    <div key={benefit} className="ps-impact-benefit">
+                      <CheckCircle2 size={16} />
+                      <span>{benefit}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="ps-impact-actions">
+                  <Link to={productContactPath} className="btn-primary">
+                    {lang === 'tr' ? 'Ürün ekibiyle konuşun' : 'Talk to the product team'} <ArrowRight size={18} />
+                  </Link>
+                </div>
+              </aside>
+            </div>
+          </section>
+        )}
       </div>
     </>
   );

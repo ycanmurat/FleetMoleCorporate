@@ -113,8 +113,8 @@ const ProductSiteHeader = () => {
             </nav>
 
             <div className="ps-header-actions">
-              <Link to={productContactPath} className="ps-header-cta">
-                {lang === 'tr' ? 'Demo' : 'Demo'}
+              <Link to={getProductSitePath(product.slug, lang, '/products')} className="ps-header-cta">
+                {lang === 'tr' ? 'Ürünler' : 'Products'}
               </Link>
               <button className="ps-header-icon" onClick={toggleLang} aria-label={lang === 'tr' ? 'Switch to English' : 'Turkceye gec'}>
                 {lang === 'tr' ? 'EN' : 'TR'}

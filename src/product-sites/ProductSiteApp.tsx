@@ -4,6 +4,11 @@ import ProductSiteContact from './ProductSiteContact';
 import ProductSiteHome from './ProductSiteHome';
 import ProductSiteLayout from './ProductSiteLayout';
 import ProductSiteNotFound from './ProductSiteNotFound';
+import ProductSiteProducts from './ProductSiteProducts';
+import ProductSiteProductDetail from './ProductSiteProductDetail';
+import ProductSiteCompare from './ProductSiteCompare';
+import ProductSiteContactsAdmin from './ProductSiteContactsAdmin';
+import ProductSiteDemo from './ProductSiteDemo';
 
 const LocalizedSiteLayout = () => {
   const { locale } = useParams();
@@ -23,6 +28,11 @@ const ProductSiteApp = () => {
       <Route path=":locale" element={<LocalizedSiteLayout />}>
         <Route index element={<ProductSiteHome />} />
         <Route path="contact" element={<ProductSiteContact />} />
+        <Route path="products" element={<ProductSiteProducts />} />
+        <Route path="products/compare" element={<ProductSiteCompare />} />
+        <Route path="products/:productId" element={<ProductSiteProductDetail />} />
+        <Route path="demo" element={<ProductSiteDemo />} />
+        <Route path="admin/contacts" element={<ProductSiteContactsAdmin />} />
         <Route path="*" element={<ProductSiteNotFound />} />
       </Route>
 

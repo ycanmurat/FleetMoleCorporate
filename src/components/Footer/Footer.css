@@ -57,8 +57,8 @@
 .footer-spotlight-inner {
   display: grid;
   grid-template-columns: minmax(0, 1.35fr) minmax(18rem, 0.82fr);
-  gap: 1rem;
-  align-items: start;
+  gap: 1.5rem;
+  align-items: stretch;
   padding-bottom: 1.6rem;
   border-bottom: 1px solid var(--footer-border);
 }
@@ -140,10 +140,12 @@
 }
 
 .footer-spotlight-card {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 0.68rem;
-  align-content: start;
-  padding: 1.25rem;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 1.5rem;
 }
 
 .footer-spotlight-card strong,

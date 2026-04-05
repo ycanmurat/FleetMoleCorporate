@@ -56,8 +56,8 @@ export interface ProductSiteContent {
     body: LocalizedText;
   };
   overview: ProductSiteSection;
-  workflow: ProductSiteSection;
-  impact: ProductSiteSection;
+  workflow?: ProductSiteSection;
+  impact?: ProductSiteSection;
   contact: ProductSiteContactContent;
 }
 
@@ -427,8 +427,8 @@ export const PRODUCT_SITE_CONTENT: Record<ProductSlug, ProductSiteContent> = {
     menu: [
       menu('Telemetri', 'Telemetry', '#overview'),
       menu('Modüller', 'Modules', '#modules'),
-      menu('Alarm Akışı', 'Alert Flow', '#workflow'),
-      menu('Operasyon Etkisi', 'Operational Impact', '#impact'),
+      menu('Ürünler', 'Products', '/products'),
+      menu('Demo', 'Demo', '/demo'),
       menu('İletişim', 'Contact', '/contact'),
     ],
     hero: {
@@ -490,65 +490,6 @@ export const PRODUCT_SITE_CONTENT: Record<ProductSlug, ProductSiteContent> = {
           'Motor ve kullanım verisi bakım ihtiyacını daha erken görünür kılar.',
           'Engine and usage data surface maintenance needs earlier.',
           t('Bakım', 'Maintenance'),
-        ),
-      ],
-    },
-    workflow: {
-      eyebrow: t('Nasıl çalışır?', 'How it works'),
-      title: t('Veri yakalama, yorumlama ve aksiyon üçlüsüyle ilerler.', 'Moves through a capture, interpret, and act model.'),
-      body: t(
-        'Telemetri katmanı; yalnızca veriyi toplamaz, operasyon ekipleri için karar alınabilir bir formatta sunar.',
-        'The telemetry layer does not just collect data; it packages it for operational decision-making.',
-      ),
-      cards: [
-        card(
-          '1. Veriyi topla',
-          '1. Gather the signal',
-          'Konum, hareket, sürüş ve motor verisi tek veri hattında toplanır.',
-          'Location, motion, driving, and engine data are collected in one signal line.',
-        ),
-        card(
-          '2. Riski puanla',
-          '2. Score the risk',
-          'Kural ihlalleri, agresif sürüş ve bakım sinyalleri işlenir.',
-          'Rules breaches, harsh driving, and maintenance signals are processed.',
-        ),
-        card(
-          '3. Operasyona aktar',
-          '3. Push it to operations',
-          'Alarm, görev ve yönetim raporu akışları aynı anda beslenir.',
-          'Alerting, task creation, and management reporting are fed at the same time.',
-        ),
-      ],
-    },
-    impact: {
-      eyebrow: t('Kimler için?', 'Who it helps'),
-      title: t('Saha, güvenlik ve uyumluluk ekiplerini aynı canlı veriyle besler.', 'Feeds field, safety, and compliance teams with the same live data stream.'),
-      body: t(
-        'Tracker, bir yandan günlük operasyonu hızlandırırken diğer yandan riskleri daha erken görünür kılar.',
-        'Tracker accelerates daily operations while surfacing risks earlier in the cycle.',
-      ),
-      cards: [
-        card(
-          'Operasyon ekipleri',
-          'Operations teams',
-          'Araç hareketini ve görevleri canlı durumla birlikte yorumlamayı kolaylaştırır.',
-          'Makes it easier to interpret vehicle movement and tasks in live context.',
-          t('Saha', 'Field'),
-        ),
-        card(
-          'Güvenlik ve risk',
-          'Safety and risk',
-          'Sürücü davranışı ve kritik sinyaller üzerinden erken önlem alınmasını destekler.',
-          'Supports earlier intervention based on driver behavior and critical signals.',
-          t('Risk', 'Risk'),
-        ),
-        card(
-          'Uyumluluk ve denetim',
-          'Compliance and audit',
-          'İhlal ve alarm kayıtlarını raporlanabilir bir kurumsal çerçeveye taşır.',
-          'Turns breaches and alerts into a reportable compliance framework.',
-          t('Uyumluluk', 'Compliance'),
         ),
       ],
     },
