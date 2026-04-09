@@ -46,7 +46,7 @@
 
 .ps-premium-search-input {
   width: 100%;
-  background: var(--bg-main);
+  background: color-mix(in srgb, var(--bg-surface) 92%, white 8%);
   border: 1px solid rgba(0,0,0,0.06);
   border-radius: 999px;
   padding: 0.8rem 1.25rem 0.8rem 3rem;
@@ -57,14 +57,25 @@
 }
 
 .dark .ps-premium-search-input {
-  border-color: rgba(255,255,255,0.1);
-  box-shadow: 0 10px 40px -10px rgba(0,0,0,0.2);
+  background:
+    linear-gradient(180deg, rgba(17, 28, 45, 0.92), rgba(11, 18, 32, 0.96));
+  border-color: rgba(148, 163, 184, 0.14);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.03),
+    0 18px 34px -24px rgba(2, 6, 23, 0.88);
 }
 
 .ps-premium-search-input:focus {
   outline: none;
-  border-color: var(--primary);
-  box-shadow: 0 15px 50px -10px color-mix(in srgb, var(--primary) 20%, transparent);
+  border-color: var(--site-primary, var(--primary));
+  box-shadow: 0 15px 50px -10px color-mix(in srgb, var(--site-primary, var(--primary)) 20%, transparent);
+}
+
+.dark .ps-premium-search-input:focus {
+  border-color: color-mix(in srgb, var(--site-primary) 54%, rgba(148, 163, 184, 0.2));
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.03),
+    0 22px 38px -24px color-mix(in srgb, var(--site-primary) 34%, rgba(2, 6, 23, 0.92));
 }
 
 .ps-premium-search-icon {
@@ -75,12 +86,37 @@
   color: var(--text-muted);
 }
 
+.dark .ps-premium-search-icon {
+  color: color-mix(in srgb, var(--site-soft) 34%, var(--text-muted));
+}
+
+.ps-premium-search-input::placeholder {
+  color: color-mix(in srgb, var(--text-muted) 88%, transparent);
+}
+
+.dark .ps-premium-search-input::placeholder {
+  color: color-mix(in srgb, var(--text-muted) 92%, rgba(255,255,255,0.1));
+}
+
 .ps-premium-categories {
   display: flex;
   gap: 0.5rem;
   flex-wrap: wrap;
   justify-content: center;
   margin-bottom: 1rem;
+  padding: 0.35rem;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.46);
+  border: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.dark .ps-premium-categories {
+  background:
+    linear-gradient(180deg, rgba(17, 24, 39, 0.9), rgba(10, 15, 27, 0.94));
+  border-color: rgba(148, 163, 184, 0.14);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.03),
+    0 18px 36px -30px rgba(2, 6, 23, 0.94);
 }
 
 .ps-premium-category-btn {
@@ -106,6 +142,20 @@
   box-shadow: 0 10px 24px -18px rgba(15, 23, 42, 0.5);
 }
 
+.dark .ps-premium-category-btn {
+  color: color-mix(in srgb, var(--text-muted) 88%, white 12%);
+}
+
+.dark .ps-premium-category-btn:hover {
+  background: rgba(255,255,255,0.04);
+}
+
+.dark .ps-premium-category-btn.active {
+  background: linear-gradient(135deg, var(--site-primary), var(--site-secondary, var(--site-primary)));
+  color: #fff;
+  box-shadow: 0 14px 26px -18px color-mix(in srgb, var(--site-primary) 58%, transparent);
+}
+
 .ps-premium-category-bg {
   position: absolute;
   inset: 0;
@@ -124,7 +174,7 @@
 }
 
 .ps-premium-subcategory-btn {
-  background: var(--bg-main);
+  background: color-mix(in srgb, var(--bg-surface) 92%, white 8%);
   border: 1px solid rgba(0,0,0,0.06);
   padding: 0.5rem 1.25rem;
   border-radius: 999px;
@@ -137,7 +187,10 @@
 }
 
 .dark .ps-premium-subcategory-btn {
-  border-color: rgba(255,255,255,0.08);
+  background:
+    linear-gradient(180deg, rgba(16, 24, 40, 0.84), rgba(11, 17, 32, 0.92));
+  border-color: rgba(148, 163, 184, 0.14);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.02);
 }
 
 .ps-premium-subcategory-btn:hover {
@@ -147,7 +200,9 @@
 }
 
 .dark .ps-premium-subcategory-btn:hover {
-  border-color: rgba(255,255,255,0.2);
+  border-color: rgba(148, 163, 184, 0.24);
+  background:
+    linear-gradient(180deg, rgba(20, 31, 53, 0.88), rgba(12, 19, 34, 0.96));
 }
 
 .ps-premium-subcategory-btn.active {
@@ -155,6 +210,12 @@
   color: #fff;
   border-color: var(--primary);
   box-shadow: 0 6px 20px color-mix(in srgb, var(--primary) 30%, transparent);
+}
+
+.dark .ps-premium-subcategory-btn.active {
+  background: linear-gradient(135deg, var(--site-primary), var(--site-secondary, var(--site-primary)));
+  border-color: transparent;
+  box-shadow: 0 12px 24px -18px color-mix(in srgb, var(--site-primary) 55%, transparent);
 }
 
 /* Premium Card Grid */
