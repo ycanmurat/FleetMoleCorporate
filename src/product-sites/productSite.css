@@ -74,7 +74,7 @@
   display: grid;
   justify-items: center;
   gap: 0.22rem;
-  width: min(100%, 42rem);
+  width: min(100%, 48rem);
   margin-inline: auto;
   padding: 0.08rem 0.28rem 0.08rem;
   border-radius: 0;
@@ -90,44 +90,70 @@
 }
 
 .ps-product-rail {
-  --product-rail-track-gap: 0.18rem;
-  --product-rail-track-min-height: 1.78rem;
+  --product-rail-track-gap: 0.2rem;
+  --product-rail-track-min-height: 2rem;
   --product-rail-track-padding-y: 0.08rem;
-  --product-rail-track-padding-x: 0.1rem;
-  --product-rail-link-gap: 0.16rem;
-  --product-rail-link-min-height: 1.56rem;
-  --product-rail-link-padding-x: 0.16rem;
-  --product-rail-mark-size: 23px;
-  --product-rail-name-max: 5.4rem;
+  --product-rail-track-padding-x: 0.12rem;
+  --product-rail-link-gap: 0.18rem;
+  --product-rail-link-min-height: 1.82rem;
+  --product-rail-link-padding-x: 0.22rem;
+  --product-rail-mark-size: 28px;
+  --product-rail-name-max: 5.8rem;
   --product-rail-track-bg: transparent;
   --product-rail-track-shadow: none;
   --product-rail-text-color: color-mix(in srgb, var(--text-main) 72%, #475569);
   --product-rail-hover-color: var(--product-rail-link-primary);
   --product-rail-hover-bg:
-    linear-gradient(180deg, color-mix(in srgb, var(--product-rail-link-soft) 12%, white), rgba(255, 255, 255, 0.72)),
-    color-mix(in srgb, var(--product-rail-link-soft) 32%, rgba(255, 255, 255, 0.44));
-  --product-rail-hover-shadow:
-    inset 0 0 0 1px color-mix(in srgb, var(--product-rail-link-primary) 14%, rgba(148, 163, 184, 0.16));
+    linear-gradient(180deg, color-mix(in srgb, var(--product-rail-link-soft) 10%, white), rgba(255, 255, 255, 0.58)),
+    color-mix(in srgb, var(--product-rail-link-soft) 18%, rgba(255, 255, 255, 0.22));
+  --product-rail-hover-shadow: none;
   --product-rail-active-color: color-mix(in srgb, var(--product-rail-link-primary) 80%, #0f172a);
   --product-rail-active-bg:
-    linear-gradient(180deg, color-mix(in srgb, var(--product-rail-link-primary) 11%, white), rgba(255, 255, 255, 0.8)),
-    color-mix(in srgb, var(--product-rail-link-soft) 58%, rgba(255, 255, 255, 0.52));
-  --product-rail-active-shadow:
-    inset 0 0 0 1px color-mix(in srgb, var(--product-rail-link-primary) 16%, rgba(148, 163, 184, 0.16)),
-    0 12px 22px -20px color-mix(in srgb, var(--product-rail-link-primary) 24%, transparent);
+    linear-gradient(180deg, color-mix(in srgb, var(--product-rail-link-primary) 8%, white), rgba(255, 255, 255, 0.68)),
+    color-mix(in srgb, var(--product-rail-link-soft) 22%, rgba(255, 255, 255, 0.26));
+  --product-rail-active-shadow: none;
   width: 100%;
+}
+
+.ps-product-rail .product-rail-link {
+  border-radius: 1rem;
+}
+
+.ps-product-rail .product-rail-link[aria-current='page'] {
+  padding: 0 calc(var(--product-rail-link-padding-x) + 5px) 0 var(--product-rail-link-padding-x);
+  border-color: color-mix(in srgb, var(--product-rail-link-primary) 56%, rgba(148, 163, 184, 0.14));
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--product-rail-link-primary) 14%, transparent),
+    0 10px 18px -18px color-mix(in srgb, var(--product-rail-link-primary) 28%, transparent);
+  transform: none;
+}
+
+.ps-product-rail .product-rail-link[aria-current='page'] .product-mark {
+  transform: scale(1.03);
+  filter: drop-shadow(0 4px 10px color-mix(in srgb, var(--product-rail-link-primary) 14%, transparent));
+}
+
+.ps-product-rail .product-rail-link[aria-current='page'] .product-rail-name {
+  font-weight: 760;
+}
+
+.ps-product-rail .product-rail-link--home[aria-current='page'] {
+  border-color: color-mix(in srgb, var(--product-rail-link-primary) 48%, rgba(148, 163, 184, 0.14));
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--product-rail-link-primary) 8%, white), rgba(255, 255, 255, 0.66)),
+    color-mix(in srgb, var(--product-rail-link-soft) 20%, rgba(255, 255, 255, 0.24));
 }
 
 .ps-header.is-scrolled .ps-product-rail {
   --product-rail-track-gap: 0.12rem;
-  --product-rail-track-min-height: 1.52rem;
+  --product-rail-track-min-height: 1.68rem;
   --product-rail-track-padding-y: 0.05rem;
   --product-rail-track-padding-x: 0.06rem;
   --product-rail-link-gap: 0.1rem;
-  --product-rail-link-min-height: 1.38rem;
-  --product-rail-link-padding-x: 0.1rem;
-  --product-rail-mark-size: 21px;
-  --product-rail-name-max: 4.5rem;
+  --product-rail-link-min-height: 1.52rem;
+  --product-rail-link-padding-x: 0.14rem;
+  --product-rail-mark-size: 23px;
+  --product-rail-name-max: 4.8rem;
   --product-rail-name-opacity: 0.82;
 }
 
@@ -317,7 +343,7 @@
 .ps-mobile-meta {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 0.75rem;
   align-items: center;
   color: var(--text-muted);
@@ -686,6 +712,11 @@
   letter-spacing: -0.02em;
 }
 
+.ps-contact-column {
+  display: grid;
+  gap: 1rem;
+}
+
 .ps-contact-card {
   display: grid;
   gap: 0.95rem;
@@ -771,6 +802,196 @@
   height: 26px;
 }
 
+.ps-legal-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(18rem, 0.82fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.ps-legal-aside,
+.ps-legal-card,
+.product-site-footer-panel {
+  border: 1px solid color-mix(in srgb, var(--site-primary) 10%, var(--border-light));
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--bg-surface) 92%, white 8%), color-mix(in srgb, var(--bg-base) 95%, white 5%));
+  box-shadow: 0 18px 34px -28px rgba(15, 23, 42, 0.16);
+}
+
+.ps-legal-aside {
+  display: grid;
+  gap: 1rem;
+  padding: 1.2rem;
+  border-radius: 1.45rem;
+}
+
+.ps-legal-aside strong {
+  color: var(--text-main);
+  font-size: 1.1rem;
+}
+
+.ps-legal-aside p,
+.ps-legal-card p,
+.ps-legal-card li,
+.product-site-footer-panel p,
+.product-site-footer-links a,
+.product-site-footer-contact span,
+.product-site-footer-contact a,
+.product-site-footer-bottom {
+  color: color-mix(in srgb, var(--text-main) 76%, #475569);
+  line-height: 1.76;
+}
+
+.ps-legal-aside-list {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.ps-legal-aside-item {
+  display: flex;
+  gap: 0.65rem;
+  align-items: flex-start;
+}
+
+.ps-legal-aside-item svg,
+.ps-legal-card li::before,
+.product-site-footer-contact svg {
+  color: var(--site-primary);
+}
+
+.ps-legal-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.ps-legal-card {
+  display: grid;
+  gap: 0.9rem;
+  padding: 1.25rem;
+  border-radius: 1.45rem;
+}
+
+.ps-legal-card > span {
+  display: inline-flex;
+  width: fit-content;
+  color: color-mix(in srgb, var(--site-primary) 82%, var(--text-main));
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.ps-legal-card ul {
+  display: grid;
+  gap: 0.72rem;
+}
+
+.ps-legal-card li {
+  position: relative;
+  padding-left: 1rem;
+}
+
+.ps-legal-card li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.72rem;
+  width: 0.38rem;
+  height: 0.38rem;
+  border-radius: 999px;
+  background: currentColor;
+}
+
+.product-site-footer {
+  position: relative;
+  z-index: 1;
+  padding-top: 1rem;
+  background:
+    radial-gradient(circle at 14% 0%, color-mix(in srgb, var(--site-soft) 86%, transparent), transparent 28%),
+    linear-gradient(180deg, color-mix(in srgb, var(--site-soft) 14%, transparent), transparent 16%),
+    linear-gradient(180deg, #eef4fa 0%, #f8fafc 24%, #eef3f8 100%);
+}
+
+.product-site-footer-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) repeat(3, minmax(0, 0.88fr));
+  gap: 1rem;
+  padding-bottom: 1.4rem;
+}
+
+.product-site-footer-panel {
+  display: grid;
+  align-content: start;
+  gap: 0.95rem;
+  padding: 1.2rem;
+  border-radius: 1.45rem;
+}
+
+.product-site-footer-panel--brand {
+  gap: 1rem;
+}
+
+.product-site-footer-panel h2 {
+  margin: 0;
+  color: var(--text-main);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.product-site-footer-links {
+  display: grid;
+  gap: 0.78rem;
+}
+
+.product-site-footer-links a:hover,
+.product-site-footer-backlink:hover {
+  color: var(--text-main);
+}
+
+.product-site-footer-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.product-site-footer-contact {
+  display: grid;
+  gap: 0.72rem;
+}
+
+.product-site-footer-contact span,
+.product-site-footer-contact a,
+.product-site-footer-backlink {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+
+.product-site-footer-backlink {
+  width: fit-content;
+  color: color-mix(in srgb, var(--site-primary) 78%, var(--text-main));
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.product-site-footer-bottom {
+  border-top: 1px solid color-mix(in srgb, var(--site-primary) 10%, rgba(148, 163, 184, 0.18));
+}
+
+.product-site-footer-bottom-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0 1.4rem;
+  font-size: 0.84rem;
+}
+
 @media (max-width: 1080px) {
   .ps-header-main {
     grid-template-columns: minmax(0, 1fr) max-content;
@@ -797,12 +1018,18 @@
 
   .ps-card-grid,
   .ps-module-grid,
-  .ps-workflow-grid {
+  .ps-workflow-grid,
+  .ps-legal-grid,
+  .product-site-footer-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 760px) {
+  .ps-header {
+    padding: 15px 5px;
+  }
+
   .ps-header-shell {
     gap: 0.08rem;
     padding: 0.2rem 0.22rem 0.16rem;
@@ -840,7 +1067,9 @@
   .ps-card-grid,
   .ps-module-grid,
   .ps-workflow-grid,
-  .ps-contact-detail-grid {
+  .ps-contact-detail-grid,
+  .ps-legal-grid,
+  .product-site-footer-grid {
     grid-template-columns: 1fr;
   }
 
@@ -878,6 +1107,11 @@
   .ps-contact-channel {
     align-items: flex-start;
   }
+
+  .product-site-footer-bottom-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 .dark .ps-header-shell,
@@ -886,6 +1120,9 @@
 .dark .ps-workflow-card,
 .dark .ps-detail-card,
 .dark .ps-topic-card,
+.dark .ps-legal-aside,
+.dark .ps-legal-card,
+.dark .product-site-footer-panel,
 .dark .ps-mobile-link {
   border-color: rgba(148, 163, 184, 0.16);
   background:
@@ -942,6 +1179,14 @@
 .dark .ps-workflow-card p,
 .dark .ps-detail-card li,
 .dark .ps-topic-card p,
+.dark .ps-legal-card p,
+.dark .ps-legal-card li,
+.dark .ps-legal-aside p,
+.dark .product-site-footer-panel p,
+.dark .product-site-footer-links a,
+.dark .product-site-footer-contact span,
+.dark .product-site-footer-contact a,
+.dark .product-site-footer-bottom,
 .dark .ps-contact-channel span,
 .dark .ps-contact-channel a,
 .dark .ps-contact-response span,
@@ -951,9 +1196,7 @@
 }
 
 .dark .ps-nav-link:hover,
-.dark .ps-nav-link.is-active,
 .dark .ps-contact-response,
-.dark .ps-card-badge,
 .dark .ps-chip {
   background: color-mix(in srgb, var(--site-primary) 26%, rgba(15, 23, 42, 0.52));
 }
@@ -968,6 +1211,22 @@
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,0.03),
     0 14px 24px -20px color-mix(in srgb, var(--site-primary) 46%, transparent);
+}
+
+.dark .ps-product-rail {
+  --product-rail-hover-bg:
+    linear-gradient(180deg, color-mix(in srgb, var(--product-rail-link-primary) 10%, rgba(255, 255, 255, 0.04)), transparent),
+    color-mix(in srgb, var(--product-rail-link-soft) 14%, rgba(15, 23, 42, 0.22));
+  --product-rail-active-bg:
+    linear-gradient(180deg, color-mix(in srgb, var(--product-rail-link-primary) 14%, rgba(255, 255, 255, 0.05)), transparent),
+    color-mix(in srgb, var(--product-rail-link-soft) 18%, rgba(15, 23, 42, 0.3));
+}
+
+.dark .ps-product-rail .product-rail-link[aria-current='page'] {
+  border-color: color-mix(in srgb, var(--product-rail-link-primary) 44%, rgba(148, 163, 184, 0.16));
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--product-rail-link-primary) 12%, transparent),
+    0 10px 18px -18px color-mix(in srgb, var(--product-rail-link-primary) 34%, transparent);
 }
 
 :root:not(.dark) .ps-product-rail {

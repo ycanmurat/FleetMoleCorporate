@@ -27,6 +27,7 @@ import {
   Wrench,
 } from 'lucide-react';
 import type { Locale } from '../config/site';
+import { NEWS_ARTICLES, type NewsArticle } from './newsArticles';
 import type { ProductSlug } from './products';
 
 type LocalizedText = Record<Locale, string>;
@@ -40,6 +41,8 @@ export interface ContentPageItem {
   highlights: Record<Locale, string[]>;
   icon: LucideIcon;
   relatedProducts?: ProductSlug[];
+  navHidden?: boolean;
+  newsArticle?: NewsArticle;
 }
 
 export interface ContentSection {
@@ -518,6 +521,16 @@ const resources: ContentSection = {
       icon: Megaphone,
       relatedProducts: ['rent'],
     },
+    ...NEWS_ARTICLES.map((article) => ({
+      slug: article.slug,
+      title: article.title,
+      description: article.description,
+      highlights: article.highlights,
+      icon: Newspaper,
+      relatedProducts: article.relatedProducts,
+      navHidden: true,
+      newsArticle: article,
+    })),
   ],
 };
 
@@ -820,3 +833,6 @@ export const getContentPath = (section: ContentSectionId, slug: string) => {
 
 export const getContentPage = (section: ContentSectionId, slug?: string) =>
   slug ? CONTENT_SECTION_MAP[section].items.find((item) => item.slug === slug) : undefined;
+
+export const getVisibleContentItems = (section: ContentSectionId) =>
+  CONTENT_SECTION_MAP[section].items.filter((item) => !item.navHidden);

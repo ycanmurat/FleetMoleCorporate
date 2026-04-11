@@ -89,7 +89,7 @@ const ProductSiteHome = () => {
             >
               <div className="ps-hero-panel-top">
                 <ProductWordmark product={product} height={36} alt="" className="ps-hero-panel-wordmark" />
-                <span>{content.hero.snapshotLabel[lang]}</span>
+                <span>{product.category[lang]}</span>
               </div>
 
               <div className="ps-hero-panel-main">
@@ -134,7 +134,6 @@ const ProductSiteHome = () => {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.06 }}
                 >
-                  {item.badge ? <span className="ps-card-badge">{item.badge[lang]}</span> : null}
                   <h3>{item.title[lang]}</h3>
                   <p>{item.body[lang]}</p>
                 </motion.article>
@@ -219,7 +218,6 @@ const ProductSiteHome = () => {
                       viewport={{ once: true }}
                       transition={{ delay: index * 0.06 }}
                     >
-                      {item.badge ? <span className="ps-card-badge">{item.badge[lang]}</span> : null}
                       <h3>{item.title[lang]}</h3>
                       <p>{item.body[lang]}</p>
                     </motion.article>

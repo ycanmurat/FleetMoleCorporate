@@ -1,14 +1,14 @@
 .product-rail {
-  --product-rail-track-gap: 0.14rem;
-  --product-rail-track-min-height: 1.74rem;
+  --product-rail-track-gap: 0.18rem;
+  --product-rail-track-min-height: 2rem;
   --product-rail-track-padding-y: 0;
   --product-rail-track-padding-x: 0;
-  --product-rail-link-gap: 0.16rem;
-  --product-rail-link-min-height: 1.58rem;
-  --product-rail-link-padding-x: 0.18rem;
+  --product-rail-link-gap: 0.22rem;
+  --product-rail-link-min-height: 1.82rem;
+  --product-rail-link-padding-x: 0.26rem;
   --product-rail-link-opacity: 0.84;
-  --product-rail-mark-size: 24px;
-  --product-rail-name-max: 5rem;
+  --product-rail-mark-size: 28px;
+  --product-rail-name-max: 5.8rem;
   --product-rail-name-opacity: 1;
   --product-rail-name-shift: 0rem;
   --product-rail-text-color: rgba(226, 232, 240, 0.82);
@@ -84,6 +84,7 @@
   border-radius: 999px;
   color: var(--product-rail-text-color);
   opacity: var(--product-rail-link-opacity);
+  border: 1px solid transparent;
   scroll-snap-align: center;
   transition:
     color 0.32s ease,
@@ -94,6 +95,21 @@
     box-shadow 0.32s ease,
     border-color 0.32s ease,
     transform 0.24s ease;
+}
+
+.product-rail-link--home {
+  width: calc(var(--product-rail-link-min-height) + 0.24rem);
+  min-width: calc(var(--product-rail-link-min-height) + 0.24rem);
+  padding: 0;
+  gap: 0;
+  border-radius: 1rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent),
+    color-mix(in srgb, var(--product-rail-link-soft, rgba(32, 58, 116, 0.14)) 14%, rgba(15, 23, 42, 0.08));
+}
+
+.product-rail-link--home svg {
+  stroke-width: 2;
 }
 
 .product-rail-link .product-mark {
@@ -126,15 +142,38 @@
 .product-rail-link[aria-current='page'] {
   color: var(--product-rail-active-color);
   opacity: 1;
-  padding-inline: 0.16rem;
+  padding-inline: 0.18rem;
+  border-color: color-mix(in srgb, var(--product-rail-link-primary) 48%, rgba(148, 163, 184, 0.14));
   background: var(--product-rail-active-bg);
-  box-shadow: var(--product-rail-active-shadow);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.16),
+    inset 0 0 0 1px color-mix(in srgb, var(--product-rail-link-primary) 18%, transparent),
+    var(--product-rail-active-shadow);
+  transform: translateY(-1px);
+}
+
+.product-rail-link--home[aria-current='page'] {
+  color: color-mix(in srgb, var(--product-rail-link-primary, #203a74) 78%, white);
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--product-rail-link-primary, #203a74) 16%, rgba(255, 255, 255, 0.08)),
+      transparent
+    ),
+    color-mix(in srgb, var(--product-rail-link-soft, rgba(32, 58, 116, 0.14)) 56%, rgba(255, 255, 255, 0.04));
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--product-rail-link-primary, #203a74) 42%, rgba(148, 163, 184, 0.14)),
+    0 16px 24px -18px color-mix(in srgb, var(--product-rail-link-primary, #203a74) 42%, transparent);
 }
 
 .product-rail-link[aria-current='page'] .product-mark {
   opacity: 1;
-  transform: scale(1.04);
+  transform: translateY(-1px) scale(1.06);
   filter: drop-shadow(0 6px 12px color-mix(in srgb, var(--product-rail-link-primary) 18%, transparent));
+}
+
+.product-rail-link[aria-current='page'] .product-rail-name {
+  font-weight: 800;
 }
 
 .product-rail-name {
@@ -145,8 +184,8 @@
   overflow: hidden;
   opacity: var(--product-rail-name-opacity);
   transform: translateX(var(--product-rail-name-shift));
-  font-size: 0.7rem;
-  font-weight: 640;
+  font-size: 0.79rem;
+  font-weight: 700;
   letter-spacing: -0.01em;
   line-height: 1;
   white-space: nowrap;
@@ -158,15 +197,15 @@
 
 @media (max-width: 900px) {
   .product-rail {
-    --product-rail-track-gap: 0.12rem;
-    --product-rail-track-min-height: 1.54rem;
+    --product-rail-track-gap: 0.14rem;
+    --product-rail-track-min-height: 1.7rem;
     --product-rail-track-padding-y: 0;
     --product-rail-track-padding-x: 0;
-    --product-rail-link-gap: 0.12rem;
-    --product-rail-link-min-height: 1.44rem;
-    --product-rail-link-padding-x: 0.12rem;
-    --product-rail-mark-size: 22px;
-    --product-rail-name-max: 4.8rem;
+    --product-rail-link-gap: 0.14rem;
+    --product-rail-link-min-height: 1.58rem;
+    --product-rail-link-padding-x: 0.16rem;
+    --product-rail-mark-size: 24px;
+    --product-rail-name-max: 5rem;
   }
 
   .product-rail-track {
@@ -178,17 +217,17 @@
 @media (max-width: 640px) {
   .product-rail {
     --product-rail-track-gap: 0.1rem;
-    --product-rail-track-min-height: 1.46rem;
+    --product-rail-track-min-height: 1.5rem;
     --product-rail-track-padding-y: 0;
     --product-rail-track-padding-x: 0;
     --product-rail-link-gap: 0.1rem;
-    --product-rail-link-min-height: 1.34rem;
+    --product-rail-link-min-height: 1.42rem;
     --product-rail-link-padding-x: 0.1rem;
-    --product-rail-mark-size: 20px;
+    --product-rail-mark-size: 22px;
     --product-rail-name-max: 4.4rem;
   }
 
   .product-rail-name {
-    font-size: 0.68rem;
+    font-size: 0.72rem;
   }
 }

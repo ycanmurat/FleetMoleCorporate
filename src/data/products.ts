@@ -289,8 +289,8 @@ const PRODUCT_DEFINITIONS = [
       en: 'Combines location, driving scores, sensor data, and fault codes with real-time analytics.',
     },
     description: {
-      tr: 'FleetMole Tracker, araçlardan gelen konum, kullanım, sensör ve motor verilerini merkezi olarak izler. Geleneksel takip sisteminin ötesine geçerek filo yöneticilerine aksiyon aldıran analitik görünürlük sunar.',
-      en: 'FleetMole Tracker centralizes location, usage, sensor, and engine data from connected vehicles. It goes beyond conventional tracking by turning telematics into actionable operating insight.',
+      tr: 'FleetMole Tracker, araçlardan gelen konum, kullanım, sensör ve motor verilerini merkezi olarak izler. Geleneksel takip sisteminin ötesine geçerek filo yöneticilerine aksiyon aldıran mobilite görünürlüğü sunar.',
+      en: 'FleetMole Tracker centralizes location, usage, sensor, and engine data from connected vehicles. It goes beyond conventional tracking by turning mobility data into actionable operating insight.',
     },
     detail: {
       tr: 'Sürücü skorlaması, geo-fence, tahmine dayalı bakım ve alarm kurguları sayesinde güvenlik, verim ve kontrol aynı ekosistemde buluşur.',
@@ -311,8 +311,8 @@ const PRODUCT_DEFINITIONS = [
     features: [
       {
         title: {
-          tr: 'Gerçek Zamanlı Telemetri',
-          en: 'Real-Time Telematics',
+          tr: 'Gerçek Zamanlı Mobilite',
+          en: 'Real-Time Mobility',
         },
         description: {
           tr: 'Konum, sürüş tarzı ve motor sağlığı verilerini anlık olarak işler.',
@@ -345,8 +345,8 @@ const PRODUCT_DEFINITIONS = [
       en: 'FleetMole Tracker | Smart Vehicle Tracking and Data Platform',
     },
     seoDescription: {
-      tr: 'FleetMole Tracker ile canlı konum, sürüş verisi ve telemetri akışını tek ekranda yönetin.',
-      en: 'Manage live location, driving data, and telematics flows from one screen with FleetMole Tracker.',
+      tr: 'FleetMole Tracker ile canlı konum, sürüş verisi ve mobilite akışını tek ekranda yönetin.',
+      en: 'Manage live location, driving data, and mobility flows from one screen with FleetMole Tracker.',
     },
     theme: buildTheme('#20ABE3', '#54C3EF', '#0F4564'),
   },

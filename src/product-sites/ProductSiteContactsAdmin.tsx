@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { ArrowLeft, Clock, Mail, MessageSquare, Tag, Trash2, User } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import type { ContactFormSubmission } from '../components/ContactInquiryForm/ContactInquiryForm';
 import SeoHead from '../components/Seo/SeoHead';
 import { useApp } from '../context/AppContext';
-import { getProductFaviconPath, getProductSitePath } from '../config/productSites';
-import type { ContactFormSubmission } from './ProductSiteContact';
+import { getProductFaviconPath } from '../config/productSites';
 
 const ProductSiteContactsAdmin = () => {
   const { lang } = useApp();
@@ -77,7 +77,7 @@ const ProductSiteContactsAdmin = () => {
                   <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap', paddingBottom: '1rem', borderBottom: '1px solid var(--border-soft)' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                       <User size={16} color="var(--primary)" />
-                      <strong>{contact.name}</strong>
+                      <strong>{contact.name || `${contact.firstName} ${contact.lastName}`.trim()}</strong>
                     </div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                       <Mail size={16} color="var(--primary)" />
@@ -89,7 +89,7 @@ const ProductSiteContactsAdmin = () => {
                     </div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--text-muted)' }}>
                       <Tag size={16} />
-                      <span className="ps-chip" style={{ fontSize: '0.75rem', padding: '0.2rem 0.5rem' }}>{contact.productSlug}</span>
+                      <span className="ps-chip" style={{ fontSize: '0.75rem', padding: '0.2rem 0.5rem' }}>{contact.productLabel || contact.productSlug}</span>
                     </div>
                   </div>
                   

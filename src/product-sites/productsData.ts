@@ -182,8 +182,8 @@ const translateTechnicalTextToTr = (input: string) => {
 export const PRODUCT_CATEGORIES: ProductCategory[] = [
   {
     id: 'video-telematics',
-    name: { tr: 'Video Telemetri', en: 'Video Telematics' },
-    description: { tr: 'Her yolculukta akıllı gözler.', en: 'Intelligent eyes on every journey.' },
+    name: { tr: 'Video Mobilite', en: 'Video Mobility' },
+    description: { tr: 'Her yolculukta görünürlük ve kanıt akışı.', en: 'Visibility and proof flow on every journey.' },
     subcategories: [
       { id: 'dashcam', name: { tr: 'Araç İçi Kamera', en: 'Dashcam' } },
       { id: 'ai-camera', name: { tr: 'Yapay Zeka Kamera', en: 'AI Camera' } },
@@ -275,7 +275,7 @@ export const getLocalizedProductSpecGroups = (product: HardwareProduct, lang: 't
 const getGeneratedProductTaglineTr = (product: HardwareProduct) => {
   switch (product.categoryId) {
     case 'video-telematics':
-      return `${product.name} ile bağlantılı görüntü ve güvenlik tek noktada.`;
+      return `${product.name} ile bağlantılı görüntü ve mobilite kontrolü tek noktada.`;
     case 'gps-trackers':
       return `${product.name} ile takip, görünürlük ve kontrol bir arada.`;
     case 'consumer-product':
@@ -700,7 +700,7 @@ export const HARDWARE_PRODUCTS: HardwareProduct[] = [
     thumbnail: getImg('jc181'),
     tagline: { tr: 'Formu Mütevazı, Kanıtı Güçlü.', en: 'Modest in Form, Mighty in Proof.' },
     description: {
-      tr: 'JC181, hareket halindeki filoları uzaktan yönetmeyi kolaylaştıran kompakt bir video telematik cihazıdır. LTE ve GNSS desteğiyle canlı görüntü, geçmiş kayıt ve kritik kanıt erişimini her an mümkün kılar.',
+      tr: 'JC181, hareket halindeki filoları uzaktan yönetmeyi kolaylaştıran kompakt bir video mobilite cihazıdır. LTE ve GNSS desteğiyle canlı görüntü, geçmiş kayıt ve kritik kanıt erişimini her an mümkün kılar.',
       en: 'The JC181 is a compact video telematics device that makes it easy to remotely manage your en-route fleets. It adds visibility to your fleet, along with powerful LTE connectivity and GNSS capability, and can record and store video footage and images on the device.',
     },
     specs: [{ label: { tr: 'Bağlantı', en: 'Connectivity' }, value: { tr: 'LTE & GNSS', en: 'LTE & GNSS' } }]

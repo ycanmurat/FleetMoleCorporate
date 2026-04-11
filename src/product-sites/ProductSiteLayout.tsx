@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import type { CSSProperties } from 'react';
-import Footer from '../components/Footer/Footer';
 import ScrollManager from '../components/ScrollManager';
+import ProductSiteFooter from './ProductSiteFooter';
 import ProductSiteHeader from './ProductSiteHeader';
 import { useProductSite } from './ProductSiteContext';
 
@@ -28,7 +28,7 @@ const ProductSiteLayout = () => {
       <main className="product-site-main">
         <Outlet />
       </main>
-      <Footer />
+      <ProductSiteFooter />
     </div>
   );
 };

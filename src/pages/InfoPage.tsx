@@ -3,6 +3,7 @@ import {
   ArrowRight,
   ArrowRightLeft,
   BarChart3,
+  CalendarClock,
   Car,
   CheckCircle2,
   FileText,
@@ -24,6 +25,7 @@ import {
   CONTENT_SECTION_MAP,
   getContentPage,
   getContentPath,
+  getVisibleContentItems,
   type ContentSectionId,
 } from '../data/navigation';
 import { getProductBySlug } from '../data/products';
@@ -45,6 +47,17 @@ const InfoPage = ({ section }: InfoPageProps) => {
   const sectionData = CONTENT_SECTION_MAP[section];
   const page = getContentPage(section, pageSlug);
   const isServicePage = section === 'services';
+  const isNewsListingPage = section === 'resources' && page?.slug === 'otomobil-haberleri';
+  const activeNewsArticle = page?.newsArticle ?? null;
+  const isNewsArticlePage = Boolean(activeNewsArticle);
+  const visibleSectionItems = getVisibleContentItems(section);
+  const newsArticles =
+    section === 'resources'
+      ? sectionData.items
+          .map((item) => item.newsArticle)
+          .filter((item): item is NonNullable<typeof item> => Boolean(item))
+      : [];
+  const latestNewsArticle = newsArticles[0] ?? null;
 
   if (!page) {
     return <NotFoundPage />;
@@ -89,9 +102,34 @@ const InfoPage = ({ section }: InfoPageProps) => {
   const detailSectionTitle =
     serviceDetail?.cardsTitle[lang] ?? (lang === 'tr' ? 'Hizmet Kapsamı' : 'Service Scope');
   const detailSectionDescription = serviceDetail?.cardsDescription[lang] ?? page.description[lang];
-  const siblingLinks = sectionData.items.filter((item) => item.slug !== page.slug).slice(0, 4);
+  const siblingLinks = visibleSectionItems.filter((item) => item.slug !== page.slug).slice(0, 4);
   const pageTitle = `${page.title[lang]} | ${COMPANY_NAME}`;
-  const pageDescription = page.description[lang];
+  const pageDescription = activeNewsArticle?.description[lang] ?? page.description[lang];
+  const schema = activeNewsArticle
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'NewsArticle',
+        headline: activeNewsArticle.title[lang],
+        description: activeNewsArticle.description[lang],
+        datePublished: activeNewsArticle.publishedAtIso,
+        image: [`${SITE_URL}${activeNewsArticle.heroImage}`],
+        mainEntityOfPage: `${SITE_URL}${localizePath(getContentPath(section, page.slug))}`,
+        publisher: {
+          '@type': 'Organization',
+          name: COMPANY_NAME,
+        },
+      }
+    : {
+        '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        name: pageTitle,
+        description: pageDescription,
+        url: `${SITE_URL}${localizePath(getContentPath(section, page.slug))}`,
+        publisher: {
+          '@type': 'Organization',
+          name: COMPANY_NAME,
+        },
+      };
 
   return (
     <>
@@ -105,17 +143,7 @@ const InfoPage = ({ section }: InfoPageProps) => {
           en: getContentPath(section, page.slug),
           'x-default': getContentPath(section, page.slug),
         }}
-        schema={{
-          '@context': 'https://schema.org',
-          '@type': 'WebPage',
-          name: pageTitle,
-          description: pageDescription,
-          url: `${SITE_URL}${localizePath(getContentPath(section, page.slug))}`,
-          publisher: {
-            '@type': 'Organization',
-            name: COMPANY_NAME,
-          },
-        }}
+        schema={schema}
       />
 
       <div className={`info-page ${isServicePage ? 'info-page--services' : ''}`} style={accentStyle}>
@@ -136,17 +164,36 @@ const InfoPage = ({ section }: InfoPageProps) => {
 
               <span className="info-chip">
                 <Sparkles size={14} />
-                {sectionData.eyebrow[lang]}
+                {activeNewsArticle ? activeNewsArticle.tag[lang] : sectionData.eyebrow[lang]}
               </span>
+
+              {activeNewsArticle ? (
+                <div className="info-inline-meta">
+                  <span className="info-inline-meta-item">
+                    <CalendarClock size={14} />
+                    {activeNewsArticle.publishedAt[lang]}
+                  </span>
+                </div>
+              ) : null}
 
               <h1>{page.title[lang]}</h1>
               <p className="info-lead">{heroLead}</p>
               {heroBody ? <p className="info-body">{heroBody}</p> : null}
 
               <div className="info-actions">
-                <Link to={localizePath('/contact')} className="btn-primary">
-                  {lang === 'tr' ? 'İletişime Geçin' : 'Talk to Us'} <ArrowRight size={18} />
-                </Link>
+                {isNewsArticlePage ? (
+                  <Link to={localizePath(getContentPath('resources', 'otomobil-haberleri'))} className="btn-primary">
+                    {lang === 'tr' ? 'Tüm Haberler' : 'All News'} <ArrowRight size={18} />
+                  </Link>
+                ) : isNewsListingPage && latestNewsArticle ? (
+                  <Link to={localizePath(getContentPath('resources', latestNewsArticle.slug))} className="btn-primary">
+                    {lang === 'tr' ? 'En Yeni Haberi Aç' : 'Open Latest Story'} <ArrowRight size={18} />
+                  </Link>
+                ) : (
+                  <Link to={localizePath('/contact')} className="btn-primary">
+                    {lang === 'tr' ? 'İletişime Geçin' : 'Talk to Us'} <ArrowRight size={18} />
+                  </Link>
+                )}
                 {relatedProducts[0] ? (
                   <ProductSiteLink productSlug={relatedProducts[0].slug} className="btn-outline">
                     {lang === 'tr' ? 'İlgili Ürünü İncele' : 'Explore Related Product'}
@@ -155,40 +202,196 @@ const InfoPage = ({ section }: InfoPageProps) => {
               </div>
             </div>
 
-            <aside className="info-side glass-panel">
-              <div className="info-side-block">
-                <strong>{lang === 'tr' ? 'İletişim' : 'Contact'}</strong>
-                <ul className="info-contact-list">
-                  <li>
-                    <MapPin size={16} />
-                    <span>{getCompanyAddress(lang)}</span>
-                  </li>
-                  <li>
-                    <Phone size={16} />
-                    <a href={`tel:${COMPANY_INFO.phoneHref}`}>{COMPANY_INFO.phoneDisplay}</a>
-                  </li>
-                  <li>
-                    <Mail size={16} />
-                    <a href={`mailto:${COMPANY_INFO.email}`}>{COMPANY_INFO.email}</a>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="info-side-block">
-                <strong>{lang === 'tr' ? 'Bu sayfada' : 'On this page'}</strong>
-                <div className="info-pill-list">
-                  {page.highlights[lang].map((highlight) => (
-                    <span key={highlight} className="info-pill">
-                      {highlight}
-                    </span>
-                  ))}
+            {isNewsArticlePage && activeNewsArticle ? (
+              <aside className="info-side glass-panel">
+                <div className="info-side-block">
+                  <strong>{lang === 'tr' ? 'Haber Özeti' : 'Story summary'}</strong>
+                  <div className="info-pill-list">
+                    {page.highlights[lang].map((highlight) => (
+                      <span key={highlight} className="info-pill">
+                        {highlight}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </aside>
+
+                <div className="info-side-block">
+                  <strong>{lang === 'tr' ? 'Yayın Tarihi' : 'Published on'}</strong>
+                  <div className="info-side-meta">
+                    <CalendarClock size={16} />
+                    <span>{activeNewsArticle.publishedAt[lang]}</span>
+                  </div>
+                </div>
+              </aside>
+            ) : isNewsListingPage ? (
+              <aside className="info-side glass-panel">
+                <div className="info-side-block">
+                  <strong>{lang === 'tr' ? 'Son Eklenen Haberler' : 'Latest stories'}</strong>
+                  <div className="info-topic-list">
+                    {newsArticles.slice(0, 4).map((article) => (
+                      <Link
+                        key={article.slug}
+                        to={localizePath(getContentPath('resources', article.slug))}
+                        className="info-topic-link"
+                      >
+                        <span>{article.title[lang]}</span>
+                        <ArrowRight size={14} />
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="info-side-block">
+                  <strong>{lang === 'tr' ? 'Odak Alanları' : 'Coverage'}</strong>
+                  <div className="info-pill-list">
+                    {page.highlights[lang].map((highlight) => (
+                      <span key={highlight} className="info-pill">
+                        {highlight}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </aside>
+            ) : (
+              <aside className="info-side glass-panel">
+                <div className="info-side-block">
+                  <strong>{lang === 'tr' ? 'İletişim' : 'Contact'}</strong>
+                  <ul className="info-contact-list">
+                    <li>
+                      <MapPin size={16} />
+                      <span>{getCompanyAddress(lang)}</span>
+                    </li>
+                    <li>
+                      <Phone size={16} />
+                      <a href={`tel:${COMPANY_INFO.phoneHref}`}>{COMPANY_INFO.phoneDisplay}</a>
+                    </li>
+                    <li>
+                      <Mail size={16} />
+                      <a href={`mailto:${COMPANY_INFO.email}`}>{COMPANY_INFO.email}</a>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="info-side-block">
+                  <strong>{lang === 'tr' ? 'Bu sayfada' : 'On this page'}</strong>
+                  <div className="info-pill-list">
+                    {page.highlights[lang].map((highlight) => (
+                      <span key={highlight} className="info-pill">
+                        {highlight}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </aside>
+            )}
           </div>
         </section>
 
-        {serviceSignals.length ? (
+        {isNewsArticlePage && activeNewsArticle ? (
+          <section className="info-section info-section--article">
+            <div className="container">
+              <div className="info-article-layout">
+                <article className="info-article-card glass-panel">
+                  <div className="info-article-image-wrap">
+                    <img
+                      src={activeNewsArticle.heroImage}
+                      alt={activeNewsArticle.title[lang]}
+                      className="info-article-image"
+                      loading="eager"
+                    />
+                  </div>
+
+                  <div className="info-article-content">
+                    {activeNewsArticle.sections.map((sectionBlock, index) => (
+                      <section key={`${activeNewsArticle.slug}-${index}`} className="info-article-section">
+                        {sectionBlock.heading ? <h2>{sectionBlock.heading[lang]}</h2> : null}
+                        {sectionBlock.paragraphs?.[lang]?.map((paragraph) => (
+                          <p key={paragraph}>{paragraph}</p>
+                        ))}
+                        {sectionBlock.bullets?.[lang]?.length ? (
+                          <ul className="info-article-list">
+                            {sectionBlock.bullets[lang].map((bullet) => (
+                              <li key={bullet}>{bullet}</li>
+                            ))}
+                          </ul>
+                        ) : null}
+                        {sectionBlock.link ? (
+                          <a href={sectionBlock.link.href} target="_blank" rel="noreferrer" className="info-article-link">
+                            {sectionBlock.link.label[lang]} <ArrowRight size={16} />
+                          </a>
+                        ) : null}
+                      </section>
+                    ))}
+                  </div>
+                </article>
+
+                <aside className="info-side glass-panel">
+                  <div className="info-side-block">
+                    <strong>{lang === 'tr' ? 'Kategori' : 'Category'}</strong>
+                    <div className="info-side-meta">
+                      <Sparkles size={16} />
+                      <span>{activeNewsArticle.tag[lang]}</span>
+                    </div>
+                  </div>
+
+                  <div className="info-side-block">
+                    <strong>{lang === 'tr' ? 'Öne Çıkan Başlıklar' : 'Key points'}</strong>
+                    <div className="info-pill-list">
+                      {activeNewsArticle.highlights[lang].map((highlight) => (
+                        <span key={highlight} className="info-pill">
+                          {highlight}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </aside>
+              </div>
+            </div>
+          </section>
+        ) : null}
+
+        {isNewsListingPage ? (
+          <section className="info-section info-section--news">
+            <div className="container">
+              <div className="info-section-head">
+                <h2>{lang === 'tr' ? 'Güncel Haberler' : 'Latest stories'}</h2>
+                <p>
+                  {lang === 'tr'
+                    ? 'FleetMole haber akışında yayımlanan içerikleri bu sayfadan statik olarak inceleyebilirsiniz.'
+                    : 'You can review the content published in the FleetMole news stream from this static page.'}
+                </p>
+              </div>
+
+              <div className="info-news-grid">
+                {newsArticles.map((article) => (
+                  <Link
+                    key={article.slug}
+                    to={localizePath(getContentPath('resources', article.slug))}
+                    className="info-news-card glass-panel"
+                  >
+                    <div className="info-news-image-wrap">
+                      <img src={article.heroImage} alt={article.title[lang]} className="info-news-image" loading="lazy" />
+                    </div>
+
+                    <div className="info-news-copy">
+                      <div className="info-news-meta">
+                        <span>{article.tag[lang]}</span>
+                        <span>{article.publishedAt[lang]}</span>
+                      </div>
+                      <h3>{article.title[lang]}</h3>
+                      <p>{article.description[lang]}</p>
+                      <span className="info-news-action">
+                        {lang === 'tr' ? 'Haberi Aç' : 'Open Story'} <ArrowRight size={15} />
+                      </span>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </section>
+        ) : null}
+
+        {!isNewsArticlePage && !isNewsListingPage && serviceSignals.length ? (
           <section className="info-section info-section--signals">
             <div className="container">
               <div className="info-section-head">
@@ -215,7 +418,7 @@ const InfoPage = ({ section }: InfoPageProps) => {
           </section>
         ) : null}
 
-        {introParagraphs.length ? (
+        {!isNewsArticlePage && !isNewsListingPage && introParagraphs.length ? (
           <section className="info-section info-section--story">
             <div className="container">
               <div className="info-section-head">
@@ -236,7 +439,7 @@ const InfoPage = ({ section }: InfoPageProps) => {
           </section>
         ) : null}
 
-        {spotlightCards.length ? (
+        {!isNewsArticlePage && !isNewsListingPage && spotlightCards.length ? (
           <section className="info-section info-section--spotlight">
             <div className="container">
               <div className="info-section-head">
@@ -263,7 +466,7 @@ const InfoPage = ({ section }: InfoPageProps) => {
           </section>
         ) : null}
 
-        {journeyCards.length ? (
+        {!isNewsArticlePage && !isNewsListingPage && journeyCards.length ? (
           <section className="info-section info-section--journey">
             <div className="container">
               <div className="info-section-head">
@@ -293,26 +496,28 @@ const InfoPage = ({ section }: InfoPageProps) => {
           </section>
         ) : null}
 
-        <section className="info-section info-section--details">
-          <div className="container">
-            <div className="info-section-head">
-              <h2>{detailSectionTitle}</h2>
-              <p>{detailSectionDescription}</p>
-            </div>
+        {!isNewsArticlePage && !isNewsListingPage ? (
+          <section className="info-section info-section--details">
+            <div className="container">
+              <div className="info-section-head">
+                <h2>{detailSectionTitle}</h2>
+                <p>{detailSectionDescription}</p>
+              </div>
 
-            <div className="info-grid">
-              {detailCards.map((card: ServiceDetailCard, index: number) => (
-                <article key={card.title[lang]} className="info-card glass-panel">
-                  <span className="info-card-index">{`0${index + 1}`}</span>
-                  <h2>{card.title[lang]}</h2>
-                  <p>{card.body[lang]}</p>
-                </article>
-              ))}
+              <div className="info-grid">
+                {detailCards.map((card: ServiceDetailCard, index: number) => (
+                  <article key={card.title[lang]} className="info-card glass-panel">
+                    <span className="info-card-index">{`0${index + 1}`}</span>
+                    <h2>{card.title[lang]}</h2>
+                    <p>{card.body[lang]}</p>
+                  </article>
+                ))}
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        ) : null}
 
-        {commandTitle && (commandPoints.length || commandProducts.length) ? (
+        {!isNewsArticlePage && !isNewsListingPage && commandTitle && (commandPoints.length || commandProducts.length) ? (
           <section className="info-section info-section--command">
             <div className="container">
               <div className="info-command glass-panel">
@@ -354,7 +559,7 @@ const InfoPage = ({ section }: InfoPageProps) => {
           </section>
         ) : null}
 
-        {relatedProducts.length ? (
+        {relatedProducts.length && !isNewsListingPage ? (
           <section className="info-section info-section--related">
             <div className="container">
               <div className="info-section-head">

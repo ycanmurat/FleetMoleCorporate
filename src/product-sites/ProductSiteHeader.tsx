@@ -1,8 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
-import { ArrowUpRight, Menu, Moon, Sun, X } from 'lucide-react';
-import CommonTopBanner from '../components/CommonTopBanner/CommonTopBanner';
+import { Menu, Moon, Sun, X } from 'lucide-react';
 import ProductRail from '../components/ProductRail/ProductRail';
 import ProductWordmark from '../components/ProductWordmark/ProductWordmark';
 import { getProductSitePath } from '../config/productSites';
@@ -17,6 +16,7 @@ const ProductSiteHeader = () => {
   const location = useLocation();
   const { product, content } = useProductSite();
   const { lang, toggleLang, toggleTheme, isDark } = useApp();
+  const showProductCatalog = product.slug === 'tracker';
 
   useEffect(() => {
     setMobileOpen(false);
@@ -61,11 +61,12 @@ const ProductSiteHeader = () => {
 
   const corporatePath = getCorporateSitePath(lang);
   const productHomePath = getProductSitePath(product.slug, lang);
-  const productContactPath = getProductSitePath(product.slug, lang, '/contact');
+  const productCatalogPath = getProductSitePath(product.slug, lang, '/products');
   const resolveHref = (href: string) =>
     href.startsWith('#')
       ? `${productHomePath}#${href.slice(1)}`
       : getProductSitePath(product.slug, lang, href);
+  const isCatalogRoute = location.pathname === productCatalogPath || location.pathname.startsWith(`${productCatalogPath}/`);
 
   const isActive = (href: string) => {
     if (href.startsWith('#')) {
@@ -80,9 +81,12 @@ const ProductSiteHeader = () => {
       <div className="container">
         <div className="ps-header-shell glass-panel">
           <div className="ps-brand-stack">
-            <CommonTopBanner to={corporatePath} className="ps-common-banner" />
-
-            <ProductRail activeProductSlug={product.slug} className="ps-product-rail" />
+            <ProductRail
+              activeProductSlug={product.slug}
+              className="ps-product-rail"
+              homeHref={corporatePath}
+              showHomeLink
+            />
           </div>
 
           <div className="ps-header-main">
@@ -113,9 +117,11 @@ const ProductSiteHeader = () => {
             </nav>
 
             <div className="ps-header-actions">
-              <Link to={getProductSitePath(product.slug, lang, '/products')} className="ps-header-cta">
-                {lang === 'tr' ? 'Ürünler' : 'Products'}
-              </Link>
+              {showProductCatalog && !isCatalogRoute ? (
+                <Link to={productCatalogPath} className="ps-header-cta">
+                  {lang === 'tr' ? 'Ürünler' : 'Products'}
+                </Link>
+              ) : null}
               <button className="ps-header-icon" onClick={toggleLang} aria-label={lang === 'tr' ? 'Switch to English' : 'Turkceye gec'}>
                 {lang === 'tr' ? 'EN' : 'TR'}
               </button>
@@ -162,10 +168,8 @@ const ProductSiteHeader = () => {
                 </div>
 
                 <div className="ps-mobile-meta">
-                  <span>{product.name}</span>
                   <Link to={corporatePath} className="ps-mobile-backlink">
-                    {lang === 'tr' ? 'Corporate siteye don' : 'Back to corporate'}
-                    <ArrowUpRight size={14} />
+                    {lang === 'tr' ? 'Anasayfa' : 'Homepage'}
                   </Link>
                 </div>
               </motion.div>

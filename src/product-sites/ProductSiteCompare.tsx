@@ -20,6 +20,9 @@ const ProductSiteCompare = () => {
   const [searchParams] = useSearchParams();
 
   const productSiteRoot = getProductSitePath(product.slug, lang);
+  if (product.slug !== 'tracker') {
+    return <Navigate to={productSiteRoot} replace />;
+  }
   const itemIds = searchParams.get('items')?.split(',').filter(Boolean) || [];
   const compareProducts = itemIds.map(id => HARDWARE_PRODUCTS.find(p => p.id === id)).filter(Boolean);
 

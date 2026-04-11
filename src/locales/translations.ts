@@ -9,7 +9,7 @@ export const translations = {
     },
     services_dropdown: {
       consulting: 'Filo Operasyon Danışmanlığı',
-      telemetry: 'Araç Takip ve Telemetri',
+      telemetry: 'Araç Takip ve Mobilite',
       smart: 'Smart Hasar ve Belge Analitiği',
     },
     rental_dropdown: {
@@ -28,7 +28,7 @@ export const translations = {
       title2: 'Filo Yönetimini',
       title3: 'Tek Merkezde Toplayın',
       subtitle:
-        'FleetMole; kiralama, operasyon, tedarikçi ağı, lastik yönetimi, telemetri, Smart karar katmanı ve ticari karar süreçlerini aynı veri akışında buluşturur.',
+        'FleetMole; kiralama, operasyon, tedarikçi ağı, lastik yönetimi, mobilite, Smart karar katmanı ve ticari karar süreçlerini aynı veri akışında buluşturur.',
       cta: 'Ücretsiz Demo Planla',
       secondary: 'Ürünleri İncele',
     },
@@ -41,12 +41,12 @@ export const translations = {
       {
         value: '360°',
         label: 'Operasyon görünürlüğü',
-        detail: 'Araç, sözleşme, servis, teklif, telemetri ve hasar verisi aynı akışta.',
+        detail: 'Araç, sözleşme, servis, teklif, mobilite ve hasar verisi aynı akışta.',
       },
       {
         value: 'API',
         label: 'Entegrasyon odaklı yapı',
-        detail: 'ERP, HR, finans, servis ve telemetri sistemleriyle uyumlu mimari.',
+        detail: 'ERP, HR, finans, servis ve mobilite sistemleriyle uyumlu mimari.',
       },
       {
         value: 'SLA',
@@ -85,14 +85,14 @@ export const translations = {
       ],
     },
     integration: {
-      title1: 'Kurumsal Sistemlerle',
-      title2: 'Uyumlu Çalışır',
+      title1: 'Mevcut Sistemlerle',
+      title2: 'Kolayca Bağlanır',
       desc:
-        'FleetMole; ERP, IK, muhasebe, servis yönetimi ve telemetri kaynaklarıyla birlikte çalışacak şekilde tasarlanmıştır. Farklı ekiplerde üretilen veriyi ortak karar altyapısına dönüştürür.',
-      check1: 'Rol bazlı yetkilendirme ve ekip bazlı süreç yönetimi',
-      check2: 'Servis, kiralama, finans ve telemetri verisi için entegrasyon kurgusu',
-      check3: 'Raporlama, otomatik uyarı ve karar destek akışları',
-      apiBtn: 'Entegrasyon Akışını Konuşalım',
+        'FleetMole; ERP, insan kaynakları, muhasebe, servis ve mobilite verileriyle birlikte çalışır. Bilgiyi tek yerde toplar, ekiplerin aynı veriyle ilerlemesini sağlar.',
+      check1: 'Ekiplere göre yetki ve onay adımları tanımlanabilir',
+      check2: 'Servis, kiralama, finans ve mobilite verileri aynı yapıda birleşir',
+      check3: 'Raporlar ve kritik uyarılar tek merkezden izlenir',
+      apiBtn: 'Entegrasyonu Planlayalım',
     },
     impact: {
       title: 'FleetMole',
@@ -112,7 +112,7 @@ export const translations = {
         },
         {
           title: 'Risk, veri ve uyumluluk ekipleri',
-          text: 'Canlı telemetri, sürüş skoru, hasar analizi ve belge akışları sayesinde riskler erken görünür hale gelir.',
+          text: 'Canlı mobilite verisi, sürüş skoru, hasar analizi ve belge akışları sayesinde riskler erken görünür hale gelir.',
           badge: 'Tracker + Smart',
         },
       ],
@@ -152,7 +152,7 @@ export const translations = {
       btn: 'Demo ve Kapsam Görüşmesi',
     },
     footer: {
-      desc: 'Kiralama, operasyon, tedarikçi ağı, telemetri, Smart karar katmanı ve araç ticareti süreçleri için kurumsal filo yazılım ekosistemi.',
+      desc: 'Kiralama, operasyon, tedarikçi ağı, mobilite, Smart karar katmanı ve araç ticareti süreçleri için kurumsal filo yazılım ekosistemi.',
       solutions: 'Ürünler',
       corporate: 'Kurumsal',
       features: 'Özellikler',
@@ -188,7 +188,7 @@ export const translations = {
     },
     services_dropdown: {
       consulting: 'Fleet Operations Consulting',
-      telemetry: 'Vehicle Tracking and Telematics',
+      telemetry: 'Vehicle Tracking and Mobility',
       smart: 'Smart Damage and Document Analytics',
     },
     rental_dropdown: {
@@ -207,7 +207,7 @@ export const translations = {
       title2: 'Run Fleet Management',
       title3: 'from One Control Layer',
       subtitle:
-        'FleetMole brings leasing, operations, supplier networks, tyre management, telematics, Smart, and commercial decision workflows into the same data stream.',
+        'FleetMole brings leasing, operations, supplier networks, tyre management, mobility, Smart, and commercial decision workflows into the same data stream.',
       cta: 'Plan a Free Demo',
       secondary: 'Explore Products',
     },
@@ -220,12 +220,12 @@ export const translations = {
       {
         value: '360°',
         label: 'Operational visibility',
-        detail: 'Vehicles, contracts, service, sourcing, telematics, and damage workflows in one flow.',
+        detail: 'Vehicles, contracts, service, sourcing, mobility, and damage workflows in one flow.',
       },
       {
         value: 'API',
         label: 'Integration-first structure',
-        detail: 'Designed to work with ERP, HR, finance, service, and telematics systems.',
+        detail: 'Designed to work with ERP, HR, finance, service, and mobility systems.',
       },
       {
         value: 'SLA',
@@ -264,14 +264,14 @@ export const translations = {
       ],
     },
     integration: {
-      title1: 'Built to Work with',
-      title2: 'Enterprise Systems',
+      title1: 'Connects Easily',
+      title2: 'With Existing Systems',
       desc:
-        'FleetMole is designed to work alongside ERP, HR, finance, service-management, and telematics sources. It turns fragmented operational data into a shared decision infrastructure.',
-      check1: 'Role-based permissions and team-specific workflows',
-      check2: 'Integration patterns for service, leasing, finance, and telematics data',
-      check3: 'Reporting, automated alerts, and decision-support workflows',
-      apiBtn: 'Talk Through the Integration Flow',
+        'FleetMole works alongside ERP, HR, accounting, service, and mobility data sources. It gathers operational information in one place so teams can move with the same picture.',
+      check1: 'Permissions and approval steps can be defined by team',
+      check2: 'Service, leasing, finance, and mobility data align in one structure',
+      check3: 'Reports and critical alerts are monitored from one center',
+      apiBtn: 'Plan the Integration',
     },
     impact: {
       title: 'Where FleetMole',
@@ -291,7 +291,7 @@ export const translations = {
         },
         {
           title: 'Risk, data, and compliance teams',
-          text: 'Live telematics, driving scores, damage analysis, and document flows surface risk earlier and with more context.',
+          text: 'Live mobility data, driving scores, damage analysis, and document flows surface risk earlier and with more context.',
           badge: 'Tracker + Smart',
         },
       ],
@@ -331,7 +331,7 @@ export const translations = {
       btn: 'Book a Demo and Scope Session',
     },
     footer: {
-      desc: 'An enterprise fleet software ecosystem spanning leasing, operations, supplier networks, telematics, Smart, and vehicle trading.',
+      desc: 'An enterprise fleet software ecosystem spanning leasing, operations, supplier networks, mobility, Smart, and vehicle trading.',
       solutions: 'Products',
       corporate: 'Corporate',
       features: 'Features',

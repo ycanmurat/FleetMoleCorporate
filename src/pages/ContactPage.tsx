@@ -1,10 +1,9 @@
-import type { CSSProperties } from 'react';
 import { ArrowRight, Mail, MapPin, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import ContactInquiryForm from '../components/ContactInquiryForm/ContactInquiryForm';
 import ProductSiteLink from '../components/ProductSiteLink/ProductSiteLink';
-import ProductWordmark from '../components/ProductWordmark/ProductWordmark';
 import SeoHead from '../components/Seo/SeoHead';
-import { COMPANY_NAME, SITE_URL } from '../config/site';
+import { SITE_URL } from '../config/site';
 import { useApp } from '../context/AppContext';
 import { COMPANY_INFO, getCompanyAddress } from '../data/company';
 import { CONTENT_SECTION_MAP, getContentPath } from '../data/navigation';
@@ -33,6 +32,17 @@ const ContactPage = () => {
     })),
   ];
 
+  const productOptions = [
+    {
+      label: lang === 'tr' ? 'Kurumsal Genel' : 'Corporate General',
+      value: 'corporate',
+    },
+    ...PRODUCTS.map((product) => ({
+      label: product.name,
+      value: product.slug,
+    })),
+  ];
+
   return (
     <>
       <SeoHead
@@ -51,10 +61,6 @@ const ContactPage = () => {
           name: title,
           description,
           url: `${SITE_URL}${localizePath('/contact')}`,
-          publisher: {
-            '@type': 'Organization',
-            name: COMPANY_NAME,
-          },
         }}
       />
 
@@ -62,134 +68,82 @@ const ContactPage = () => {
         <section className="contact-hero">
           <div className="container contact-hero-grid">
             <div className="contact-copy">
-              <span className="contact-chip">{lang === 'tr' ? 'Bize Ulaşın' : 'Reach Us'}</span>
-              <h1>
+              <span className="contact-chip">{lang === 'tr' ? 'Kurumsal İletişim' : 'Corporate Contact'}</span>
+              <h1>{lang === 'tr' ? 'Doğru ekibe, doğru kapsamla bağlanın.' : 'Reach the right team with the right scope.'}</h1>
+              <p>
                 {lang === 'tr'
-                  ? 'Demo, teklif, entegrasyon ve iş ortaklığı için ekibimizle doğrudan görüşün.'
-                  : 'Talk directly with our team about demos, proposals, integrations, and partnerships.'}
-              </h1>
-              <p>{description}</p>
+                  ? 'Satış, demo planlama, entegrasyon, tedarikçi ağı veya kurumsal iş birlikleri için talebinizi konu ve ürün bağlamıyla iletin. Ekibimiz dönüşü hızlandıracak şekilde talepleri ilgili masa ile eşleştirir.'
+                  : 'Share your request with the relevant product and topic context for sales, demos, integrations, supplier network discussions, or enterprise partnerships. The team routes each inquiry to the right desk.'}
+              </p>
 
               <div className="contact-action-shell">
                 <div className="contact-actions">
                   <a className="btn-primary contact-btn contact-btn--primary" href={`mailto:${COMPANY_INFO.email}`}>
-                    {lang === 'tr' ? 'E-posta Gönder' : 'Send Email'} <ArrowRight size={18} />
+                    <Mail size={18} />
+                    {lang === 'tr' ? 'Mail Gönder' : 'Send Email'}
                   </a>
                   <a className="btn-outline contact-btn contact-btn--secondary" href={`tel:${COMPANY_INFO.phoneHref}`}>
-                    {lang === 'tr' ? 'Telefonla Ulaşın' : 'Call Us'}
+                    <Phone size={18} />
+                    {lang === 'tr' ? 'Hemen Ara' : 'Call Now'}
                   </a>
                 </div>
 
                 <div className="contact-action-meta">
-                  <span>{lang === 'tr' ? 'Doğrudan ekip erişimi' : 'Direct team access'}</span>
-                  <strong>
-                    {lang === 'tr'
-                      ? 'Satış, demo, entegrasyon ve iş ortaklığı görüşmeleri'
-                      : 'Sales, demos, integrations, and partnership conversations'}
-                  </strong>
+                  <span>{lang === 'tr' ? 'Merkezi İletişim' : 'Central Contact'}</span>
+                  <strong>{lang === 'tr' ? 'Tüm talepler tek operasyon akışında toplanır.' : 'All inquiries are collected in one operational stream.'}</strong>
                 </div>
               </div>
 
-              <div className="contact-product-group">
-                <div className="contact-product-head">
+              <div className="contact-channel-list">
+                <div className="contact-channel-card">
+                  <MapPin size={18} />
                   <div>
-                    <span>{lang === 'tr' ? 'İlgili Ürün Akışı' : 'Relevant Product Stream'}</span>
-                    <strong>
-                      {lang === 'tr'
-                        ? 'Görüşmeyi doğru kapsamla başlatın'
-                        : 'Start the conversation with the right scope'}
-                    </strong>
+                    <strong>{lang === 'tr' ? 'Ofis' : 'Office'}</strong>
+                    <span>{getCompanyAddress(lang)}</span>
                   </div>
-                  <small>{lang === 'tr' ? 'Ürün seçimi' : 'Product selection'}</small>
                 </div>
-
-                <div className="contact-product-grid">
-                  {PRODUCTS.slice(0, 4).map((product) => (
-                    <ProductSiteLink
-                      key={product.slug}
-                      productSlug={product.slug}
-                      className="contact-product-card"
-                      style={
-                        {
-                          '--product-accent': product.theme.primary,
-                          '--product-soft': product.theme.soft,
-                        } as CSSProperties
-                      }
-                    >
-                      <div className="contact-product-top">
-                        <ProductWordmark product={product} className="contact-product-wordmark" height={28} alt="" />
-                        <span className="contact-product-arrow">
-                          <ArrowRight size={15} />
-                        </span>
-                      </div>
-                      <strong className="sr-only">{product.name}</strong>
-                      <span>{product.category[lang]}</span>
-                    </ProductSiteLink>
-                  ))}
+                <div className="contact-channel-card">
+                  <Phone size={18} />
+                  <div>
+                    <strong>{lang === 'tr' ? 'Telefon' : 'Phone'}</strong>
+                    <a href={`tel:${COMPANY_INFO.phoneHref}`}>{COMPANY_INFO.phoneDisplay}</a>
+                  </div>
+                </div>
+                <div className="contact-channel-card">
+                  <Mail size={18} />
+                  <div>
+                    <strong>{lang === 'tr' ? 'E-Posta' : 'Email'}</strong>
+                    <a href={`mailto:${COMPANY_INFO.email}`}>{COMPANY_INFO.email}</a>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <aside className="contact-card">
-              <div className="contact-card-head">
-                <span className="contact-card-kicker">{lang === 'tr' ? 'Doğrudan Erişim' : 'Direct Access'}</span>
-                <strong>{lang === 'tr' ? 'İletişim Kanalları' : 'Contact Channels'}</strong>
-                <p>
-                  {lang === 'tr'
-                    ? 'Talebinizi doğru ekip ve doğru kapsamla eşleştirmek için tüm temas noktaları burada.'
-                    : 'All contact points are here so we can route your request to the right team and scope.'}
-                </p>
-              </div>
-
-              <div className="contact-card-row">
-                <span className="contact-card-icon">
-                  <MapPin size={18} />
-                </span>
-                <div className="contact-card-copy">
-                  <strong>{lang === 'tr' ? 'Adresimiz' : 'Our Address'}</strong>
-                  <span>{getCompanyAddress(lang)}</span>
-                </div>
-              </div>
-              <div className="contact-card-row">
-                <span className="contact-card-icon">
-                  <Phone size={18} />
-                </span>
-                <div className="contact-card-copy">
-                  <strong>{lang === 'tr' ? 'Telefon' : 'Phone'}</strong>
-                  <a href={`tel:${COMPANY_INFO.phoneHref}`}>{COMPANY_INFO.phoneDisplay}</a>
-                </div>
-              </div>
-              <div className="contact-card-row">
-                <span className="contact-card-icon">
-                  <Mail size={18} />
-                </span>
-                <div className="contact-card-copy">
-                  <strong>E-posta</strong>
-                  <a href={`mailto:${COMPANY_INFO.email}`}>{COMPANY_INFO.email}</a>
-                </div>
-              </div>
-            </aside>
+            <ContactInquiryForm
+              accentColor="#203A74"
+              defaultProduct="corporate"
+              productOptions={productOptions}
+              siteScope="corporate"
+              title={lang === 'tr' ? 'Talep Formu' : 'Inquiry Form'}
+              lead={
+                lang === 'tr'
+                  ? 'Konu ve ürün seçimiyle başlayan talepler doğru ekipte daha hızlı açılır.'
+                  : 'Requests that start with a topic and product selection are routed to the right team faster.'
+              }
+              variant="corporate"
+            />
           </div>
         </section>
 
         <section className="contact-section">
           <div className="container contact-section-grid">
-            <div className="contact-detail">
-              <h2>{lang === 'tr' ? 'Hangi başlıklarda destek veriyoruz?' : 'What can we help with?'}</h2>
-              <ul>
-                <li>{lang === 'tr' ? 'Kurumsal demo ve ürün sunumları' : 'Enterprise demos and product walkthroughs'}</li>
-                <li>{lang === 'tr' ? 'Tekliflendirme ve kapsam toplantıları' : 'Quoting and discovery sessions'}</li>
-                <li>{lang === 'tr' ? 'API, entegrasyon ve teknik değerlendirme' : 'API, integration, and technical assessments'}</li>
-                <li>{lang === 'tr' ? 'İş ortaklığı ve tedarikçi ağı görüşmeleri' : 'Partnership and supplier network discussions'}</li>
-              </ul>
-            </div>
-
-            <div className="contact-detail">
-              <h2>{lang === 'tr' ? 'Hızlı yönlendirme' : 'Quick Routing'}</h2>
+            <article className="contact-detail">
+              <span className="contact-detail-kicker">{lang === 'tr' ? 'Hızlı Yönlendirme' : 'Quick Routing'}</span>
+              <h2>{lang === 'tr' ? 'Görüşme öncesi doğru akışı seçin.' : 'Pick the right stream before the meeting.'}</h2>
               <p>
                 {lang === 'tr'
-                  ? 'İlgili çözüm başlığını önceden incelemek, görüşmeyi daha doğru kapsamla başlatmamızı sağlar.'
-                  : 'Reviewing the relevant solution topic first helps us start the conversation with the right scope.'}
+                  ? 'Ön inceleme yapmak, ilk görüşmenin kapsamını daraltır ve süreci daha verimli başlatır.'
+                  : 'A quick review helps narrow the first conversation and starts the process more efficiently.'}
               </p>
               <div className="contact-links">
                 {quickLinks.map((link) => (
@@ -202,7 +156,25 @@ const ContactPage = () => {
                   </Link>
                 ))}
               </div>
-            </div>
+            </article>
+
+            <article className="contact-detail">
+              <span className="contact-detail-kicker">{lang === 'tr' ? 'Ürün Kısayolları' : 'Product Shortcuts'}</span>
+              <h2>{lang === 'tr' ? 'Doğrudan ürün ekiplerine geçin.' : 'Jump straight to product teams.'}</h2>
+              <p>
+                {lang === 'tr'
+                  ? 'Belirli bir ürün başlığı zaten netse doğrudan ilgili ürün sitesine geçip detaylı sayfaları inceleyebilirsiniz.'
+                  : 'If the product scope is already clear, you can go directly to the relevant product site and review its detailed pages.'}
+              </p>
+              <div className="contact-product-links">
+                {PRODUCTS.map((product) => (
+                  <ProductSiteLink key={product.slug} productSlug={product.slug} className="contact-product-link">
+                    <strong>{product.shortName}</strong>
+                    <span>{product.summary[lang]}</span>
+                  </ProductSiteLink>
+                ))}
+              </div>
+            </article>
           </div>
         </section>
       </div>

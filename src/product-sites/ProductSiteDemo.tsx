@@ -1,5 +1,5 @@
 import { ArrowRight, CalendarCheck2, Eye, Layers, MonitorSmartphone, Play, Radar, Route, ShieldCheck, Zap } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import SeoHead from '../components/Seo/SeoHead';
 import { useApp } from '../context/AppContext';
@@ -15,6 +15,10 @@ const ProductSiteDemo = () => {
   const productSiteRoot = getProductSitePath(product.slug, lang);
   const pageTitle = lang === 'tr' ? `${product.name} | Demo` : `${product.name} | Demo`;
   const contactPath = `${productSiteRoot}/contact`;
+
+  if (product.slug !== 'tracker') {
+    return <Navigate to={productSiteRoot} replace />;
+  }
 
   const demoFeatures = [
     {
@@ -168,7 +172,7 @@ const ProductSiteDemo = () => {
                 {lang === 'tr' ? 'Demo Planla' : 'Schedule Demo'} <CalendarCheck2 size={18} />
               </Link>
               <Link to={`${productSiteRoot}/products`} className="btn-outline" style={{ fontSize: '1.125rem', padding: '1rem 2rem' }}>
-                {lang === 'tr' ? '\u00dcr\u00fcnleri G\u00f6r' : 'Browse Products'}
+                {lang === 'tr' ? 'Mobilite Ürünlerini Gör' : 'Browse Mobility Products'}
               </Link>
             </motion.div>
           </div>

@@ -1,4 +1,6 @@
+import { House } from 'lucide-react';
 import { useEffect, useRef, type CSSProperties } from 'react';
+import { Link } from 'react-router-dom';
 import { PRODUCTS, type ProductSlug } from '../../data/products';
 import { useApp } from '../../context/AppContext';
 import ProductMark from '../ProductMark/ProductMark';
@@ -8,10 +10,19 @@ import './ProductRail.css';
 interface ProductRailProps {
   activeProductSlug?: ProductSlug | null;
   className?: string;
+  homeActive?: boolean;
+  homeHref?: string;
+  showHomeLink?: boolean;
 }
 
-const ProductRail = ({ activeProductSlug = null, className = '' }: ProductRailProps) => {
-  const { t } = useApp();
+const ProductRail = ({
+  activeProductSlug = null,
+  className = '',
+  homeActive = false,
+  homeHref = '/',
+  showHomeLink = false,
+}: ProductRailProps) => {
+  const { lang, t } = useApp();
   const productLinkRefs = useRef<Partial<Record<ProductSlug, HTMLAnchorElement | null>>>({});
 
   useEffect(() => {
@@ -34,6 +45,24 @@ const ProductRail = ({ activeProductSlug = null, className = '' }: ProductRailPr
   return (
     <div className={`product-rail ${className}`.trim()}>
       <div className="product-rail-track" aria-label={t.misc.allProducts}>
+        {showHomeLink ? (
+          <Link
+            to={homeHref}
+            className="product-rail-link product-rail-link--home"
+            aria-current={homeActive ? 'page' : undefined}
+            aria-label={lang === 'tr' ? 'Ana Sayfa' : 'Home'}
+            title={lang === 'tr' ? 'Ana Sayfa' : 'Home'}
+            style={
+              {
+                '--product-rail-link-primary': '#203A74',
+                '--product-rail-link-soft': 'rgba(32, 58, 116, 0.14)',
+              } as CSSProperties
+            }
+          >
+            <House size={18} />
+          </Link>
+        ) : null}
+
         {PRODUCTS.map((product) => (
           <ProductSiteLink
             key={product.slug}

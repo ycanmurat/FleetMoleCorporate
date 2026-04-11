@@ -9,6 +9,7 @@ import ProductSiteProductDetail from './ProductSiteProductDetail';
 import ProductSiteCompare from './ProductSiteCompare';
 import ProductSiteContactsAdmin from './ProductSiteContactsAdmin';
 import ProductSiteDemo from './ProductSiteDemo';
+import ProductSiteLegalPage from './ProductSiteLegalPage';
 
 const LocalizedSiteLayout = () => {
   const { locale } = useParams();
@@ -32,6 +33,7 @@ const ProductSiteApp = () => {
         <Route path="products/compare" element={<ProductSiteCompare />} />
         <Route path="products/:productId" element={<ProductSiteProductDetail />} />
         <Route path="demo" element={<ProductSiteDemo />} />
+        <Route path="legal/:pageSlug" element={<ProductSiteLegalPage />} />
         <Route path="admin/contacts" element={<ProductSiteContactsAdmin />} />
         <Route path="*" element={<ProductSiteNotFound />} />
       </Route>

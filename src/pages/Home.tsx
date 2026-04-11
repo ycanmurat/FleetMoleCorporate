@@ -109,7 +109,7 @@ const HERO_SLOGANS = {
         'Stok, değişim, aşınma ve maliyet kararlarını daha yüksek görünürlükle yönetin.',
     },
     tracker: {
-      chip: 'Canlı telemetri katmanı',
+      chip: 'Canlı mobilite katmanı',
       title: ['Sahadaki Her Hareketi', 'Anlık', 'Görün'],
       subtitle:
         'Araç kullanımı, sürüş davranışı ve risk sinyallerini gerçek zamanlı olarak izleyin.',
@@ -153,7 +153,7 @@ const HERO_SLOGANS = {
         'Drive stock, replacement, wear, and cost decisions with stronger operational visibility.',
     },
     tracker: {
-      chip: 'Live telematics layer',
+      chip: 'Live mobility layer',
       title: ['See Every Field', 'Signal In', 'Real Time'],
       subtitle:
         'Monitor vehicle usage, driver behavior, and risk signals continuously across the fleet.',
@@ -184,6 +184,20 @@ const HERO_SLOGANS = {
 >;
 
 const HERO_EASE = [0.22, 1, 0.36, 1] as const;
+const INTEGRATION_MEDIA = {
+  primary: `${import.meta.env.BASE_URL}entegrasyon.png`,
+  secondary: `${import.meta.env.BASE_URL}entegrasyon2.png`,
+} as const;
+const INTEGRATION_MEDIA_ALT = {
+  tr: {
+    primary: 'FleetMole sistem entegrasyon görünümü',
+    secondary: 'FleetMole ortak veri akışı diyagramı',
+  },
+  en: {
+    primary: 'FleetMole systems integration visual',
+    secondary: 'FleetMole shared data flow diagram',
+  },
+} satisfies Record<Locale, { primary: string; secondary: string }>;
 
 const HERO_COPY_STAGE_ANIM = {
   hidden: { opacity: 0.01 },
@@ -300,6 +314,7 @@ const HERO_STAGE_PANEL_ANIM = {
 const Home = () => {
   const { t, lang, localizePath, featuredProductSlug, setFeaturedProductSlug } = useApp();
   const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const [heroAutoplayActive, setHeroAutoplayActive] = useState(true);
 
   const faqItems = t.faq.items;
   const heroUi = HERO_UI[lang];
@@ -364,7 +379,7 @@ const Home = () => {
       } as CSSProperties,
     };
   });
-  const heroPaused = false;
+  const heroPaused = !heroAutoplayActive;
   const heroStyle = {
     '--hero-primary': heroProduct.theme.primary,
     '--hero-secondary': heroProduct.theme.secondary,
@@ -378,8 +393,8 @@ const Home = () => {
       : 'FleetMole | Enterprise Fleet Management in One Ecosystem';
   const seoDescription =
     lang === 'tr'
-      ? 'FleetMole; kiralama, operasyon, tedarikçi ağı, lastik yönetimi, telemetri, yapay zekâ ve araç ticareti süreçlerini tek ekosistemde birleştirir.'
-      : 'FleetMole brings leasing, operations, supplier networks, tyre management, telematics, Smart, and vehicle trading into one enterprise ecosystem.';
+      ? 'FleetMole; kiralama, operasyon, tedarikçi ağı, lastik yönetimi, mobilite, yapay zekâ ve araç ticareti süreçlerini tek ekosistemde birleştirir.'
+      : 'FleetMole brings leasing, operations, supplier networks, tyre management, mobility, Smart, and vehicle trading into one enterprise ecosystem.';
 
   const schema = {
     '@context': 'https://schema.org',
@@ -419,6 +434,23 @@ const Home = () => {
   }, [setFeaturedProductSlug]);
 
   useEffect(() => {
+    const syncAutoplay = () => {
+      setHeroAutoplayActive(window.scrollY < 16);
+    };
+
+    syncAutoplay();
+    window.addEventListener('scroll', syncAutoplay, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', syncAutoplay);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!heroAutoplayActive) {
+      return;
+    }
+
     const timeoutId = window.setTimeout(() => {
       setFeaturedProductSlug((current) => {
         const currentIndex = PRODUCTS.findIndex((product) => product.slug === current);
@@ -430,7 +462,7 @@ const Home = () => {
     return () => {
       window.clearTimeout(timeoutId);
     };
-  }, [heroProduct.slug, setFeaturedProductSlug]);
+  }, [heroAutoplayActive, heroProduct.slug, setFeaturedProductSlug]);
 
   const cycleHeroProduct = (direction: 1 | -1) => {
     setFeaturedProductSlug((current) => {
@@ -1024,25 +1056,28 @@ const Home = () => {
             </motion.div>
 
             <motion.div
-              className="api-box"
+              className="integration-media"
               initial={{ opacity: 0, x: 24 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <div className="api-header">
-                <span className="api-dot blue" />
-                <span className="api-dot teal" />
-                <span className="api-dot violet" />
-                <span className="api-file">fleetmole-ecosystem.json</span>
+              <div className="integration-media-shell">
+                <figure className="integration-media-card integration-media-card--primary">
+                  <img
+                    src={INTEGRATION_MEDIA.primary}
+                    alt={INTEGRATION_MEDIA_ALT[lang].primary}
+                    loading="lazy"
+                  />
+                </figure>
+
+                <figure className="integration-media-card integration-media-card--secondary">
+                  <img
+                    src={INTEGRATION_MEDIA.secondary}
+                    alt={INTEGRATION_MEDIA_ALT[lang].secondary}
+                    loading="lazy"
+                  />
+                </figure>
               </div>
-              <pre className="api-code">{`{
-  "manager": ["contracts", "maintenance", "costControl"],
-  "partner": ["supplierNetwork", "sla", "workOrders"],
-  "rent": ["quotes", "tenders", "replacementVehicles"],
-  "tracker": ["telematics", "driverScore", "alerts"],
-  "smart": ["damageAnalysis", "documentParsing", "estimation"],
-  "trader": ["valuation", "portfolio", "pricingSignals"]
-}`}</pre>
             </motion.div>
           </div>
         </section>

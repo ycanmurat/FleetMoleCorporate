@@ -14,7 +14,6 @@ import {
   X,
 } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
-import CommonTopBanner from '../CommonTopBanner/CommonTopBanner';
 import ProductMark from '../ProductMark/ProductMark';
 import ProductRail from '../ProductRail/ProductRail';
 import ProductSiteLink from '../ProductSiteLink/ProductSiteLink';
@@ -26,6 +25,7 @@ import {
   PRODUCT_MENU_META,
   TOP_NAV_ORDER,
   getContentPath,
+  getVisibleContentItems,
   type ContentSectionId,
 } from '../../data/navigation';
 import { PRODUCTS } from '../../data/products';
@@ -50,7 +50,6 @@ const Header = () => {
     PRODUCTS.find((product) => location.pathname === localizePath(`/${product.slug}`)) ?? null;
   const isHomePage = location.pathname === localizePath('/');
   const activeProductSlug = currentProduct?.slug ?? null;
-  const showPrimaryCluster = Boolean(currentProduct);
   const corporateLogoSrc = `${import.meta.env.BASE_URL}${isDark ? 'logo-white.png' : 'logo-black.png'}`;
 
   const brandStyle = currentProduct
@@ -228,62 +227,59 @@ const Header = () => {
           }}
         >
           <div className="header-brand-stack">
-            <CommonTopBanner to={localizePath('/')} className="header-common-banner" />
-
             <ProductRail
               activeProductSlug={activeProductSlug}
               className={`header-product-rail ${isScrolled ? 'is-scrolled' : ''}`}
+              homeActive
+              homeHref={localizePath('/')}
+              showHomeLink
             />
           </div>
 
-          <div className={`header-main-row ${showPrimaryCluster ? '' : 'is-compact'}`.trim()}>
-            {showPrimaryCluster ? (
-              <div className="header-primary-cluster">
-                <Link
-                  to={localizePath('/')}
-                  className={`brand-logo ${currentProduct ? 'is-product' : 'is-home'}`}
-                  onClick={closeAll}
-                  style={brandStyle}
-                >
-                  <AnimatePresence initial={false} mode="wait">
-                    <motion.span
-                      key={currentProduct?.slug ?? 'corporate'}
-                      className="brand-lockup"
-                      initial={{ opacity: 0, y: 8 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -6 }}
-                      transition={{ duration: 0.42, ease: HEADER_EASE }}
-                    >
-                      {currentProduct ? (
-                        <ProductWordmark product={currentProduct} className="brand-product-wordmark" />
-                      ) : (
-                        <span className="brand-copy brand-copy--home">
-                          <img
-                            className="brand-wordmark brand-wordmark--home"
-                            src={corporateLogoSrc}
-                            alt="FleetMole Corporate"
-                          />
-                        </span>
-                      )}
-                    </motion.span>
-                  </AnimatePresence>
-                </Link>
-              </div>
-            ) : null}
+          <div className="header-main-row">
+            <div className="header-primary-cluster">
+              <Link
+                to={localizePath('/')}
+                className={`brand-logo ${currentProduct ? 'is-product' : 'is-home'}`}
+                onClick={closeAll}
+                style={brandStyle}
+              >
+                <AnimatePresence initial={false} mode="wait">
+                  <motion.span
+                    key={currentProduct?.slug ?? 'corporate'}
+                    className="brand-lockup"
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -6 }}
+                    transition={{ duration: 0.42, ease: HEADER_EASE }}
+                  >
+                    {currentProduct ? (
+                      <ProductWordmark product={currentProduct} className="brand-product-wordmark" />
+                    ) : (
+                      <span className="brand-copy brand-copy--home">
+                        <img
+                          className="brand-wordmark brand-wordmark--home"
+                          src={corporateLogoSrc}
+                          alt="FleetMole Corporate"
+                        />
+                      </span>
+                    )}
+                  </motion.span>
+                </AnimatePresence>
+              </Link>
+            </div>
 
-            <nav className={`desktop-nav ${showPrimaryCluster ? '' : 'is-compact'}`.trim()}>
-              {isHomePage ? (
-                <Link
-                  to={localizePath('/')}
-                  className="nav-link plain nav-link--home"
-                  aria-label={lang === 'tr' ? 'Ana Sayfa' : 'Home'}
-                  onClick={closeAll}
-                  style={{ '--nav-accent': '#203A74' } as CSSProperties}
-                >
-                  <House size={16} />
-                  <span>{lang === 'tr' ? 'Ana Sayfa' : 'Home'}</span>
-                </Link>
-              ) : null}
+            <nav className="desktop-nav">
+              <Link
+                to={localizePath('/')}
+                className={`nav-link plain nav-link--home ${isHomePage ? 'is-active' : ''}`}
+                aria-label={lang === 'tr' ? 'Ana Sayfa' : 'Home'}
+                onClick={closeAll}
+                style={{ '--nav-accent': '#203A74' } as CSSProperties}
+              >
+                <House size={16} />
+                <span>{lang === 'tr' ? 'Ana Sayfa' : 'Home'}</span>
+              </Link>
 
               {desktopNavGroups.map((group) => {
                 const navAccent =
@@ -324,17 +320,6 @@ const Header = () => {
             </nav>
 
             <div className="header-actions">
-              {!isHomePage ? (
-                <Link
-                  to={localizePath('/')}
-                  className={`top-ctrl top-ctrl--home ${isHomePage ? 'is-active-home' : ''}`}
-                  aria-label={lang === 'tr' ? 'Ana Sayfa' : 'Home'}
-                  onClick={closeAll}
-                  style={homeControlStyle}
-                >
-                  <House size={17} />
-                </Link>
-              ) : null}
               <button
                 className="top-ctrl top-ctrl--lang"
                 onClick={toggleLang}
@@ -419,7 +404,7 @@ const Header = () => {
                           <ArrowUpRight size={16} className="dd-arrow" />
                         </Link>
                       ) : null}
-                      {CONTENT_SECTION_MAP[activeDesktopGroup.id].items.map((item) => (
+                      {getVisibleContentItems(activeDesktopGroup.id).map((item) => (
                         <Link
                           key={item.slug}
                           to={localizePath(getContentPath(activeDesktopGroup.id, item.slug))}
@@ -575,7 +560,7 @@ const Header = () => {
                                         </div>
                                       </Link>
                                     ) : null}
-                                    {CONTENT_SECTION_MAP[group.id].items.map((item) => (
+                                    {getVisibleContentItems(group.id).map((item) => (
                                       <Link
                                         key={item.slug}
                                         to={localizePath(getContentPath(group.id, item.slug))}

@@ -268,7 +268,7 @@ export const PRODUCT_SITE_CONTENT: Record<ProductSlug, ProductSiteContent> = {
     hero: {
       eyebrow: t('Dijital kiralama ve ikame akışı', 'Digital rental and replacement flow'),
       title: lines(
-        ['İkame, Kiralama ve', 'Dijital Tedariki', 'Tek Akışta Yönetin'],
+        ['İkame, Kiralama ve', 'Dijital Tedarik', 'Tek Akışta Yönetin'],
         ['Run Replacement, Rental,', 'and Digital Sourcing', 'In One Flow'],
       ),
       lead: t(
@@ -425,7 +425,7 @@ export const PRODUCT_SITE_CONTENT: Record<ProductSlug, ProductSiteContent> = {
   },
   tracker: {
     menu: [
-      menu('Telemetri', 'Telemetry', '#overview'),
+      menu('Mobilite', 'Mobility', '#overview'),
       menu('Modüller', 'Modules', '#modules'),
       menu('Ürünler', 'Products', '/products'),
       menu('Demo', 'Demo', '/demo'),
@@ -434,8 +434,8 @@ export const PRODUCT_SITE_CONTENT: Record<ProductSlug, ProductSiteContent> = {
     hero: {
       eyebrow: t('Canlı araç verisi', 'Live vehicle data'),
       title: lines(
-        ['Sahadaki Her Aracı', 'Canlı Telemetriyle', 'Görünür Hale Getirin'],
-        ['Make Every Field', 'Vehicle Visible', 'Through Live Telematics'],
+        ['Sahadaki Her Aracı', 'Canlı Mobiliteyle', 'Görünür Hale Getirin'],
+        ['Make Every Field', 'Vehicle Visible', 'Through Live Mobility'],
       ),
       lead: t(
         'FleetMole Tracker; konum, sürüş davranışı, sensör ve motor verilerini aynı akışta birleştirerek erken aksiyon alınmasını sağlar.',
@@ -443,7 +443,7 @@ export const PRODUCT_SITE_CONTENT: Record<ProductSlug, ProductSiteContent> = {
       ),
       primaryCta: t('Canlı Akışı Gör', 'See the Live Feed'),
       secondaryCta: t('Alarm Kurgusunu İncele', 'Review the Alert Design'),
-      snapshotLabel: t('Telemetri snapshot', 'Telemetry snapshot'),
+      snapshotLabel: t('Mobilite görünümü', 'Mobility view'),
       snapshotBody: t(
         'Canlı veri yalnızca harita görünümü değil; risk, uyumluluk ve bakım kararları için de bir erken uyarı katmanıdır.',
         'Live data is not just a map layer; it is an early warning layer for risk, compliance, and maintenance decisions.',
@@ -455,7 +455,7 @@ export const PRODUCT_SITE_CONTENT: Record<ProductSlug, ProductSiteContent> = {
       ],
     },
     modules: {
-      eyebrow: t('Telemetri modülleri', 'Telemetry modules'),
+      eyebrow: t('Mobilite modülleri', 'Mobility modules'),
       title: t('Harita, alarm ve sürüş verisini tek katmanda toplar.', 'Combines map, alerts, and driving signals in one layer.'),
       body: t(
         'Tracker yalnızca araçların nerede olduğunu göstermez; ekiplerin ne yapması gerektiğini de görünür kılar.',
@@ -464,7 +464,7 @@ export const PRODUCT_SITE_CONTENT: Record<ProductSlug, ProductSiteContent> = {
     },
     overview: {
       eyebrow: t('Ne çözüyor?', 'What it solves'),
-      title: t('Telemetriyi operasyon ekipleri için aksiyona dönüştürür.', 'Turns telematics into action for operating teams.'),
+      title: t('Mobilite verisini operasyon ekipleri için aksiyona dönüştürür.', 'Turns mobility data into action for operating teams.'),
       body: t(
         'Konum, sürüş alışkanlığı ve sensör sinyalleri aynı akışta yorumlanabildiğinde güvenlik ve verim kararları hızlanır.',
         'When location, driving patterns, and sensor signals can be interpreted together, safety and efficiency decisions move faster.',
@@ -495,7 +495,7 @@ export const PRODUCT_SITE_CONTENT: Record<ProductSlug, ProductSiteContent> = {
     },
     contact: {
       chip: t('Tracker ekibi ile konuşun', 'Talk to the Tracker team'),
-      title: t('Telemetri mimarinizi ve canlı alarm yapınızı birlikte netleştirelim.', 'Let’s define your telemetry architecture and live alert strategy together.'),
+      title: t('Mobilite mimarinizi ve canlı alarm yapınızı birlikte netleştirelim.', 'Let’s define your mobility architecture and live alert strategy together.'),
       lead: t(
         'Cihaz entegrasyonu, alarm senaryoları, sürücü skorlama ve bakım sinyalleri için ürün ekibiyle doğrudan ilerleyebilirsiniz.',
         'Work directly with the product team on device integration, alert scenarios, driver scoring, and maintenance signals.',
@@ -503,7 +503,7 @@ export const PRODUCT_SITE_CONTENT: Record<ProductSlug, ProductSiteContent> = {
       response: t('İlk dönüş: veri kaynağı ve entegrasyon kapsamına göre aynı gün içinde.', 'First response: the same day depending on data source and integration scope.'),
       reasonsTitle: t('Sık gelen başlıklar', 'Common request themes'),
       reasons: [
-        t('Canlı telemetri görünürlüğü', 'Live telemetry visibility'),
+        t('Canlı mobilite görünürlüğü', 'Live mobility visibility'),
         t('Geo-fence ve alarm senaryoları', 'Geofence and alert scenarios'),
         t('Sürücü puanlama ve risk raporları', 'Driver scoring and risk reporting'),
       ],
@@ -512,8 +512,8 @@ export const PRODUCT_SITE_CONTENT: Record<ProductSlug, ProductSiteContent> = {
         card(
           'Cihaz ve veri kaynağı',
           'Device and data source',
-          'Mevcut telematik cihazları veya yeni veri kaynaklarını sisteme bağlamak isteyen ekipler için.',
-          'For teams that want to connect existing telematics devices or new data sources.',
+          'Mevcut mobilite cihazlarını veya yeni veri kaynaklarını sisteme bağlamak isteyen ekipler için.',
+          'For teams that want to connect existing mobility devices or new data sources.',
         ),
         card(
           'Alarm tasarımı',

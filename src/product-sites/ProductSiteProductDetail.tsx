@@ -64,6 +64,10 @@ const ProductSiteProductDetail = () => {
   const [activeTab, setActiveTab] = useState<'features' | 'specs' | 'downloads'>('features');
   
   const productSiteRoot = getProductSitePath(product.slug, lang);
+
+  if (product.slug !== 'tracker') {
+    return <Navigate to={productSiteRoot} replace />;
+  }
   
   const hwProduct = HARDWARE_PRODUCTS.find(p => p.id === productId);
 
