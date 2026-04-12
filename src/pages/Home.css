@@ -91,7 +91,7 @@
 .hero-grid::before {
   content: '';
   position: absolute;
-  inset: clamp(7.2rem, 9vw, 8.6rem) 0 0;
+  inset: clamp(4.4rem, 6.2vw, 5.8rem) 0 0;
   border-radius: 2.4rem;
   background:
     linear-gradient(180deg, rgba(248, 250, 252, 0.74), rgba(248, 250, 252, 0.18) 18%, transparent 34%),
@@ -2142,7 +2142,7 @@
   }
 
   .hero-grid::before {
-    inset: clamp(5.8rem, 16vw, 6.8rem) 0 0;
+    inset: clamp(3.8rem, 11vw, 4.8rem) 0 0;
     border-radius: 2rem;
     background:
       linear-gradient(180deg, rgba(248, 250, 252, 0.82), rgba(248, 250, 252, 0.22) 20%, transparent 42%),

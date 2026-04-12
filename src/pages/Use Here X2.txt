@@ -1,0 +1,250 @@
+Network
+Standard
+4G LTE Cat.4
+WiFi
+2.4GHz, Support AP Mode/STA Mode/WiFi Direct
+Bluetooth
+BLE 4.0
+Band
+Eurasian Version
+LTE-FDD: B1/B3/B5/B7/B8/B19/B20
+LTE-TDD: B38/B39/B40/B41 (100M)
+WCDMA: B1/B2/B5/B8
+GSM: B2/B3/B5/B8
+
+American Version
+LTE-FDD: B2/B3/B4/B5/B7/B12/B17
+LTE-TDD: B38/B41 (100M)
+WCDMA: B2/B4/B5
+GSM: B2/B5/B8
+Camera
+Front Camera (Main)
+1920×1080/25FPS/F2.2/Full color/118° (HFoV)
+Sub Camera
+1280×720/15FPS/F2.5/Full color in daytime & monochrome in dim light/90° (HFoV)
+Video Format
+.mp4
+Configuration
+GNSS
+GPS/BDS
+Sensor
+6-axis
+Microphone
+Support
+Speaker
+Support
+Interface
+Micro USB*1, SOS*1, RS232*1, Relay*1
+Memory Support
+TF card (Up to 256GB)
+SIM Card Type
+Nano
+LED Indication
+Red (Power), Blue (Cellular), Green (GNSS)
+Others
+Power Supply
+Power cable: B+/ACC/GND
+Operating Voltage
+DC 9–30V
+Operating Temperature
+–20°C to +65°C
+Storage Temperature
+–30°C to +85°C
+Device Weight
+233g
+Device Dimension
+109*69*52mm
+Certifications
+CE/FCC/RoHS
+
+- 
+
+Network
+Standard
+4G LTE Cat.4
+WiFi
+2.4GHz, Support AP Mode/STA Mode/WiFi Direct
+Bluetooth
+BLE 4.0
+Band
+Eurasian Version
+LTE-FDD: B1/B3/B5/B7/B8/B19/B20
+LTE-TDD: B38/B39/B40/B41 (100M)
+WCDMA: B1/B2/B5/B8
+GSM: B2/B3/B5/B8
+
+American Version
+LTE-FDD: B2/B3/B4/B5/B7/B12/B17
+LTE-TDD: B38/B41 (100M)
+WCDMA: B2/B4/B5
+GSM: B2/B5/B8
+Camera
+Front Camera (Main)
+1920×1080/25FPS/F2.2/Full color/118° (HFoV)
+Peripheral Camera (Optional )
+CI01: 1280×720/15FPS/F2.0/Full color in daytime & monochrome in dim light/100° (HFoV)
+
+CI03: 1280×720/15FPS/F2.4/Full color in daytime & monochrome in dim light/119° (HFoV)
+
+CE01: 1280×720/15FPS/F2.0/Full color/IP67/125° (HFoV)
+Video Format
+.mp4
+Configuration
+GNSS
+GPS/BDS
+Sensor
+6-axis
+Microphone
+Support
+Speaker
+Support
+Interface
+Micro USB*1, SOS*1, RS232*1, Relay*1
+Memory Support
+TF card (Up to 256GB)
+SIM Card Type
+Nano
+LED Indication
+Red (Power), Blue (Cellular), Green (GNSS)
+Others
+Power Supply
+Power cable: B+/ACC/GND
+Operating Voltage
+DC 9–30V
+Operating Temperature
+–20°C to +65°C
+Storage Temperature
+–30°C to +85°C
+Device Weight
+233g
+Device Dimension
+109*69*52mm
+Certifications
+CE/FCC/RoHS
+
+- 
+
+Network
+Standard
+4G LTE Cat.4
+WiFi
+2.4GHz, Support AP Mode/STA Mode/WiFi Direct
+Bluetooth
+BLE 4.0
+Band
+Eurasian Version
+LTE-FDD: B1/B3/B5/B7/B8/B19/B20
+LTE-TDD: B38/B39/B40/B41 (100M)
+WCDMA: B1/B2/B5/B8
+GSM: B2/B3/B5/B8
+
+American Version
+LTE-FDD: B2/B3/B4/B5/B7/B12/B17
+LTE-TDD: B38/B41 (100M)
+WCDMA: B2/B4/B5
+GSM: B2/B5/B8
+Camera
+Front Camera (Main)
+1920×1080/25FPS/F2.2/Full color/85° (HFoV)
+Sub Camera
+1280×720/15FPS/F2.5/Full color in daytime & monochrome in dim light/90° (HFoV)
+Video Format
+.ts
+Configuration
+GNSS
+GPS/BDS
+Sensor
+6-Axis accelerometer
+Microphone
+Support
+Speaker
+Support
+Interface
+Micro USB*1, SOS*1, TTL*1, Relay*1
+Memory Support
+TF card (Up to 256GB)
+SIM Card Type
+Nano
+LED Indication
+Red (Power), Blue (Cellular), Green (GNSS)
+Others
+Power Supply
+Power cable: B+/ACC/GND
+Operating Voltage
+DC 9–30V
+Operating Temperature
+–20°C to +65°C
+Storage Temperature
+–30°C to +85°C
+Device Weight
+233g
+Device Dimension
+109*69*52mm
+Certifications
+CE/FCC/RoHS
+
+
+===Network
+Standard
+4G LTE Cat.4
+WiFi
+2.4GHz, Support AP Mode/STA Mode/WiFi Direct
+Bluetooth
+BLE 4.0
+Band
+Eurasian Version
+LTE-FDD: B1/B3/B5/B7/B8/B19/B20
+LTE-TDD: B38/B39/B40/B41 (100M)
+WCDMA: B1/B2/B5/B8
+GSM: B2/B3/B5/B8
+
+American Version
+LTE-FDD: B2/B3/B4/B5/B7/B12/B17
+LTE-TDD: B38/B41 (100M)
+WCDMA: B2/B4/B5
+GSM: B2/B5/B8
+Camera
+Front Camera (Main)
+1920×1080/25FPS/F2.2/Full color/85° (HFoV)
+Peripheral Camera (Optional)
+CI01: 1280×720/15FPS/F2.0/Full color in daytime & monochrome in dim light/100° (HFoV)
+
+CI03: 1280×720/15FPS/F2.4/Full color in daytime & monochrome in dim light/119° (HFoV)
+
+CE01: 1280×720/15FPS/F2.0/Full color/IP67/125° (HFoV)
+
+JC170: 1280×720/15FPS/F2.4/Monochrome/56° (HFoV)
+Video Format
+.ts
+Configuration
+GNSS
+GPS/BDS
+Sensor
+3-axis
+Microphone
+Support
+Speaker
+Support
+Interface
+Micro USB*1, SOS*1, TTL*1, Relay*1
+Memory Support
+TF card (Up to 256GB)
+SIM Card Type
+Nano
+LED Indication
+Red (Power), Blue (Cellular), Green (GNSS)
+Others
+Power Supply
+Power cable: B+/ACC/GND
+Operating Voltage
+DC 9–30V
+Operating Temperature
+–20°C to +65°C
+Storage Temperature
+–30°C to +85°C
+Device Weight
+233g
+Device Dimension
+109*69*52mm
+Certifications
+CE/FCC/RoHS

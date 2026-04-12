@@ -354,7 +354,7 @@ const LEGAL_DOCUMENTS: LegalDocument[] = [
         bullets: {
           tr: [
             'Ünvan: Fleetmole Bilişim Kiralama Danışmanlık Ticaret Limited Şirketi',
-            'Adres: Demirkaya İş Merkezi Kozyatağı Mah. Bayar Cad. No:97 Ofis No:21 Kat:10 34742 Kadıköy / İstanbul',
+            'Adres: Kozyatağı Mah. Bayar Cad. No:97 Ofis No:21 Kat:10 34742 Kadıköy / İstanbul',
             'Telefon: 0(216) 606 99 99',
             'E-posta: info@fleetmole.com',
           ],
@@ -586,7 +586,7 @@ const LEGAL_DOCUMENTS: LegalDocument[] = [
         bullets: {
           tr: [
             'Ünvan: Fleetmole Bilişim Kiralama Danışmanlık Ticaret Limited Şirketi',
-            'Adres: Demirkaya İş Merkezi Kozyatağı Mah. Bayar Cad. No:97 Ofis No:21 Kat:10 34742 Kadıköy / İstanbul',
+            'Adres: Kozyatağı Mah. Bayar Cad. No:97 Ofis No:21 Kat:10 34742 Kadıköy / İstanbul',
             'Telefon: 0(216) 606 99 99',
             'E-posta: info@fleetmole.com',
           ],
@@ -731,4 +731,3 @@ const LEGAL_DOCUMENTS: LegalDocument[] = [
 export const getLocalizedLegalValue = <T>(value: LocalizedValue<T>, locale: Locale): T => value[locale] ?? value.tr;
 
 export const getLegalDocument = (slug?: string) => LEGAL_DOCUMENTS.find((document) => document.slug === slug);
-

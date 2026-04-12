@@ -83,6 +83,13 @@ const specGroup = (trTitle: string, enTitle: string, items: Spec[]): ProductSpec
   title: t(trTitle, enTitle),
   items,
 });
+const downloadItem = (trLabel: string, enLabel: string, url: string): ProductDownload => ({
+  label: t(trLabel, enLabel),
+  url,
+});
+const leafletDownload = (url: string) => downloadItem('Broşür', 'Leaflet', url);
+const manualDownload = (url: string) => downloadItem('Kullanım Kılavuzu', 'User Manual', url);
+const quickStartDownload = (url: string) => downloadItem('Hızlı Başlangıç Kılavuzu', 'Quick Start Guide', url);
 const productImage = (pathname: string) => `/product-images/${pathname}`;
 const galleryImage = (pathname: string, trAlt: string, enAlt = trAlt): ProductGalleryImage => ({
   src: productImage(pathname),
@@ -125,11 +132,14 @@ const TECHNICAL_TR_REPLACEMENTS: Array<[RegExp, string]> = [
   [/Smart Wearables/gi, 'Akıllı Giyilebilir'],
   [/IPC Camera/gi, 'IPC Kamera'],
   [/Network/gi, 'Ağ'],
+  [/Technology/gi, 'Teknoloji'],
+  [/Frequency/gi, 'Frekans'],
   [/Camera/gi, 'Kamera'],
   [/Configuration/gi, 'Yapılandırma'],
   [/Others/gi, 'Diğer'],
   [/Standard/gi, 'Standart'],
   [/Band/gi, 'Bant'],
+  [/Positioning system/gi, 'Konumlandırma sistemi'],
   [/Sensor/gi, 'Sensör'],
   [/Microphone/gi, 'Mikrofon'],
   [/Speaker/gi, 'Hoparlör'],
@@ -145,6 +155,16 @@ const TECHNICAL_TR_REPLACEMENTS: Array<[RegExp, string]> = [
   [/American Version/gi, 'Amerika Versiyonu'],
   [/Power cable/gi, 'Güç kablosu'],
   [/Support/gi, 'Desteklenir'],
+  [/Input voltage/gi, 'Giriş voltajı'],
+  [/Dimensions/gi, 'Boyutlar'],
+  [/Weight/gi, 'Ağırlık'],
+  [/External memory/gi, 'Harici bellek'],
+  [/Digital I\/Os/gi, 'Dijital G/Ç'],
+  [/Analog I\/Os/gi, 'Analog G/Ç'],
+  [/Serial ports/gi, 'Seri portlar'],
+  [/Configuration support/gi, 'Yapılandırma desteği'],
+  [/Firmware update/gi, 'Ürün yazılımı güncelleme'],
+  [/Certification/gi, 'Sertifikalar'],
   [/Red \(Power\)/gi, 'Kırmızı (Güç)'],
   [/Blue \(Cellular\)/gi, 'Mavi (Hücresel)'],
   [/Green \(GNSS\)/gi, 'Yeşil (GNSS)'],
@@ -162,6 +182,12 @@ const TECHNICAL_TR_REPLACEMENTS: Array<[RegExp, string]> = [
   [/Rear-view/gi, 'Arka Görüş'],
   [/Side-view/gi, 'Yan Görüş'],
   [/waterproof/gi, 'su geçirmez'],
+  [/Phone use/gi, 'Telefon kullanımı'],
+  [/Smoking/gi, 'Sigara içme'],
+  [/Distraction/gi, 'Dikkat dağınıklığı'],
+  [/Yawning/gi, 'Esneme'],
+  [/Eyes closed/gi, 'Gözler kapalı'],
+  [/No face detected/gi, 'Yüz algılanmadı'],
 ];
 
 const translateTechnicalTextToTr = (input: string) => {
@@ -501,7 +527,216 @@ const GALLERY: Record<string, ProductGalleryImage[]> = {
   ],
 };
 
-export const HARDWARE_PRODUCTS: HardwareProduct[] = [
+const PRODUCT_DOWNLOADS: Record<string, ProductDownload[]> = {
+  jc400p: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771638601/JC_400_P_Leaflet_3954847710.pdf'),
+  ],
+  jc400: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771638487/JC_400_Leaflet_3469283bb6.pdf'),
+  ],
+  jc261p: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771638372/JC_261_P_Leaflet_ce1cd84cca.pdf'),
+  ],
+  jc261: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771638349/JC_261_Leaflet_67ea4e39b5.pdf'),
+    manualDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771638429/JC_261_User_manual_3062e33e93.pdf'),
+  ],
+  jc182: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771638292/JC_182_Leaflet_4279162567.pdf'),
+    manualDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771638323/JC_182_User_manual_a3695bc485.pdf'),
+  ],
+  jc181: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771638124/JC_181_Leaflet_43d930285a.pdf'),
+    manualDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771638264/JC_181_User_Manual_8b25bf06ac.pdf'),
+  ],
+  jc171: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771638103/JC_171_Leaflet_cbaa9149dc.pdf'),
+  ],
+  jc170: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771638033/JC_170_Leaflet_54c17fb6a5.pdf'),
+  ],
+  jc450: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771985488/JC_450_Leaflet_d1743f2ac6.pdf'),
+  ],
+  jc451: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771638667/JC_451_Leaflet_3b780b4ce9.pdf'),
+  ],
+  jc371: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771638459/JC_371_Leaflet_f539df8b9b.pdf'),
+    manualDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771635967/JC_371_User_manual_735420f492.pdf'),
+  ],
+  vl113: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771640193/VL_113_Leaflet_5262d1770f.pdf'),
+  ],
+  vl863: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771640507/VL_863_Leaflet_1302da0255.pdf'),
+    manualDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771636655/VL_863_User_Manual_39e076d800.pdf'),
+  ],
+  pl601: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771639879/PL_601_Leaflet_b4225ab68e.pdf'),
+  ],
+  ll303pro: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771639271/LL_303_PRO_Leaflet_53da152b2b.pdf'),
+  ],
+  vl505: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771640304/VL_505_Leaflet_e06b7a2b13.pdf'),
+  ],
+  vl512: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771640432/VL_512_Leaflet_7ff4c994b7.pdf'),
+  ],
+  pl200: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771639855/PL_200_Leaflet_19e0e35fb1.pdf'),
+  ],
+  ll704: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1772548856/LL_704_Leaflet_d9df5da364.pdf'),
+  ],
+  ll708: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771639465/LL_708_Leaflet_f2d71e7659.pdf'),
+  ],
+  ll705: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771639432/LL_705_Leaflet_6859db9840.pdf'),
+  ],
+  ll702: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771639333/LL_702_Leaflet_e15af6fc9a.pdf'),
+  ],
+  ll309: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771639295/LL_309_Leaflet_fee3897f03.pdf'),
+  ],
+  ll302: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771639242/LL_302_Leaflet_d1f41c4d09.pdf'),
+  ],
+  ll301: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771639220/LL_301_Leaflet_9ef8565685.pdf'),
+  ],
+  lg300: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771639146/LG_300_Leaflet_7335ea5719.pdf'),
+  ],
+  'gt06n-4g': [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771637821/GT_06_N_4_G_Leaflet_725e66ca6c.pdf'),
+  ],
+  kd031: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771638806/KD_031_Leaflet_81db77e127.pdf'),
+  ],
+  kd032: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771638837/KD_032_Leaflet_d15dbcb637.pdf'),
+  ],
+  ll02: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771639199/LL_02_Leaflet_5a060d7d04.pdf'),
+  ],
+  ll01: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771639165/LL_01_Leaflet_d855a6400b.pdf'),
+  ],
+  bl10: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771637613/BL_10_Leaflet_c11fa182f0.pdf'),
+  ],
+  at4: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771637583/AT_4_Leaflet_c2e3317fed.pdf'),
+  ],
+  at1: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771637007/AT_1_Leaflet_2f45ffcf16.pdf'),
+  ],
+  eg02: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771637793/EG_02_Leaflet_306f6028df.pdf'),
+  ],
+  gt06s: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771637884/GT_06_S_Leaflet_5f83f6d5c4.pdf'),
+  ],
+  'jm-vl02': [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771638696/JMVL_02_Leaflet_6df76b66fe.pdf'),
+  ],
+  kl100: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771639056/KL_100_Leaflet_5396bfa1d1.pdf'),
+  ],
+  vg03: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771640041/VG_03_Leaflet_0fbd4a6100.pdf'),
+  ],
+  vl103m: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771640100/VL_103_M_Leaflet_477a42e1fc.pdf'),
+  ],
+  vl106: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771640119/VL_106_Leaflet_1354a29679.pdf'),
+  ],
+  vl110c: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771640145/VL_110_C_Leaflet_d8d96feccc.pdf'),
+  ],
+  vl111: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771640166/VL_111_Leaflet_060a88a701.pdf'),
+  ],
+  vl501: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771640221/VL_501_Leaflet_60a9639eb5.pdf'),
+  ],
+  vl802: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771640456/VL_802_Leaflet_ea5f3e501d.pdf'),
+  ],
+  vl808: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771640483/VL_808_Leaflet_2125b2200e.pdf'),
+  ],
+  wetrack2: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771640570/Wetrack2_Leaflet_7d1ee49c12.pdf'),
+  ],
+  wetrack140: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771640547/Wetrack140_Leaflet_96d83796c8.pdf'),
+  ],
+  x3: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771640643/X3_Leaflet_35a20a2974.pdf'),
+  ],
+  gt06n: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771637846/GT_06_N_Leaflet_e9e8870c7a.pdf'),
+  ],
+  bl11: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771637637/BL_11_Leaflet_76ece26235.pdf'),
+  ],
+  'wetrack-lite': [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771640621/Wetrack_Lite_Leaflet_0d54f4b7c2.pdf'),
+  ],
+  vl502: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771640269/VL_502_Leaflet_6e84fa2189.pdf'),
+  ],
+  'vl502-a': [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771640244/VL_502_A_Leaflet_f6a046a545.pdf'),
+  ],
+  r001: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771639915/R001_Leaflet_de190cdf3d.pdf'),
+    manualDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771636553/R001_User_Manual_a8fedf41a6.pdf'),
+  ],
+  r002: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771640004/R002_Leaflet_32485561c2.pdf'),
+  ],
+  hl365s: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771637908/HL_365_Leaflet_9775f716a9.pdf'),
+    quickStartDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1772463280/HL_365_S_4_G_Smart_Camera_Quick_Start_Guide_V1_1_20260128_HL_365_S_User_Manual_d60f28cc0e_ce5a1f475a.pdf'),
+  ],
+  kf043u: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771638883/KF_043_U_Leaflet_01cb47206f.pdf'),
+  ],
+  kj806: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771638971/KJ_806_Leaflet_95265251f1.pdf'),
+  ],
+  kz081v: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771639102/KZ_081_V_en_20251126_1da8f0d80e.pdf'),
+  ],
+  kf041s: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771638859/KF_041_S_Leaflet_ce6f0401dc.pdf'),
+  ],
+  k7800p: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771638734/K7800_P_Leaflet_bbc852f456.pdf'),
+    manualDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771635899/K7800_P_User_Manual_f8b4ef7730.pdf'),
+  ],
+  kc208s: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771638764/KC_208_S_Leaflet_1bd712e8c8.pdf'),
+    manualDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771636636/KC_208_S_User_Manual_8ff049bfd7.pdf'),
+  ],
+  kf201s: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771638912/KF_201_S_en_0c0ce032c2.pdf'),
+    manualDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771636622/KF_Series_BLE_Fuel_Sensor_User_Manual_ae5a032370.pdf'),
+  ],
+  kf281s: [
+    leafletDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771638944/KF_281_S_b13fa59f69.pdf'),
+    manualDownload('/api/download?url=https://assets.jimiiot.app/image/upload/v1771636582/KF_Series_BLE_Fuel_Sensor_User_Manual_db425df930.pdf'),
+  ],
+};
+
+const HARDWARE_PRODUCTS_BASE: HardwareProduct[] = [
   // Video Telematics -> Dashcam
   {
     id: 'jc400p',
@@ -645,10 +880,89 @@ export const HARDWARE_PRODUCTS: HardwareProduct[] = [
     thumbnail: getImg('jc400'),
     tagline: { tr: 'Tasarımı basit, doğası gereği güçlü.', en: 'Simple by design. Powerful by nature.' },
     description: {
-      tr: 'Hem yolu hem de kabin içini aynı yolculukta görünür kılmak üzere tasarlandı. JC400, filonuzun her rotasını daha net izlemenizi ve daha hızlı aksiyon almanızı sağlar.',
-      en: 'Crafted to capture both what\'s ahead and what\'s happening within, JC400 gives your fleet a fuller view of every journey, so you can drive smarter, manage better, and respond faster.',
+      tr: 'JC400 4G araç içi kamerası, yol görünürlüğünü ve operasyon güvenliğini aynı yapıda güçlendirir. Cihaz üzerindeki kamera yolu izlerken opsiyonel harici kamera kabini veya arka alanı takip eder; 4G bağlantı sayesinde canlı video, sesli uyarı, rota oynatma ve geçmiş kayıt erişimi de sunar.',
+      en: 'JC400 4G dashcam can significantly increase the safety efficiency and sustainability of operations that power the fleet. It allows you to add an inward-facing, or backup camera as needed. The on-device camera can monitor the road ahead, while the peripheral camera can monitor the cabin, or the rear.',
     },
     specs: [{ label: { tr: 'Ağ', en: 'Network' }, value: { tr: '4G LTE', en: '4G LTE' } }],
+    featureCards: [
+      featureCard(
+        'car',
+        'Çift Kanallı Kayıt',
+        'Dual-Channel Recording',
+        'Entegre lens ön yolu izlerken, opsiyonel çevre kamera kabini, arka alanı, yan tarafı veya sürücüyü iş ihtiyacınıza göre gözlemleyebilir.',
+        'Monitor the road ahead through the integrated lens and what is happening in the cab, in the rear, to the side, or to the driver through a peripheral camera to meet your specific business needs.',
+      ),
+      featureCard(
+        'monitor',
+        'Video Gözetimi',
+        'Video Surveillance',
+        'Güçlü LTE bağlantısı, aracın içi ve dışının çevrim içi platformdan canlı izlenmesini; cihazdaki kritik kliplerin ise her yerden talep üzerine oynatılmasını sağlar.',
+        "Powerful LTE connectivity enables the live monitoring of the vehicle's interior and exterior via an online platform; while the critical video clips in the device allows for on-demand playback after the fact from anywhere, at any time.",
+      ),
+      featureCard(
+        'bell',
+        'Birden Fazla Uyarı',
+        'Multiple Alerts',
+        'Hız aşımı ve SOS düğmesi aktivasyonu gibi özelleştirilebilir olaylarda video klipleri veya durağan görüntüleri kaydedip yükler.',
+        'Record and upload video clips or still images of customizable events such as speeding and SOS button activation.',
+      ),
+      featureCard(
+        'chart',
+        'Kompakt Boyut',
+        'Compact Size',
+        'Küçük form faktörü, sürücünün görüş alanını kapatmadan dikiz aynasının arkasına gizli kurulum yapılmasına imkan tanır.',
+        "The small form factor allows discreet installation behind the rearview mirror without blocking the driver's view.",
+      ),
+      featureCard(
+        'shield',
+        'Araç İmmobilizasyonu',
+        'Vehicle Immobilization',
+        'Tracksolid Pro üzerinden 20 km/s altındaki araçlarda yakıtı veya gücü keserek çalıntı araç senaryolarında kritik bir müdahale katmanı sağlar.',
+        'Enable you to cut off the fuel/power to the vehicle moving under 20km/h using Tracksolid Pro, which is useful if your fleet vehicle has been stolen.',
+      ),
+    ],
+    specGroups: [
+      specGroup('Ağ', 'Network', [
+        spec('Standart', 'Standard', '4G LTE Cat.4'),
+        spec('WiFi', 'WiFi', '2.4GHz, AP Mode / STA Mode / WiFi Direct desteği', '2.4GHz, Support AP Mode / STA Mode / WiFi Direct'),
+        spec('Bluetooth', 'Bluetooth', 'BLE 4.0'),
+        spec(
+          'Bant',
+          'Band',
+          'Avrasya Versiyonu\nLTE-FDD: B1/B3/B5/B7/B8/B19/B20\nLTE-TDD: B38/B39/B40/B41 (100M)\nWCDMA: B1/B2/B5/B8\nGSM: B2/B3/B5/B8\n\nAmerika Versiyonu\nLTE-FDD: B2/B3/B4/B5/B7/B12/B17\nLTE-TDD: B38/B41 (100M)\nWCDMA: B2/B4/B5\nGSM: B2/B5/B8',
+          'Eurasian Version\nLTE-FDD: B1/B3/B5/B7/B8/B19/B20\nLTE-TDD: B38/B39/B40/B41 (100M)\nWCDMA: B1/B2/B5/B8\nGSM: B2/B3/B5/B8\n\nAmerican Version\nLTE-FDD: B2/B3/B4/B5/B7/B12/B17\nLTE-TDD: B38/B41 (100M)\nWCDMA: B2/B4/B5\nGSM: B2/B5/B8',
+        ),
+      ]),
+      specGroup('Kamera', 'Camera', [
+        spec('Ön Kamera (Ana)', 'Front Camera (Main)', '1920×1080 / 25FPS / F2.2 / Tam renkli / 118° (HFoV)', '1920×1080 / 25FPS / F2.2 / Full color / 118° (HFoV)'),
+        spec(
+          'Çevre Kamera (Opsiyonel)',
+          'Peripheral Camera (Optional)',
+          'CI01: 1280×720 / 15FPS / F2.0 / Gündüz tam renkli, düşük ışıkta monokrom / 100° (HFoV)\nCI03: 1280×720 / 15FPS / F2.4 / Gündüz tam renkli, düşük ışıkta monokrom / 119° (HFoV)\nCE01: 1280×720 / 15FPS / F2.0 / Tam renkli / IP67 / 125° (HFoV)',
+          'CI01: 1280×720 / 15FPS / F2.0 / Full color in daytime & monochrome in dim light / 100° (HFoV)\nCI03: 1280×720 / 15FPS / F2.4 / Full color in daytime & monochrome in dim light / 119° (HFoV)\nCE01: 1280×720 / 15FPS / F2.0 / Full color / IP67 / 125° (HFoV)',
+        ),
+        spec('Video Formatı', 'Video Format', '.mp4'),
+      ]),
+      specGroup('Yapılandırma', 'Configuration', [
+        spec('GNSS', 'GNSS', 'GPS / BDS'),
+        spec('Sensör', 'Sensor', '6 eksen', '6-axis'),
+        spec('Mikrofon', 'Microphone', 'Desteklenir', 'Support'),
+        spec('Hoparlör', 'Speaker', 'Desteklenir', 'Support'),
+        spec('Arayüz', 'Interface', 'Micro USB*1, SOS*1, RS232*1, Röle*1', 'Micro USB*1, SOS*1, RS232*1, Relay*1'),
+        spec('Bellek Desteği', 'Memory Support', 'TF kart (256GB\'a kadar)', 'TF card (Up to 256GB)'),
+        spec('SIM Kart Tipi', 'SIM Card Type', 'Nano'),
+        spec('LED Göstergesi', 'LED Indication', 'Kırmızı (Güç), Mavi (Hücresel), Yeşil (GNSS)', 'Red (Power), Blue (Cellular), Green (GNSS)'),
+      ]),
+      specGroup('Diğer', 'Others', [
+        spec('Güç Beslemesi', 'Power Supply', 'Güç kablosu: B+ / ACC / GND', 'Power cable: B+ / ACC / GND'),
+        spec('Çalışma Voltajı', 'Operating Voltage', 'DC 9-30V', 'DC 9–30V'),
+        spec('Çalışma Sıcaklığı', 'Operating Temperature', '-20°C ile +65°C', '-20°C to +65°C'),
+        spec('Depolama Sıcaklığı', 'Storage Temperature', '-30°C ile +85°C', '-30°C to +85°C'),
+        spec('Cihaz Ağırlığı', 'Device Weight', '233g'),
+        spec('Cihaz Boyutları', 'Device Dimension', '109×69×52mm', '109*69*52mm'),
+        spec('Sertifikalar', 'Certifications', 'CE / FCC / RoHS', 'CE / FCC / RoHS'),
+      ]),
+    ],
     gallery: GALLERY.jc400,
   },
   {
@@ -659,10 +973,95 @@ export const HARDWARE_PRODUCTS: HardwareProduct[] = [
     thumbnail: getImg('jc261p'),
     tagline: { tr: 'İki Görünüm. Daha Akıllı Kararlar. Güvenlik, Yeniden Tanımlandı.', en: 'Two Views. Smarter Decisions. Safety, Redefined.' },
     description: {
-      tr: 'JC261P entegre çift lensli araç içi kamerası, ön yolu ve kabini aynı anda izlemenizi sağlar. Kızılötesi gece görüşü, ADAS, istisna uyarıları ve 4G destekli canlı yayın ile filo ekiplerine koçluk ve operasyon iyileştirmesi için daha güçlü bir veri katmanı sunar.',
-      en: 'JC261P integrated dual-lens dash camera allows you to simultaneously monitor the road ahead and the cabin. A number of safety features are included in the system, including infrared night vision, ADAS, exception alerts, and more. Furthermore, the 4G capability of the device enables seamless video streaming, live audio alerts, route replay, and video history playback.',
+      tr: 'JC400P\'nin yapay zeka ile güçlendirilmiş versiyonu olan JC261P, ön yolu ve kabini aynı anda izleyen entegre çift lensli bir araç içi kameradır. Kızılötesi gece görüşü, ADAS, istisna uyarıları ve 4G bağlantılı canlı video akışı ile sürücü koçluğu ve operasyon iyileştirmesi için daha güçlü bir veri katmanı sunar.',
+      en: 'An upgrade of JC400P, the JC261P integrated dual-lens dash camera allows you to simultaneously monitor the road ahead and the cabin. A number of safety features are included in the system, including infrared night vision (inward-facing lens), ADAS, exception alerts, and more.',
     },
     specs: [{ label: { tr: 'Ağ', en: 'Network' }, value: { tr: '4G/LTE', en: '4G/LTE' } }],
+    featureCards: [
+      featureCard(
+        'monitor',
+        'Video Gözetimi',
+        'Video Surveillance',
+        'Güçlü LTE bağlantısı, aracın içini ve dışını çevrim içi platform üzerinden canlı izlemeyi sağlar. Cihaz üzerindeki kritik klipler ise istenildiğinde her yerden yeniden oynatılabilir.',
+        "Powerful LTE connectivity enables the live monitoring of the vehicle's interior and exterior via an online platform; while the critical video clips in the device allows for on-demand playback after the fact from anywhere, at any time.",
+      ),
+      featureCard(
+        'car',
+        'Çift Kanallı Kayıt',
+        'Dual-Channel Recording',
+        'Harici kamera gerektirmeden ön yolu ve kabin içini gerçek zamanlı olarak aynı anda izler. Kompakt yapı kurulum süresini kısaltır ve daha az yer kaplar.',
+        'Simultaneously monitor the road ahead and what happens in the cab in real-time, with no peripheral camera needed. The compact design makes it easy to install and the installation takes less space as well.',
+      ),
+      featureCard(
+        'bell',
+        'Sürücü Destek Sistemi (ADAS)',
+        'Driver Assistance (ADAS)',
+        'ADAS algoritması takip mesafesi, yakın çarpışma ve şerit ihlali gibi olayları izleyip sürücüyü gerçek zamanlı olarak uyarır.',
+        'The ADAS algorithm enables the device to monitor incidents related to following distance, near collisions, lane keeping, etc., and warn the driver in real time.',
+      ),
+      featureCard(
+        'chart',
+        'Yüksek Entegrasyonlu Tasarım',
+        'Highly-Integrated Design',
+        'Yüksek çözünürlüklü yola bakan ana kamera ile içe dönük alt kamera tek gövdede bir arada bulunur. Bu yapı yer tasarrufu sağlar ve montajı kolaylaştırır.',
+        'The high-definition road-facing camera (main) and the inward-facing camera (sub) are housed in one unit. This saves space and makes it easier to install.',
+      ),
+      featureCard(
+        'layers',
+        'Hızlı Entegrasyon',
+        'Fast Integration',
+        'Kendi platformunuz ya da ITS yapınız için hızlı entegrasyon gerektiğinde IoT Hub ile uyumlu bir bağlantı katmanı sunar.',
+        'We can provide an IoT Hub to facilitate fast and seamless integration to any third-party platform or the intelligent transport system (ITS).',
+      ),
+    ],
+    specGroups: [
+      specGroup('Ağ', 'Network', [
+        spec('Standart', 'Standard', '4G LTE Cat.4'),
+        spec('WiFi', 'WiFi', '2.4GHz, AP Mode / STA Mode / WiFi Direct desteği', '2.4GHz, Support AP Mode / STA Mode / WiFi Direct'),
+        spec('Bluetooth', 'Bluetooth', 'BLE 4.0'),
+        spec(
+          'Bant',
+          'Band',
+          'Avrasya Versiyonu\nLTE-FDD: B1/B3/B5/B7/B8/B19/B20\nLTE-TDD: B38/B39/B40/B41 (100M)\nWCDMA: B1/B2/B5/B8\nGSM: B2/B3/B5/B8\n\nAmerika Versiyonu\nLTE-FDD: B2/B3/B4/B5/B7/B12/B17\nLTE-TDD: B38/B41 (100M)\nWCDMA: B2/B4/B5\nGSM: B2/B5/B8',
+          'Eurasian Version\nLTE-FDD: B1/B3/B5/B7/B8/B19/B20\nLTE-TDD: B38/B39/B40/B41 (100M)\nWCDMA: B1/B2/B5/B8\nGSM: B2/B3/B5/B8\n\nAmerican Version\nLTE-FDD: B2/B3/B4/B5/B7/B12/B17\nLTE-TDD: B38/B41 (100M)\nWCDMA: B2/B4/B5\nGSM: B2/B5/B8',
+        ),
+      ]),
+      specGroup('Kamera', 'Camera', [
+        spec('Ön Kamera (Ana)', 'Front Camera (Main)', '1920×1080 / 25FPS / F2.2 / Tam renkli / 85° (HFoV)', '1920×1080 / 25FPS / F2.2 / Full color / 85° (HFoV)'),
+        spec(
+          'Alt Kamera',
+          'Sub Camera',
+          '1280×720 / 15FPS / F2.5 / Gündüz tam renkli, düşük ışıkta monokrom / 90° (HFoV)',
+          '1280×720 / 15FPS / F2.5 / Full color in daytime & monochrome in dim light / 90° (HFoV)',
+        ),
+        spec('Video Formatı', 'Video Format', '.ts'),
+      ]),
+      specGroup('Yapılandırma', 'Configuration', [
+        spec('GNSS', 'GNSS', 'GPS / BDS'),
+        spec('Sensör', 'Sensor', '6 eksenli ivmeölçer', '6-Axis accelerometer'),
+        spec('Mikrofon', 'Microphone', 'Desteklenir', 'Support'),
+        spec('Hoparlör', 'Speaker', 'Desteklenir', 'Support'),
+        spec('Arayüz', 'Interface', 'Micro USB*1, SOS*1, TTL*1, Röle*1', 'Micro USB*1, SOS*1, TTL*1, Relay*1'),
+        spec('Bellek Desteği', 'Memory Support', 'TF kart (256GB\'a kadar)', 'TF card (Up to 256GB)'),
+        spec('SIM Kart Tipi', 'SIM Card Type', 'Nano'),
+        spec('LED Göstergesi', 'LED Indication', 'Kırmızı (Güç), Mavi (Hücresel), Yeşil (GNSS)', 'Red (Power), Blue (Cellular), Green (GNSS)'),
+      ]),
+      specGroup('Özellik', 'Feature', [
+        spec('ADAS', 'ADAS', 'FCW, HMW, LDW'),
+        spec('DMS', 'DMS', 'Yok', 'N/A'),
+        spec('Yapılandırma Desteği', 'Configuration support', 'GPRS, SMS, hafıza kartı, uygulama', 'GPRS, SMS, Memory card, APP'),
+        spec('Ürün Yazılımı Güncelleme', 'Firmware update', 'USB kablosu, hafıza kartı, OTA', 'USB Cable, Memory Card, OTA'),
+      ]),
+      specGroup('Diğer', 'Others', [
+        spec('Güç Beslemesi', 'Power Supply', 'Güç kablosu: B+ / ACC / GND', 'Power cable: B+ / ACC / GND'),
+        spec('Çalışma Voltajı', 'Operating Voltage', 'DC 9-30V', 'DC 9–30V'),
+        spec('Çalışma Sıcaklığı', 'Operating Temperature', '-20°C ile +65°C', '-20°C to +65°C'),
+        spec('Depolama Sıcaklığı', 'Storage Temperature', '-30°C ile +85°C', '-30°C to +85°C'),
+        spec('Cihaz Ağırlığı', 'Device Weight', '233g'),
+        spec('Cihaz Boyutları', 'Device Dimension', '109×69×52mm', '109*69*52mm'),
+        spec('Sertifikalar', 'Certifications', 'CE / FCC / RoHS', 'CE / FCC / RoHS'),
+      ]),
+    ],
     gallery: GALLERY.jc261p,
   },
   {
@@ -673,10 +1072,100 @@ export const HARDWARE_PRODUCTS: HardwareProduct[] = [
     thumbnail: getImg('jc261'),
     tagline: { tr: 'Yolu Hissedin. Sürücülerinizi Anlayın. Önde Kalın.', en: 'Sense the Road. Understand Your Drivers. Stay Ahead.' },
     description: {
-      tr: 'JC400\'ün gelişmiş versiyonu olan JC261, ihtiyaca göre sürücüye dönük, içe dönük ya da geri görüş kamerası eklemenize izin verir. DMS, ADAS, istisna uyarıları ve 4G üzerinden video akışı sayesinde filo yöneticileri sürücü davranışlarını veriyle iyileştirebilir.',
-      en: 'An upgrade of JC400, the JC261 4G dash camera allows you to add a driver-facing, inward-facing, or backup camera as needed. The on-device camera can monitor the road ahead, while the peripheral camera can monitor the driver, the cabin, or the rear. A number of safety features are included in the system, including DMS, ADAS, exception alerts, and more.',
+      tr: 'JC261, JC400\'ün gelişmiş bir versiyonu olarak sürücüye dönük, kabin içi veya geri görüş kamerası eklemenize imkan tanır. Entegre kamera ön yolu izlerken opsiyonel çevre kamera sürücüyü, kabini veya arka alanı takip eder; DMS, ADAS ve 4G video akışı ile filo ekiplerine daha güçlü görünürlük sunar.',
+      en: 'The JC261 4G dash camera allows you to add a driver-facing, inward-facing, or backup camera as needed. The on-device camera can monitor the road ahead, while the peripheral camera can monitor the driver, the cabin, or the rear. A number of safety features are included in the system, including DMS, ADAS, exception alerts and more.',
     },
     specs: [{ label: { tr: 'Video', en: 'Video' }, value: { tr: '1080P', en: '1080P' } }],
+    featureCards: [
+      featureCard(
+        'monitor',
+        'Video Gözetimi',
+        'Video Surveillance',
+        'Güçlü LTE bağlantısı, aracın içini ve dışını çevrim içi platform üzerinden canlı izlemeyi sağlar. Cihaz üzerindeki kritik klipler ise istenildiğinde her yerden yeniden oynatılabilir.',
+        "Powerful LTE connectivity enables the live monitoring of the vehicle's interior and exterior via an online platform; while the critical video clips in the device allows for on-demand playback after the fact from anywhere, at any time.",
+      ),
+      featureCard(
+        'car',
+        'Çift Kanallı Kayıt',
+        'Dual-Channel Recording',
+        'Entegre lens ön yolu izlerken opsiyonel çevre kamera kabin içi, arka alan, yan taraf veya sürücü davranışını ihtiyaca göre takip eder.',
+        'Monitor the road ahead through the integrated lens and what is happening in the cab, in the rear, to the side, or to the driver through a peripheral camera to meet your specific business needs.',
+      ),
+      featureCard(
+        'bell',
+        'Sürücü Destek Sistemi (ADAS)',
+        'Driver Assistance (ADAS)',
+        'ADAS algoritması takip mesafesi, yakın çarpışma ve şerit ihlali gibi olayları izleyip sürücüyü gerçek zamanlı olarak uyarır.',
+        'The ADAS algorithm enables the device to monitor incidents related to following distance, near collisions, lane keeping, etc., and warn the driver in real time.',
+      ),
+      featureCard(
+        'cpu',
+        'Sürücü İzleme (DMS) (Opsiyonel)',
+        'Driver Monitoring (DMS) (Optional)',
+        'Opsiyonel DMS kamera telefon kullanımı, sigara içme, dikkat dağınıklığı, esneme, gözlerin kapanması veya sürücünün pozisyonda olmaması gibi durumları algılayabilir.',
+        'The DMS camera is able to detect fatigue and distracted driving, such as texting while driving, yawning, smoking, or fiddling with the stereo, as well as the exception of the driver not being in position.',
+      ),
+      featureCard(
+        'layers',
+        'Hızlı Entegrasyon',
+        'Fast Integration',
+        'Üçüncü taraf platformlar veya ITS yapıları için IoT Hub ile hızlı ve kesintisiz entegrasyon kurgusu sunabilir.',
+        'We can provide an IoT Hub to facilitate fast and seamless integration to any third-party platform or the intelligent transport system (ITS).',
+      ),
+    ],
+    specGroups: [
+      specGroup('Ağ', 'Network', [
+        spec('Standart', 'Standard', '4G LTE Cat.4'),
+        spec('WiFi', 'WiFi', '2.4GHz, AP Mode / STA Mode / WiFi Direct desteği', '2.4GHz, Support AP Mode / STA Mode / WiFi Direct'),
+        spec('Bluetooth', 'Bluetooth', 'BLE 4.0'),
+        spec(
+          'Bant',
+          'Band',
+          'Avrasya Versiyonu\nLTE-FDD: B1/B3/B5/B7/B8/B19/B20\nLTE-TDD: B38/B39/B40/B41 (100M)\nWCDMA: B1/B2/B5/B8\nGSM: B2/B3/B5/B8\n\nAmerika Versiyonu\nLTE-FDD: B2/B3/B4/B5/B7/B12/B17\nLTE-TDD: B38/B41 (100M)\nWCDMA: B2/B4/B5\nGSM: B2/B5/B8',
+          'Eurasian Version\nLTE-FDD: B1/B3/B5/B7/B8/B19/B20\nLTE-TDD: B38/B39/B40/B41 (100M)\nWCDMA: B1/B2/B5/B8\nGSM: B2/B3/B5/B8\n\nAmerican Version\nLTE-FDD: B2/B3/B4/B5/B7/B12/B17\nLTE-TDD: B38/B41 (100M)\nWCDMA: B2/B4/B5\nGSM: B2/B5/B8',
+        ),
+      ]),
+      specGroup('Kamera', 'Camera', [
+        spec('Ön Kamera (Ana)', 'Front Camera (Main)', '1920×1080 / 25FPS / F2.2 / Tam renkli / 85° (HFoV)', '1920×1080 / 25FPS / F2.2 / Full color / 85° (HFoV)'),
+        spec(
+          'Çevre Kamera (Opsiyonel)',
+          'Peripheral Camera (Optional)',
+          'CI01: 1280×720 / 15FPS / F2.0 / Gündüz tam renkli, düşük ışıkta monokrom / 100° (HFoV)\nCI03: 1280×720 / 15FPS / F2.4 / Gündüz tam renkli, düşük ışıkta monokrom / 119° (HFoV)\nCE01: 1280×720 / 15FPS / F2.0 / Tam renkli / IP67 / 125° (HFoV)\nJC170: 1280×720 / 15FPS / F2.4 / Monokrom / 56° (HFoV)',
+          'CI01: 1280×720 / 15FPS / F2.0 / Full color in daytime & monochrome in dim light / 100° (HFoV)\nCI03: 1280×720 / 15FPS / F2.4 / Full color in daytime & monochrome in dim light / 119° (HFoV)\nCE01: 1280×720 / 15FPS / F2.0 / Full color / IP67 / 125° (HFoV)\nJC170: 1280×720 / 15FPS / F2.4 / Monochrome / 56° (HFoV)',
+        ),
+        spec('Video Formatı', 'Video Format', '.ts'),
+      ]),
+      specGroup('Yapılandırma', 'Configuration', [
+        spec('GNSS', 'GNSS', 'GPS / BDS'),
+        spec('Sensör', 'Sensor', '3 eksenli ivmeölçer', '3-axis'),
+        spec('Mikrofon', 'Microphone', 'Desteklenir', 'Support'),
+        spec('Hoparlör', 'Speaker', 'Desteklenir', 'Support'),
+        spec('Arayüz', 'Interface', 'Micro USB*1, SOS*1, TTL*1, Röle*1', 'Micro USB*1, SOS*1, TTL*1, Relay*1'),
+        spec('Bellek Desteği', 'Memory Support', 'TF kart (256GB\'a kadar)', 'TF card (Up to 256GB)'),
+        spec('SIM Kart Tipi', 'SIM Card Type', 'Nano'),
+        spec('LED Göstergesi', 'LED Indication', 'Kırmızı (Güç), Mavi (Hücresel), Yeşil (GNSS)', 'Red (Power), Blue (Cellular), Green (GNSS)'),
+      ]),
+      specGroup('Özellik', 'Feature', [
+        spec('ADAS', 'ADAS', 'FCW, HMW, LDW'),
+        spec(
+          'DMS (Opsiyonel)',
+          'DMS (Optional)',
+          'Telefon kullanımı, sigara içme, dikkat dağınıklığı, esneme, gözlerin kapanması, sürücü algılanmaması',
+          'Phone use, Smoking, Distraction, Yawning, Eyes closed, No face detected',
+        ),
+        spec('Yapılandırma Desteği', 'Configuration support', 'GPRS, SMS, hafıza kartı, uygulama', 'GPRS, SMS, Memory card, APP'),
+        spec('Ürün Yazılımı Güncelleme', 'Firmware update', 'USB kablosu, hafıza kartı, OTA', 'USB Cable, Memory card, OTA'),
+      ]),
+      specGroup('Diğer', 'Others', [
+        spec('Güç Beslemesi', 'Power Supply', 'Güç kablosu: B+ / ACC / GND', 'Power cable: B+ / ACC / GND'),
+        spec('Çalışma Voltajı', 'Operating Voltage', 'DC 9-30V', 'DC 9–30V'),
+        spec('Çalışma Sıcaklığı', 'Operating Temperature', '-20°C ile +65°C', '-20°C to +65°C'),
+        spec('Depolama Sıcaklığı', 'Storage Temperature', '-30°C ile +85°C', '-30°C to +85°C'),
+        spec('Cihaz Ağırlığı', 'Device Weight', '233g'),
+        spec('Cihaz Boyutları', 'Device Dimension', '109×69×52mm', '109*69*52mm'),
+        spec('Sertifikalar', 'Certifications', 'CE / FCC / RoHS', 'CE / FCC / RoHS'),
+      ]),
+    ],
     gallery: GALLERY.jc261,
   },
   {
@@ -1476,3 +1965,9 @@ export const HARDWARE_PRODUCTS: HardwareProduct[] = [
     specs: []
   }
 ];
+
+export const HARDWARE_PRODUCTS: HardwareProduct[] = HARDWARE_PRODUCTS_BASE.map((product) => {
+  const downloads = PRODUCT_DOWNLOADS[product.id] ?? product.downloads;
+
+  return downloads ? { ...product, downloads } : product;
+});

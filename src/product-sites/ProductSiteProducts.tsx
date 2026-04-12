@@ -1,14 +1,12 @@
 import { useMemo, useState } from 'react';
 import {
   ArrowRight,
-  Check,
-  ChevronRight,
-  Plus,
+  FileDown,
   RotateCcw,
   Search,
   SlidersHorizontal,
 } from 'lucide-react';
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import SeoHead from '../components/Seo/SeoHead';
 import { useApp } from '../context/AppContext';
 import { getProductFaviconPath, getProductSitePath } from '../config/productSites';
@@ -16,6 +14,7 @@ import { useProductSite } from './ProductSiteContext';
 import {
   FALLBACK_PRODUCT_IMAGE,
   HARDWARE_PRODUCTS,
+  getLocalizedDownloadLabel,
   PRODUCT_CATEGORIES,
   getLocalizedProductDescription,
   getLocalizedProductTagline,
@@ -26,11 +25,9 @@ import './ProductSiteProducts.css';
 const ProductSiteProducts = () => {
   const { lang } = useApp();
   const { product } = useProductSite();
-  const navigate = useNavigate();
 
   const [activeCategory, setActiveCategory] = useState<string>('all');
   const [activeSubcategory, setActiveSubcategory] = useState<string>('all');
-  const [compareItems, setCompareItems] = useState<string[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
 
   const pageTitle = lang === 'tr' ? `${product.name} | Ürünler` : `${product.name} | Products`;
@@ -110,22 +107,6 @@ const ProductSiteProducts = () => {
       ]),
     ) as Record<string, number>;
   }, [activeCategoryObj, searchFilteredProducts]);
-
-  const toggleCompare = (id: string, event?: React.MouseEvent) => {
-    event?.preventDefault();
-    event?.stopPropagation();
-    setCompareItems((current) => {
-      if (current.includes(id)) {
-        return current.filter((item) => item !== id);
-      }
-
-      if (current.length >= 3) {
-        return current;
-      }
-
-      return [...current, id];
-    });
-  };
 
   const resetFilters = () => {
     setSearchQuery('');
@@ -260,7 +241,8 @@ const ProductSiteProducts = () => {
               {filteredProducts.map((productItem) => {
                 const category = PRODUCT_CATEGORIES.find((entry) => entry.id === productItem.categoryId);
                 const subcategory = getProductSubcategory(productItem.categoryId, productItem.subcategoryId);
-                const isComparing = compareItems.includes(productItem.id);
+                const downloads = productItem.downloads ?? [];
+                const hasDownloads = downloads.length > 0;
 
                 return (
                   <article key={productItem.id} className="ps-premium-card">
@@ -286,19 +268,48 @@ const ProductSiteProducts = () => {
                       <p className="ps-premium-card-tagline">{getLocalizedProductTagline(productItem, lang)}</p>
                       <p className="ps-premium-card-desc">{getLocalizedProductDescription(productItem, lang)}</p>
 
+                      <div
+                        className="ps-premium-downloads"
+                        aria-label={lang === 'tr' ? `${productItem.name} kılavuzları` : `${productItem.name} guides`}
+                      >
+                        <div className="ps-premium-downloads-head">
+                          <strong>{lang === 'tr' ? 'Kılavuzlar' : 'Guides'}</strong>
+                          <span>
+                            {hasDownloads
+                              ? `${downloads.length} ${lang === 'tr' ? 'doküman' : downloads.length === 1 ? 'document' : 'documents'}`
+                              : lang === 'tr'
+                                ? 'Yakında'
+                                : 'Soon'}
+                          </span>
+                        </div>
+
+                        {hasDownloads ? (
+                          <div className="ps-premium-download-list">
+                            {downloads.map((download) => (
+                              <a
+                                key={`${productItem.id}-${download.url}`}
+                                href={download.url}
+                                download
+                                className="ps-premium-download-link"
+                              >
+                                <FileDown size={15} />
+                                <span>{getLocalizedDownloadLabel(download, lang)}</span>
+                              </a>
+                            ))}
+                          </div>
+                        ) : (
+                          <p className="ps-premium-download-placeholder">
+                            {lang === 'tr'
+                              ? 'Bu ürünün indirme linki yakında eklenecek.'
+                              : 'Download links for this product will be added soon.'}
+                          </p>
+                        )}
+                      </div>
+
                       <div className="ps-premium-card-footer">
                         <Link to={`${productSiteRoot}/products/${productItem.id}`} className="ps-premium-detail-btn">
                           {lang === 'tr' ? 'Detaya Git' : 'Open Details'} <ArrowRight size={16} />
                         </Link>
-
-                        <button
-                          className={`ps-premium-compare-btn ${isComparing ? 'active' : ''}`}
-                          onClick={(event) => toggleCompare(productItem.id, event)}
-                          title={lang === 'tr' ? 'Karşılaştır' : 'Compare'}
-                        >
-                          {isComparing ? <Check size={16} /> : <Plus size={16} />}
-                          <span>{lang === 'tr' ? 'Karşılaştır' : 'Compare'}</span>
-                        </button>
                       </div>
                     </div>
                   </article>
@@ -317,48 +328,6 @@ const ProductSiteProducts = () => {
           )}
         </div>
       </div>
-
-      {compareItems.length > 0 ? (
-        <div className="ps-compare-bar">
-          <div className="container ps-compare-inner">
-            <div className="ps-compare-selected">
-              <strong>
-                {lang === 'tr' ? 'Karşılaştırma' : 'Compare'} ({compareItems.length}/3)
-              </strong>
-              {compareItems.map((id) => {
-                const selected = HARDWARE_PRODUCTS.find((productItem) => productItem.id === id);
-
-                return (
-                  <div key={id} className="ps-compare-item">
-                    <span>{selected?.name}</span>
-                    <button type="button" className="ps-compare-item-close" onClick={() => toggleCompare(id)}>
-                      ×
-                    </button>
-                  </div>
-                );
-              })}
-            </div>
-
-            <div className="ps-compare-actions">
-              <button type="button" className="ps-compare-clear" onClick={() => setCompareItems([])}>
-                {lang === 'tr' ? 'Temizle' : 'Clear'}
-              </button>
-              <button
-                className="btn-primary ps-compare-open"
-                disabled={compareItems.length < 2}
-                onClick={() => {
-                  const searchParams = new URLSearchParams();
-                  searchParams.set('items', compareItems.join(','));
-                  navigate(`${productSiteRoot}/products/compare?${searchParams.toString()}`);
-                }}
-                type="button"
-              >
-                {lang === 'tr' ? 'Karşılaştırmayı Aç' : 'Open Comparison'} <ChevronRight size={16} />
-              </button>
-            </div>
-          </div>
-        </div>
-      ) : null}
     </>
   );
 };

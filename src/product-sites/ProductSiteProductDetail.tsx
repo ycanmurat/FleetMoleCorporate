@@ -154,12 +154,11 @@ const ProductSiteProductDetail = () => {
                 {hasDownloads && (
                   <a
                     href={hwProduct.downloads![0].url}
-                    target="_blank"
-                    rel="noreferrer"
+                    download
                     className="ps-product-detail-secondary-action"
                   >
                     <FileDown size={18} />
-                    {lang === 'tr' ? 'Broşürü Aç' : 'Open Brochure'}
+                    {getLocalizedDownloadLabel(hwProduct.downloads![0], lang)}
                   </a>
                 )}
               </div>
@@ -288,7 +287,7 @@ const ProductSiteProductDetail = () => {
                 hasDownloads ? (
                   <div className="ps-product-detail-downloads">
                     {hwProduct.downloads!.map((item, idx) => (
-                      <a key={idx} href={item.url} className="ps-product-detail-download-item" target="_blank" rel="noreferrer">
+                      <a key={idx} href={item.url} download className="ps-product-detail-download-item">
                         <FileDown size={18} />
                         <span>{getLocalizedDownloadLabel(item, lang)}</span>
                       </a>
