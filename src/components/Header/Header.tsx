@@ -49,6 +49,8 @@ const Header = () => {
   const currentProduct =
     PRODUCTS.find((product) => location.pathname === localizePath(`/${product.slug}`)) ?? null;
   const isHomePage = location.pathname === localizePath('/');
+  const isLoginPage = location.pathname === localizePath('/login');
+  const isRegisterPage = location.pathname === localizePath('/register');
   const activeProductSlug = currentProduct?.slug ?? null;
   const corporateLogoSrc = `${import.meta.env.BASE_URL}${isDark ? 'logo-white.png' : 'logo-black.png'}`;
 
@@ -320,6 +322,22 @@ const Header = () => {
             </nav>
 
             <div className="header-actions">
+              <div className="header-auth">
+                <Link
+                  to={localizePath('/login')}
+                  className={`header-auth-link ${isLoginPage ? 'is-active' : ''}`}
+                  onClick={closeAll}
+                >
+                  {lang === 'tr' ? 'Giriş' : 'Login'}
+                </Link>
+                <Link
+                  to={localizePath('/register')}
+                  className={`header-auth-cta ${isRegisterPage ? 'is-active' : ''}`}
+                  onClick={closeAll}
+                >
+                  {lang === 'tr' ? 'Kayıt Ol' : 'Register'}
+                </Link>
+              </div>
               <button
                 className="top-ctrl top-ctrl--lang"
                 onClick={toggleLang}
@@ -583,6 +601,29 @@ const Header = () => {
                       </AnimatePresence>
                     </section>
                   ))}
+                </div>
+
+                <div className="mob-auth-card">
+                  <div className="mob-auth-top">
+                    <strong>{lang === 'tr' ? 'Kullanıcı Erişimi' : 'User Access'}</strong>
+                    <span>{lang === 'tr' ? 'Kurumsal panel girişleri' : 'Corporate panel access'}</span>
+                  </div>
+                  <div className="mob-auth-links">
+                    <Link
+                      to={localizePath('/login')}
+                      className={`mob-auth-link ${isLoginPage ? 'is-active' : ''}`}
+                      onClick={closeAll}
+                    >
+                      {lang === 'tr' ? 'Giriş Yap' : 'Sign In'}
+                    </Link>
+                    <Link
+                      to={localizePath('/register')}
+                      className={`mob-auth-link mob-auth-link--primary ${isRegisterPage ? 'is-active' : ''}`}
+                      onClick={closeAll}
+                    >
+                      {lang === 'tr' ? 'Kayıt Ol' : 'Register'}
+                    </Link>
+                  </div>
                 </div>
 
                 <Link to={localizePath('/contact')} className="mob-contact-card" onClick={closeAll}>

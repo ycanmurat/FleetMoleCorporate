@@ -3,6 +3,7 @@ import { ArrowRight, Mail, MapPin, Phone, Sparkles } from 'lucide-react';
 import ProductSiteLink from '../ProductSiteLink/ProductSiteLink';
 import { useApp } from '../../context/AppContext';
 import { COMPANY_INFO, getCompanyAddress } from '../../data/company';
+import { getLegalDocument, getLocalizedLegalValue } from '../../data/legalContent';
 import {
   FOOTER_CORPORATE_LINKS,
   FOOTER_LEGAL_LINKS,
@@ -22,7 +23,8 @@ const Footer = () => {
   });
   const legalLinks = FOOTER_LEGAL_LINKS.flatMap((entry) => {
     const page = getContentPage(entry.section, entry.slug);
-    return page ? [{ ...entry, page }] : [];
+    const legalDocument = getLegalDocument(entry.slug);
+    return page ? [{ ...entry, page, legalDocument }] : [];
   });
 
   return (
@@ -119,9 +121,9 @@ const Footer = () => {
       <div className="footer-bottom">
         <div className="container footer-bottom-inner">
           <div className="legal-links">
-            {legalLinks.map(({ section, slug, page }) => (
+            {legalLinks.map(({ section, slug, page, legalDocument }) => (
               <Link key={slug} to={localizePath(getContentPath(section, slug))}>
-                {page.title[lang]}
+                {legalDocument?.footerLabel ? getLocalizedLegalValue(legalDocument.footerLabel, lang) : page.title[lang]}
               </Link>
             ))}
           </div>

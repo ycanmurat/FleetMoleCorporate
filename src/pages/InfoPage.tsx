@@ -21,6 +21,7 @@ import ProductWordmark from '../components/ProductWordmark/ProductWordmark';
 import { COMPANY_NAME, SITE_URL } from '../config/site';
 import { useApp } from '../context/AppContext';
 import { COMPANY_INFO, getCompanyAddress } from '../data/company';
+import { getLegalDocument, getLocalizedLegalValue } from '../data/legalContent';
 import {
   CONTENT_SECTION_MAP,
   getContentPage,
@@ -63,6 +64,9 @@ const InfoPage = ({ section }: InfoPageProps) => {
     return <NotFoundPage />;
   }
 
+  const legalDocument = section === 'legal' ? getLegalDocument(page.slug) : undefined;
+  const isLegalPage = Boolean(legalDocument);
+
   const accentStyle = {
     '--page-accent': sectionData.accent,
   } as CSSProperties;
@@ -71,8 +75,12 @@ const InfoPage = ({ section }: InfoPageProps) => {
     return product ? [product] : [];
   });
   const serviceDetail = section === 'services' ? getServicePageDetail(page.slug) : undefined;
-  const heroLead = serviceDetail?.heroLead?.[lang] ?? page.description[lang];
-  const heroBody = serviceDetail?.heroBody?.[lang];
+  const legalLead = legalDocument ? getLocalizedLegalValue(legalDocument.lead, lang) : undefined;
+  const legalBody = legalDocument?.body ? getLocalizedLegalValue(legalDocument.body, lang) : undefined;
+  const legalSummary = legalDocument ? getLocalizedLegalValue(legalDocument.summary, lang) : [];
+  const legalUpdatedAt = legalDocument?.updatedAt ? getLocalizedLegalValue(legalDocument.updatedAt, lang) : null;
+  const heroLead = legalLead ?? serviceDetail?.heroLead?.[lang] ?? page.description[lang];
+  const heroBody = legalBody ?? serviceDetail?.heroBody?.[lang];
   const introParagraphs: string[] = serviceDetail?.intro[lang] ?? [];
   const signalSectionTitle = serviceDetail?.signalsTitle?.[lang];
   const signalSectionDescription = serviceDetail?.signalsDescription?.[lang];
@@ -104,7 +112,7 @@ const InfoPage = ({ section }: InfoPageProps) => {
   const detailSectionDescription = serviceDetail?.cardsDescription[lang] ?? page.description[lang];
   const siblingLinks = visibleSectionItems.filter((item) => item.slug !== page.slug).slice(0, 4);
   const pageTitle = `${page.title[lang]} | ${COMPANY_NAME}`;
-  const pageDescription = activeNewsArticle?.description[lang] ?? page.description[lang];
+  const pageDescription = activeNewsArticle?.description[lang] ?? legalLead ?? page.description[lang];
   const schema = activeNewsArticle
     ? {
         '@context': 'https://schema.org',
@@ -254,38 +262,133 @@ const InfoPage = ({ section }: InfoPageProps) => {
               </aside>
             ) : (
               <aside className="info-side glass-panel">
-                <div className="info-side-block">
-                  <strong>{lang === 'tr' ? 'İletişim' : 'Contact'}</strong>
-                  <ul className="info-contact-list">
-                    <li>
-                      <MapPin size={16} />
-                      <span>{getCompanyAddress(lang)}</span>
-                    </li>
-                    <li>
-                      <Phone size={16} />
-                      <a href={`tel:${COMPANY_INFO.phoneHref}`}>{COMPANY_INFO.phoneDisplay}</a>
-                    </li>
-                    <li>
-                      <Mail size={16} />
-                      <a href={`mailto:${COMPANY_INFO.email}`}>{COMPANY_INFO.email}</a>
-                    </li>
-                  </ul>
-                </div>
+                {isLegalPage ? (
+                  <>
+                    {legalUpdatedAt ? (
+                      <div className="info-side-block">
+                        <strong>{lang === 'tr' ? 'Güncellenme Tarihi' : 'Updated on'}</strong>
+                        <div className="info-side-meta">
+                          <CalendarClock size={16} />
+                          <span>{legalUpdatedAt}</span>
+                        </div>
+                      </div>
+                    ) : null}
 
-                <div className="info-side-block">
-                  <strong>{lang === 'tr' ? 'Bu sayfada' : 'On this page'}</strong>
-                  <div className="info-pill-list">
-                    {page.highlights[lang].map((highlight) => (
-                      <span key={highlight} className="info-pill">
-                        {highlight}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+                    <div className="info-side-block">
+                      <strong>{lang === 'tr' ? 'Bu dokümanda' : 'In this document'}</strong>
+                      <div className="info-pill-list">
+                        {legalSummary.map((highlight) => (
+                          <span key={highlight} className="info-pill">
+                            {highlight}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div className="info-side-block">
+                      <strong>{lang === 'tr' ? 'İletişim' : 'Contact'}</strong>
+                      <ul className="info-contact-list">
+                        <li>
+                          <MapPin size={16} />
+                          <span>{getCompanyAddress(lang)}</span>
+                        </li>
+                        <li>
+                          <Phone size={16} />
+                          <a href={`tel:${COMPANY_INFO.phoneHref}`}>{COMPANY_INFO.phoneDisplay}</a>
+                        </li>
+                        <li>
+                          <Mail size={16} />
+                          <a href={`mailto:${COMPANY_INFO.email}`}>{COMPANY_INFO.email}</a>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div className="info-side-block">
+                      <strong>{lang === 'tr' ? 'Bu sayfada' : 'On this page'}</strong>
+                      <div className="info-pill-list">
+                        {page.highlights[lang].map((highlight) => (
+                          <span key={highlight} className="info-pill">
+                            {highlight}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </>
+                )}
               </aside>
             )}
           </div>
         </section>
+
+        {isLegalPage && legalDocument ? (
+          <section className="info-section info-section--article">
+            <div className="container">
+              <article className="info-article-card info-article-card--legal glass-panel">
+                <div className="info-article-content">
+                  {legalDocument.sections.map((sectionBlock, index) => {
+                    const paragraphs = sectionBlock.paragraphs
+                      ? getLocalizedLegalValue(sectionBlock.paragraphs, lang)
+                      : [];
+                    const bullets = sectionBlock.bullets ? getLocalizedLegalValue(sectionBlock.bullets, lang) : [];
+                    const tableColumns = sectionBlock.table
+                      ? getLocalizedLegalValue(sectionBlock.table.columns, lang)
+                      : null;
+                    const tableRows = sectionBlock.table ? getLocalizedLegalValue(sectionBlock.table.rows, lang) : null;
+
+                    return (
+                      <section key={`${legalDocument.slug}-${index}`} className="info-article-section">
+                        {sectionBlock.heading ? <h2>{getLocalizedLegalValue(sectionBlock.heading, lang)}</h2> : null}
+                        {paragraphs.map((paragraph) => (
+                          <p key={paragraph}>{paragraph}</p>
+                        ))}
+                        {bullets.length ? (
+                          <ul className="info-article-list">
+                            {bullets.map((bullet) => (
+                              <li key={bullet}>{bullet}</li>
+                            ))}
+                          </ul>
+                        ) : null}
+                        {tableColumns && tableRows ? (
+                          <div className="info-article-table-wrap">
+                            <table className="info-article-table">
+                              <thead>
+                                <tr>
+                                  {tableColumns.map((column) => (
+                                    <th key={column}>{column}</th>
+                                  ))}
+                                </tr>
+                              </thead>
+                              <tbody>
+                                {tableRows.map((row) => (
+                                  <tr key={row.join('-')}>
+                                    {row.map((cell, cellIndex) => (
+                                      <td key={`${row[0]}-${cellIndex}`}>{cell}</td>
+                                    ))}
+                                  </tr>
+                                ))}
+                              </tbody>
+                            </table>
+                          </div>
+                        ) : null}
+                        {sectionBlock.links?.length ? (
+                          <div className="info-article-links">
+                            {sectionBlock.links.map((link) => (
+                              <a key={link.href} href={link.href} target="_blank" rel="noreferrer" className="info-article-link">
+                                {getLocalizedLegalValue(link.label, lang)} <ArrowRight size={16} />
+                              </a>
+                            ))}
+                          </div>
+                        ) : null}
+                      </section>
+                    );
+                  })}
+                </div>
+              </article>
+            </div>
+          </section>
+        ) : null}
 
         {isNewsArticlePage && activeNewsArticle ? (
           <section className="info-section info-section--article">
@@ -496,7 +599,7 @@ const InfoPage = ({ section }: InfoPageProps) => {
           </section>
         ) : null}
 
-        {!isNewsArticlePage && !isNewsListingPage ? (
+        {!isLegalPage && !isNewsArticlePage && !isNewsListingPage ? (
           <section className="info-section info-section--details">
             <div className="container">
               <div className="info-section-head">

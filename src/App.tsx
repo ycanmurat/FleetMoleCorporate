@@ -1,6 +1,7 @@
 import { Navigate, Outlet, Route, Routes, useParams } from 'react-router-dom';
 import MainLayout from './layouts/MainLayout';
 import { DEFAULT_LOCALE, isLocale } from './config/site';
+import AuthPage from './pages/AuthPage';
 import ContactPage from './pages/ContactPage';
 import Home from './pages/Home';
 import InfoPage from './pages/InfoPage';
@@ -47,6 +48,9 @@ const App = () => {
 
         <Route element={<MainLayout />}>
           <Route index element={<Home />} />
+          <Route path="login" element={<AuthPage mode="login" />} />
+          <Route path="forgot-password" element={<AuthPage mode="forgotPassword" />} />
+          <Route path="register" element={<AuthPage mode="register" />} />
           <Route path="contact" element={<ContactPage />} />
           <Route path="services" element={<ServicesLandingPage />} />
           <Route path="services/:pageSlug" element={<InfoPage section="services" />} />
