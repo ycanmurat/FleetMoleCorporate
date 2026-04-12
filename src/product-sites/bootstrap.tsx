@@ -7,6 +7,7 @@ import '../index.css';
 import './productSite.css';
 import ProductSiteApp from './ProductSiteApp';
 import { ProductSiteProvider } from './ProductSiteContext';
+import { ProductSiteRuntimeProvider } from './ProductSiteRuntimeContext';
 
 export const mountProductSite = (productSlug: ProductSlug) => {
   const rootElement = document.getElementById('root');
@@ -19,9 +20,11 @@ export const mountProductSite = (productSlug: ProductSlug) => {
     <React.StrictMode>
       <BrowserRouter>
         <AppProvider>
-          <ProductSiteProvider productSlug={productSlug}>
-            <ProductSiteApp />
-          </ProductSiteProvider>
+          <ProductSiteRuntimeProvider mode="standalone">
+            <ProductSiteProvider productSlug={productSlug}>
+              <ProductSiteApp />
+            </ProductSiteProvider>
+          </ProductSiteRuntimeProvider>
         </AppProvider>
       </BrowserRouter>
     </React.StrictMode>,

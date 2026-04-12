@@ -6,14 +6,16 @@ import { useApp } from '../context/AppContext';
 import { toAbsoluteUrl } from '../lib/i18n';
 import { getProductSiteLegalPage } from './legalContent';
 import { useProductSite } from './ProductSiteContext';
+import { useProductSitePathMode } from './ProductSiteRuntimeContext';
 
 const ProductSiteLegalPage = () => {
   const { lang } = useApp();
   const { product } = useProductSite();
+  const pathMode = useProductSitePathMode();
   const { pageSlug } = useParams<{ pageSlug: string }>();
   const page = getProductSiteLegalPage(product, pageSlug);
-  const productHomePath = getProductSitePath(product.slug, lang);
-  const pagePath = getProductSitePath(product.slug, lang, `/legal/${pageSlug ?? ''}`);
+  const productHomePath = getProductSitePath(product.slug, lang, '/', pathMode);
+  const pagePath = getProductSitePath(product.slug, lang, `/legal/${pageSlug ?? ''}`, pathMode);
 
   if (!page) {
     return <Navigate to={productHomePath} replace />;
@@ -28,9 +30,9 @@ const ProductSiteLegalPage = () => {
         locale={lang}
         favicon={getProductFaviconPath(product.slug)}
         alternates={{
-          tr: getProductSitePath(product.slug, 'tr', `/legal/${page.slug}`),
-          en: getProductSitePath(product.slug, 'en', `/legal/${page.slug}`),
-          'x-default': getProductSitePath(product.slug, 'tr', `/legal/${page.slug}`),
+          tr: getProductSitePath(product.slug, 'tr', `/legal/${page.slug}`, pathMode),
+          en: getProductSitePath(product.slug, 'en', `/legal/${page.slug}`, pathMode),
+          'x-default': getProductSitePath(product.slug, 'tr', `/legal/${page.slug}`, pathMode),
         }}
         schema={{
           '@context': 'https://schema.org',
@@ -62,7 +64,7 @@ const ProductSiteLegalPage = () => {
                   </div>
                 ))}
               </div>
-              <Link to={getProductSitePath(product.slug, lang, '/contact')} className="btn-primary">
+              <Link to={getProductSitePath(product.slug, lang, '/contact', pathMode)} className="btn-primary">
                 {lang === 'tr' ? 'İletişime Geçin' : 'Contact the Team'} <ArrowRight size={18} />
               </Link>
             </aside>

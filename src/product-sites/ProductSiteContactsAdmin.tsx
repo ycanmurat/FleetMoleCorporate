@@ -4,12 +4,13 @@ import { Link } from 'react-router-dom';
 import type { ContactFormSubmission } from '../components/ContactInquiryForm/ContactInquiryForm';
 import SeoHead from '../components/Seo/SeoHead';
 import { useApp } from '../context/AppContext';
-import { getProductFaviconPath } from '../config/productSites';
+import { getProductFaviconPath, getProductSitePath } from '../config/productSites';
+import { useProductSitePathMode } from './ProductSiteRuntimeContext';
 
 const ProductSiteContactsAdmin = () => {
   const { lang } = useApp();
-  // Safe to assume we want to go back to tracking site? We'll make it generic.
-  const homePath = `/${lang}/tracker`;
+  const pathMode = useProductSitePathMode();
+  const homePath = getProductSitePath('tracker', lang, '/', pathMode);
   const [contacts, setContacts] = useState<ContactFormSubmission[]>([]);
 
   useEffect(() => {
@@ -41,9 +42,10 @@ const ProductSiteContactsAdmin = () => {
       <SeoHead
         title="Admin | Form Kayıtları"
         description="İletişim formu kayıtları"
-        pathname={`/${lang}/tracker/admin/contacts`}
+        pathname={getProductSitePath('tracker', lang, '/admin/contacts', pathMode)}
         locale={lang}
         favicon={getProductFaviconPath('tracker')}
+        robots="noindex,nofollow"
       />
       <div className="product-site-page" style={{ paddingTop: '100px', minHeight: '100vh', background: 'var(--bg-default)' }}>
         <div className="container">

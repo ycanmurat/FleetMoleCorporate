@@ -4,11 +4,13 @@ import SeoHead from '../components/Seo/SeoHead';
 import { getProductFaviconPath, getProductSitePath } from '../config/productSites';
 import { useApp } from '../context/AppContext';
 import { useProductSite } from './ProductSiteContext';
+import { useProductSitePathMode } from './ProductSiteRuntimeContext';
 
 const ProductSiteNotFound = () => {
   const { lang } = useApp();
   const { product } = useProductSite();
-  const productHomePath = getProductSitePath(product.slug, lang);
+  const pathMode = useProductSitePathMode();
+  const productHomePath = getProductSitePath(product.slug, lang, '/', pathMode);
 
   return (
     <>
@@ -19,7 +21,7 @@ const ProductSiteNotFound = () => {
             ? 'İstediğiniz ürün sayfası bulunamadı. Ürün ana sayfasına geri dönebilirsiniz.'
             : 'The requested product page could not be found. Return to the product homepage.'
         }
-        pathname={getProductSitePath(product.slug, lang, '/404')}
+        pathname={getProductSitePath(product.slug, lang, '/404', pathMode)}
         locale={lang}
         favicon={getProductFaviconPath(product.slug)}
         robots="noindex,nofollow"

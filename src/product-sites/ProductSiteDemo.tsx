@@ -4,17 +4,24 @@ import { motion } from 'framer-motion';
 import SeoHead from '../components/Seo/SeoHead';
 import { useApp } from '../context/AppContext';
 import { getProductFaviconPath, getProductSitePath } from '../config/productSites';
+import { toAbsoluteUrl } from '../lib/i18n';
 import { useProductSite } from './ProductSiteContext';
+import { useProductSitePathMode } from './ProductSiteRuntimeContext';
 
 const transition = { duration: 0.5, ease: 'easeOut' as const };
 
 const ProductSiteDemo = () => {
   const { lang } = useApp();
   const { product } = useProductSite();
+  const pathMode = useProductSitePathMode();
 
-  const productSiteRoot = getProductSitePath(product.slug, lang);
+  const productSiteRoot = getProductSitePath(product.slug, lang, '/', pathMode);
   const pageTitle = lang === 'tr' ? `${product.name} | Demo` : `${product.name} | Demo`;
   const contactPath = `${productSiteRoot}/contact`;
+  const pageDescription =
+    lang === 'tr'
+      ? "FleetMole Tracker'ı canlı demo ortamında keşfedin."
+      : 'Explore FleetMole Tracker in a live demo environment.';
 
   if (product.slug !== 'tracker') {
     return <Navigate to={productSiteRoot} replace />;
@@ -110,14 +117,23 @@ const ProductSiteDemo = () => {
     <>
       <SeoHead
         title={pageTitle}
-        description={
-          lang === 'tr'
-            ? 'FleetMole Tracker\u0027\u0131 canl\u0131 demo ortam\u0131nda ke\u015ffedin.'
-            : 'Explore FleetMole Tracker in a live demo environment.'
-        }
+        description={pageDescription}
         pathname={`${productSiteRoot}/demo`}
         locale={lang}
         favicon={getProductFaviconPath(product.slug)}
+        alternates={{
+          tr: getProductSitePath(product.slug, 'tr', '/demo', pathMode),
+          en: getProductSitePath(product.slug, 'en', '/demo', pathMode),
+          'x-default': getProductSitePath(product.slug, 'tr', '/demo', pathMode),
+        }}
+        schema={{
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          name: pageTitle,
+          description: pageDescription,
+          url: toAbsoluteUrl(getProductSitePath(product.slug, lang, '/demo', pathMode)),
+        }}
+        themeColor={product.theme.primary}
       />
 
       <div className="product-site-page">

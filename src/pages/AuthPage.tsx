@@ -144,6 +144,7 @@ const AuthPage = ({ mode }: AuthPageProps) => {
         description={description}
         pathname={pathname}
         locale={lang}
+        robots="noindex,nofollow"
         alternates={{
           tr: isLogin ? '/tr/login' : isRegister ? '/tr/register' : '/tr/forgot-password',
           en: isLogin ? '/en/login' : isRegister ? '/en/register' : '/en/forgot-password',

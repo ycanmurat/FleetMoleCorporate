@@ -10,13 +10,15 @@ import { PRODUCTS } from '../data/products';
 import { toAbsoluteUrl } from '../lib/i18n';
 import { getCorporateSitePath } from './siteConfig';
 import { useProductSite } from './ProductSiteContext';
+import { useProductSitePathMode } from './ProductSiteRuntimeContext';
 
 const ProductSiteContact = () => {
   const { lang } = useApp();
   const { product, content } = useProductSite();
+  const pathMode = useProductSitePathMode();
   const corporatePath = getCorporateSitePath(lang);
-  const productHomePath = getProductSitePath(product.slug, lang);
-  const productContactPath = getProductSitePath(product.slug, lang, '/contact');
+  const productHomePath = getProductSitePath(product.slug, lang, '/', pathMode);
+  const productContactPath = getProductSitePath(product.slug, lang, '/contact', pathMode);
   const title = lang === 'tr' ? `${product.name} | İletişim` : `${product.name} | Contact`;
   const description = content.contact.lead[lang];
 
@@ -40,9 +42,9 @@ const ProductSiteContact = () => {
         locale={lang}
         favicon={getProductFaviconPath(product.slug)}
         alternates={{
-          tr: getProductSitePath(product.slug, 'tr', '/contact'),
-          en: getProductSitePath(product.slug, 'en', '/contact'),
-          'x-default': getProductSitePath(product.slug, 'tr', '/contact'),
+          tr: getProductSitePath(product.slug, 'tr', '/contact', pathMode),
+          en: getProductSitePath(product.slug, 'en', '/contact', pathMode),
+          'x-default': getProductSitePath(product.slug, 'tr', '/contact', pathMode),
         }}
         schema={{
           '@context': 'https://schema.org',
@@ -172,7 +174,7 @@ const ProductSiteContact = () => {
                   {lang === 'tr' ? 'Ana Sayfa' : 'Home'}
                 </Link>
                 {product.slug === 'tracker' ? (
-                  <Link to={getProductSitePath(product.slug, lang, '/products')} className="btn-primary">
+                  <Link to={getProductSitePath(product.slug, lang, '/products', pathMode)} className="btn-primary">
                     {lang === 'tr' ? 'Mobilite Ürünlerini Aç' : 'Open Mobility Products'} <ArrowRight size={18} />
                   </Link>
                 ) : null}

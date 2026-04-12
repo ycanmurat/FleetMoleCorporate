@@ -10,7 +10,9 @@ import { Link, Navigate } from 'react-router-dom';
 import SeoHead from '../components/Seo/SeoHead';
 import { useApp } from '../context/AppContext';
 import { getProductFaviconPath, getProductSitePath } from '../config/productSites';
+import { toAbsoluteUrl } from '../lib/i18n';
 import { useProductSite } from './ProductSiteContext';
+import { useProductSitePathMode } from './ProductSiteRuntimeContext';
 import {
   FALLBACK_PRODUCT_IMAGE,
   HARDWARE_PRODUCTS,
@@ -25,13 +27,19 @@ import './ProductSiteProducts.css';
 const ProductSiteProducts = () => {
   const { lang } = useApp();
   const { product } = useProductSite();
+  const pathMode = useProductSitePathMode();
 
   const [activeCategory, setActiveCategory] = useState<string>('all');
   const [activeSubcategory, setActiveSubcategory] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState('');
 
   const pageTitle = lang === 'tr' ? `${product.name} | Ürünler` : `${product.name} | Products`;
-  const productSiteRoot = getProductSitePath(product.slug, lang);
+  const productSiteRoot = getProductSitePath(product.slug, lang, '/', pathMode);
+  const productsPath = getProductSitePath(product.slug, lang, '/products', pathMode);
+  const pageDescription =
+    lang === 'tr'
+      ? 'FleetMole Tracker ürün kataloğunda video telematics, GPS takip cihazları, tüketici ürünleri ve aksesuarları inceleyin.'
+      : 'Explore video telematics, GPS trackers, consumer devices, and accessories in the FleetMole Tracker catalog.';
 
   if (product.slug !== 'tracker') {
     return <Navigate to={productSiteRoot} replace />;
@@ -118,10 +126,35 @@ const ProductSiteProducts = () => {
     <>
       <SeoHead
         title={pageTitle}
-        description={lang === 'tr' ? 'FleetMole Tracker mobilite ürün ekosistemi' : 'FleetMole Tracker mobility product ecosystem'}
-        pathname={`${productSiteRoot}/products`}
+        description={pageDescription}
+        pathname={productsPath}
         locale={lang}
         favicon={getProductFaviconPath(product.slug)}
+        alternates={{
+          tr: getProductSitePath(product.slug, 'tr', '/products', pathMode),
+          en: getProductSitePath(product.slug, 'en', '/products', pathMode),
+          'x-default': getProductSitePath(product.slug, 'tr', '/products', pathMode),
+        }}
+        schema={{
+          '@context': 'https://schema.org',
+          '@type': 'CollectionPage',
+          name: pageTitle,
+          description: pageDescription,
+          url: toAbsoluteUrl(productsPath),
+          mainEntity: {
+            '@type': 'ItemList',
+            numberOfItems: HARDWARE_PRODUCTS.length,
+            itemListElement: HARDWARE_PRODUCTS.map((productItem, index) => ({
+              '@type': 'ListItem',
+              position: index + 1,
+              url: toAbsoluteUrl(
+                getProductSitePath(product.slug, lang, `/products/${productItem.id}`, pathMode),
+              ),
+              name: productItem.name,
+            })),
+          },
+        }}
+        themeColor={product.theme.primary}
       />
 
       <div className="ps-catalog-layout">

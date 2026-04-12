@@ -8,6 +8,7 @@ import { getProductSitePath } from '../config/productSites';
 import { useApp } from '../context/AppContext';
 import { getCorporateSitePath } from './siteConfig';
 import { useProductSite } from './ProductSiteContext';
+import { useProductSitePathMode } from './ProductSiteRuntimeContext';
 
 const ProductSiteHeader = () => {
   const headerRef = useRef<HTMLElement | null>(null);
@@ -16,6 +17,7 @@ const ProductSiteHeader = () => {
   const location = useLocation();
   const { product, content } = useProductSite();
   const { lang, toggleLang, toggleTheme, isDark } = useApp();
+  const pathMode = useProductSitePathMode();
   const showProductCatalog = product.slug === 'tracker';
 
   useEffect(() => {
@@ -60,12 +62,12 @@ const ProductSiteHeader = () => {
   }, [isScrolled, lang, mobileOpen, product.slug]);
 
   const corporatePath = getCorporateSitePath(lang);
-  const productHomePath = getProductSitePath(product.slug, lang);
-  const productCatalogPath = getProductSitePath(product.slug, lang, '/products');
+  const productHomePath = getProductSitePath(product.slug, lang, '/', pathMode);
+  const productCatalogPath = getProductSitePath(product.slug, lang, '/products', pathMode);
   const resolveHref = (href: string) =>
     href.startsWith('#')
       ? `${productHomePath}#${href.slice(1)}`
-      : getProductSitePath(product.slug, lang, href);
+      : getProductSitePath(product.slug, lang, href, pathMode);
   const isCatalogRoute = location.pathname === productCatalogPath || location.pathname.startsWith(`${productCatalogPath}/`);
 
   const isActive = (href: string) => {
@@ -73,7 +75,7 @@ const ProductSiteHeader = () => {
       return location.pathname === productHomePath && location.hash === href;
     }
 
-    return location.pathname === getProductSitePath(product.slug, lang, href);
+    return location.pathname === getProductSitePath(product.slug, lang, href, pathMode);
   };
 
   return (

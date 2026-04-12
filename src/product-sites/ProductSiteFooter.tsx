@@ -7,18 +7,20 @@ import { COMPANY_INFO, getCompanyAddress } from '../data/company';
 import { getProductSiteLegalPages } from './legalContent';
 import { getCorporateSitePath } from './siteConfig';
 import { useProductSite } from './ProductSiteContext';
+import { useProductSitePathMode } from './ProductSiteRuntimeContext';
 
 const ProductSiteFooter = () => {
   const { lang } = useApp();
   const { product, content } = useProductSite();
+  const pathMode = useProductSitePathMode();
   const legalPages = getProductSiteLegalPages(product);
-  const productHomePath = getProductSitePath(product.slug, lang);
+  const productHomePath = getProductSitePath(product.slug, lang, '/', pathMode);
   const corporatePath = getCorporateSitePath(lang);
 
   const resolveMenuHref = (href: string) =>
     href.startsWith('#')
       ? `${productHomePath}#${href.slice(1)}`
-      : getProductSitePath(product.slug, lang, href);
+      : getProductSitePath(product.slug, lang, href, pathMode);
 
   return (
     <footer className="product-site-footer">
@@ -32,7 +34,7 @@ const ProductSiteFooter = () => {
           />
           <p>{product.summary[lang]}</p>
           <div className="product-site-footer-actions">
-            <Link to={getProductSitePath(product.slug, lang, '/contact')} className="btn-primary">
+            <Link to={getProductSitePath(product.slug, lang, '/contact', pathMode)} className="btn-primary">
               {lang === 'tr' ? 'Ürün Ekibiyle Görüşün' : 'Talk to the Product Team'}
             </Link>
             <Link to={corporatePath} className="btn-outline">
@@ -64,7 +66,9 @@ const ProductSiteFooter = () => {
           <ul className="product-site-footer-links">
             {legalPages.map((page) => (
               <li key={page.slug}>
-                <Link to={getProductSitePath(product.slug, lang, `/legal/${page.slug}`)}>{page.title[lang]}</Link>
+                <Link to={getProductSitePath(product.slug, lang, `/legal/${page.slug}`, pathMode)}>
+                  {page.title[lang]}
+                </Link>
               </li>
             ))}
           </ul>

@@ -19,7 +19,9 @@ import { motion } from 'framer-motion';
 import SeoHead from '../components/Seo/SeoHead';
 import { useApp } from '../context/AppContext';
 import { getProductFaviconPath, getProductSitePath } from '../config/productSites';
+import { toAbsoluteUrl } from '../lib/i18n';
 import { useProductSite } from './ProductSiteContext';
+import { useProductSitePathMode } from './ProductSiteRuntimeContext';
 import {
   FALLBACK_PRODUCT_IMAGE,
   HARDWARE_PRODUCTS,
@@ -60,10 +62,11 @@ const renderFeatureIcon = (iconKey: string) => {
 const ProductSiteProductDetail = () => {
   const { lang } = useApp();
   const { product } = useProductSite();
+  const pathMode = useProductSitePathMode();
   const { productId } = useParams<{ productId: string }>();
   const [activeTab, setActiveTab] = useState<'features' | 'specs' | 'downloads'>('features');
   
-  const productSiteRoot = getProductSitePath(product.slug, lang);
+  const productSiteRoot = getProductSitePath(product.slug, lang, '/', pathMode);
 
   if (product.slug !== 'tracker') {
     return <Navigate to={productSiteRoot} replace />;
@@ -76,6 +79,7 @@ const ProductSiteProductDetail = () => {
   }
 
   const pageTitle = `${hwProduct.name} | ${product.name}`;
+  const pagePath = `${productSiteRoot}/products/${hwProduct.id}`;
   const heroImage = hwProduct.heroImage ?? hwProduct.thumbnail;
   const heroImageFit = hwProduct.heroImageFit ?? 'contain';
   const localizedTagline = getLocalizedProductTagline(hwProduct, lang);
@@ -108,15 +112,79 @@ const ProductSiteProductDetail = () => {
       value: String(hwProduct.downloads?.length ?? 0),
     },
   ];
+  const absoluteHeroImage =
+    heroImage.startsWith('http') || heroImage.startsWith('data:') ? heroImage : toAbsoluteUrl(heroImage);
+  const additionalProperties = specGroups.flatMap((group) =>
+    group.items.map((spec) => ({
+      '@type': 'PropertyValue',
+      name: `${group.title} - ${spec.label}`,
+      value: spec.value,
+    })),
+  );
 
   return (
     <>
       <SeoHead
         title={pageTitle}
         description={localizedDescription}
-        pathname={`${productSiteRoot}/products/${hwProduct.id}`}
+        pathname={pagePath}
         locale={lang}
+        image={heroImage}
         favicon={getProductFaviconPath(product.slug)}
+        alternates={{
+          tr: getProductSitePath(product.slug, 'tr', `/products/${hwProduct.id}`, pathMode),
+          en: getProductSitePath(product.slug, 'en', `/products/${hwProduct.id}`, pathMode),
+          'x-default': getProductSitePath(product.slug, 'tr', `/products/${hwProduct.id}`, pathMode),
+        }}
+        schema={{
+          '@context': 'https://schema.org',
+          '@graph': [
+            {
+              '@type': 'Product',
+              name: hwProduct.name,
+              brand: {
+                '@type': 'Brand',
+                name: 'FleetMole',
+              },
+              category: category?.name[lang] ?? product.name,
+              description: localizedDescription,
+              image: [absoluteHeroImage],
+              model: hwProduct.name,
+              url: toAbsoluteUrl(pagePath),
+              additionalProperty: additionalProperties,
+              subjectOf:
+                hwProduct.downloads?.map((download) => ({
+                  '@type': 'CreativeWork',
+                  name: getLocalizedDownloadLabel(download, lang),
+                  url: toAbsoluteUrl(download.url),
+                })) ?? [],
+            },
+            {
+              '@type': 'BreadcrumbList',
+              itemListElement: [
+                {
+                  '@type': 'ListItem',
+                  position: 1,
+                  name: product.name,
+                  item: toAbsoluteUrl(productSiteRoot),
+                },
+                {
+                  '@type': 'ListItem',
+                  position: 2,
+                  name: lang === 'tr' ? 'Ürünler' : 'Products',
+                  item: toAbsoluteUrl(`${productSiteRoot}/products`),
+                },
+                {
+                  '@type': 'ListItem',
+                  position: 3,
+                  name: hwProduct.name,
+                  item: toAbsoluteUrl(pagePath),
+                },
+              ],
+            },
+          ],
+        }}
+        themeColor={product.theme.primary}
       />
 
       <div className="product-site-page ps-product-detail-page">

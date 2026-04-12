@@ -8,6 +8,7 @@ import { getProductFaviconPath, getProductSitePath } from '../config/productSite
 import { useApp } from '../context/AppContext';
 import { toAbsoluteUrl } from '../lib/i18n';
 import { useProductSite } from './ProductSiteContext';
+import { useProductSitePathMode } from './ProductSiteRuntimeContext';
 
 const reveal = {
   hidden: { opacity: 0, y: 22 },
@@ -17,11 +18,12 @@ const reveal = {
 const ProductSiteHome = () => {
   const { lang } = useApp();
   const { product, content } = useProductSite();
+  const pathMode = useProductSitePathMode();
   const title = product.seoTitle[lang];
   const description = content.hero.lead[lang];
   const heroTitle = content.hero.title[lang];
-  const productHomePath = getProductSitePath(product.slug, lang);
-  const productContactPath = getProductSitePath(product.slug, lang, '/contact');
+  const productHomePath = getProductSitePath(product.slug, lang, '/', pathMode);
+  const productContactPath = getProductSitePath(product.slug, lang, '/contact', pathMode);
 
   return (
     <>
@@ -32,9 +34,9 @@ const ProductSiteHome = () => {
         locale={lang}
         favicon={getProductFaviconPath(product.slug)}
         alternates={{
-          tr: getProductSitePath(product.slug, 'tr'),
-          en: getProductSitePath(product.slug, 'en'),
-          'x-default': getProductSitePath(product.slug, 'tr'),
+          tr: getProductSitePath(product.slug, 'tr', '/', pathMode),
+          en: getProductSitePath(product.slug, 'en', '/', pathMode),
+          'x-default': getProductSitePath(product.slug, 'tr', '/', pathMode),
         }}
         schema={{
           '@context': 'https://schema.org',

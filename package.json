@@ -20,7 +20,7 @@
     "dev:smart": "npm --workspace sites/smart run dev",
     "dev:all": "node scripts/dev-all.mjs",
     "smoke:local": "node scripts/smoke-check.mjs",
-    "build": "tsc && vite build",
+    "build": "tsc && vite build && node scripts/prerender-seo.mjs corporate dist",
     "build:manager": "npm --workspace sites/manager run build",
     "build:rent": "npm --workspace sites/rent run build",
     "build:tracker": "npm --workspace sites/tracker run build",

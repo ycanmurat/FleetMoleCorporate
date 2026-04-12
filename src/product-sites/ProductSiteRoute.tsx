@@ -3,6 +3,7 @@ import NotFoundPage from '../pages/NotFoundPage';
 import { getProductBySlug } from '../data/products';
 import ProductSiteLayout from './ProductSiteLayout';
 import { ProductSiteProvider } from './ProductSiteContext';
+import { ProductSiteRuntimeProvider } from './ProductSiteRuntimeContext';
 
 const ProductSiteRoute = () => {
   const { productSlug } = useParams();
@@ -13,9 +14,11 @@ const ProductSiteRoute = () => {
   }
 
   return (
-    <ProductSiteProvider productSlug={product.slug}>
-      <ProductSiteLayout />
-    </ProductSiteProvider>
+    <ProductSiteRuntimeProvider mode="embedded">
+      <ProductSiteProvider productSlug={product.slug}>
+        <ProductSiteLayout />
+      </ProductSiteProvider>
+    </ProductSiteRuntimeProvider>
   );
 };
 
