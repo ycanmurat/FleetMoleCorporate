@@ -903,9 +903,9 @@ GSM: B2/B5/B8`)
       ]),
       specGroup('Camera', 'Camera', [
         spec('Front Camera (Main)', 'Front Camera (Main)', '1920×1080/25FPS/F2.2/Full color/118° (HFoV)'),
-        spec('Peripheral Camera (Optional )', 'Peripheral Camera (Optional )', 'CI01: 1280×720/15FPS/F2.0/Full color in daytime & monochrome in dim light/100° (HFoV)')
-      ]),
-      specGroup('CE01: 1280×720/15FPS/F2.0/Full color/IP67/125° (HFoV)', 'CE01: 1280×720/15FPS/F2.0/Full color/IP67/125° (HFoV)', [
+        spec('Peripheral Camera (Optional)', 'Peripheral Camera (Optional)', `CI01: 1280×720/15FPS/F2.0/Full color in daytime & monochrome in dim light/100° (HFoV)
+CI03: 1280×720/15FPS/F2.4/Full color in daytime & monochrome in dim light/119° (HFoV)
+CE01: 1280×720/15FPS/F2.0/Full color/IP67/125° (HFoV)`),
         spec('Video Format', 'Video Format', '.mp4')
       ]),
       specGroup('Configuration', 'Configuration', [
@@ -925,8 +925,7 @@ GSM: B2/B5/B8`)
         spec('Storage Temperature', 'Storage Temperature', '–30°C to +85°C'),
         spec('Device Weight', 'Device Weight', '233g'),
         spec('Device Dimension', 'Device Dimension', '109*69*52mm'),
-        spec('Certifications', 'Certifications', `CE/FCC/RoHS
-  -`)
+        spec('Certifications', 'Certifications', 'CE/FCC/RoHS')
       ])
     ],
     gallery: GALLERY.jc400,
@@ -1088,9 +1087,10 @@ GSM: B2/B5/B8`)
       ]),
       specGroup('Camera', 'Camera', [
         spec('Front Camera (Main)', 'Front Camera (Main)', '1920×1080/25FPS/F2.2/Full color/85° (HFoV)'),
-        spec('Peripheral Camera (Optional)', 'Peripheral Camera (Optional)', 'CI01: 1280×720/15FPS/F2.0/Full color in daytime & monochrome in dim light/100° (HFoV)')
-      ]),
-      specGroup('JC170: 1280×720/15FPS/F2.4/Monochrome/56° (HFoV)', 'JC170: 1280×720/15FPS/F2.4/Monochrome/56° (HFoV)', [
+        spec('Peripheral Camera (Optional)', 'Peripheral Camera (Optional)', `CI01: 1280×720/15FPS/F2.0/Full color in daytime & monochrome in dim light/100° (HFoV)
+CI03: 1280×720/15FPS/F2.4/Full color in daytime & monochrome in dim light/119° (HFoV)
+CE01: 1280×720/15FPS/F2.0/Full color/IP67/125° (HFoV)
+JC170: 1280×720/15FPS/F2.4/Monochrome/56° (HFoV)`),
         spec('Video Format', 'Video Format', '.ts')
       ]),
       specGroup('Configuration', 'Configuration', [
@@ -1110,8 +1110,7 @@ GSM: B2/B5/B8`)
         spec('Storage Temperature', 'Storage Temperature', '–30°C to +85°C'),
         spec('Device Weight', 'Device Weight', '233g'),
         spec('Device Dimension', 'Device Dimension', '109*69*52mm'),
-        spec('Certifications', 'Certifications', `CE/FCC/RoHS
-  -`)
+        spec('Certifications', 'Certifications', 'CE/FCC/RoHS')
       ])
     ],
     gallery: GALLERY.jc261,
@@ -1170,8 +1169,7 @@ LTE-FDD: B1/B2/B3/B4/B5/B7/B8/B28`)
       specGroup('Standard Packing', 'Standard Packing', [
         spec('JC182 unit', 'JC182 unit', '1'),
         spec('Screws', 'Screws', '2'),
-        spec('Screwdriver', 'Screwdriver', `1
- -`)
+        spec('Screwdriver', 'Screwdriver', '1')
       ])
     ],
   },
@@ -1219,8 +1217,7 @@ GSM: B2/B3/B5/B8`)
         spec('Operating Temperature', 'Operating Temperature', '–20°C to +70°C'),
         spec('Storage Temperature', 'Storage Temperature', '–30°C to +85°C'),
         spec('Device Weight', 'Device Weight', '143g'),
-        spec('Device Dimension', 'Device Dimension', `118*46.5*43.5mm
- -`)
+        spec('Device Dimension', 'Device Dimension', '118*46.5*43.5mm')
       ])
     ],
   },
@@ -1275,8 +1272,7 @@ GSM: B2/B3/B5/B8`)
       specGroup('Optional Configuration', 'Optional Configuration', [
         spec('Power cable', 'Power cable', 'Required when working with GT06N or VL802'),
         spec('Compatibility', 'Compatibility', 'JC261 Dual-channel AI dashCam, GT06N Vehicle GNSS tracker, VL802 LTE vehicle terminal'),
-        spec('GPS antenna', 'GPS antenna', `Required when GNSS function is a must, and the unit is used on its own
-  -`)
+        spec('GPS antenna', 'GPS antenna', 'Required when GNSS function is a must, and the unit is used on its own')
       ])
     ],
   },
@@ -1379,8 +1375,7 @@ GSM: B2/B3/B5/B8`)
         spec('DMS (Optional)', 'DMS (Optional)', 'Phone use, Smoking, Distraction, Yawning, Eyes closed, No face detected'),
         spec('Configuration support', 'Configuration support', 'GPRS, SMS, Memory card, APP'),
         spec('Firmware update', 'Firmware update', 'USB Cable, Memory card, OTA'),
-        spec('Certification', 'Certification', `FCC，PTCRB，CE
- -`)
+        spec('Certification', 'Certification', 'FCC，PTCRB，CE')
       ])
     ],
   },
@@ -1439,9 +1434,9 @@ GSM: B3/B8`)
       ]),
       specGroup('Feature', 'Feature', [
         spec('ADAS', 'ADAS', 'FCW, HMW, LDW'),
-        spec('DMS (Optional)', 'DMS (Optional)', 'Phone use, Smoking, Distraction, Yawning, Eyes closed, No face detected')
-      ]),
-      specGroup('Seatbelt Detection (Required with JC171)', 'Seatbelt Detection (Required with JC171)', [
+        spec('DMS (Optional)', 'DMS (Optional)', 'Phone use, Smoking, Distraction, Yawning, Eyes closed, No face detected'),
+        spec('Facial Recognition System', 'Facial Recognition System', 'Required with JC171'),
+        spec('Seatbelt Detection', 'Seatbelt Detection', 'Required with JC171'),
         spec('Configuration support', 'Configuration support', 'GPRS, SMS, Memory card, APP'),
         spec('Firmware update', 'Firmware update', 'USB cable, Memory card, OTA'),
         spec('Certification', 'Certification', 'CE, FCC, PTCRB, RoHS, AT&T')
@@ -1468,8 +1463,7 @@ CI04: 1280x720/15FPS/F2.4/Color in daytime & mono in dim light/119° (HFoV)
 CD02: 1280x720/15FPS/F2.0/Monochrome/56° (HFoV)
 CE01: 1280x720/15FPS/F2.0/Full color/IP67/125° (HFoV)
 CE02: 1280x720/15FPS/F2.0/Full color/IP67/111° (HFoV)`),
-        spec('Relay', 'Relay', `12V or 24V
- -`)
+        spec('Relay', 'Relay', '12V or 24V')
       ])
     ],
   },
@@ -1525,8 +1519,7 @@ FDD-LTE: B1/B3/B7/B8/B20/B28A`)
         spec('DMS (Optional)', 'DMS (Optional)', 'Phone use, Smoking, Distraction, Yawning, Eyes closed, No face detected'),
         spec('Configuration support', 'Configuration support', 'GPRS, SMS, Memory card, APP'),
         spec('Firmware update', 'Firmware update', 'USB Cable, Memory card, OTA'),
-        spec('Certification (planning)', 'Certification (planning)', `CE
- -`)
+        spec('Certification (planning)', 'Certification (planning)', 'CE')
       ])
     ],
   },
@@ -1595,8 +1588,7 @@ Working: < 60mA`)
       ]),
       specGroup('Optional Configuration', 'Optional Configuration', [
         spec('Battery', 'Battery', '1000mAh/3.7V industrial-grade Li-Polymer battery'),
-        spec('SIM IC', 'SIM IC', `5 x 6mm onboard
- -`)
+        spec('SIM IC', 'SIM IC', '5 x 6mm onboard')
       ])
     ],
   },
@@ -1732,8 +1724,7 @@ Working: 35mA (one update per 10s)`)
         spec('Driving behavior analysis (DBA)', 'Driving behavior analysis (DBA)', 'Harsh acceleration, Harsh braking, Harsh cornering, Collision'),
         spec('Bluetooth', 'Bluetooth', 'N/A'),
         spec('Configuration support', 'Configuration support', 'SMS, Tracksolid Pro'),
-        spec('Certification', 'Certification', `FCC, CE
- -`)
+        spec('Certification', 'Certification', 'FCC, CE')
       ])
     ],
   },
@@ -1794,8 +1785,7 @@ LTE-TDD: B34/B38/B39/B40/B41`)
         spec('Driving behavior analysis (DBA)', 'Driving behavior analysis (DBA)', 'Harsh acceleration, Harsh braking, Harsh cornering, Collision'),
         spec('Bluetooth', 'Bluetooth', 'N/A'),
         spec('Configuration support', 'Configuration support', 'SMS, PC Tools, TrackSolid Pro'),
-        spec('Certification', 'Certification', `CE
- -`)
+        spec('Certification', 'Certification', 'CE')
       ])
     ],
   },
@@ -1807,7 +1797,63 @@ LTE-TDD: B34/B38/B39/B40/B41`)
     thumbnail: getImg('jm-vl02'),
     tagline: { tr: 'Kontrol İçin Tasarlandı.', en: 'Built to Connect. Designed to Control.' },
     description: { tr: 'Filonuzun güvendiği operasyonel asistan.', en: 'Your fleet\'s trusted partner on every trip, delivering safety and connection.' },
-    specs: [{ label: { tr: 'Frekans', en: 'Frequency' }, value: { tr: 'Çoklu Bant', en: 'Multi-band' } }]
+    specs: [],
+    specGroups: [
+      specGroup('Positioning & Location', 'Positioning & Location', [
+        spec('Technology', 'Technology', 'GPS, BDS, LBS, GLONASS'),
+        spec('Accuracy', 'Accuracy', '＜2.5m CEP'),
+        spec('Tracking sensitivity', 'Tracking sensitivity', '–165dBm'),
+        spec('Acquisition sensitivity', 'Acquisition sensitivity', '–148dBm'),
+        spec('TTFF (open sky)', 'TTFF (open sky)', `Avg. hot start ≤1s
+Avg. cold start ≤32s`)
+      ]),
+      specGroup('Cellular', 'Cellular', [
+        spec('Technology', 'Technology', 'LTE Cat M1 & NB2, GSM'),
+        spec('Frequency', 'Frequency', `JM-VL02A:
+LTE: B1/B2/B3/B4/B5/B12/B13/B28/B66
+GSM: 850/900/1800/1900 MHz
+JM-VL02E:
+LTE: B1/B3/B5/B8/B18/B19/B20/B26
+GSM: 850/900/1800/1900 MHz`)
+      ]),
+      specGroup('Power', 'Power', [
+        spec('Battery', 'Battery', '300mAh/3.7V industrial-grade Li-Polymer battery'),
+        spec('Input voltage', 'Input voltage', '9-36VDC'),
+        spec('Power consumption', 'Power consumption', `Standby: 5mA
+Working: 58mA`)
+      ]),
+      specGroup('Operating Environment', 'Operating Environment', [
+        spec('Operating temperature', 'Operating temperature', '–20℃ to +70℃'),
+        spec('Operating humidity', 'Operating humidity', '5% to 95%, non-condensing'),
+        spec('IP rating', 'IP rating', 'IP65')
+      ]),
+      specGroup('Physical Specification', 'Physical Specification', [
+        spec('Dimensions', 'Dimensions', '105 x 57.0 x 22mm'),
+        spec('Weight', 'Weight', '103g')
+      ]),
+      specGroup('Interface', 'Interface', [
+        spec('LED indication', 'LED indication', 'GNSS (Blue), Cellular (Green), Power (Red)'),
+        spec('SIM', 'SIM', 'Standard-SIM'),
+        spec('Digital I/Os', 'Digital I/Os', '1*ACC, 1*SOS, 1*Relay, 1*Reserved output, 1*Reserved input'),
+        spec('Analog I/Os', 'Analog I/Os', '1: 0–30VDC (±0.3V)'),
+        spec('Memory capacity', 'Memory capacity', '1000 GPS data entries'),
+        spec('USB', 'USB', 'N/A'),
+        spec('GNSS antenna', 'GNSS antenna', 'Internal'),
+        spec('Bluetooth antenna', 'Bluetooth antenna', 'N/A'),
+        spec('Serial ports', 'Serial ports', 'TTL')
+      ]),
+      specGroup('Feature', 'Feature', [
+        spec('Sensors', 'Sensors', 'Accelerometer'),
+        spec('Scenarios', 'Scenarios', 'Vehicle movement alert, Over-speed alert, Geo-fence, Vehicle battery detection, Power supply disconnection'),
+        spec('Driving behavior analysis (DBA)', 'Driving behavior analysis (DBA)', 'Harsh acceleration, Harsh braking, Harsh cornering, Collision'),
+        spec('Bluetooth', 'Bluetooth', 'N/A'),
+        spec('Configuration support', 'Configuration support', 'PC Tools, SMS, GPRS'),
+        spec('Certification', 'Certification', 'CE, FCC, PTCRB, AT&T, T-Mobile, Verizon, TELEC')
+      ]),
+      specGroup('Optional Configuration', 'Optional Configuration', [
+        spec('RS232 sensor', 'RS232 sensor', 'Capacitive fuel level sensor, Ultrasonic fuel level sensor, Temperature sensor')
+      ])
+    ]
   },
   {
     id: 'vl101g',
@@ -1847,7 +1893,7 @@ Avg. cold start ≤24sec`)
         spec('USB', 'USB', 'N/A'),
         spec('GNSS antenna', 'GNSS antenna', 'Internal'),
         spec('Bluetooth antenna', 'Bluetooth antenna', 'Internal'),
-        spec('Serial ports', 'Serial ports', '1’TTL')
+        spec('Serial ports', 'Serial ports', '1*TTL')
       ]),
       specGroup('Physical Specification', 'Physical Specification', [
         spec('Dimensions', 'Dimensions', '70.0 x 80.0 x 25.0mm'),
@@ -1969,8 +2015,7 @@ Quad-band: 850/900/1800/1900MHz`)
         spec('Driving behavior analysis (DBA)', 'Driving behavior analysis (DBA)', 'Harsh acceleration, Harsh braking, Harsh cornering, Collision'),
         spec('Specialties', 'Specialties', 'Microphone'),
         spec('Configuration support', 'Configuration support', 'SMS, TrackSolid Pro'),
-        spec('Certification', 'Certification', `CE
- -`)
+        spec('Certification', 'Certification', 'CE')
       ])
     ],
   },
@@ -2033,8 +2078,7 @@ Standby < 4 mA`)
         spec('Operating principle', 'Operating principle', 'Capacitive'),
         spec('Probe length', 'Probe length', '1000mm'),
         spec('Max probe cutting', 'Max probe cutting', '750mm'),
-        spec('Measurement inaccuracy', 'Measurement inaccuracy', `<1% FS
- -`)
+        spec('Measurement inaccuracy', 'Measurement inaccuracy', '<1% FS')
       ])
     ],
   },
@@ -2782,8 +2826,7 @@ Avg. cold start ≤32sec`)
         spec('Bluetooth', 'Bluetooth', 'Bluetooth 4.0'),
         spec('iBeacon positioning accuracy', 'iBeacon positioning accuracy', '1-10meters'),
         spec('Sensors', 'Sensors', '3-axis Accelerometer'),
-        spec('Scenarios', 'Scenarios', `Audible recovery, Vibrating Alert, Low battery alert
- -`)
+        spec('Scenarios', 'Scenarios', 'Audible recovery, Vibrating Alert, Low battery alert')
       ])
     ],
   },
@@ -3050,8 +3093,7 @@ Cat-NB1/NB2: B1, B2, B3, B4, B5, B8, B12, B13, B17, B19, B20, B25, B26, B28, B66
       ]),
       specGroup('Feature', 'Feature', [
         spec('Sensors', 'Sensors', 'Accelerometer'),
-        spec('Scenarios', 'Scenarios', `Safety fence exit alert, Buzzer alert, Low battery alert
-  -`)
+        spec('Scenarios', 'Scenarios', 'Safety fence exit alert, Buzzer alert, Low battery alert')
       ])
     ],
   },
@@ -3111,8 +3153,7 @@ Mode 1: Timing mode`),
       ]),
       specGroup('Physical Specification', 'Physical Specification', [
         spec('Dimensions', 'Dimensions', '105.0 x 62.0 x 13.0mm'),
-        spec('Weight', 'Weight', `81g
- -`)
+        spec('Weight', 'Weight', '81g')
       ])
     ],
   },
@@ -3187,8 +3228,7 @@ Mode 3: Power-saving mode`),
         spec('Anti-theft screw', 'Anti-theft screw', '4')
       ]),
       specGroup('Optional Configuration', 'Optional Configuration', [
-        spec('Bluetooth sensor', 'Bluetooth sensor', `K7800 environmental sensor
- -`)
+        spec('Bluetooth sensor', 'Bluetooth sensor', 'K7800 environmental sensor')
       ])
     ],
   },
@@ -3238,8 +3278,7 @@ Mode 5: Phase-based mode`),
         spec('Sensors', 'Sensors', 'Light sensor'),
         spec('Scenarios', 'Scenarios', 'Low battery alert, Tamper alert, Geo-fence entry & exit alert'),
         spec('Bluetooth', 'Bluetooth', 'N/A'),
-        spec('RFID', 'RFID', `N/A
- -`)
+        spec('RFID', 'RFID', 'N/A')
       ])
     ],
   },
@@ -3310,8 +3349,7 @@ Mode 4: Alarm-based mode`),
         spec('Weight', 'Weight', '145g')
       ]),
       specGroup('Standard Packing', 'Standard Packing', [
-        spec('LL702 unit', 'LL702 unit', `1
- -`)
+        spec('LL702 unit', 'LL702 unit', '1')
       ])
     ],
   },
@@ -3376,7 +3414,7 @@ Mode 3: Power-saving Mode`),
       specGroup('Standard Packing', 'Standard Packing', [
         spec('LL309 unit', 'LL309 unit', '1'),
         spec('Type-C cable', 'Type-C cable', '1'),
-        spec('Adhesive wall hooks', 'Adhesive wall hooks', `2 
+        spec('Adhesive wall hooks', 'Adhesive wall hooks', `2
 -`)
       ])
     ],
@@ -3567,8 +3605,7 @@ Mode 4: Time period mode`),
         spec('Screwdriver', 'Screwdriver', '1')
       ]),
       specGroup('Optional Configuration', 'Optional Configuration', [
-        spec('Bluetooth sensor', 'Bluetooth sensor', `K7800 environmental sensor
- -`)
+        spec('Bluetooth sensor', 'Bluetooth sensor', 'K7800 environmental sensor')
       ])
     ],
   },
@@ -3635,8 +3672,7 @@ Mode 3: Power-saving mode`),
         spec('Mount method', 'Mount method', 'Magnet'),
         spec('Bluetooth', 'Bluetooth', 'BLE 5.0'),
         spec('Configuration support', 'Configuration support', 'APP, Tracksolid Pro, PC tools, SMS'),
-        spec('Certification', 'Certification', `CE, FCC
- -`)
+        spec('Certification', 'Certification', 'CE, FCC')
       ])
     ],
   },
@@ -3699,8 +3735,7 @@ Mode 3: Battery saving mode`),
         spec('Mount method', 'Mount method', 'Magnet or straps'),
         spec('Bluetooth', 'Bluetooth', 'BLE 5.0'),
         spec('Configuration support', 'Configuration support', 'Bluetooth, Tracksolid Pro, PC tools, SMS'),
-        spec('Certification', 'Certification', `CE, FCC
-  -`)
+        spec('Certification', 'Certification', 'CE, FCC')
       ])
     ],
   },
@@ -3747,8 +3782,7 @@ Mode 2: Intelligent mode`)
       ]),
       specGroup('Feature', 'Feature', [
         spec('Sensors', 'Sensors', '3-axis Accelerometer'),
-        spec('Scenarios', 'Scenarios', `Low battery alert, Tamper alert, Sound-triggered alert
- -`)
+        spec('Scenarios', 'Scenarios', 'Low battery alert, Tamper alert, Sound-triggered alert')
       ])
     ],
   },
@@ -3806,8 +3840,7 @@ Mode 2: Power-saving mode`),
         spec('Scenarios', 'Scenarios', 'Low battery alert, Tamper alert, Vibrating alert, Over-speed alert, Geo-fence entry/exit'),
         spec('Mount method', 'Mount method', 'Magnet or straps'),
         spec('Configuration support', 'Configuration support', 'APP Tracksolid Pro, PC tools, SMS'),
-        spec('Certification', 'Certification', `FCC
- -`)
+        spec('Certification', 'Certification', 'FCC')
       ])
     ],
   },
@@ -3910,8 +3943,7 @@ Mode 3: Power-saving mode`),
         spec('Voice monitoring range', 'Voice monitoring range', '≤3 meters'),
         spec('Sensors', 'Sensors', 'Accelerometer, Light sensor'),
         spec('Scenarios', 'Scenarios', 'Low battery alert, Tamper alert, Vibrating Alert, Over-speed alert, Geo-fence'),
-        spec('Specialties', 'Specialties', `On/off button disabling, Voice recording, Over-decibel notification
- -`)
+        spec('Specialties', 'Specialties', 'On/off button disabling, Voice recording, Over-decibel notification')
       ])
     ],
   },
@@ -3964,8 +3996,7 @@ GSM: 850/900//1800/1900MHz`)
         spec('Sensors', 'Sensors', 'Accelerometer'),
         spec('Ignition detection', 'Ignition detection', 'External Power Voltage'),
         spec('Scenarios', 'Scenarios', 'Vehicle movement alert, Speeding alert, Geo-fence, Voice-monitoring, Vehicle battery detection, Power supply disconnection'),
-        spec('Driving behavior analysis', 'Driving behavior analysis', `Harsh acceleration, Harsh braking, Harsh cornering, Collision
- -`)
+        spec('Driving behavior analysis', 'Driving behavior analysis', 'Harsh acceleration, Harsh braking, Harsh cornering, Collision')
       ])
     ],
   },
@@ -4024,7 +4055,7 @@ GSM: 850/900//1800/1900MHz`)
         spec('Main cable', 'Main cable', '1')
       ]),
       specGroup('J1939 9-pin to OBDII cable', 'J1939 9-pin to OBDII cable', [
-        spec('Adapter cable', 'Adapter cable', '-  Power'),
+        spec('Adapter cable', 'Adapter cable', '-Power'),
         spec('Input voltage', 'Input voltage', '9-33VDC'),
         spec('Output voltage1', 'Output voltage1', '9-33VDC, 3A'),
         spec('Output voltage2', 'Output voltage2', '5VDC, 0.3A'),
@@ -4262,8 +4293,7 @@ SAE J1939 CAN(29 bit ID, 500 kbaud)`)
       ]),
       specGroup('Standard Packing', 'Standard Packing', [
         spec('Smart ring', 'Smart ring', '1'),
-        spec('Charging cable', 'Charging cable', `1
- -`)
+        spec('Charging cable', 'Charging cable', '1')
       ])
     ],
   },
