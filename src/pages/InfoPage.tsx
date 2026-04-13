@@ -7,9 +7,6 @@ import {
   Car,
   CheckCircle2,
   FileText,
-  Mail,
-  MapPin,
-  Phone,
   ShieldCheck,
   Sparkles,
   Wrench,
@@ -20,7 +17,6 @@ import SeoHead from '../components/Seo/SeoHead';
 import ProductWordmark from '../components/ProductWordmark/ProductWordmark';
 import { COMPANY_NAME, SITE_URL } from '../config/site';
 import { useApp } from '../context/AppContext';
-import { COMPANY_INFO, getCompanyAddress } from '../data/company';
 import { getLegalDocument, getLocalizedLegalValue } from '../data/legalContent';
 import {
   CONTENT_SECTION_MAP,
@@ -288,31 +284,32 @@ const InfoPage = ({ section }: InfoPageProps) => {
                 ) : (
                   <>
                     <div className="info-side-block">
-                      <strong>{lang === 'tr' ? 'İletişim' : 'Contact'}</strong>
-                      <ul className="info-contact-list">
-                        <li>
-                          <MapPin size={16} />
-                          <span>{getCompanyAddress(lang)}</span>
-                        </li>
-                        <li>
-                          <Phone size={16} />
-                          <a href={`tel:${COMPANY_INFO.phoneHref}`}>{COMPANY_INFO.phoneDisplay}</a>
-                        </li>
-                        <li>
-                          <Mail size={16} />
-                          <a href={`mailto:${COMPANY_INFO.email}`}>{COMPANY_INFO.email}</a>
-                        </li>
-                      </ul>
-                    </div>
-
-                    <div className="info-side-block">
                       <strong>{lang === 'tr' ? 'Bu sayfada' : 'On this page'}</strong>
-                      <div className="info-pill-list">
-                        {page.highlights[lang].map((highlight) => (
-                          <span key={highlight} className="info-pill">
+                      <div className="info-side-list">
+                        {page.highlights[lang].slice(0, 3).map((highlight) => (
+                          <span key={highlight} className="info-side-line">
                             {highlight}
                           </span>
                         ))}
+                      </div>
+                    </div>
+
+                    <div className="info-side-block info-side-block--compact">
+                      <strong>{lang === 'tr' ? 'Sonraki adım' : 'Next step'}</strong>
+                      <p className="info-side-note">
+                        {lang === 'tr'
+                          ? 'Detaylı teklif, kapsam veya ürün eşleştirmesi için ekiple tek adımda ilerleyin.'
+                          : 'Move forward with the team in one step for scope, offer, or product matching.'}
+                      </p>
+                      <div className="info-side-actions">
+                        <Link to={localizePath('/contact')} className="btn-primary">
+                          {lang === 'tr' ? 'İletişime Geçin' : 'Talk to Us'} <ArrowRight size={18} />
+                        </Link>
+                        {relatedProducts[0] ? (
+                          <ProductSiteLink productSlug={relatedProducts[0].slug} className="btn-outline">
+                            {lang === 'tr' ? 'İlgili Ürün' : 'Related Product'}
+                          </ProductSiteLink>
+                        ) : null}
                       </div>
                     </div>
                   </>

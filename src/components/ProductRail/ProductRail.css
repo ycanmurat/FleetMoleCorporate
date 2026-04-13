@@ -115,6 +115,7 @@
 .product-rail-link .product-mark {
   --mark-size: var(--product-rail-mark-size);
   opacity: 0.92;
+  margin-left: -3px;
   transition:
     width 0.34s cubic-bezier(0.22, 1, 0.36, 1),
     height 0.34s cubic-bezier(0.22, 1, 0.36, 1),

@@ -38,19 +38,15 @@ type DesktopDropdownId = (typeof TOP_NAV_ORDER)[number];
 const Header = () => {
   const headerRef = useRef<HTMLElement | null>(null);
   const desktopCloseTimerRef = useRef<number | null>(null);
-  const restingHeaderOffsetRef = useRef<number | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<DesktopDropdownId | null>(null);
   const [mobileSection, setMobileSection] = useState<DesktopDropdownId | null>(null);
-  const [isScrolled, setIsScrolled] = useState(false);
   const { isDark, toggleTheme, lang, toggleLang, t, localizePath } = useApp();
   const location = useLocation();
 
   const currentProduct =
     PRODUCTS.find((product) => location.pathname === localizePath(`/${product.slug}`)) ?? null;
   const isHomePage = location.pathname === localizePath('/');
-  const isLoginPage = location.pathname === localizePath('/login');
-  const isRegisterPage = location.pathname === localizePath('/register');
   const activeProductSlug = currentProduct?.slug ?? null;
   const corporateLogoSrc = `${import.meta.env.BASE_URL}${isDark ? 'logo-white.png' : 'logo-black.png'}`;
 
@@ -112,39 +108,13 @@ const Header = () => {
   useEffect(() => () => clearDesktopCloseTimer(), []);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 18);
-    };
-
-    handleScroll();
-    window.addEventListener('scroll', handleScroll, { passive: true });
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-  useEffect(() => {
     const syncHeaderOffset = () => {
       if (!headerRef.current) {
         return;
       }
 
       const nextOffset = Math.ceil(headerRef.current.getBoundingClientRect().height + 12);
-      const lockedOffset = restingHeaderOffsetRef.current ?? nextOffset;
-
-      if (!isScrolled && !mobileOpen) {
-        restingHeaderOffsetRef.current = nextOffset;
-        document.documentElement.style.setProperty('--header-offset', `${nextOffset}px`);
-        return;
-      }
-
-      if (mobileOpen) {
-        document.documentElement.style.setProperty('--header-offset', `${Math.max(nextOffset, lockedOffset)}px`);
-        return;
-      }
-
-      document.documentElement.style.setProperty('--header-offset', `${lockedOffset}px`);
+      document.documentElement.style.setProperty('--header-offset', `${nextOffset}px`);
     };
 
     syncHeaderOffset();
@@ -163,7 +133,7 @@ const Header = () => {
       observer.disconnect();
       window.removeEventListener('resize', syncHeaderOffset);
     };
-  }, [currentProduct?.slug, isHomePage, isScrolled, mobileOpen, lang]);
+  }, [currentProduct?.slug, isHomePage, mobileOpen, lang]);
 
   useEffect(() => {
     if (!mobileOpen) {
@@ -212,7 +182,7 @@ const Header = () => {
     <header ref={headerRef} className="site-header">
       <div className="container header-stack">
         <motion.div
-          className={`header-shell ${isScrolled ? 'is-scrolled' : ''} ${isHomePage && !isScrolled ? 'is-hero-overlap' : ''} ${isHomePage ? 'is-home-layout' : ''}`}
+          className={`header-shell ${isHomePage ? 'is-hero-overlap is-home-layout' : ''}`}
           initial={{ opacity: 0, y: -18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.54, ease: HEADER_EASE }}
@@ -231,7 +201,7 @@ const Header = () => {
           <div className="header-brand-stack">
             <ProductRail
               activeProductSlug={activeProductSlug}
-              className={`header-product-rail ${isScrolled ? 'is-scrolled' : ''}`}
+              className="header-product-rail"
               homeActive
               homeHref={localizePath('/')}
               showHomeLink
@@ -322,22 +292,6 @@ const Header = () => {
             </nav>
 
             <div className="header-actions">
-              <div className="header-auth">
-                <Link
-                  to={localizePath('/login')}
-                  className={`header-auth-link ${isLoginPage ? 'is-active' : ''}`}
-                  onClick={closeAll}
-                >
-                  {lang === 'tr' ? 'Giriş' : 'Login'}
-                </Link>
-                <Link
-                  to={localizePath('/register')}
-                  className={`header-auth-cta ${isRegisterPage ? 'is-active' : ''}`}
-                  onClick={closeAll}
-                >
-                  {lang === 'tr' ? 'Kayıt Ol' : 'Register'}
-                </Link>
-              </div>
               <button
                 className="top-ctrl top-ctrl--lang"
                 onClick={toggleLang}
@@ -601,29 +555,6 @@ const Header = () => {
                       </AnimatePresence>
                     </section>
                   ))}
-                </div>
-
-                <div className="mob-auth-card">
-                  <div className="mob-auth-top">
-                    <strong>{lang === 'tr' ? 'Kullanıcı Erişimi' : 'User Access'}</strong>
-                    <span>{lang === 'tr' ? 'Kurumsal panel girişleri' : 'Corporate panel access'}</span>
-                  </div>
-                  <div className="mob-auth-links">
-                    <Link
-                      to={localizePath('/login')}
-                      className={`mob-auth-link ${isLoginPage ? 'is-active' : ''}`}
-                      onClick={closeAll}
-                    >
-                      {lang === 'tr' ? 'Giriş Yap' : 'Sign In'}
-                    </Link>
-                    <Link
-                      to={localizePath('/register')}
-                      className={`mob-auth-link mob-auth-link--primary ${isRegisterPage ? 'is-active' : ''}`}
-                      onClick={closeAll}
-                    >
-                      {lang === 'tr' ? 'Kayıt Ol' : 'Register'}
-                    </Link>
-                  </div>
                 </div>
 
                 <Link to={localizePath('/contact')} className="mob-contact-card" onClick={closeAll}>

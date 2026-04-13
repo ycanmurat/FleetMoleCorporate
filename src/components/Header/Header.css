@@ -73,7 +73,6 @@
   backdrop-filter: blur(16px) saturate(136%);
   -webkit-backdrop-filter: blur(16px) saturate(136%);
   transform-origin: top center;
-  will-change: transform, padding, border-radius, box-shadow, background;
   pointer-events: auto;
   transition:
     padding var(--header-shell-motion),

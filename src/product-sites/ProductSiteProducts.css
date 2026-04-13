@@ -1,5 +1,5 @@
 .ps-catalog-layout {
-  padding: 0.55rem 0 clamp(4rem, 6vw, 6rem);
+  padding: 0.4rem 0 clamp(3.5rem, 5vw, 5rem);
 }
 
 .ps-catalog-hero,
@@ -49,10 +49,10 @@
 
 .ps-filter-shell {
   display: grid;
-  gap: 0.9rem;
-  margin: 0.35rem 0 1.35rem;
-  padding: clamp(1rem, 1.8vw, 1.2rem);
-  border-radius: 1.7rem;
+  gap: 0.75rem;
+  margin: 0.28rem 0 1rem;
+  padding: clamp(0.9rem, 1.5vw, 1.05rem);
+  border-radius: 1.35rem;
 }
 
 .ps-filter-top {
@@ -68,7 +68,7 @@
   align-items: center;
   gap: 0.75rem;
   flex: 1;
-  min-height: 3rem;
+  min-height: 2.85rem;
   padding: 0 1rem 0 1.05rem;
   border: 1px solid color-mix(in srgb, var(--site-primary) 12%, var(--border-light));
   border-radius: 1.15rem;
@@ -103,7 +103,7 @@
 
 .ps-filter-meta span {
   color: var(--text-muted);
-  font-size: 0.84rem;
+  font-size: 0.8rem;
   font-weight: 700;
 }
 
@@ -163,8 +163,8 @@
   display: inline-flex;
   align-items: center;
   gap: 0.7rem;
-  min-height: 2.85rem;
-  padding: 0.75rem 1rem;
+  min-height: 2.55rem;
+  padding: 0.62rem 0.88rem;
   border: 1px solid color-mix(in srgb, var(--site-primary) 10%, var(--border-light));
   border-radius: 999px;
   background: color-mix(in srgb, var(--bg-surface) 92%, white 8%);
@@ -290,15 +290,15 @@
 
 .ps-premium-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.15rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.95rem;
 }
 
 .ps-premium-card {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  border-radius: 1.55rem;
+  border-radius: 1.35rem;
   border: 1px solid color-mix(in srgb, var(--site-primary) 10%, var(--border-light));
   background:
     linear-gradient(180deg, color-mix(in srgb, var(--bg-surface) 94%, white 6%), color-mix(in srgb, var(--bg-base) 98%, white 2%));
@@ -310,7 +310,7 @@
 }
 
 .ps-premium-card:hover {
-  transform: translateY(-2px);
+  transform: translateY(-1px);
   border-color: color-mix(in srgb, var(--site-primary) 18%, var(--border-light));
   box-shadow: 0 26px 44px -34px color-mix(in srgb, var(--site-primary) 18%, rgba(15, 23, 42, 0.16));
 }
@@ -319,8 +319,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 14.2rem;
-  padding: 1.5rem;
+  min-height: 11.8rem;
+  padding: 1.15rem;
   background:
     radial-gradient(circle at 50% 14%, color-mix(in srgb, var(--site-soft) 48%, transparent), transparent 42%),
     linear-gradient(180deg, color-mix(in srgb, var(--bg-surface) 96%, white 4%), color-mix(in srgb, var(--bg-base) 100%, transparent));
@@ -328,7 +328,7 @@
 
 .ps-premium-card-img-area img {
   max-width: 100%;
-  max-height: 11rem;
+  max-height: 9.4rem;
   object-fit: contain;
   transition: transform 0.4s ease;
 }
@@ -340,9 +340,9 @@
 .ps-premium-card-body {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 0.68rem;
   flex: 1;
-  padding: 1.2rem 1.2rem 1.3rem;
+  padding: 1rem 1rem 1.05rem;
 }
 
 .ps-premium-card-meta {
@@ -354,12 +354,12 @@
 .ps-premium-card-meta span {
   display: inline-flex;
   align-items: center;
-  min-height: 1.8rem;
-  padding: 0.32rem 0.7rem;
+  min-height: 1.65rem;
+  padding: 0.26rem 0.58rem;
   border-radius: 999px;
   background: color-mix(in srgb, var(--site-soft) 72%, transparent);
   color: color-mix(in srgb, var(--site-primary) 82%, var(--text-main));
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 800;
   letter-spacing: 0.04em;
 }
@@ -367,7 +367,7 @@
 .ps-premium-card-title {
   margin: 0;
   color: var(--text-main);
-  font-size: 1.2rem;
+  font-size: 1.08rem;
   letter-spacing: -0.03em;
 }
 
@@ -379,21 +379,30 @@
 .ps-premium-card-tagline {
   color: var(--text-main);
   font-weight: 720;
-  line-height: 1.55;
+  line-height: 1.45;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .ps-premium-card-desc {
   color: var(--text-muted);
-  line-height: 1.72;
+  font-size: 0.92rem;
+  line-height: 1.62;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .ps-premium-card-footer {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  gap: 0.8rem;
-  margin-top: auto;
-  padding-top: 0.35rem;
+  justify-content: flex-end;
+  margin-top: 0.5rem;
+  padding-top: 0.72rem;
+  border-top: 1px solid color-mix(in srgb, var(--site-primary) 10%, var(--border-light));
 }
 
 .ps-premium-detail-btn {
@@ -401,20 +410,41 @@
   align-items: center;
   justify-content: center;
   gap: 0.48rem;
-  min-height: 2.7rem;
-  border-radius: 999px;
+  min-height: 2.2rem;
+  padding: 0.5rem 0.85rem;
+  border: 1px solid color-mix(in srgb, var(--site-primary) 16%, var(--border-light));
+  border-radius: 0.82rem;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--site-primary) 8%, white), transparent),
+    color-mix(in srgb, var(--site-soft) 46%, rgba(255, 255, 255, 0.88));
+  color: color-mix(in srgb, var(--site-primary) 78%, var(--text-main));
+  font-size: 0.8rem;
   font-weight: 700;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
-.ps-premium-detail-btn {
-  color: color-mix(in srgb, var(--site-primary) 82%, var(--text-main));
+.ps-premium-detail-btn svg {
+  color: var(--site-primary);
+}
+
+.ps-premium-detail-btn:hover {
+  transform: translateY(-1px);
+  border-color: color-mix(in srgb, var(--site-primary) 26%, var(--border-light));
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--site-primary) 12%, white), transparent),
+    color-mix(in srgb, var(--site-soft) 66%, rgba(255, 255, 255, 0.94));
+  box-shadow: 0 16px 28px -28px color-mix(in srgb, var(--site-primary) 34%, transparent);
 }
 
 .ps-premium-downloads {
   display: grid;
-  gap: 0.7rem;
-  padding-top: 0.95rem;
-  border-top: 1px solid color-mix(in srgb, var(--site-primary) 10%, var(--border-light));
+  gap: 0.55rem;
+  padding-top: 0.5rem;
+  margin-top: auto;
 }
 
 .ps-premium-downloads-head {
@@ -426,7 +456,7 @@
 
 .ps-premium-downloads-head strong {
   color: color-mix(in srgb, var(--site-primary) 84%, var(--text-main));
-  font-size: 0.7rem;
+  font-size: 0.66rem;
   font-weight: 800;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -434,14 +464,14 @@
 
 .ps-premium-downloads-head span {
   color: var(--text-muted);
-  font-size: 0.76rem;
+  font-size: 0.72rem;
   font-weight: 700;
 }
 
 .ps-premium-download-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.55rem;
+  gap: 0.45rem;
 }
 
 .ps-premium-download-link {
@@ -449,13 +479,13 @@
   align-items: center;
   justify-content: center;
   gap: 0.48rem;
-  min-height: 2.5rem;
-  padding: 0.62rem 0.82rem;
-  border: 1px solid color-mix(in srgb, var(--site-primary) 12%, var(--border-light));
-  border-radius: 0.95rem;
+  min-height: 2.2rem;
+  padding: 0.5rem 0.7rem;
+  border: 1px solid color-mix(in srgb, var(--site-primary) 10%, var(--border-light));
+  border-radius: 0.82rem;
   background: color-mix(in srgb, var(--site-soft) 34%, rgba(255, 255, 255, 0.72));
   color: var(--text-main);
-  font-size: 0.84rem;
+  font-size: 0.8rem;
   font-weight: 700;
   transition:
     transform 0.2s ease,
@@ -480,8 +510,8 @@
 .ps-premium-download-placeholder {
   margin: 0;
   color: var(--text-muted);
-  font-size: 0.88rem;
-  line-height: 1.6;
+  font-size: 0.82rem;
+  line-height: 1.55;
 }
 
 .ps-catalog-empty {
@@ -560,7 +590,13 @@
   gap: 0.45rem;
 }
 
-@media (max-width: 1180px) {
+@media (max-width: 1400px) {
+  .ps-premium-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1080px) {
   .ps-premium-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -584,7 +620,7 @@
   }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 680px) {
   .ps-premium-grid {
     grid-template-columns: 1fr;
   }
@@ -638,7 +674,9 @@
 .dark .ps-filter-state span,
 .dark .ps-catalog-empty p,
 .dark .ps-premium-card-desc,
-.dark .ps-compare-clear {
+.dark .ps-compare-clear,
+.dark .ps-filter-meta span,
+.dark .ps-premium-downloads-head span {
   color: color-mix(in srgb, var(--text-main) 74%, #cbd5e1);
 }
 
@@ -654,13 +692,19 @@
   border-top-color: rgba(148, 163, 184, 0.12);
 }
 
-.dark .ps-premium-download-link {
+.dark .ps-premium-card-footer {
+  border-top-color: rgba(148, 163, 184, 0.12);
+}
+
+.dark .ps-premium-download-link,
+.dark .ps-premium-detail-btn {
   border-color: rgba(148, 163, 184, 0.16);
   background:
     linear-gradient(180deg, rgba(15, 23, 42, 0.9), rgba(10, 16, 30, 0.94));
 }
 
-.dark .ps-premium-download-link:hover {
+.dark .ps-premium-download-link:hover,
+.dark .ps-premium-detail-btn:hover {
   background:
     linear-gradient(180deg, color-mix(in srgb, var(--site-primary) 16%, rgba(255, 255, 255, 0.06)), transparent),
     color-mix(in srgb, var(--site-primary) 18%, rgba(15, 23, 42, 0.64));
@@ -672,6 +716,19 @@
   background:
     linear-gradient(180deg, color-mix(in srgb, var(--site-primary) 16%, rgba(255, 255, 255, 0.06)), transparent),
     color-mix(in srgb, var(--site-primary) 18%, rgba(15, 23, 42, 0.64));
+}
+
+.dark .ps-premium-card-meta span,
+.dark .ps-premium-download-link {
+  color: color-mix(in srgb, var(--text-main) 88%, #dbeafe);
+}
+
+.dark .ps-premium-card-tagline,
+.dark .ps-premium-card-title,
+.dark .ps-premium-detail-btn,
+.dark .ps-catalog-context strong,
+.dark .ps-premium-downloads-head strong {
+  color: #f8fafc;
 }
 
 .dark .ps-filter-pill--category small {

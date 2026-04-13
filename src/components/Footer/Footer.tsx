@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Mail, MapPin, Phone, Sparkles } from 'lucide-react';
+import { ArrowRight, Mail, MapPin, Phone } from 'lucide-react';
 import ProductSiteLink from '../ProductSiteLink/ProductSiteLink';
 import { useApp } from '../../context/AppContext';
 import { COMPANY_INFO, getCompanyAddress } from '../../data/company';
@@ -29,54 +29,46 @@ const Footer = () => {
 
   return (
     <footer className="site-footer">
-      <div className="footer-spotlight">
-        <div className="container footer-spotlight-inner">
-          <div className="footer-spotlight-copy">
-            <span className="footer-spotlight-chip">
-              <Sparkles size={14} />
-              {lang === 'tr' ? 'FleetMole Ekosistemi' : 'FleetMole Ecosystem'}
-            </span>
-            <h3>
-              {lang === 'tr'
-                ? 'Ürün, hizmet ve kiralama akışlarını tek kurumsal çerçevede takip edin.'
-                : 'Track products, services, and leasing flows in one enterprise framework.'}
-            </h3>
-            <p>{t.footer.desc}</p>
-          </div>
-
-          <div className="footer-spotlight-card">
-            <strong>{lang === 'tr' ? 'İletişime Geçin' : 'Get in Touch'}</strong>
-            <p>{getCompanyAddress(lang)}</p>
-            <a href={`tel:${COMPANY_INFO.phoneHref}`}>{COMPANY_INFO.phoneDisplay}</a>
-            <a href={`mailto:${COMPANY_INFO.email}`}>{COMPANY_INFO.email}</a>
-            <Link to={localizePath('/contact')} className="fcta-btn">
-              {t.footer.contact} <ArrowRight size={18} />
-            </Link>
-          </div>
-        </div>
-      </div>
-
-      <div className="footer-body">
-        <div className="container footer-grid">
-          <div className="footer-col brand-col">
+      <div className="container footer-shell">
+        <div className="footer-top">
+          <div className="footer-brand-block">
             <div className="footer-logo">
               <img className="footer-logo-image" src={corporateLogoSrc} alt="FleetMole Corporate" />
             </div>
             <p className="footer-desc">{t.footer.desc}</p>
-            <ul className="footer-contact-list">
-              <li>
-                <MapPin size={16} />
+          </div>
+
+          <div className="footer-contact-block">
+            <h4 className="footer-heading">{lang === 'tr' ? 'İletişim' : 'Contact'}</h4>
+            <div className="footer-contact-list">
+              <span className="footer-contact-item">
+                <MapPin size={15} />
                 <span>{getCompanyAddress(lang)}</span>
-              </li>
-              <li>
-                <Phone size={16} />
-                <a href={`tel:${COMPANY_INFO.phoneHref}`}>{COMPANY_INFO.phoneDisplay}</a>
-              </li>
-              <li>
-                <Mail size={16} />
-                <a href={`mailto:${COMPANY_INFO.email}`}>{COMPANY_INFO.email}</a>
-              </li>
-            </ul>
+              </span>
+              <a className="footer-contact-item" href={`tel:${COMPANY_INFO.phoneHref}`}>
+                <Phone size={15} />
+                <span>{COMPANY_INFO.phoneDisplay}</span>
+              </a>
+              <a className="footer-contact-item" href={`mailto:${COMPANY_INFO.email}`}>
+                <Mail size={15} />
+                <span>{COMPANY_INFO.email}</span>
+              </a>
+            </div>
+            <Link to={localizePath('/contact')} className="footer-inline-cta">
+              {t.footer.contact} <ArrowRight size={16} />
+            </Link>
+          </div>
+        </div>
+
+        <div className="footer-body">
+          <div className="footer-grid">
+          <div className="footer-col brand-col">
+            <h4 className="footer-heading">{lang === 'tr' ? 'Kurumsal Çerçeve' : 'Enterprise Frame'}</h4>
+            <p className="footer-note">
+              {lang === 'tr'
+                ? 'Ürün, operasyon ve kiralama akışlarını tek marka mimarisinde birleştiren kurumsal yapı.'
+                : 'An enterprise layer that keeps product, operations, and leasing flows aligned under one brand system.'}
+            </p>
           </div>
 
           <div className="footer-col footer-col--links">
@@ -101,25 +93,25 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="footer-col footer-col--support">
+          <div className="footer-col footer-col--links">
             <h4 className="footer-heading">{t.footer.support}</h4>
-            <div className="footer-support-card">
-              <strong>{lang === 'tr' ? 'Hızlı Ulaşım' : 'Quick Access'}</strong>
-              <p>
-                {lang === 'tr'
-                  ? 'Demo, ürün kapsamı ve iş ortaklığı görüşmeleri için ekibimizle doğrudan iletişime geçin.'
-                  : 'Reach the team directly for demos, product scope discussions, and partnership conversations.'}
-              </p>
-              <Link to={localizePath('/contact')} className="footer-support-link">
-                {t.nav.contact} <ArrowRight size={16} />
-              </Link>
-            </div>
+            <ul className="footer-links footer-links--support">
+              <li>
+                <Link to={localizePath('/contact')}>{t.nav.contact}</Link>
+              </li>
+              <li>
+                <a href={`tel:${COMPANY_INFO.phoneHref}`}>{COMPANY_INFO.phoneDisplay}</a>
+              </li>
+              <li>
+                <a href={`mailto:${COMPANY_INFO.email}`}>{COMPANY_INFO.email}</a>
+              </li>
+            </ul>
           </div>
         </div>
-      </div>
+        </div>
 
-      <div className="footer-bottom">
-        <div className="container footer-bottom-inner">
+        <div className="footer-bottom">
+          <div className="footer-bottom-inner">
           <div className="legal-links">
             {legalLinks.map(({ section, slug, page, legalDocument }) => (
               <Link key={slug} to={localizePath(getContentPath(section, slug))}>
@@ -128,6 +120,7 @@ const Footer = () => {
             ))}
           </div>
           <span>© {new Date().getFullYear()} FleetMole. {t.footer.copyright}</span>
+          </div>
         </div>
       </div>
     </footer>

@@ -314,7 +314,7 @@ const HERO_STAGE_PANEL_ANIM = {
 const Home = () => {
   const { t, lang, localizePath, featuredProductSlug, setFeaturedProductSlug } = useApp();
   const [openFaq, setOpenFaq] = useState<number | null>(0);
-  const [heroAutoplayActive, setHeroAutoplayActive] = useState(true);
+  const [heroPaused, setHeroPaused] = useState(false);
 
   const faqItems = t.faq.items;
   const heroUi = HERO_UI[lang];
@@ -379,7 +379,7 @@ const Home = () => {
       } as CSSProperties,
     };
   });
-  const heroPaused = !heroAutoplayActive;
+  const heroAutoplayActive = !heroPaused;
   const heroStyle = {
     '--hero-primary': heroProduct.theme.primary,
     '--hero-secondary': heroProduct.theme.secondary,
@@ -434,15 +434,17 @@ const Home = () => {
   }, [setFeaturedProductSlug]);
 
   useEffect(() => {
-    const syncAutoplay = () => {
-      setHeroAutoplayActive(window.scrollY < 16);
+    const handleScrollPause = () => {
+      if (window.scrollY > 48) {
+        setHeroPaused(true);
+      }
     };
 
-    syncAutoplay();
-    window.addEventListener('scroll', syncAutoplay, { passive: true });
+    handleScrollPause();
+    window.addEventListener('scroll', handleScrollPause, { passive: true });
 
     return () => {
-      window.removeEventListener('scroll', syncAutoplay);
+      window.removeEventListener('scroll', handleScrollPause);
     };
   }, []);
 
@@ -532,7 +534,7 @@ const Home = () => {
                     </motion.p>
 
                     <motion.div className="hero-mobile-carousel" variants={HERO_COPY_ITEM_ANIM}>
-                      <div className="hero-mobile-shell">
+                      <div className={`hero-mobile-shell ${heroPaused ? 'is-paused' : ''}`}>
                         <div className="hero-mobile-progress" aria-hidden="true">
                           <span
                             key={heroProduct.slug}
@@ -764,7 +766,7 @@ const Home = () => {
               style={heroStyle}
             >
               <div
-                className="hero-stage"
+                className={`hero-stage ${heroPaused ? 'is-paused' : ''}`}
                 role="tabpanel"
                 id={`hero-panel-${heroProduct.slug}`}
                 aria-labelledby={`hero-tab-${heroProduct.slug}`}
@@ -840,15 +842,24 @@ const Home = () => {
 
                 <div className="hero-stage-detail-shell">
                   <div className="hero-stage-head">
-                    <div className="hero-stage-dots">
-                      <span className="api-dot blue" />
-                      <span className="api-dot teal" />
-                      <span className="api-dot violet" />
-                      <span className="hero-stage-file">{`fleetmole-${heroProduct.slug}.${heroUi.filePrefix}`}</span>
+                    <div className="hero-stage-meta">
+                      <div className="hero-stage-kicker">
+                        <span className="hero-stage-kicker-icon" aria-hidden="true">
+                          <Layers3 size={14} />
+                        </span>
+                        <span>{heroUi.stageLabel}</span>
+                      </div>
+
+                      <div className="hero-stage-dots">
+                        <span className="api-dot blue" />
+                        <span className="api-dot teal" />
+                        <span className="api-dot violet" />
+                        <span className="hero-stage-file">{`fleetmole-${heroProduct.slug}.${heroUi.filePrefix}`}</span>
+                      </div>
                     </div>
                     <div className="hero-stage-badge">
                       <span className={`hero-stage-badge-dot ${heroPaused ? 'paused' : ''}`} />
-                      <span>{heroUi.detailLabel}</span>
+                      <span>{heroPaused ? heroUi.paused : heroUi.detailLabel}</span>
                     </div>
                   </div>
 

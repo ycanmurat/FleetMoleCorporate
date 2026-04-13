@@ -1,0 +1,6666 @@
+https://www.jimiiot.com/en/products/video-telematics/jc400p : 
+Network
+
+Standard
+4G LTE Cat.4
+
+WiFi
+2.4GHz, Support AP Mode/STA Mode/WiFi Direct
+
+Bluetooth
+BLE 4.0
+
+Band
+Eurasian Version
+LTE-FDD: B1/B3/B5/B7/B8/B19/B20
+LTE-TDD: B38/B39/B40/B41 (100M)
+WCDMA: B1/B2/B5/B8
+GSM: B2/B3/B5/B8
+
+American Version
+LTE-FDD: B2/B3/B4/B5/B7/B12/B17
+LTE-TDD: B38/B41 (100M)
+WCDMA: B2/B4/B5
+GSM: B2/B5/B8
+
+Camera
+
+Front Camera (Main)
+1920×1080/25FPS/F2.2/Full color/118° (HFoV)
+
+Sub Camera
+1280×720/15FPS/F2.5/Full color in daytime & monochrome in dim light/90° (HFoV)
+
+Video Format
+.mp4
+
+Configuration
+
+GNSS
+GPS/BDS
+
+Sensor
+6-axis
+
+Microphone
+Support
+
+Speaker
+Support
+
+Interface
+Micro USB*1, SOS*1, RS232*1, Relay*1
+
+Memory Support
+TF card (Up to 256GB)
+
+SIM Card Type
+Nano
+
+LED Indication
+Red (Power), Blue (Cellular), Green (GNSS)
+
+Others
+
+Power Supply
+Power cable: B+/ACC/GND
+
+Operating Voltage
+DC 9–30V
+
+Operating Temperature
+–20°C to +65°C
+
+Storage Temperature
+–30°C to +85°C
+
+Device Weight
+233g
+
+Device Dimension
+109*69*52mm
+
+Certifications
+CE/FCC/RoHS
+
+-
+https://www.jimiiot.com/en/products/video-telematics/jc400:
+Network
+
+Standard
+4G LTE Cat.4
+
+WiFi
+2.4GHz, Support AP Mode/STA Mode/WiFi Direct
+
+Bluetooth
+BLE 4.0
+
+Band
+Eurasian Version
+LTE-FDD: B1/B3/B5/B7/B8/B19/B20
+LTE-TDD: B38/B39/B40/B41 (100M)
+WCDMA: B1/B2/B5/B8
+GSM: B2/B3/B5/B8
+
+American Version
+LTE-FDD: B2/B3/B4/B5/B7/B12/B17
+LTE-TDD: B38/B41 (100M)
+WCDMA: B2/B4/B5
+GSM: B2/B5/B8
+
+Camera
+
+Front Camera (Main)
+1920×1080/25FPS/F2.2/Full color/118° (HFoV)
+
+Peripheral Camera (Optional )
+CI01: 1280×720/15FPS/F2.0/Full color in daytime & monochrome in dim light/100° (HFoV)
+
+CI03: 1280×720/15FPS/F2.4/Full color in daytime & monochrome in dim light/119° (HFoV)
+
+CE01: 1280×720/15FPS/F2.0/Full color/IP67/125° (HFoV)
+
+Video Format
+.mp4
+
+Configuration
+
+GNSS
+GPS/BDS
+
+Sensor
+6-axis
+
+Microphone
+Support
+
+Speaker
+Support
+
+Interface
+Micro USB*1, SOS*1, RS232*1, Relay*1
+
+Memory Support
+TF card (Up to 256GB)
+
+SIM Card Type
+Nano
+
+LED Indication
+Red (Power), Blue (Cellular), Green (GNSS)
+
+Others
+
+Power Supply
+Power cable: B+/ACC/GND
+
+Operating Voltage
+DC 9–30V
+
+Operating Temperature
+–20°C to +65°C
+
+Storage Temperature
+–30°C to +85°C
+
+Device Weight
+233g
+
+Device Dimension
+109*69*52mm
+
+Certifications
+CE/FCC/RoHS
+  -
+https://www.jimiiot.com/en/products/video-telematics/jc261p:
+Network
+
+Standard
+4G LTE Cat.4
+
+WiFi
+2.4GHz, Support AP Mode/STA Mode/WiFi Direct
+
+Bluetooth
+BLE 4.0
+
+Band
+Eurasian Version
+LTE-FDD: B1/B3/B5/B7/B8/B19/B20
+LTE-TDD: B38/B39/B40/B41 (100M)
+WCDMA: B1/B2/B5/B8
+GSM: B2/B3/B5/B8
+
+American Version
+LTE-FDD: B2/B3/B4/B5/B7/B12/B17
+LTE-TDD: B38/B41 (100M)
+WCDMA: B2/B4/B5
+GSM: B2/B5/B8
+
+Camera
+
+Front Camera (Main)
+1920×1080/25FPS/F2.2/Full color/85° (HFoV)
+
+Sub Camera
+1280×720/15FPS/F2.5/Full color in daytime & monochrome in dim light/90° (HFoV)
+
+Video Format
+.ts
+
+Configuration
+
+GNSS
+GPS/BDS
+
+Sensor
+6-Axis accelerometer
+
+Microphone
+Support
+
+Speaker
+Support
+
+Interface
+Micro USB*1, SOS*1, TTL*1, Relay*1
+
+Memory Support
+TF card (Up to 256GB)
+
+SIM Card Type
+Nano
+
+LED Indication
+Red (Power), Blue (Cellular), Green (GNSS)
+
+Others
+
+Power Supply
+Power cable: B+/ACC/GND
+
+Operating Voltage
+DC 9–30V
+
+Operating Temperature
+–20°C to +65°C
+
+Storage Temperature
+–30°C to +85°C
+
+Device Weight
+233g
+
+Device Dimension
+109*69*52mm
+
+Certifications
+CE/FCC/RoHS
+
+-
+https://www.jimiiot.com/en/products/video-telematics/jc261:
+Network
+
+Standard
+4G LTE Cat.4
+
+WiFi
+2.4GHz, Support AP Mode/STA Mode/WiFi Direct
+
+Bluetooth
+BLE 4.0
+
+Band
+Eurasian Version
+LTE-FDD: B1/B3/B5/B7/B8/B19/B20
+LTE-TDD: B38/B39/B40/B41 (100M)
+WCDMA: B1/B2/B5/B8
+GSM: B2/B3/B5/B8
+
+American Version
+LTE-FDD: B2/B3/B4/B5/B7/B12/B17
+LTE-TDD: B38/B41 (100M)
+WCDMA: B2/B4/B5
+GSM: B2/B5/B8
+
+Camera
+
+Front Camera (Main)
+1920×1080/25FPS/F2.2/Full color/85° (HFoV)
+
+Peripheral Camera (Optional)
+CI01: 1280×720/15FPS/F2.0/Full color in daytime & monochrome in dim light/100° (HFoV)
+
+CI03: 1280×720/15FPS/F2.4/Full color in daytime & monochrome in dim light/119° (HFoV)
+
+CE01: 1280×720/15FPS/F2.0/Full color/IP67/125° (HFoV)
+
+JC170: 1280×720/15FPS/F2.4/Monochrome/56° (HFoV)
+
+Video Format
+.ts
+
+Configuration
+
+GNSS
+GPS/BDS
+
+Sensor
+3-axis
+
+Microphone
+Support
+
+Speaker
+Support
+
+Interface
+Micro USB*1, SOS*1, TTL*1, Relay*1
+
+Memory Support
+TF card (Up to 256GB)
+
+SIM Card Type
+Nano
+
+LED Indication
+Red (Power), Blue (Cellular), Green (GNSS)
+
+Others
+
+Power Supply
+Power cable: B+/ACC/GND
+
+Operating Voltage
+DC 9–30V
+
+Operating Temperature
+–20°C to +65°C
+
+Storage Temperature
+–30°C to +85°C
+
+Device Weight
+233g
+
+Device Dimension
+109*69*52mm
+
+Certifications
+CE/FCC/RoHS
+  -  https://www.jimiiot.com/en/products/video-telematics/jc182:
+Cellular
+
+Technology
+4G LTE Cat 1
+
+Frequency
+JC182-LA:
+LTE-FDD: B1/B2/B3/B4/B5/B7/B8/B28
+
+JC182-EU:
+
+LTE-FDD: B1/B3/B7/B8/B20/B28;
+
+LTE-FDD: B34/B38/B39/B40/B41
+
+Interface
+
+LED indication
+Red (Power), Blue (Cellular), Green (GNSS)
+
+SIM
+Nano-SIM
+
+External memory
+TF card (up to 512GB)
+
+USB
+Type-C
+
+WiFi
+2.4GHz, Support WiFi Direct
+
+Microphone
+Support
+
+Speaker
+Support
+
+Sensor
+6-Axis accelerometer
+
+GNSS
+
+Positioning system
+GPS, BDS, AGPS
+
+Camera
+
+Front camera (main)
+2560×1440 / 25FPS / F2.4 / Full color / 110° (HFoV)
+
+Video format
+.ts
+
+Power
+
+Input voltage
+DC 9–30V
+
+Operating Environment
+
+Operating temperature
+–20°C to +65°C
+
+Storage temperature
+–30°C to +85°C
+
+Physical Specification
+
+Dimensions
+70.0 x 60.0 x 34.0mm
+
+Weight
+110g
+
+Feature
+
+Configuration support
+APP, Memory card
+
+Firmware update
+USB Cable, Memory card, OTA
+
+Certification
+CE, FCC
+
+Standard Packing
+
+JC182 unit
+1
+
+Screws
+2
+
+Screwdriver
+1
+ -
+
+https://www.jimiiot.com/en/products/video-telematics/jc181:
+Network
+
+Standard
+4G LTE Cat.1
+
+WiFi
+2.4GHz, Support WiFi Direct
+
+Brand
+Latin American Version
+LTE-FDD: B1/B2/B3/B4/B5/B7/B8/B28
+GSM: B2/B3/B5/B8
+
+Eurasian Version
+LTE-FDD: B1/B3/B5/B7/B8/B20/B28
+LTE-TDD: B38/B40/B41
+GSM: B2/B3/B5/B8
+
+Camera
+
+Front Camera (Main)
+1920×1080/30FPS/F2.2/Full color/110° (HFoV)
+
+Sub Camera
+640×360/10FPS/F2.8/Full color in daytime & monochrome in dim light/100° (HFoV)
+
+Video Format
+.mp4
+
+Configuration
+
+GNSS
+GPS/BDS/AGPS
+
+Sensor
+3-axis
+
+Microphone
+Support
+
+Speaker
+Support
+
+Interface
+Type-C USB*1, Relay*1
+
+Memory Support
+TF Card (Up to 128GB)
+
+SIM Card Type
+Nano
+
+LED Indication
+Red (Power), Green (GNSS), Blue (Cellular)
+
+Others
+
+Power Supply
+Power cable: B+/ACC/GND
+
+Operating Voltage
+DC 9–30V
+
+Operating Temperature
+–20°C to +70°C
+
+Storage Temperature
+–30°C to +85°C
+
+Device Weight
+143g
+
+Device Dimension
+118*46.5*43.5mm
+ -
+
+https://www.jimiiot.com/en/products/video-telematics/jc171:
+Camera
+
+Front camera (main)
+1920×1080/25FPS/F2.4/Monochrome/110° (HFoV)
+
+Video format
+.ts
+
+Interface
+
+LED indication
+Red (Power), Green (Monitoring), Blue (Align)
+
+External memory
+TF card (up to 128GB)
+
+USB
+Type-C
+
+Microphone
+Support
+
+Speaker
+Support
+
+Serial ports
+1*TTL
+
+Feature
+
+AI
+Facial recognition, Driver change notification, Seatbelt use detection, Phone use, Smoking, Distraction, Yawning, Eyes closed, No face detected
+
+Configuration support
+Memory card, USB cable
+
+Firmware update
+USB cable
+
+Certification
+CE, FCC
+
+Power
+
+Input voltage
+DC 9–30V
+
+Operating Environment
+
+Operating temperature
+–20°C to +70°C
+
+Storage temperature
+–30°C to +85°C
+
+Physical Specification
+
+Dimensions
+68.0 x 55.0 x 33.0mm
+
+Weight
+216g
+
+Standard Packing
+
+JC171 unit
+1
+
+Screws
+2
+
+Hex screwdriver
+1
+
+Optional Configuration*
+
+Power cable
+Required when working with GT06N or VL802
+
+Compatibility
+JC261 Dual-channel AI dashCam, GT06N Vehicle GNSS tracker, VL802 LTE vehicle terminal
+
+GPS antenna
+Required when GNSS function is a must, and the unit is used on its own
+  - 
+
+https://www.jimiiot.com/en/products/video-telematics/jc170:
+Camera
+
+Front Camera (Main)
+1280×720/15FPS/F2.4/Monochrome/56° (HFoV)
+
+Video Format
+.mp4
+
+Configuration
+
+Speaker
+Support
+
+Interface
+Mirco USB*1, TTL*1
+
+Memory Support
+TF Card (Up to 128GB)
+
+LED Indication
+Red (Power), Green (Monitoring), Blue (Align)
+
+Others
+
+Power Supply
+Power cable: B+/ACC/GND
+
+Operating Voltage
+DC 9–30V
+
+Operating Temperature
+–20°C to +70°C
+
+Storage Temperature
+–30°C to +85°C
+
+Device Weight
+216g
+
+Device Dimension
+68*55*33mm
+
+Certifications
+CE/FCC/RoHS
+
+-
+https://www.jimiiot.com/en/products/video-telematics/jc450:
+Cellular
+
+Technology
+4G LTE Cat 4, 3G (WCDMA), 2G (GSM)
+
+Frequency
+JC450-LA:
+FDD-LTE: B1/B2/B3/B4/B5/B7/B8/B28/B66
+TDD-LTE: B40
+WCDMA: B1/B2/B4/B5/B8
+GSM: B2/B3/B5/B8
+
+JC450-NA:
+FDD-LTE: B2/B4/B5/B12/B13/B14/B66
+WCDMA: B2/B4/B5
+
+JC450-EU:
+FDD-LTE: B1/B3/B5/B7/B8/B20/B28
+TDD-LTE: B38/B40/B41
+WCDMA: B1/B5/B8
+GSM: B3/B8
+
+GNSS
+
+Positioning system
+GPS, BDS, AGPS
+
+Camera
+
+Front camera (main)
+1920x1080/25FPS/F2.0/Full color/80° (HFoV)
+
+Video format
+.ts/.mp4
+
+Power
+
+Input voltage
+DC 9–30V
+
+Operating Environment
+
+Operating temperature
+-20℃ to +70℃
+
+Storage temperature
+-30℃ to +85℃
+
+Interface
+
+LED indication
+Red (Power), Blue (Cellular), Green (GNSS)
+
+SIM
+Nano-SIM
+
+External memory
+TF card (up to 256GB*2)
+
+USB
+Type-C
+
+WiFi
+2.4GHz, Support AP Mode/STA Mode/WiFi Direct
+
+Bluetooth
+BLE 4.0
+
+Microphone
+Support
+
+Speaker
+Support
+
+Digital I/Os
+2*SOS; 1*Relay; 2*Reserved inputs
+
+Analog I/Os
+1*CVBS-OUT
+
+Serial ports
+1*RS232, 1*TTL
+
+Sensor
+3-Axis accelerometer
+
+Feature
+
+ADAS
+FCW, HMW, LDW
+
+DMS (Optional)
+Phone use, Smoking, Distraction, Yawning, Eyes closed, No face detected
+
+Facial Recognition System (Required with JC171)
+
+Seatbelt Detection (Required with JC171)
+
+Configuration support
+GPRS, SMS, Memory card, APP
+
+Firmware update
+USB cable, Memory card, OTA
+
+Certification
+CE, FCC, PTCRB, RoHS, AT&T
+
+Physical Specification
+
+Dimensions
+114.0 x 113.0 x 33.0mm
+
+Weight
+374g
+
+Standard Packing
+
+JC450 unit
+1
+
+Power cable
+1
+
+SOS button
+1
+
+Mount base
+1
+
+Double-sided adhesive
+1
+
+Screws
+1
+
+Screwdriver
+1
+
+Optional Configuration*
+
+Peripheral camera
+JC171: AI Camera (driver monitoring system/facial recognition system/seatbelt detection)
+CI02: 1280x720/15FPS/F2.5/Color in daytime & mono in dim light/135° (HFoV)
+CI01: 1280x720/15FPS/F2.0/Color in daytime & mono in dim light/100° (HFoV)
+CI03: 1280x720/15FPS/F2.4/Color in daytime & mono in dim light/119° (HFoV)
+CI04: 1280x720/15FPS/F2.4/Color in daytime & mono in dim light/119° (HFoV)
+CD02: 1280x720/15FPS/F2.0/Monochrome/56° (HFoV)
+CE01: 1280x720/15FPS/F2.0/Full color/IP67/125° (HFoV)
+CE02: 1280x720/15FPS/F2.0/Full color/IP67/111° (HFoV)
+
+Relay
+12V or 24V
+ -
+
+https://www.jimiiot.com/en/products/video-telematics/jc451:
+Cellular
+
+Technology
+4G LTE Cat 4, 3G (WCDMA), 2G (GSM)
+
+Frequency
+JC451-EU
+FDD-LTE: B1/B3/B7/B8/B20/B28A
+
+TDD-LTE: B38/B40/B41
+
+WCDMA: B1/B8
+
+GSM: B3/B8
+
+
+JC451-LA
+
+FDD-LTE: B1 / B2/ B3 / B4 / B5 / B7 / B8 / B28 / B66
+
+TDD-LTE: B40
+
+WCDMA: B1 / B2 / B4 / B5/ B8
+
+GSM: B2 / B3 / B5 / B8
+
+GNSS
+
+Positioning system
+GPS, BDS
+
+Camera
+
+Camera support
+Max. 5 (1*1080P + 4*720P), refer to Optional Configuration*
+
+Video format
+.ts
+
+Power
+
+Input voltage
+DC 9–30V
+
+Operating Environment
+
+Operating temperature
+–20°C to +70°C
+
+Storage temperature
+–30°C to +85°C
+
+Physical Specification
+
+Dimensions
+118.0 x 97.0 x 32.0mm
+
+Weight
+350g
+
+Interface
+
+LED indication
+Red (Power), Blue (Cellular), Green (GNSS)
+
+SIM
+Nano-SIM
+
+External memory
+TF card (up to 256GB*2)
+
+USB
+Type-C
+
+WiFi
+2.4GHz, Support AP Mode/STA Mode/WiFi Direct
+
+Bluetooth
+BLE 4.0
+
+Microphone
+Support
+
+Speaker
+Support
+
+Digital I/Os
+2: SOS*2, 1* Relay, 2*Reserved inputs
+
+Analog I/Os
+1*CVBS-OUT
+
+Serial ports
+1*RS232, 1*TTL
+
+Sensor
+3-Axis accelerometer
+
+Feature
+
+ADAS
+FCW, HMW, LDW
+
+DMS (Optional)
+Phone use, Smoking, Distraction, Yawning, Eyes closed, No face detected
+
+Configuration support
+GPRS, SMS, Memory card, APP
+
+Firmware update
+USB Cable, Memory card, OTA
+
+Certification (planning)
+CE
+ -
+https://www.jimiiot.com/en/products/video-telematics/jc371:
+Cellular
+
+Technology
+4G LTE Cat 4, 3G (WCDMA)，2G（GSM）
+
+Frequency
+JC371-EU:
+FDD-LTE: B1/B3/B5/B7/B8/B20/B28A
+TDD-LTE: B38/B40/B41
+WCDMA: B1/B5/B8
+GSM: B3/B8
+
+JC371-NA:
+FDD-LTE: B2/B4/B5/B12/B13/B14/B66/B71
+WCDMA: B2/B4/B5
+
+JC371-LA:
+FDD-LTE: B1/B2/B3/B4/B5/B7/B8/B28/B66
+TDD-LTE: B40
+WCDMA: B1/B2/B4/B5/B8
+GSM: B2/B3/B5/B8
+
+GNSS
+
+Positioning system
+GPS, BDS, AGPS
+
+Camera
+
+Camera support
+1080P x 3
+
+Video format
+.ts
+
+Power
+
+Input voltage
+DC 9–30V
+
+Operating Environment
+
+Operating temperature
+–20°C to +70°C
+
+Storage temperature
+–30°C to +85°C
+
+Physical Specification
+
+Dimensions
+118.0 x 77.0 x 31.0mm
+
+Weight
+283g
+
+Interface
+
+LED indication
+Red (Power), Blue (Cellular), Green (GNSS), White (AI)
+
+SIM
+Nano-SIM
+
+Internal memory
+EMMC 128GB
+
+External memory
+TF card (up to 512GB)
+
+USB
+Type-C
+
+WiFi
+2.4GHz, Support AP Mode/STA Mode/WiFi Direct
+
+Bluetooth
+N/A
+
+Microphone
+Support
+
+Speaker
+Support
+
+Digital I/Os
+2*SOS, 2*Relay, 2*Reserved inputs
+
+Analog I/Os
+N/A
+
+Serial ports
+2*TTL
+
+Sensor
+6-Axis accelerometer
+
+Feature
+
+ADAS
+FCW, HMW, LDW, PCW
+
+DMS (Optional)
+Phone use, Smoking, Distraction, Yawning, Eyes closed, No face detected
+
+Configuration support
+GPRS, SMS, Memory card, APP
+
+Firmware update
+USB Cable, Memory card, OTA
+
+Certification
+FCC，PTCRB，CE
+ -
+
+https://www.jimiiot.com/en/products/gps-trackers/vl113:
+Applications
+
+Motorcycle Tracking
+
+
+Fleet Management
+
+
+Vehicle Dealers
+
+
+Positioning & Location
+
+Technology
+GPS, BDS, GLONASS, WIFI, LBS, AGPS
+
+Accuracy
+< 2.5m CEP
+
+Tracking sensitivity
+-165dBm
+
+Acquisition sensitivity
+-148dBm
+
+TTFF (open sky)
+Avg. hot start ≤ 1sec; Avg. cold start ≤ 32sec
+
+Cellular
+
+Technology
+LTE Cat 1
+
+Frequency
+VL113_EU:
+LTE-FDD: B1/B3/B7/B8/B20/B28;
+LTE-TDD: B34/B38/B39/B40/B41
+
+VL113_JP:
+LTE-FDD: B1/B3/B5/B8/B18/B19/B26/B28
+LTE-TDD: B41
+
+Power
+
+Battery
+N/A
+
+Input voltage
+DC 9–90V
+
+Power consumption
+Standby: < 5mA
+Working: < 60mA
+
+Interface
+
+LED indication
+GNSS (Blue), Cellular (Green)
+
+SIM
+E-SIM
+
+Digital I/Os
+N/A
+
+Analog I/Os
+N/A
+
+Voltage detection
+0–90V
+
+Memory capacity
+3000 GPS data entries
+
+USB
+N/A
+
+No. of onboard relays
+N/A
+
+GNSS antenna
+Internal
+
+Bluetooth antenna
+N/A
+
+Serial ports
+N/A
+
+Feature
+
+Voice monitoring range
+N/A
+
+Sensors
+Accelerometer
+
+Scenarios
+Vibrating alert, Speed alert, Geo-fence entry/exit alert, Power disconnection alert, Low internal battery alert
+
+Driving behavior analysis (DBA)
+Harsh acceleration, Harsh braking, Harsh cornering, Collision
+
+Bluetooth
+N/A
+
+Configuration support
+SMS, TrackSolid Pro
+
+Certification
+CE
+
+Operating Environment
+
+Operating temperature
+-20℃ to +70℃
+
+Operating humidity
+5% to 95%, non-condensing
+
+IP rating
+IP44
+
+Physical Specification
+
+Dimensions
+49.0 x 20.0 x 9.2mm
+
+Weight
+24g
+
+Optional Configuration*
+
+Battery
+1000mAh/3.7V industrial-grade Li-Polymer battery
+
+SIM IC
+5 x 6mm onboard
+ -
+
+https://www.jimiiot.com/en/products/gps-trackers/vl863:
+Applications
+
+Bus Fleet Management
+
+
+Vehicle Tracking
+
+
+Truck Fleet Management
+
+
+Positioning & Location
+
+Technology
+GPS, BDS, GLONASS
+
+Accuracy
+< 2.5m CEP
+
+Tracking sensitivity
+-165dBm
+
+Acquisition sensitivity
+-148dBm
+
+TTFF (open sky)
+Avg. hot start ≤ 1sec; Avg. cold start ≤ 38sec
+
+Cellular
+
+Technology
+LTE Cat 1, 2G (GSM)
+
+Frequency
+VL863P_LA:
+LTE-FDD: B1/B2/B3/B4/B5/B7/B8/B28
+GSM: B2/B3/B5/B8
+
+VL863P_EM:
+LTE-FDD: B1/B3/B7/B8/B20/B28
+LTE-TDD: B34/B38/B39/B40/B41
+GSM: B2/B3/B5/B8
+
+Power
+
+Battery
+1000mAh
+
+Input voltage
+9–36VDC
+
+Power consumption
+< 16mA
+
+Interface
+
+LED indication
+GNSS (Blue), Cellular (Green), Power (Red)
+
+SIM
+Micro-SIM
+
+Digital I/Os
+4 (with 2 configurable): ACC detection, panic button, relay, and door detection
+
+Analog I/Os
+ADC_1: 0–5V; ADC_2: 0–36V
+
+Memory capacity
+3000 GPS data entries
+
+USB
+Type-C (for configuration)
+
+GNSS antenna
+Internal
+
+Bluetooth antenna
+Internal
+
+Serial ports
+3*TTL (TTL3 can be replaced by CAN);
+1*RS485;
+1*1-Wire
+1*RS232 (which can multiplex with TTL2)
+
+CAN
+1
+
+Feature
+
+Sensors
+Accelerometer
+
+Scenarios
+Vibrating alert, Speed alert, SOS alert, Tamper alert, Geo-fence entry/exit alert, Remote immobilization, Power disconnection alert, Low internal battery alert, Door status detection, Audible alert (via onboard buzzer)
+
+Driving behavior analysis (DBA)
+Harsh acceleration, Harsh braking, Harsh cornering, Collision
+
+Bluetooth
+BLE 5.0
+
+Configuration support
+PC Tools, SMS, Tracksolid Pro, Bluetooth
+
+Certification (planning)
+CE, FCC
+
+Operating Environment
+
+Operating temperature
+-20℃ to +70℃
+
+Operating humidity
+5% to 95%, non-condensing
+
+IP rating
+N/A
+
+Physical Specification
+
+Dimensions
+115.0 x 69.0 x 28.0mm
+
+Weight
+172g
+
+Optional Configuration*
+
+2000mAh Battery
+Instead of 1000mAh internal battery
+
+External GNSS antenna
+Instead of internal antenna
+
+External Bluetooth antenna
+Instead of internal antenna
+
+Accessories
+K7800 environmental sensor, RFID reader, Temperature sensor, Fuel level sensor, MIC/SPK
+
+-
+
+https://www.jimiiot.com/en/products/gps-trackers/pl601:
+Applications
+
+Personal Safety
+
+
+Pet Tracking
+
+
+Package Tracking
+
+
+Positioning & Location
+
+Technology
+GPS, BDS
+
+Accuracy
+< 2m CEP50
+
+Tracking sensitivity
+-165dBm
+
+Acquisition sensitivity
+-159dBm
+
+TTFF (open sky)
+Avg. hot start ≤ 1sec; Avg. cold start ≤ 26sec
+
+Cellular
+
+Technology
+LTE Cat 1
+
+
+
+
+Frequency
+PL601_LA:
+LTE-FDD: B1/B2/B3/B4/B5/B7/B8/B28/B66
+GSM: 850/900/1800/1900
+
+PL601_NA:
+LTE-FDD: B2/B4/B5/B7/B12/B14/B17/B25/B26/B66
+LTE-TDD: B41
+
+PL601_EA:
+LTE-FDD: B1/B3/B5/B7/B8/B20/B28
+LTE-TDD: B34/B38/B39/B40/B41
+GSM: 900/1800
+
+Power
+
+Battery
+650mAh/3.8V industrial-grade Li-Polymer battery ( Rechargeable)
+
+Working modes
+Intelligent mode, Timing mode
+
+Battery life
+Up to 4 days in intelligent mode, 2 hours moving per day (update every 60s)
+
+Interface
+
+LED indication
+Tri-color LED for power, cellular, and GNSS
+
+SIM
+Nano-SIM
+
+Memory capacity
+1000 GPS data entries
+
+Button
+1 button for SOS, power on/off, and more
+
+USB
+Type-C (for charging)
+
+GNSS antenna
+Internal
+
+Bluetooth antenna
+Internal
+
+Feature
+
+Voice monitoring range
+3m
+
+Sensors
+Accelerometer, Barometer (optional)
+
+Scenarios
+SOS alert, Geo-fence entry/exit alert, Abnormal noise alert, Low battery alert, Power on/off alert
+
+Mount method
+Lanyard, back clip
+
+Bluetooth
+BLE 5.0
+
+RFID
+N/A
+
+Configuration support
+Bluetooth
+
+Certification
+CE, FCC
+
+Operating Environment
+
+Operating temperature
+-20℃ to +70℃
+
+Operating humidity
+5% to 95%, non-condensing
+
+IP rating
+IP65
+
+Physical Specification
+
+Dimensions
+45.0 x 45.0 x 17.0mm
+
+Weight
+33g
+
+Standard Packing
+
+USB cable
+1
+
+Lanyard
+1
+
+Optional Configuration*
+
+Charger
+5V/1A
+
+Back clip
+
+
+Barometer
+To measure altitude
+
+SIM
+eSIM
+ 
+-
+
+https://www.jimiiot.com/en/products/gps-trackers/ll303pro-solar-powered-gnss-tracker: 
+
+Technology
+GPS, BDS, LBS
+
+Accuracy
+＜2.5m CEP
+
+Tracking sensitivity
+–165dBm
+
+Acquisition sensitivity
+–148dBm
+
+TTFF (open sky)
+Avg. hot start ≤1s
+Avg. cold start ≤32s
+
+Cellular
+
+Technology
+LTE Cat 1, GSM
+
+Frequency
+LTE-FDD: B1/B3//B7/B8/B20/B28LTE-TDD: B38/B40
+GSM:
+
+E-GSM900
+
+DCS1800
+
+Power
+
+Battery
+10,000mAh/3.7V industrial-grade Li-Polymer battery (rechargeable)
+
+Solar power
+5V/400mA (Standard Operating Voltage/Current @STC)
+STC: Direct illumination with 38,000lux halogen lamp
+
+Magnetic charger
+5V/2A
+
+Working modes
+Mode 1: Timing mode
+Mode 2: Intelligent mode
+Mode 3: Power-saving mode
+
+Battery life
+10 days to 1 year
+
+Interface
+
+LED indication
+Cellular (Green), Power (Red)
+
+SIM
+Nano-SIM
+
+Memory capacity
+1000 GPS data entries
+
+Tamper proof
+Hall effect sensor
+
+USB
+4-Pin magnetic wire
+
+GNSS antenna
+Internal
+
+Bluetooth antenna
+Internal
+
+Operating Environment
+
+Operating temperature
+–20℃ to +70℃
+
+Operating humidity
+5% to 95%, non-condensing
+
+IP rating
+IP67
+
+Physical Specification
+
+Dimensions
+200.0 x 115.0 x 25.0mm (mount base excluded)
+
+Weight
+423g
+
+Feature
+
+Sensors
+Accelerometer, Buzzer, Hall effect sensor, NTC
+
+Scenarios
+Low battery alert, Tamper alert, Vibrating alert, SIM card change alert, Temperature & humidity exception alerts (optional)
+
+Bluetooth
+BLE 5.0
+
+RFID
+2.4GHz
+
+Configuration support
+APP, TrackSolid Pro, PC Tools, SMS
+
+Certification
+CE, FCC, PTCRB
+
+Standard Packing
+
+LL303PRO unit
+1
+
+Charging cable
+1
+
+Mount base
+1
+
+Screwdriver
+1
+
+Ejector pin
+1
+
+Self-tapping screw
+4
+
+Flat head screw
+4
+
+Anti-theft screw
+4
+
+Optional Configuration*
+
+Bluetooth sensor
+K7800 environmental sensor
+ -
+https://www.jimiiot.com/en/products/gps-trackers/vl505:
+Positioning & Location
+
+Technology
+GPS, BDS, AGPS, LBS
+
+Accuracy
+<2.5m CEP
+
+Tracking sensitivity
+–163dBm
+
+Acquisition sensitivity
+–158dBm
+
+TTFF (open sky)
+Avg. hot start ≤1sec
+Avg. cold start ≤28sec
+
+Cellular
+
+Technology
+LTE Cat 1
+
+Frequency
+VL505-NA
+LTE-FDD: B2/B4/B5/B7/B12/B14/B17/B25/B26/B66
+LTE-TDD: B41VL505-EU
+LTE-FDD: B1/B3/B7/B8/B20/B28
+LTE-TDD: B34/B38/B39/B40/B41
+
+Power
+
+Battery
+50mAh/3.7V
+
+Input voltage
+9–36VDC
+
+Power consumption
+Standby: 2mA
+Working: 35mA (one update per 10s)
+
+Operating Environment
+
+Operating temperature
+–20°C to 70°C
+
+Operating humidity
+5% to 95%, non-condensing
+
+IP rating
+N/A
+
+Physical Specification
+
+Dimensions
+45.0 x 30.0 x 22.5mm
+
+Weight
+26g
+
+Interface
+
+LED indication
+Power (Red), GNSS (Blue), Cellular (Green)
+
+SIM
+eSIM
+
+Digital I/Os
+N/A
+
+Analog I/Os
+N/A
+
+Voltage detection
+N/A
+
+Memory capacity
+400 GPS data entries
+
+USB
+N/A
+
+Microphone
+Onboard
+
+No. of relays
+N/A
+
+GNSS antenna
+Internal
+
+Bluetooth antenna
+N/A
+
+Serial ports
+N/A
+
+Feature
+
+Voice monitoring range
+≤5 meters
+
+Sensors
+Accelerometer
+
+Driving behavior analysis (DBA)
+Harsh acceleration, Harsh braking, Harsh cornering, Collision
+
+Bluetooth
+N/A
+
+Configuration support
+SMS, Tracksolid Pro
+
+Certification
+FCC, CE
+ -
+https://www.jimiiot.com/en/products/gps-trackers/vl512-4g-obd-tracker: GNSS
+
+Positioning system
+GPS/BDS
+
+Positioning accuracy
+＜2.5m CEP
+
+Tracking sensitivity
+-162 dBm
+
+Acquisition sensitivity
+-148 dBm (cold) /-156 dBm (hot)
+
+TTFF (open sky)
+Avg. hot start ≤1sec
+Avg. cold start ≤32sec
+
+Cellular
+
+Communication network
+LTE Cat 1 + GSM
+
+Frequency
+LTE FDD: B1/B3/B7/B8/B20/B28
+LTE TDD: B34/B38/B39/B40/B41
+GSM: 850/900//1800/1900MHz
+
+Power
+
+Battery
+50mAh industrial-grade LiCo battery
+
+Input voltage
+9-36VDC
+
+Interface
+
+LED indication
+GNSS (Blue), Cellular (Green)
+
+Connector
+OBDII port
+
+SIM
+Nano-SIM
+
+USB
+1 x USB Type-C for configuration
+
+Data storage
+16+16MB
+
+Physical Specification
+
+Dimensions
+51.0 x 50.0 x 22.0mm
+
+Weight
+42g
+
+Operating Environment
+
+Operating temperature
+-20°C to 70°C
+
+Operating humidity
+5%～95%, non-condensing
+
+Feature
+
+Voice monitoring range
+≤5 meters
+
+Sensors
+Accelerometer
+
+Ignition detection
+External Power Voltage
+
+Scenarios
+Vehicle movement alert, Speeding alert, Geo-fence, Voice-monitoring, Vehicle battery detection, Power supply disconnection
+
+Driving behavior analysis
+Harsh acceleration, Harsh braking, Harsh cornering, Collision
+ - https://www.jimiiot.com/en/products/gps-trackers/qbit-m: GNSS
+
+Positioning system
+GPS+QZSS (nRF*)
+
+Positioning accuracy
+＜2.5m CEP
+
+Tracking sensitivity
+-155dBm
+
+Acquisition sensitivity
+-147dBm
+
+TTFF (open sky)
+Avg. hot start ≤1sec
+Avg. cold start ≤36sec
+
+Cellular
+
+Communication network
+LTE-M Cat M1 & Cat NB
+
+Frequency
+Cat-M1: B1, B2, B3, B4, B5, B8, B12, B13, B14, B18, B19, B20, B25, B26, B28, B66
+Cat-NB1/NB2: B1, B2, B3, B4, B5, B8, B12, B13, B17, B19, B20, B25, B26, B28, B66
+
+Power
+
+Battery
+650mAh/3.8V industrial-grade Li-Polymer battery
+
+Working modes
+Intelligent mode; Regular GPS mode
+
+Standby time
+Up to 7 days in Intelligent mode, 2 hours moving per day (180s locate interval in movement)
+
+Interface
+
+SIM
+Nano-SIM (or soft SIM)
+
+Button
+1 functional button, 1 panic button
+
+Physical Specification
+
+Dimensions
+40.0 x 45.0 x 15.0mm
+
+Weight
+30.5g
+
+Operating Environment
+
+Operating temperature
+–20℃ to +75℃
+
+Operating humidity
+5%～95%, non-condensing
+
+IP rating
+IP65
+
+Feature
+
+Sensors
+Accelerometer
+
+Scenarios
+Safety fence exit alert, Buzzer alert, Low battery alert
+  - https://www.jimiiot.com/en/products/gps-trackers/pl200: Positioning & Location
+
+Technology
+GPS, BDS, LBS, BLE, WiFi
+
+Accuracy
+＜2.5m CEP
+
+Tracking sensitivity
+–165dBm
+
+Acquisition sensitivity
+–148dBm
+
+TTFF (open sky)
+Avg. hot start ≤1sec
+Avg. cold start ≤32sec
+
+Cellular
+
+Technology
+4G Cat 1, GSM
+
+Frequency
+PL200(L):
+FDD: B1/B2/B3/B4/B5/B7/B28
+
+GSM: B2/B3/B5/B8
+
+PL200(E):
+
+FDD: B1/B3/B7/B8/B20/B28:
+
+TDD: B38/B40/B41
+
+GSM: B2/B3/B5/B8
+
+Power
+
+Battery
+2,000mAh/3.7V industrial-grade Li-Polymer battery (rechargeable)
+
+Working modes
+Mode 0: Step-count-based mode
+Mode 1: Timing mode
+
+Battery life
+Up to 5 days
+
+Interface
+
+LED indication
+Power (Red), Notice (Green)
+
+SIM
+Nano-SIM
+
+Memory capacity
+1000 GPS data entries
+
+Button
+2*functional buttons; 1*panic button
+
+USB
+Magnetic
+
+GNSS antenna
+Internal
+
+Bluetooth antenna
+Internal
+
+Feature
+
+Voice monitoring range
+N/A
+
+Sensors
+Accelerometer
+
+Scenarios
+Power-on alert, Shutdown alert, Low battery alert, SOS alert, SIM card change alert, Geo-fence entry & exit alert
+
+Specialties
+Speaker, Microphone
+
+Bluetooth
+BLE 5.0
+
+RFID
+N/A
+
+Mount method
+Lanyard
+
+Configuration support
+SMS, Online command
+
+Certification
+FCC、CE
+
+Operating Environment
+
+Operating temperature
+–20℃ to +60℃
+
+Operating humidity
+5% to 95%, non-condensing
+
+IP rating
+IP65
+
+Physical Specification
+
+Dimensions
+105.0 x 62.0 x 13.0mm
+
+Weight
+81g
+ -  https://www.jimiiot.com/en/products/gps-trackers/ll704: Positioning & Location
+
+Technology
+GPS, BeiDou, WiFi, LBS
+
+Accuracy
+< 2.5m CEP
+
+Tracking sensitivity
+-165dBm
+
+Acquisition sensitivity
+-148dBm
+
+TTFF (open sky)
+Avg. hot start < 1sec;
+Avg. cold start < 32sec
+
+Cellular
+
+Technology
+4G Cat 1
+
+Frequency
+FDD-LTE: B1/B3/B7/B8/B20
+TDD-LTE:B34/B38/B39/B40/B41
+
+Power
+
+Battery
+3200mAh/3.0V Li-Po battery (disposable)
+
+Working modes
+Mode 1: Tracking mode
+Mode 2: Timing mode
+Mode 3: Week-based mode
+Mode 4: Alarm-based mode
+Mode 5: Phase-based mode
+
+Battery life
+30 days to 3 years
+
+Interface
+
+LED indication
+Power (Red)
+
+SIM
+Nano-SIM
+
+Memory capacity
+N/A
+
+Tamper proof
+N/A
+
+USB
+N/A
+
+GNSS antenna
+Internal
+
+Bluetooth antenna
+N/A
+
+Feature
+
+Voice monitoring range
+N/A
+
+Sensors
+Light sensor
+
+Scenarios
+Low battery alert, Tamper alert, Geo-fence entry & exit alert
+
+Bluetooth
+N/A
+
+RFID
+N/A
+ - https://www.jimiiot.com/en/products/gps-trackers/ll708: Positioning & Location
+
+Technology
+GPS/BDS/LBS
+
+Accuracy
+< 2.5m CEP
+
+Tracking sensitivity
+-165dBm
+
+Acquisition sensitivity
+-148dBm
+
+TTFF (open sky)
+Avg. hot start ≤ 1sec;
+Avg. cold start ≤ 32sec
+
+Cellular
+
+Technology
+4G Cat.1
+
+Frequency
+LL708_EU
+LTE-FDD: B1/B3/B7/B8/B20/B28
+LTE-TDD: B34/B38/B39/B40/B41
+LL708_LA
+LTE-FDD: B1/B2/B3/B4/B5/B7/B8/B28/B66
+
+Power
+
+Battery
+550 mah
+
+Input voltage
+N/A
+
+Power consumption
+6 months (Positioning once a day)
+
+Interface
+
+LED indication
+Power (Red)
+
+SIM
+nano
+
+Digital I/Os
+N/A
+
+Analog I/Os
+N/A
+
+Voltage detection
+N/A
+
+USB
+N/A
+
+GNSS antenna
+Ceramic antenna
+
+Bluetooth antenna
+N/A
+
+Serial ports
+N/A
+
+Operating Environment
+
+Operating temperature
+-20℃-60℃
+
+Operating humidity
+5% to 95%, non-condensing
+
+IP rating
+N/A
+
+Physical Specification
+
+Dimensions
+48*38*14mm
+
+Optional Configuration*
+
+*Optional Configuration required to be customized or purchased separately.
+ - https://www.jimiiot.com/en/products/gps-trackers/4g-wireless-gps-tracker: Positioning & Location
+
+Technology
+GPS, BDS, LBS
+
+Accuracy
+＜2.5m CEP
+
+Tracking sensitivity
+–165dBm
+
+Acquisition sensitivity
+–148dBm
+
+TTFF (open sky)
+Avg. hot start ≤1sec
+Avg. cold start ≤32sec
+
+Cellular
+
+Technology
+LTE Cat.1, GSM
+
+Frequency
+LL705(E):
+LTE-FDD: B1/B3/B5/B7/B8/B20/B28
+LTE-TDD: B38/B40/B41
+GSM: B2/B3/B5/B8
+
+LL705(GL):
+LTE-FDD: B1/B2/B3/B4/B5/B7/B8/B12/B17/B18/B19/B20/B25/B26/B28/B66
+LTE-TDD: B38/B40/B41
+GSM: B2/B3/B5/B8
+
+Power
+
+Battery
+18,000mAh Li-soCl2 battery string (disposable)
+
+Working modes
+Mode 1: Tiracking mode
+Mode 2: Timing mode
+Mode 3: Alarm-based mode
+Mode 4: Time period mode
+
+Standby time
+8 days to 10 years
+
+Interface
+
+LED indication
+Power (GREEN)
+
+SIM
+Nano-SIM
+
+Memory capacity
+1000 GPS data entries
+
+Tamper proof
+Light sensor
+
+USB
+N/A
+
+GNSS antenna
+Internal
+
+Bluetooth antenna
+Internal
+
+Operating Environment
+
+Operating temperature
+–20℃ to +70℃
+
+Operating humidity
+5%～95%, non-condensing
+
+IP rating
+IP67
+
+Physical Specification
+
+Dimensions
+120.0 x 68.0 x 43.5mm
+
+Weight
+289.0g
+
+Feature
+
+Sensors
+Light sensor, Accelerometer
+
+Scenarios
+Low battery alert, Tamper alert, Vibrating alert, Geo-fence entry & exit alert
+
+Driving behavior analysis (DBA)
+N/A
+
+GPS Jammer detection
+N/A
+
+Cellular Jammer detection
+N/A
+
+Bluetooth
+BLE 4.2
+
+Configuration support
+SMS, Online command, App
+
+Certification
+CE
+
+Standard Packing
+
+LL705 unit
+1
+
+Screwdriver
+1
+
+Optional Configuration*
+
+Bluetooth sensor
+K7800 environmental sensor
+ - https://www.jimiiot.com/en/products/gps-trackers/ll702-wireless-gps-tracker: Positioning & Location
+
+Technology
+GPS, BDS, LBS
+
+Accuracy
+<2.5m CEP
+
+Tracking sensitivity
+–165dBm
+
+Acquisition sensitivity
+–148dBm
+
+TTFF (open sky)
+Avg. hot start ≤1sec
+Avg. cold start ≤32sec
+
+Cellular
+
+Technology
+LTE Cat 1, GSM
+
+Frequency
+LL702-E:
+LTE-FDD: B1/B3/B5/B7/B8/B20/B28
+LTE-TDD: B38/B40/B41
+GSM: B2/B3/B5/B8
+LL702-L:
+LTE-FDD: B1/B2/B3/B4/B5/B7/B8/B20/B28
+LTE-TDD: B40
+GSM: B2/B3/B5/B8
+
+Power
+
+Battery
+4,200mAh/3.0V industrial-grade Li-MnO2 battery (disposable)
+
+Working modes
+Mode 1: Tracking mode
+Mode 2: Timing mode
+Mode 3: Week-based mode
+Mode 4: Alarm-based mode
+
+Battery life
+2 days to 3 years
+
+Interface
+
+LED indication
+Power (Green)
+
+SIM
+Nano-SIM
+
+Memory capacity
+400 GPS data entries
+
+Tamper proof
+Light sensor
+
+USB
+N/A
+
+GNSS antenna
+Internal
+
+Bluetooth antenna
+N/A
+
+Feature
+
+Voice monitoring range
+N/A
+
+Sensors
+Light sensor
+
+Scenarios
+Tamper alert, Geo-fence entry & exit alert
+
+Specialties
+Additional fixes (generated in cellular blind spots) upload upon cellular reconnection
+
+Bluetooth
+N/A
+
+RFID
+N/A
+
+Mount method
+Magnet
+
+Configuration support
+Online command, SMS
+
+Certification
+CE, FCC
+
+Operating Environment
+
+Operating temperature
+–20℃ to +60℃
+
+Operating humidity
+5% to 95%, non-condensing
+
+IP rating
+IP54
+
+Physical Specification
+
+Dimensions
+80.0 x 45.0 x 31.4mm
+
+Weight
+145g
+
+Standard Packing
+
+LL702 unit
+1
+ - https://www.jimiiot.com/en/products/gps-trackers/ll309: Positioning & Location
+
+Technology
+GPS, BDS, LBS
+
+Accuracy
+< 2.5m CEP
+
+Tracking sensitivity
+–148 dBm
+
+Acquisition sensitivity
+–168 dBm
+
+TTFF (open sky)
+Avg. hot start ≤1s; Avg. cold start ≤32s
+
+Cellular
+
+Technology
+LTE Cat. 1
+
+Frequency
+LL309
+LTE-FDD: B2/B4/B5/B7/B12/B14/B17/B25/B26/B66
+LTE-TDD: B41
+
+Power
+
+Battery
+2500mAh Li-Po battery (rechargeable)
+
+Working modes
+Mode 1: Timing Mode
+Mode 2: Intelligent Mode
+Mode 3: Power-saving Mode
+
+Battery life
+30 days (one update per hour)
+
+Interface
+
+LED indication
+GNSS (Blue), Battery (White), Cellular (Green)
+
+SIM
+Nano-SIM
+
+Memory capacity
+20,000 data entries (for export); 5000 GPS data entries (buffer)
+
+Tamper proof
+Light sensor
+
+USB
+Type-C
+
+GNSS antenna
+Internal
+
+Bluetooth antenna
+Internal
+
+Feature
+
+Voice monitoring range
+N/A
+
+Sensors
+Light sensor, Temperature and humidity sensor
+
+Scenarios
+Tamper alert, Temperature & humidity exception alerts, Vibrating alert, Low battery alert
+
+Mount method
+Wall hooks
+
+Bluetooth
+BLE 5.1
+
+RFID
+N/A
+
+Configuration support
+SMS, Tracksolid Pro, PC Tools, Jimi IoT Lab
+
+Certification
+FCC
+
+Operating Environment
+
+Operating temperature
+–20℃ to +70℃
+
+Operating humidity
+0% to 100%
+
+IP rating
+IP67
+
+Physical Specification
+
+Dimensions
+100 × 60 × 15mm
+
+Weight
+108g
+
+Standard Packing
+
+LL309 unit
+1
+
+Type-C cable
+1
+
+Adhesive wall hooks
+2 
+- https://www.jimiiot.com/en/products/gps-trackers/ll302: GNSS
+
+Positioning system
+GPS+BDS+LBS
+
+Positioning accuracy
+＜2.5m CEP
+
+Tracking sensitivity
+-165dBm
+
+Acquisition sensitivity
+-148dBm
+
+TTFF (open sky)
+Avg. hot start ≤1sec
+Avg. cold start ≤32sec
+
+Cellular
+
+Communication network
+LTE Cat 1/GSM
+
+Frequency
+LL302-EU:
+LTE-FDD: B1/B3/B5/B7/B8/B20/B28
+LTE-TDD: B38/B40/B41
+GSM: B2/B3/B5/B8
+LL302-LA:
+LTE-FDD: B1/B2/B3/B4/B5/B7/B8/B20/B28
+LTE-TDD: B40
+GSM: B2/B3/B5/B8
+
+Power
+
+Battery
+6,000mAh/3.7V industrial-grade Li-Polymer battery (rechargeable)
+
+Working modes
+Mode 1: Timing mode
+Mode 2: Intelligent mode
+Mode 3: Power-saving mode
+
+Battery life
+10 days to 300 days
+
+Interface
+
+LED indication
+GNSS (Blue), Cellular (Green), Power (White)
+
+SIM
+Micro-SIM
+
+Memory capacity
+1000 GPS data entries
+
+Tamper proof
+Light sensor
+
+USB
+Micro USB
+
+GNSS antenna
+Internal
+
+Bluetooth antenna
+Internal
+
+Physical Specification
+
+Dimensions
+95.0 x 59.0 x 29.2mm (with magnet)
+
+Weight
+233g (with magnet)
+
+Operating Environment
+
+Operating temperature
+–20℃ to +70℃
+
+Operating humidity
+5%～95%, non-condensing
+
+IP rating
+IPX5
+
+Feature
+
+Temperature detection
+–20℃ to +70℃ (±0.2℃)
+
+Humidity detection
+5%～95% (±1％RH)
+
+Voice monitoring range
+≤ 5m
+
+Sensors
+Accelerometer, Light sensor
+
+Scenarios
+Low battery alert, Tamper alert, Vibrating alert, Voice-triggered alert, Temperature & humidity exception alert (optional), Door open & close alert (optional)
+
+Mount method
+Magnet
+
+Bluetooth
+BLE 5.0
+
+Configuration support
+APP, Tracksolid Pro, PC tools, SMS
+
+Certification
+CE, FCC
+ - https://www.jimiiot.com/en/products/gps-trackers/jm-ll301-4g-lte-cat-gps-asset-tracker: GNSS
+
+Positioning system
+GPS+BDS+LBS
+
+Positioning accuracy
+＜2.5m CEP
+
+Tracking sensitivity
+-165dBm
+
+Acquisition sensitivity
+-148dBm
+
+TTFF (open sky)
+Avg. hot start ≤1sec
+Avg. cold start ≤32sec
+
+Cellular
+
+Communication network
+LTE/GSM
+
+Frequency
+LL301-E
+LTE-FDD: B1/B3/B7/B8/B20/B28
+GSM: 900/1800MHz
+LL301-L
+LTE-FDD: B1/B2/B3/B4/B5/B7/B8/B28/B66
+GSM: 850/900/1800/1900MHz
+
+Power
+
+Battery
+10,000mAh/3.7V industrial-grade Li-Polymer battery (rechargeable)
+
+Working modes
+Mode 1: Timing positioning mode
+Mode 2: Intelligent positioning mode
+Mode 3: Battery saving mode
+
+Battery life
+7 days to 2 years
+
+Interface
+
+LED indication
+Status (Red), Battery (Blue)
+
+SIM
+Micro-SIM
+
+Memory capacity
+1000 GPS data entries
+
+Tamper proof
+Pressure-sensitive button
+
+USB
+Micro USB
+
+GNSS antenna
+Internal
+
+Bluetooth antenna
+Internal
+
+Physical Specification
+
+Dimensions
+108.5 x 61.1 x 30.0mm
+
+Weight
+260g
+
+Operating Environment
+
+Operating temperature
+–20℃ to +70℃
+
+Operating humidity
+5%～95%, non-condensing
+
+IP rating
+IPX5
+
+Feature
+
+Voice monitoring range
+≤ 5m
+
+Sensors
+3-Axis accelerometer
+
+Scenarios
+Low battery alert, Tamper alert, Vibrating Alert, Cover removal alert, Power off alert, Geo-fence entry & exit alert, temperature & humidity exception alert (optional)
+
+Mount method
+Magnet or straps
+
+Bluetooth
+BLE 5.0
+
+Configuration support
+Bluetooth, Tracksolid Pro, PC tools, SMS
+
+Certification
+CE, FCC
+  - https://www.jimiiot.com/en/products/gps-trackers/lg300-asset-gnss-tracker: GNSS
+
+Positioning system
+GPS+BDS+LBS
+
+Positioning accuracy
+＜2.5m CEP
+
+Tracking sensitivity
+-165dBm
+
+Acquisition sensitivity
+-148dBm
+
+TTFF (open sky)
+Avg. hot start ≤1sec
+Avg. cold start ≤32sec
+
+Cellular
+
+Communication network
+GSM
+
+Frequency
+B2/B3/B5/B8
+
+Power
+
+Battery
+10,000mAh/3.7V industrial-grade Li-Polymer battery
+
+Working modes
+Mode 1: Timing mode
+Mode 2: Intelligent mode
+
+Interface
+
+LED indication
+GNSS (Blue), Cellular (Green), Power (White)
+
+SIM
+Nano-SIM
+
+Tamper proof
+Light sensor
+
+Physical Specification
+
+Dimensions
+86.0 x 63.0 x 31.5mm
+
+Weight
+245g
+
+Operating Environment
+
+Operating temperature
+–20℃ to +70℃
+
+Operating humidity
+5%～95%, non-condensing
+
+IP rating
+IP65
+
+Feature
+
+Sensors
+3-axis Accelerometer
+
+Scenarios
+Low battery alert, Tamper alert, Sound-triggered alert
+ - https://www.jimiiot.com/en/products/gps-trackers/gt06n-4g: Positioning & Location
+
+Technology
+GPS, BDS, LBS, GLONASS
+
+Accuracy
+< 2.5m CEP
+
+Tracking sensitivity
+–165dBm
+
+Acquisition sensitivity
+–148dBm
+
+TTFF (open sky)
+Avg. hot start ≤2s
+Avg. cold start ≤38s
+
+Cellular
+
+Technology
+LTE Cat 1
+
+Frequency
+LTE-FDD: B1/B3/B5/B8
+LTE-TDD: B34/B38/B39/B40/B41
+
+Power
+
+Battery
+450mAh/3.7V industrial-grade Li-Polymer battery
+
+Input voltage
+9-90VDC
+
+Power consumption
+Standby: < 5mA
+
+Operating Environment
+
+Operating temperature
+–20℃ to +70℃
+
+Operating humidity
+5% to 95%, non-condensing
+
+IP rating
+IPX4
+
+Physical Specification
+
+Dimensions
+105.8 × 54.5 × 16.4mm
+
+Weight
+87.6g
+
+Interface
+
+LED indication
+GNSS (Blue), Cellular (Green), Power (Red)
+
+SIM
+Nano-SIM
+
+Digital I/Os
+1*ACC, 1*SOS, 1*Relay
+
+Analog I/Os
+N/A
+
+Voltage detection
+N/A
+
+Data storage
+3000+ data entries
+
+USB
+N/A
+
+Microphone
+Support
+
+No. of relays
+N/A
+
+GNSS antenna
+Internal
+
+Bluetooth antenna
+N/A
+
+Serial ports
+1*TTL
+
+Feature
+
+Sensors
+Accelerometer
+
+Scenarios
+Vehicle movement alert, Speeding alert, Geo-fence entry/exit, Vehicle battery detection, Vibrating alert
+
+Driving behavior analysis (DBA)
+Harsh acceleration, Harsh braking, Harsh cornering, Collision
+
+Bluetooth
+N/A
+
+Configuration support
+SMS, PC Tools, TrackSolid Pro
+
+Certification
+CE
+ - https://www.jimiiot.com/en/products/gps-trackers/kd031: Power
+
+Input voltage
+9-33VDC
+
+Working modes
+Working Mode (Ignition On), Sleep Mode (Ignition Off)
+
+Feature
+
+Sensor
+Accelerometer
+
+Mount method
+Plug-and-Play
+
+Bluetooth
+BLE 5.1 (Optional)
+
+RFID
+Can be externally connected through the reserved serial port
+
+Certification
+FCC, CE
+
+Interface
+
+LED indication
+Blue (Status)
+
+Connection
+OBDII or J1939 9-pin port to 8-pin connector (PH3.0, 2*4-Pin)
+
+Output port
+10-Pin (PH3.0, 2*5-Pin)
+
+Operating Environment
+
+Operating temperature
+-20℃ to +70℃
+
+Operating humidity
+5% to 95% (Non-condensing)
+
+Physical Specification
+
+Dimensions (LxWxH)
+100x29x19mm
+
+Weight
+40g
+
+Standard Packing
+
+KD031 unit
+1
+
+OBDII cable
+1
+
+Optional Configuration*
+
+Bluetooth module
+
+
+Nor flash
+
+
+J1939 9-pin to OBDII cable
+
+
+Adapter cable
+ -  Power
+
+Input voltage
+9-33VDC
+
+Output voltage1
+9-33VDC, 3A
+
+Output voltage2
+5VDC, 0.3A
+
+Working modes
+Working Mode (Ignition On)
+Sleep Mode (Ignition Off）
+
+Interface
+
+LED indication
+Blue (Bluetooth), Green (GNSS),Orange (OBD)
+
+Connection
+OBDII and J1939 9P to 10P MoIex-3.0 connector
+
+Output port
+10-Pin (PH3.0, 2*5-Pin)
+
+Bluetooth antenna
+PCB onboard antenna
+
+GNSS antenna
+ceramic antenna (25*25*4mm)
+
+Feature
+
+GNSS
+GPS,BDS
+
+Mount method
+Plug-and-Play
+
+Bluetooth
+BLE 5.1
+
+Memory capacity
+16MB Nor Flash
+
+Certification (pending)
+FCC
+
+Operating Environment
+
+Operating temperature
+-20℃ ~ +85℃
+
+Operating humidity
+5%~95% (Non-condensing)
+
+Physical Specification
+
+Dimensions (LxWxH)
+70x50x20mm
+
+Weight
+60g
+
+Standard Packing
+
+KD032 unit
+1
+
+Main cable
+1
+
+Optional Configuration*
+
+3D/6D sensor
+
+
+Adapter Cable
+ - https://www.jimiiot.com/en/products/gps-trackers/kd032: Power
+
+Input voltage
+9-33VDC
+
+Output voltage1
+9-33VDC, 3A
+
+Output voltage2
+5VDC, 0.3A
+
+Working modes
+Working Mode (Ignition On)
+Sleep Mode (Ignition Off）
+
+Interface
+
+LED indication
+Blue (Bluetooth), Green (GNSS),Orange (OBD)
+
+Connection
+OBDII and J1939 9P to 10P MoIex-3.0 connector
+
+Output port
+10-Pin (PH3.0, 2*5-Pin)
+
+Bluetooth antenna
+PCB onboard antenna
+
+GNSS antenna
+ceramic antenna (25*25*4mm)
+
+Feature
+
+GNSS
+GPS,BDS
+
+Mount method
+Plug-and-Play
+
+Bluetooth
+BLE 5.1
+
+Memory capacity
+16MB Nor Flash
+
+Certification (pending)
+FCC
+
+Operating Environment
+
+Operating temperature
+-20℃ ~ +85℃
+
+Operating humidity
+5%~95% (Non-condensing)
+
+Physical Specification
+
+Dimensions (LxWxH)
+70x50x20mm
+
+Weight
+60g
+
+Standard Packing
+
+KD032 unit
+1
+
+Main cable
+1
+
+Optional Configuration*
+
+3D/6D sensor
+
+
+Adapter Cable
+- https://www.jimiiot.com/en/products/gps-trackers/jm-ll02-asset-gps-tracker-device: Positioning & Location
+
+Technology
+GPS, BDS, LBS
+
+Positioning accuracy
+＜2.5m CEP
+
+Tracking sensitivity
+-165dBm
+
+Acquisition sensitivity
+-148dBm
+
+TTFF (open sky)
+Avg. hot start ≤1sec
+Avg. cold start ≤40sec
+
+Cellular
+
+Technology
+LTE Cat M1 & NB2, GSM
+
+Frequency
+LTE Cat M1 & NB2: B2/B4/B5/B12/B13/B66
+GSM: 850/900/1800/1900 MHz
+
+Power
+
+Battery
+6,000mAh/3.7V industrial-grade Li-Polymer battery
+
+Working modes
+Mode 0: Standby mode
+Mode 1: Tracking mode
+Mode 2: Power-saving mode
+
+Battery life
+4.5 days to 1.5 years
+
+Interface
+
+LED indication
+GNSS (Blue), Cellular (Green), Power (Red)
+
+SIM
+Nano-SIM
+
+Memory capacity
+1000 GPS data entries
+
+Tamper proof
+Light sensor
+
+USB
+4-Pin magnetic wire (for charging and debugging)
+
+GNSS antenna
+Internal
+
+Bluetooth antenna
+Internal
+
+Physical Specification
+
+Dimensions
+85.0 x 58.0 x 29.0mm
+
+Weight
+158g
+
+Operating Environment
+
+Operating temperature
+–20℃ to +70℃
+
+Operating humidity
+5%～95%, non-condensing
+
+IP rating
+IP67
+
+Feature
+
+Sensors
+Accelerometer, Light sensor
+
+Bluetooth
+Support Bluetooth 5.0
+
+Scenarios
+Low battery alert, Tamper alert, Vibrating alert, Over-speed alert, Geo-fence entry/exit
+
+Mount method
+Magnet or straps
+
+Configuration support
+APP Tracksolid Pro, PC tools, SMS
+
+Certification
+FCC
+ - https://www.jimiiot.com/en/products/gps-trackers/jm-ll01-asset-gnss-tracker: Positioning & Location
+
+Technology
+GPS, BDS, LBS
+
+Accuracy
+＜2.5m CEP
+
+Tracking sensitivity
+–165dBm
+
+Acquisition sensitivity
+–148dBm
+
+TTFF (open sky)
+Avg. hot start ≤1sec
+Avg. cold start ≤40sec
+
+Cellular
+
+Technology
+LTE Cat M1 & NB2, GSM
+
+Frequency
+LTE Cat M1 & NB2: B1/B2/B3/B4/B5/B8/B12/B13/B18/B19/B20/B26/B28/B66
+GSM: 850/900/1800/1900 MHz
+
+Power
+
+Battery
+10,000mAh/3.7V industrial-grade Li-Polymer battery (rechargeable)
+
+Working modes
+Mode 0: Standby mode
+Mode 1: Intelligent mode
+Mode 2: Power-saving mode
+
+Battery life
+6 days to 3 years
+
+Interface
+
+LED indication
+Cellular (Red), Battery (Blue)
+
+SIM
+Standard-SIM
+
+Memory capacity
+1000 GPS data entries
+
+Tamper proof
+Light sensor
+
+USB
+USB：Micro USB/USB Type-C
+
+GNSS antenna
+Internal
+
+Bluetooth antenna
+Internal
+
+Feature
+
+Voice monitoring range
+N/A
+
+Sensors
+3-Axis accelerometer, Light sensor
+
+Scenarios
+Low battery alert, Tamper alert, Vibrating alert,
+Over-speed alert, Cover removal alert,
+Installation alert, Geo-fence entry & exit alert
+
+Mount method
+Magnet or straps
+
+Bluetooth
+BLE 4.2
+
+RFID
+N/A
+
+Configuration support
+APP, Tracksolid Pro, PC Tools, SMS
+
+Certification
+CE, FCC, PTCRB, RoHS, AT&T, TELEC, Orange, WEEE
+
+Operating Environment
+
+Operating temperature
+–20℃ to +70℃
+
+Operating humidity
+5% to 95%, non-condensing
+
+IP rating
+IP65
+
+Physical Specification
+
+Dimensions
+109.0 x 61.0 x 30.5mm
+
+Weight
+297g
+-
+https://www.jimiiot.com/en/products/gps-trackers/bl10-gps-bike-share-lock: GNSS
+
+Positioning system
+GPS+LBS
+
+Positioning accuracy
+＜2.5m CEP
+
+Tracking sensitivity
+-165dBm
+
+Acquisition sensitivity
+-148dBm
+
+TTFF (open sky)
+Avg. hot start ≤1sec
+Avg. cold start ≤32sec
+
+Cellular
+
+Communication network
+GSM
+
+Frequency
+Quad-band 850/900/1800/1900 MHz
+
+Power
+
+Battery
+10,000mAh/3.7V industrial-grade Li-Polymer battery
+
+Solar power
+6V/5W (Under solar illumination)
+
+Working modes
+Regular-upload mode
+
+Standby time
+Up to 40 days in locked state (without solar energy)
+
+Interface
+
+LED indication
+1 status indicator (Blue)
+
+SIM
+Micro-SIM
+
+Data storage
+64Mb
+
+Physical Specification
+
+Dimensions
+148.0 x 211.0 x 51.0 mm
+
+Weight
+1117g
+
+Operating Environment
+
+Operating temperature
+–20℃ to +60℃
+
+Operating humidity
+5%-95%, non-condensing
+
+IP rating
+IPX5
+
+Feature
+
+Bluetooth
+Bluetooth 4.0
+
+iBeacon positioning accuracy
+1-10meters
+
+Sensors
+3-axis Accelerometer
+
+Scenarios
+Audible recovery, Vibrating Alert, Low battery alert
+ - https://www.jimiiot.com/en/products/gps-trackers/at4-portable-asset-gps-tracker: GNSS
+
+Positioning system
+GPS+LBS
+
+Positioning accuracy
+＜2.5m CEP
+
+Tracking sensitivity
+-165dBm
+
+Acquisition sensitivity
+-148dBm
+
+TTFF (open sky)
+Avg. hot start ≤1sec
+Avg. cold start ≤32sec
+
+Cellular
+
+Communication network
+GSM
+
+Frequency
+Quad-band 850/900/1800/1900 MHz
+
+Power
+
+Battery
+10,000mAh/3.7V industrial-grade Li-Polymer battery
+
+Working modes
+Mode 1: Tracking mode
+Mode 2: Power-saving mode
+
+Standby time
+Up to 2.5 years in power-saving mode
+
+Interface
+
+LED indication
+1 status indicator (Red), 4 battery indicator (Blue)
+
+SIM
+Standard-SIM
+
+Data storage
+32+32Mb
+
+Tamper proof
+Pressure-sensitive button
+
+Physical Specification
+
+Dimensions
+108.0 x 61.0 x 30.0mm
+
+Weight
+285g
+
+Operating Environment
+
+Operating temperature
+–20℃ to +70℃
+
+Operating humidity
+5%～95%, non-condensing
+
+IP rating
+IPX5
+
+Feature
+
+Voice monitoring range
+≤3 meters
+
+Sensors
+Accelerometer
+
+Scenarios
+Low battery alert, Tamper alert, Vibrating Alert, Over-speed alert, Cover removal alert, Power off alert, Geo-fence
+- https://www.jimiiot.com/en/products/gps-trackers/at1-asset-gps-tracker: GNSS
+
+Positioning system
+GPS+LBS
+
+Positioning accuracy
+＜2.5m CEP
+
+Tracking sensitivity
+-165dBm
+
+Acquisition sensitivity
+-148dBm
+
+TTFF (open sky)
+Avg. hot start ≤1sec
+Avg. cold start ≤32sec
+
+Cellular
+
+Communication network
+GSM
+
+Frequency
+Quad-band 850/900/1800/1900 MHz
+
+Power
+
+Battery
+6,000mAh/3.7V industrial-grade Li-Polymer battery
+
+Working modes
+Mode 1: Regular GPS mode
+Mode 2: Tracking mode
+Mode 3: Power-saving mode
+
+Standby time
+Up to 1.5 years in power-saving mode
+
+Interface
+
+LED indication
+GNSS (Blue), Cellular (Green), Power (Red)
+
+SIM
+Nano-SIM
+
+Data storage
+32+32Mb
+
+Tamper proof
+Light sensor
+
+Physical Specification
+
+Dimensions
+85.0 × 58.0 ×29.0mm
+
+Weight
+161g
+
+Operating Environment
+
+Operating temperature
+–20℃ to +70℃
+
+Operating humidity
+5%～95%, non-condensing
+
+IP rating
+IP67
+
+Feature
+
+Voice monitoring range
+≤3 meters
+
+Sensors
+Accelerometer, Light sensor
+
+Scenarios
+Low battery alert, Tamper alert, Vibrating Alert, Over-speed alert, Geo-fence
+
+Specialties
+On/off button disabling, Voice recording, Over-decibel notification
+ - https://www.jimiiot.com/en/products/gps-trackers/eg02-intelligent-e-scooter-gps-tracker: GNSS
+
+Positioning system
+GPS + LBS
+
+No. of GPS channels
+66
+
+Positioning accuracy
+<2.5m CEP
+
+Tracking sensitivity
+–165dBm
+
+Acquisition sensitivity
+–148dBm
+
+TTFF (open sky)
+Avg. hot start ≤2sec
+Avg. cold start ≤32sec
+
+Cellular
+
+Communication network
+GSM
+
+Frequency
+850/900/1800/1900 MHz
+
+GPRS
+Class 12, TCP/IP
+
+Phase error
+RMSPE<5, PPE<20
+
+Max output
+GSM850/GSM900: 33±2dBm
+GSM1800/GSM1900: 30±3dBm
+
+Max frequency error
+±0.1ppm
+
+Receive sensitivity
+±Class II RBER2% (-102dBm)
+
+Power
+
+Battery
+270mAh/3.7V Lithium-polymer battery
+
+Input voltage
+9-90VDC/8mA (36VDC)
+
+Standby current
+≤5mA (by battery)
+
+Interface
+
+Data storage
+64Mb
+
+SIM
+Micro-SIM
+
+Antenna
+Bullit-in GPS antenna, GSM quad-band antenna
+
+Physical Specification
+
+Dimensions
+77.0 x 29.0 x 13.0mm
+
+Weight
+43g
+
+Operating Environment
+
+Operating temperature
+–20℃ to +70℃
+
+IP rating
+IPX5
+-
+https://www.jimiiot.com/en/products/gps-trackers/gt06s: Positioning & Location
+
+Technology
+GPS, BDS, LBS
+
+Accuracy
+<2.5m CEP
+
+Tracking sensitivity
+-162 dBm
+
+Acquisition sensitivity
+-148 dBm
+
+TTFF (open sky)
+Avg. hot start ≤2sec
+Avg. cold start ≤32sec
+
+Cellular
+
+Technology
+GSM
+
+Frequency
+GT06S_GO01:
+Quad-band: 850/900/1800/1900MHz
+
+Power
+
+Battery
+60mAh/3.7V industrial-grade Li-Polymer battery
+
+Input voltage
+9-90V DC
+
+Power consumption
+Standby: <5mA
+
+Operating Environment
+
+Operating temperature
+-20°C to 70° C
+
+Operating humidity
+5% to 95%, non-condensing
+
+IP rating
+IPX4
+
+Physical Specification
+
+Dimensions
+38.0 x 79.0 x 5.1mm
+
+Weight
+29g
+
+Interface
+
+LED indication
+GNSS (Blue), Cellular (Green)
+
+SIM
+Nano-SIM
+
+Digital I/Os
+1*ACC, 1*Relay
+
+Analog I/Os
+2*IO for Microphone
+
+Memory capacity
+3000+ data entries
+
+GNSS antenna
+Internal
+
+Feature
+
+Sensors
+Accelerometer
+
+Scenarios
+Vehicle movement alert, Speeding, Geo-fence entry/exit, Vehicle battery protection
+
+Driving behavior analysis (DBA)
+Harsh acceleration, Harsh braking, Harsh cornering, Collision
+
+Specialties
+Microphone
+
+Configuration support
+SMS, TrackSolid Pro
+
+Certification
+CE
+ -
+https://www.jimiiot.com/en/products/gps-trackers/vl02-fleet-tracker: Positioning & Location
+
+Technology
+GPS, BDS, LBS, GLONASS
+
+Accuracy
+＜2.5m CEP
+
+Tracking sensitivity
+–165dBm
+
+Acquisition sensitivity
+–148dBm
+
+TTFF (open sky)
+Avg. hot start ≤1s
+Avg. cold start ≤32s
+
+Cellular
+
+Technology
+LTE Cat M1 & NB2, GSM
+
+Frequency
+JM-VL02A:
+LTE: B1/B2/B3/B4/B5/B12/B13/B28/B66
+GSM: 850/900/1800/1900 MHzJM-VL02E:
+LTE: B1/B3/B5/B8/B18/B19/B20/B26
+GSM: 850/900/1800/1900 MHz
+
+Power
+
+Battery
+300mAh/3.7V industrial-grade Li-Polymer battery
+
+Input voltage
+9-36VDC
+
+Power consumption
+Standby: 5mA
+Working: 58mA
+
+Operating Environment
+
+Operating temperature
+–20℃ to +70℃
+
+Operating humidity
+5% to 95%, non-condensing
+
+IP rating
+IP65
+
+Physical Specification
+
+Dimensions
+105 x 57.0 x 22mm
+
+Weight
+103g
+
+Interface
+
+LED indication
+GNSS (Blue), Cellular (Green), Power (Red)
+
+SIM
+Standard-SIM
+
+Digital I/Os
+1*ACC, 1*SOS, 1*Relay, 1*Reserved output, 1*Reserved input
+
+Analog I/Os
+1: 0–30VDC (±0.3V)
+
+Voltage detection
+N/A
+
+Memory capacity
+1000 GPS data entries
+
+USB
+N/A
+
+GNSS antenna
+Internal
+
+Bluetooth antenna
+N/A
+
+Serial ports
+TTL
+
+Feature
+
+Sensors
+Accelerometer
+
+Scenarios
+Vehicle movement alert, Over-speed alert, Geo-fence, Vehicle battery detection, Power supply disconnection
+
+Driving behavior analysis (DBA)
+Harsh acceleration, Harsh braking, Harsh cornering, Collision
+
+Bluetooth
+N/A
+
+Configuration support
+PC Tools, SMS, GPRS
+
+Certification
+CE, FCC, PTCRB, AT&T, T-Mobile, Verizon, TELEC
+
+Optional Configuration*
+
+RS232 sensor
+Capacitive fuel level sensor, Ultrasonic fuel level sensor, Temperature sensor
+ -
+https://www.jimiiot.com/en/products/gps-trackers/kl100-positioning-fuel-level-sensor: Positioning & Location
+
+Technology
+GPS,BDS
+
+Accuracy
+＜2.5m CEP
+
+Tracking sensitivity
+–165dBm
+
+Acquisition sensitivity
+–148dBm
+
+TTFF (open sky)
+Avg. hot start ≤2s; Avg. cold start ≤38s
+
+Cellular
+
+Technology
+LTE Cat 1/GSM
+
+Frequency
+KL100_S_LA01
+LTE-FDD: B1/B2/B3/B4/B5/B7/B8/B28;
+GSM: B2/B3/B5/B8
+KL100_S_EM01
+LTE-FDD: B1/B3/B7/B8/B20/B28/
+LTE-TDD:B34/B38/B39/B40/B41;
+GSM: B2/B3/B5/B8
+
+Power
+
+Battery
+270mAh Li-Po with NTC
+
+Input voltage
+9V to 30VDC
+
+Power consumption
+Active < 40 mA
+Standby < 4 mA
+
+Interface
+
+SIM
+Nano SIM
+
+Bluetooth antenna
+Internal
+
+Serial ports
+1*TTL
+
+Physical Specification
+
+Flange size
+Outer diameter 82mm, Inner diameter 20mm
+
+Weight
+749g
+
+Operating Environment
+
+Discharge temperature range
+–20℃ to +85℃
+
+Charging temperature range
+0℃ to +45℃
+
+Operating humidity
+5% to 95%, non-condensing
+
+IP rating
+IP67
+
+Feature
+
+Sensors
+Light sensor,Accelerometer,Fuel level sensor
+
+Driving behavior analysis (DBA)
+Harsh acceleration, Harsh braking, Harsh cornering, Collision
+
+Bluetooth
+Bluetooth BLE 5.0
+
+Configuration support
+TrackSolid Pro & SMS
+
+Certification
+CE/FCC
+
+Sensor
+
+Operating principle
+Capacitive
+
+Probe length
+1000mm
+
+Max probe cutting
+750mm
+
+Measurement inaccuracy
+<1% FS
+ -
+https://www.jimiiot.com/en/products/gps-trackers/vg03:
+GNSS
+
+Positioning system
+GPS+BDS+LBS
+
+Positioning accuracy
+＜2.5m CEP
+
+Tracking sensitivity
+-162dBm
+
+Acquisition sensitivity
+-148dBm
+
+TTFF (open sky)
+Avg. hot start ≤1sec
+Avg. cold start ≤35sec
+
+Cellular
+
+Communication network
+GSM
+
+Frequency
+Quad-band 850/900/1800/1900 MHz
+
+Power
+
+Battery
+60mAh/3.7V industrial-grade Li-Polymer battery
+
+Input voltage
+9-90VDC
+
+Interface
+
+LED indication
+GPS (Blue), GSM (Green)
+
+SIM
+Micro-SIM
+
+Data storage
+32+32Mb
+
+Interface
+4 pin (V+, V-, ACC, Relay)
+
+Physical Specification
+
+Dimensions
+79.0 x 38.0 x 14mm
+
+Weight
+29g
+
+Operating Environment
+
+Operating temperature
+-20°C to 70°C
+
+IP rating
+IP65
+
+Feature
+
+Sensors
+Accelerometer
+
+Ignition detection
+ACC Detection
+
+Scenarios
+Vehicle movement alert, Over-speed alert, Geo-fence, Vehicle battery detection, Power supply disconnection
+
+Driving behavior analysis
+Harsh acceleration, Harsh braking, Harsh cornering, Collision
+-
+https://www.jimiiot.com/en/products/gps-trackers/vl101g:
+GNSS
+
+Positioning system
+GPS/BDS/GLONASS/Galileo + INS (inertial navigation system)
+
+Frequency
+L1+L5
+
+Positioning accuracy
+＜1m CEP
+
+Tracking sensitivity
+-165dBm
+
+Acquisition sensitivity
+-148dBm
+
+TTFF (open sky)
+Avg. hot start ≤1sec
+Avg. cold start ≤24sec
+
+Cellular
+
+Communication network
+LTE Cat 1/GSM
+
+Frequency
+LTE-FDD: B1/B3/B7/B8/B20/B28
+
+LTE-TDD: B34/B38/B40
+
+GSM: 900/1800 MHz
+
+Power
+
+Battery
+450mAh/3.7V industrial-grade Li-Polymer battery
+
+Input voltage
+9-30VDC
+
+Power consumption
+Standby:5mAh/Working: 50mAh
+
+Interface
+
+LED indication
+GNSS (Blue), Cellular (Green), Power (Red)
+
+SIM
+Micro-SIM
+
+Digital l/Os
+1*ACC ,1*Relay
+
+Analog l/Os
+N/A
+
+Voltage detection
+0-30V (+0.3V)
+
+Memory capacity
+1000 GPS data entries
+
+USB
+N/A
+
+GNSS antenna
+Internal
+
+Bluetooth antenna
+Internal
+
+Serial ports
+1’TTL
+
+Physical Specification
+
+Dimensions
+70.0 x 80.0 x 25.0mm
+
+Weight
+115.5g
+
+Operating Environment
+
+Operating temperature
+–20℃ to +70℃
+
+Operating humidity
+5%～95%, non-condensing
+
+IP rating
+IP66
+
+Feature
+
+Sensors
+Accelerometer and gyroscope
+
+Scenarios
+Vehicle movement alert, Speeding alert, Geo-fence entry/exit, Vehicle battery detection
+
+Driving behavior analysis
+Harsh acceleration, Harsh braking, Harsh cornering, Sudden lane change
+
+Configuration support
+SMS, Tracksolld Pro, PC Tools
+
+Cerlification
+CE, FCC ,ROHS
+
+Optional Configuration*
+
+2-Pin connector
+Buzzer
+
+Relay
+
+-
+https://www.jimiiot.com/en/products/gps-trackers/vl103d-lte-gnss-terminal:
+GNSS
+
+Positioning system
+GPS+BDS+LBS
+
+Positioning accuracy
+＜2.5m CEP
+
+Tracking sensitivity
+-165dBm
+
+Acquisition sensitivity
+-148dBm
+
+TTFF (open sky)
+Avg. hot start ≤1sec
+Avg. cold start ≤32sec
+
+Cellular
+
+Communication network
+LTE Cat 1/GSM
+
+Frequency
+VL103D (L)
+LTE-FDD: B1/B2/B3/B4/B5/B7/B8/B28
+
+GSM: B2/B3/B5/B8
+
+VL103D (E)
+
+LTE-FDD: B1/B3/B7/B8/B20/B28
+
+LTE-TDD:B34/B38/B39/B40/B41
+
+GSM: B2/B3/B5/B8
+
+Power
+
+Battery
+270mAh/3.7V industrial-grade Li-Polymer battery
+
+Input voltage
+9-90VDC
+
+Interface
+
+LED indication
+GNSS (Blue), Cellular (Green), Power (Red)
+
+SIM
+Micro-SIM
+
+Digital inputs
+ACC
+
+Digital outputs
+Relay
+
+Configurable I/O
+SOS (configurable as an extra digital output)
+
+ADC
+0-5V ADC detection
+
+Physical Specification
+
+Dimensions
+92.0 x 40.0 x 20.0mm
+
+Weight
+55g
+
+Operating Environment
+
+Operating temperature
+–20℃ to +70℃
+
+IP rating
+IP66
+
+Feature
+
+Sensors
+Accelerometer
+
+Scenarios
+Vehicle movement alert, Speeding alert, Geo-fence entry/exit, Vehicle battery detection
+
+Driving behavior analysis
+Harsh acceleration, Harsh braking, Harsh cornering, Collision
+
+-
+https://www.jimiiot.com/en/products/gps-trackers/vl103m:
+GNSS
+
+Positioning system
+GPS+BDS+LBS
+
+Positioning accuracy
+＜2.5m CEP
+
+Tracking sensitivity
+-165dBm
+
+Acquisition sensitivity
+-148dBm
+
+TTFF (open sky)
+Avg. hot start ≤1sec
+Avg. cold start ≤32sec
+
+Cellular
+
+Communication network
+LTE Cat 1/GSM
+
+Frequency
+VL103M (L)
+LTE-FDD: B1/B2/B3/B4/B5/B7/B8/B28
+GSM: B2/B3/B5/B8VL103M (E)
+LTE-FDD: B1/B3/B7/B8/B20/B28
+LTE-TDD: B34/B38/B39/B40/B41
+GSM: B2/B3/B5/B8
+
+Power
+
+Battery
+270mAh/3.7V industrial-grade Li-Polymer battery
+
+Input voltage
+9-90VDC
+
+Interface
+
+LED indication
+GNSS (Blue), Cellular (Yellow), Power (Red)
+
+SIM
+Micro-SIM
+
+Data storage
+16+16Mb
+
+Digital inputs
+ACC, SOS
+
+Digital outputs
+Relay, IO for buzzer/horn output
+
+Physical Specification
+
+Dimensions
+92.0 x 40.0 x 20.0mm
+
+Weight
+55g
+
+Operating Environment
+
+Operating temperature
+–20℃ to +70℃
+
+IP rating
+IP66
+
+Feature
+
+Sensors
+Accelerometer
+
+Scenarios
+Vibrating alert, Speeding alert, SOS call, Tamper alert, Geo-fence entry/exit alert, Vehicle battery detection
+
+-
+https://www.jimiiot.com/en/products/gps-trackers/vl106:
+GNSS
+
+Positioning system
+GPS/BDS/GLONASS/Galileo + INS (inertial navigation system)
+
+Positioning accuracy
+＜2.0m CEP
+
+INS accuracy
+＜2%
+
+Tracking sensitivity
+-165dBm
+
+Acquisition sensitivity
+-148dBm
+
+TTFF (open sky)
+Avg. hot start ≤1sec
+Avg. cold start ≤25sec
+
+Cellular
+
+Communication network
+LTE/GSM
+
+Frequency
+VL106-E:
+LTE-FDD: B1/B3/B7/B8/B20/B28
+LTE-TDD: B34/B38/B39/B40/B41
+GSM: 850/900/1800/1900 MHz
+VL106-L:
+LTE-FDD: B1/B2/B3/B4/B5/B7/B8/B28
+GSM: 850/900/1800/1900 MHz
+
+Power
+
+Battery
+100mAh/3.7V industrial-grade Li-Polymer battery
+
+Input voltage
+9-36VDC
+
+Power Consumption
+Standby: < 5mA
+
+Interface
+
+LED indication
+GNSS (Blue), Cellular (Green), Power (Red)
+
+SIM
+Micro-SIM
+
+Digital I/Os
+1*ACC, 1*Relay, 1*SOS
+
+Analog I/Os
+N/A
+
+Voltage detection
+9-36V (+0.1V)
+
+Memory capacity
+3000 GPS data entries
+
+USB
+Onboard
+
+GNSS antenna
+Internal
+
+Bluetooth antenna
+Internal
+
+Serial ports
+N/A
+
+Physical Specification
+
+Dimensions
+94.3 x 50.4 x 15.0mm
+
+Weight
+69.0g
+
+Operating Environment
+
+Operating temperature
+–20℃ to +70℃
+
+Operating humidity
+5% to 95%, non-condensing
+
+IP rating
+IP65
+
+Feature
+
+Sensors
+Accelerometer and gyroscope
+
+Scenarios
+Vehicle movement alert, Speeding alert, Geo-fence entry/exit, SOS call, Power supply disconnection, Vehicle battery detection
+
+Driving behavior analysis
+Harsh acceleration, Harsh braking, Harsh cornering, Sudden lane change, Collision, Skidding, Rollover, Roll & pitch
+
+Bluetooth
+BLE 5.0 (configuration only)
+
+Configuration support
+SMS, Bluetooth (app), TrackSolid Pro
+
+Certification
+CE
+
+Optional Configuration*
+
+Relay
+
+
+SOS Button
+
+-
+https://www.jimiiot.com/en/products/gps-trackers/vl110c:
+Positioning & Location
+
+Technology
+GPS, BDS, GLONASS, LBS
+
+Accuracy
+<2.5m CEP
+
+Tracking sensitivity
+–165dBm
+
+Acquisition sensitivity
+–148dBm
+
+TTFF (open sky)
+Avg. hot start ≤ 2sec
+Avg. cold start ≤ 38sec
+
+Cellular
+
+Technology
+LTE Cat 1 & GSM
+
+Frequency
+VL110C_EM:
+LTE-FDD: B1/B3/B7/B8/B20/B28
+LTE-TDD: B34/B38/B39/B40/B41
+GSM: B2/B3/B5/B8
+VL110C_LA:
+LTE-FDD:：B1/B2/B3/B4/B5/B7/B8/B28
+GSM: B2/B3/B5/B8
+
+Power
+
+Battery
+270mAh/3.7V industrial-grade Li-Polymer battery
+
+Input voltage
+9–90VDC
+
+Power consumption
+Standby: <5mA
+
+Operating Environment
+
+Operating temperature
+–20°C to +70°C
+
+Operating humidity
+5% to 95%, non-condensing
+
+IP rating
+IP65
+
+Physical Specification
+
+Dimensions
+94(L)*34(W)*15(H)mm
+
+Weight
+44g
+
+Interface
+
+LED indication
+GNSS (Blue), Cellular (Green), Power (Red)
+
+SIM
+Nano-SIM
+
+Digital I/Os
+1*ACC, 1*Relay
+
+Analog I/Os
+N/A
+
+Voltage detection
+0-90V (±0.3V)
+
+Data storage
+3000+ GNSS data entries
+
+USB
+Type-C (for firmware upgrade)
+
+Microphone
+N/A
+
+No. of relays
+N/A
+
+GNSS antenna
+Internal
+
+Bluetooth antenna
+N/A
+
+Serial ports
+N/A
+
+Feature
+
+Sensors
+Accelerometer
+
+Scenarios
+Vehicle movement alert, Speeding alert, Geo-fence entry/exit, Vehicle battery detection, LTE jamming detection, GPS jamming detection
+
+Driving behavior analysis (DBA)
+Harsh acceleration, Harsh braking, Harsh cornering, Collision
+
+Bluetooth
+N/A
+
+Configuration support
+SMS, PC Tools, Tracksolid Pro, Type-C
+
+Certification
+CE/FCC/RoHS
+-
+https://www.jimiiot.com/en/products/gps-trackers/vl111-4g-tracking-terminal:
+GNSS
+
+Positioning system
+GPS/BDS/GLONASS/AGPS/LBS
+
+Positioning accuracy
+< 2.5m CEP
+
+Tracking sensitivity
+–165dBm
+
+Acquisition sensitivity
+–148dBm
+
+TTFF (open sky)
+Avg. hot start ≤ 2sec
+Avg. cold start ≤ 38sec
+
+Cellular
+
+Technology
+LTE Cat.1/2G GSM
+
+Frequency
+VL111P_LA:
+LTE-FDD: B1/B2/B3/B4/B5/B7/B8/B28
+GSM: B2/B3/B5/B8VL111P_EM:
+LTE-FDD: B1/B3/B7/B8/B20/B28
+LTE-TDD: B34/B38/B39/B40/B41
+GSM: B2/B3/B5/B8
+
+Power
+
+Battery
+270mAh/3.7V industrial-grade Li-Polymer battery
+
+Input voltage
+DC 9-90V
+
+Standby current
+Standby: < 5mA
+Working: < 50mA
+
+Physical Specification
+
+Dimensions
+92 x 28 x 14mm
+
+Weight
+42.9g
+
+Operating Environment
+
+Operating temperature
+–20℃ to +70℃
+
+Operating humidity
+5% to 95%, non-condensing
+
+IP rating
+IP66
+
+Interface
+
+LED indication
+GNSS (Blue), Cellular (Green), Power (Red)
+
+SIM
+Nano-SIM
+
+Digital I/Os
+ACC; Buzzer (optional)
+
+Analog l/Os
+N/A
+
+Voltage detection
+0-90V
+
+Memory capacity
+3000 GPS data entries
+
+USB
+Type-C
+
+No. of relays
+1
+
+GNSS antenna
+Internal
+
+Bluetooth antenna
+Internal
+
+Serial ports
+N/A
+
+Feature
+
+Built-in relay current
+Max2A
+
+Voice monitoring range
+N/A
+
+Sensors
+Accelerometer
+
+Scenarios
+Vibrating alert, Speed alert, Tamper alert, Geo-fence entry/exit alert, Vehicle battery protection, Remote immobilization, Power disconnection alert, Low internal battery alert
+
+Driving behavior analysis
+Harsh acceleration, Harsh braking, Harsh cornering, Collision
+
+Bluetooth
+5.0 (configuration only)
+
+Configuration support
+PC Tools
+
+Certification
+CE, FCC
+
+Optional Configuration*
+
+SM connector
+Buzzer
+
+Onboard
+5.0×6.0mm onboard
+-
+https://www.jimiiot.com/en/products/gps-trackers/vl501-plug-and-play-tracker:
+Positioning & Location
+
+Technology
+GPS, GLONASS, BDS, AGPS
+
+Accuracy
+＜2.5m CEP (open sky)
+
+Tracking sensitivity
+–165 dBm
+
+Acquisition sensitivity
+–148 dBm (cold) / –157 dBm (hot)
+
+TTFF (open sky)
+Avg. hot start ≤1sec
+Avg. cold start ≤32sec
+
+Interface
+
+LED indication
+Power (Red); SOS (Blue)
+
+SIM
+Nano-SIM
+
+Digital I/Os
+N/A
+
+Memory capacity
+1000 GPS data entries
+
+USB
+1*USB-A (for quick charge)
+1*Type-C (for quick charge, upgrade, and debugging)
+
+GNSS antenna
+Internal
+
+Bluetooth antenna
+Internal
+
+Cellular
+
+Technology
+4G Cat 1, LTE M1 & NB2
+
+Frequency
+VL501-N:
+LTE-FDD (Cat 1): B2/B4/B5/B12/B13
+VL501-J:
+LTE-FDD (Cat M1 & NB2): B1/B3/B8/B18/B19/B26
+
+Power
+
+Battery
+50 mAh/3.7V
+
+Input voltage
+9-36VDC
+
+Power consumption
+Sleep: typ. ≤12V/15mA
+GPS and cell enabled: typ. ≤12V/120mA
+
+Feature
+
+Voice monitoring range
+≤5 meters
+
+Sensors
+Accelerometer and gyroscope
+
+Microphone
+Internal
+
+Firmware update
+OTA
+
+Scenarios
+Collision alert, Low external power alert, Vibrating alert, Unplug alert, Installation alert, Speeding alert, Fatigue driving alert, Geo-fence entry/exit alert
+
+Bluetooth
+BLE 4.0
+
+Configuration support
+SMS, Tracksolid Pro, PC Tools
+
+Certification
+CE, FCC, PTCRB, TELEC, JATE
+
+Operating Environment
+
+Operating temperature
+–20℃ to +70℃
+
+Operating humidity
+5% to 95%, non-condensing
+
+IP rating
+N/A
+
+Physical Specification
+
+Dimensions
+70.0 x 52.0 x 82.5 mm
+
+Weight
+60g
+
+-
+https://www.jimiiot.com/en/products/gps-trackers/vl802-4g-gps-tracker:
+Positioning & Location
+
+Technology
+GPS, BDS, LBS, GLONASS
+
+Accuracy
+＜2.5m CEP
+
+Tracking sensitivity
+–165dBm
+
+Acquisition sensitivity
+–148dBm
+
+TTFF (open sky)
+Avg. hot start ≤2s
+Avg. cold start ≤38s
+
+Cellular
+
+Technology
+LTE Cat 1, 2G (GSM)
+
+Frequency
+VL802_S_EM:
+LTE-FDD: B1/B3/B7/B8/B20/B28
+LTE-TDD: B34/B38/B39/B40/B41
+GSM: 850/900/1800/1900MHzVL802-S-LA:
+LTE-FDD: B1/B2/B3/B4/B5/B7/B8/B28
+GSM: 850/900/1800/1900MHz
+
+Power
+
+Battery
+1,000mAh/3.7V industrial-grade Li-Polymer battery
+
+Input voltage
+9–36VDC
+
+Power consumption
+Standby: 5mA
+Working: 33mA
+
+Interface
+
+LED indication
+GNSS (Blue), Cellular (Green), Power (Red)
+
+SIM
+Micro-SIM
+
+Digital I/Os
+5 (with 2 configurable): ACC, SOS, Relay
+
+Analog I/Os
+ADC_1: 0–30V (±0.1V)
+
+Voltage detection
+0–30V (±0.3V)
+
+Memory capacity
+3000 GPS data entries
+
+USB
+Type-C (for firmware upgrade)
+
+GNSS antenna
+Internal
+
+Bluetooth antenna
+Internal
+
+Serial ports
+RS485
+
+Operating Environment
+
+Operating temperature
+–20℃ to +70℃
+
+Operating humidity
+5% to 95%, non-condensing
+
+IP rating
+IP65
+
+Physical Specification
+
+Dimensions
+105.0 x 57.0 x 22.0mm
+
+Weight
+117.6g
+
+Feature
+
+Sensors
+Accelerometer
+
+Scenarios
+SOS alert, Speeding alert, Abnormal vibration alert, Fatigue driving alert
+
+Driving behavior analysis (DBA)
+Harsh acceleration, Harsh braking, Harsh cornering, Collision
+
+GPS Jammer detection
+support
+
+Cellular Jammer detection
+support
+
+Bluetooth
+BLE 5.0
+
+Configuration support
+PC Tools, SMS, TSP, JIMI IoT-Lab
+
+Certification
+CE, FCC
+
+Optional Configuration*
+
+Bluetooth sensor
+K7800P environmental sensor/ KC208 Remote Control / KF 2XX fuel level sensor series
+
+DMS camera
+JC170 DMS AI camera
+
+RS485 sensor**
+Capacitive fuel level sensor, Ultrasonic fuel level sensor, Temperature sensor, Radio Frequency Identification(RFID)
+
+-
+
+https://www.jimiiot.com/en/products/gps-trackers/vl808: 
+Positioning & Location
+
+Technology
+GPS, BDS, GLONASS
+
+Accuracy
+< 2.5m CEP
+
+Tracking sensitivity
+–165dBm
+
+Acquisition sensitivity
+–148dBm
+
+TTFF (open sky)
+Avg. hot start ≤ 2sec
+Avg. cold start ≤ 38sec
+
+Cellular
+
+Technology
+LTE Cat 1, 2G (GSM)
+
+Frequency
+VL808S_EM01
+LTE-FDD: B1/B3/B7/B8/B20/B28
+LTE-TDD: B34/B38/B39/B40/B41
+GSM: B2/B3/B5/B8
+
+Power
+
+Battery
+270mAh//3.7V industrial-grade LiPo battery
+
+Input voltage
+9–90VDC
+
+Power consumption
+Standby: < 10mA
+
+Operating Environment
+
+Operating temperature
+–20℃ to +85℃
+
+Operating humidity
+5% to 95%, non-condensing
+
+IP rating
+IP67
+
+Physical Specification
+
+Dimensions
+109.8 × 43.5 × 24.0mm
+
+Weight
+76g
+
+Interface
+
+LED indication
+GNSS (Blue), Cellular (Green), Power (Red)
+
+SIM
+Nano-SIM
+
+Digital I/Os
+3*Outputs, 4*Inputs (one multiplexes with TTL-RX)
+
+Analog I/Os
+2 (AIN1/AIN2: 0-36V)
+(0-5V: ±0.1V; 5-36V: ±0.2V)
+(multiplex with digital I/Os)
+
+Voltage detection
+0-90V (±0.3V）
+
+Memory capacity
+3000+ data entries
+
+USB
+Type-C
+
+GNSS antenna
+Internal
+
+Bluetooth antenna
+Internal
+
+Serial ports
+1*TTL
+
+Feature
+
+Sensors
+Accelerometer
+
+Scenarios
+Vehicle movement alert, SOS alert, Overspeed alert, Geofence entry/exit alerts, Vehicle battery detection, Door status detection
+
+Driving behavior analysis (DBA)
+Harsh acceleration, Harsh braking, Harsh cornering, Collision
+
+Bluetooth
+BLE 5.0
+
+Configuration support
+PC Tools, SMS, Tracksolid Pro, Jimi IoT Lab
+
+Certification
+CE,E-mark
+-
+https://www.jimiiot.com/en/products/gps-trackers/wetrack-2-general-gps-vehicle-tracker:
+GNSS
+
+Positioning system
+GPS+BDS+LBS
+
+Positioning accuracy
+＜2.5m CEP
+
+Tracking sensitivity
+-165dBm
+
+Acquisition sensitivity
+-148dBm
+
+TTFF (open sky)
+Avg. hot start ≤2sec
+Avg. cold start ≤38sec
+
+Cellular
+
+Communication network
+GSM
+
+Frequency
+Quad-band 850/900/1800/1900 MHz
+
+Power
+
+Battery
+270mAh/3.7V industrial-grade Li-Polymer battery
+
+Input voltage
+9-90VDC
+
+Interface
+
+LED indication
+GNSS (Blue), Cellular (Green), Power (Red)
+
+SIM
+Standard-SIM
+
+Data storage
+32+32Mb
+
+Physical Specification
+
+Dimensions
+78.0 x 41.0 x 13.0mm
+
+Weight
+41g
+
+Operating Environment
+
+Operating temperature
+-20°C to 70°C
+
+IP rating
+IP65
+
+Feature
+
+Sensors
+Accelerometer
+
+Ignition detection
+ACC detection
+
+Scenarios
+Vehicle movement alert, Over-speed alert, Geo-fence, Vehicle battery detection, Power supply disconnection
+
+-
+https://www.jimiiot.com/en/products/gps-trackers/wetrack140-multifunctional-gps-tracking-device-for-car:
+GNSS
+
+Positioning system
+GPS + IRNSS + GLONASS
+
+Frequency
+L1,1575.42MHz C/A code
+L5,1176.45MHz C/A code
+
+Positioning accuracy
+<2.5m CEP
+
+Tracking sensitivity
+-163dBm
+
+Acquisition sensitivity
+-147dBm
+
+TTFF (open sky)
+Avg. hot start ≤2sec
+Avg. cold start ≤32sec
+
+Cellular
+
+Communication network
+GSM
+
+Frequency
+850/900/1800/1900 MHz
+
+GPRS
+Class 12, TCP/IP
+
+Phase error
+RMSPE<5, PPE<20
+
+Max output
+GSM850/GSM900: 33±3dBm
+GSM1800/GSM1900: 30±3dBm
+
+Max frequency error
+±0.1ppm
+
+Receiving sensitivity
+Class IIRBER2% (-106dBm)
+
+Power
+
+Battery
+450mAh/3.7V Industrial lithium polymer battery
+
+Input voltage
+9-36VDC
+
+Standby current
+≤5mA (by battery)
+
+Standby time
+60 hours
+
+Working time
+4 hours
+
+Interface
+
+LED indication
+GNSS (Blue), Cellular (Green), Power (Red)
+
+Data storage
+32+64MB
+
+Antenna
+Built-in GPS ceramic antenna, GSM quad-band antenna
+
+Physical Specification
+
+Dimensions
+98.5 x 52.0 x 15.0mm
+
+Weight
+80g
+
+Operating Environment
+
+Operating temperature
+–20℃ to +70℃
+
+IP rating
+IP66
+
+Feature
+
+Voice monitoring range
+≤5 meters
+
+Driving behavior analysis
+Harsh acceleration, Harsh braking, Harsh cornering, Collision
+
+-
+https://www.jimiiot.com/en/products/gps-trackers/x3:
+GNSS
+
+Positioning system
+GPS+BDS+LBS
+
+Positioning accuracy
+＜2.5m CEP
+
+Tracking sensitivity
+-165dBm
+
+Acquisition sensitivity
+-148dBm
+
+TTFF (open sky)
+Avg. hot start ≤1sec
+Avg. cold start ≤35sec
+
+Cellular
+
+Communication network
+GSM
+
+Frequency
+Quad-band 850/900/1800/1900 MHz
+
+Power
+
+Battery
+450mAh/3.7V industrial-grade Li-Polymer battery
+
+Input voltage
+9-36VDC
+
+Interface
+
+LED indication
+GNSS (Blue), Cellular (Green), Power (Red)
+
+SIM
+Standard-SIM
+
+Data storage
+32+32Mb
+
+Digital inputs
+ACC, input, SOS
+
+Digital outputs
+Relay, output1, output2
+
+Physical Specification
+
+Dimensions
+80.9 x 55.8 x 23.4mm
+
+Weight
+95g
+
+Operating Environment
+
+Operating temperature
+–20℃ to +70℃
+
+Feature
+
+Voice monitoring range
+≤5 meters
+
+Sensors
+Accelerometer
+
+Scenarios
+Vehicle movement alert, Over-speed alert, Geo-fence, Voice Monitoring, Vehicle battery detection, Power supply disconnection
+
+Driving behavior analysis
+Harsh acceleration, Harsh braking, Harsh cornering, Collision
+-
+https://www.jimiiot.com/en/products/gps-trackers/gt06n-multifunctional-gps-vehicle-tracker:
+GNSS
+
+Positioning system
+GPS+BDS+LBS
+
+Positioning accuracy
+＜2.5m CEP
+
+Tracking sensitivity
+-165dBm
+
+Acquisition sensitivity
+-148dBm
+
+TTFF (open sky)
+Avg. hot start ≤1sec
+Avg. cold start ≤32sec
+
+Cellular
+
+Communication network
+GSM
+
+Frequency
+Quad-band 850/900/1800/1900 MHz
+
+Power
+
+Battery
+450mAh/3.7V industrial-grade Li-Polymer battery
+
+Input voltage
+9-36VDC
+
+Interface
+
+LED indication
+GNSS (Blue), Cellular (Green), Power (Red)
+
+SIM
+Standard-SIM
+
+Data storage
+32+32Mb
+
+Digital inputs
+ACC, SOS, input
+
+Digital outputs
+Relay, output
+
+Physical Specification
+
+Dimensions
+105.8 x 54.5 x 16.4mm
+
+Weight
+96g
+
+Operating Environment
+
+Operating temperature
+–20℃ to +70℃
+
+Operating humidity
+5%～95%, non-condensing
+
+Feature
+
+Voice monitoring range
+≤5 meters
+
+Sensors
+Accelerometer
+
+Scenarios
+Vehicle movement alert, Over-speed alert, Geo-fence, Voice monitoring, Power supply disconnection
+
+-
+https://www.jimiiot.com/en/products/gps-trackers/bl11-4g-gps-bike-tracker-lock:
+GNSS
+
+Positioning system
+GPS+AGPS+LBS
+
+Positioning accuracy
+＜2.5m CEP
+
+Tracking sensitivity
+-165dBm
+
+Acquisition sensitivity
+-148dBm
+
+TTFF (open sky)
+Avg. hot start ≤1sec
+Avg. cold start ≤40sec
+
+Cellular
+
+Communication network
+LTE Cat M1 & NB2
+
+Frequency
+Cat M1:B1/B2/B3/B4/B5/B8/B12/B13/B18/B19/B20/B25/B26/B27/B28/B66/B85
+
+Cat NB2: B1/B2/B3/B4/B5/B8/B12/B13/B18/B19/B20/B66/B85
+
+Power
+
+Battery
+12,000mAh/3.6V
+
+Solar power
+6V/5W (Under solar illumination)
+
+Working modes
+Tracking mode; Transport mode
+
+Standby time
+Up to 40 days in locked state (without solar energy)
+
+Interface
+
+LED indication
+2 x Status indicators (Green/Red)
+
+SIM
+Nano-SIM
+
+Data storage
+32+32Mb
+
+Physical Specification
+
+Dimensions
+142.5 x 223.7 x 38.0 mm
+
+Weight
+1180g
+
+Operating Environment
+
+Operating temperature
+–20℃ to +60℃
+
+Operating humidity
+5%-95%, non-condensing
+
+IP rating
+IP66
+
+Feature
+
+Bluetooth
+Bluetooth 4.2
+
+Sensors
+Accelerometer
+
+Scenarios
+Audible recovery, Low battery alert, Vibrating Alert, Geo-fence
+
+NFC
+RFID 13.56Mhz
+
+-
+https://www.jimiiot.com/en/products/gps-trackers/wetrack-lite-vehicle-gps-tracker:
+GNSS
+
+Positioning system
+GPS+BDS+LBS
+
+Positioning accuracy
+＜2.5m CEP
+
+Tracking sensitivity
+-165dBm
+
+Acquisition sensitivity
+-148dBm
+
+TTFF (open sky)
+Avg. hot start ≤1sec
+Avg. cold start ≤32sec
+
+Cellular
+
+Communication network
+GSM
+
+Frequency
+Quad-band 850/900/1800/1900 MHz
+
+Power
+
+Battery
+100mAh/3.7V industrial-grade Li-Polymer battery
+
+Input voltage
+9-90VDC
+
+Interface
+
+LED indication
+GPS (Blue), GSM (Green)
+
+SIM
+Micro-SIM
+
+Data storage
+32+32Mb
+
+Physical Specification
+
+Dimensions
+73.8 × 25.9 × 12.2mm
+
+Weight
+26.6g
+
+Operating Environment
+
+Operating temperature
+-20°C to 70°C
+
+IP rating
+IPX5
+
+Feature
+
+Sensors
+Accelerometer
+
+Ignition detection
+ACC Detection
+
+Scenarios
+Vehicle movement alert, Over-speed alert, Geo-fence, Vehicle battery detection, Power supply disconnection
+
+-
+https://www.jimiiot.com/en/products/gps-trackers/vl502-obd-tracker:
+Positioning & Location
+
+Technology
+GPS, GLONASS, BDS, GALILEO, AGPS, LBS
+
+Accuracy
+＜2.5m CEP
+
+Tracking sensitivity
+–165 dBm
+
+Acquisition sensitivity
+–148 dBm (cold); –156 dBm (hot)
+
+TTFF (open sky)
+Avg. hot start ≤2s
+Avg. cold start ≤38s
+
+Cellular
+
+Technology
+4G Cat 1, 2G (GSM)
+
+Frequency
+VL502 (L):
+LTE-FDD: B2/B3/B4/B5/B7/B8/B28/B66
+GSM: B2/B3/B5/B8
+VL502 (E):
+LTE-FDD: B1/B3/B5/B7/B8/B20/B28
+GSM: B2/B3/B5/B8
+
+VL502 (A):
+Cat M1: B2/B4/B5/B12/B13
+Cat NB2: B2/B4/B5/B12/B13
+
+Power
+
+Battery
+50mAh/3.7V
+
+Input voltage
+9-33VDC
+
+Power consumption
+Standby: ≤ 5mA
+
+Operating Environment
+
+Operating temperature
+–20°C to 70°C
+
+Operating humidity
+5% to 95%, non-condensing
+
+IP rating
+N/A
+
+Physical Specification
+
+Dimensions
+61.0 x 52.0 x 26.0mm
+
+Weight
+55g
+
+Interface
+
+LED indication
+Status (Blue)
+
+SIM
+Nano-SIM
+
+Digital I/Os
+N/A
+
+Analog I/Os
+N/A
+
+Voltage detection
+0–33V (±0.3V)
+
+Memory capacity
+1000 GPS data entries
+
+USB
+Micro USB
+
+GNSS antenna
+Internal
+
+Bluetooth antenna
+Internal
+
+Serial ports
+N/A
+
+OBD Port
+
+Connection
+OBDII port
+
+Data
+K-Line, CAN Bus
+
+OBD protocols
+ISO 9141-2 (5 baud init, 10.4 kbaud)
+ISO 14230-4 KWP (5 baud init, 10.4 kbaud)
+ISO 14230-4 KWP (fast init, 10.4 kbaud)
+ISO 15765-4 CAN (11 bit ID, 250 kbaud)
+ISO 15765-4 CAN (11 bit ID, 500 kbaud)
+ISO 15765-4 CAN (29 bit ID, 250 kbaud)
+ISO 15765-4 CAN (29 bit ID, 500 kbaud)
+SAE J1939 CAN(29 bit ID, 250 kbaud)
+SAE J1939 CAN(29 bit ID, 500 kbaud)
+
+Feature
+
+Voice monitoring range
+N/A
+
+Sensors
+Accelerometer
+
+Scenarios
+Car Fault, Over-Speed, Ignition detection, Collision, Geo-fence entry/exit, Power on, Device pull-out, Engine idling
+
+Driving behavior analysis (DBA)
+Harsh acceleration, Harsh braking, Harsh cornering, Collision
+
+Bluetooth
+BLE 4.2
+
+Configuration support
+SMS, Tracksolid Pro, PC Tools
+
+Certification
+CE, FCC, RoHS
+
+-
+https://www.jimiiot.com/en/products/gps-trackers/vl502a-obd-tracker:
+Positioning & Location
+
+Technology
+GPS, GLONASS, BDS, GALILEO, AGPS, LBS
+
+Accuracy
+＜2.5m CEP
+
+Tracking sensitivity
+-162dBm
+
+Acquisition sensitivity
+-148dBm (cold); -156dBm (hot)
+
+TTFF (open sky)
+Avg. hot start ≤1s
+Avg. cold start ≤32s
+
+Cellular
+
+Technology
+LTE Cat M1 & NB2
+
+Frequency
+Cat M1: B2/B4/B5/B12/B13
+
+Cat NB2: B2/B4/B5/B12/B13
+
+Power
+
+Battery
+180mAh/3.7V
+
+Input voltage
+9–36VDC
+
+Power consumption
+Standby: ≤ 5mA
+
+Operating Environment
+
+Operating temperature
+–20°C to 70°C
+
+Operating humidity
+5% to 95%, non-condensing
+
+IP rating
+N/A
+
+Physical Specification
+
+Dimensions
+65.0 x 50.0 x 25.0mm
+
+Weight
+65g
+
+Interface
+
+LED indication
+Status (Blue)
+
+SIM
+Nano-SIM
+
+Digital I/Os
+N/A
+
+Analog I/Os
+N/A
+
+Voltage detection
+0–36V (±0.3V)
+
+Memory capacity
+3000 GPS data entries
+
+USB
+Micro USB
+
+GNSS antenna
+Internal
+
+Bluetooth antenna
+Internal
+
+Serial ports
+N/A
+
+OBD Port
+
+Connection
+OBDII port
+
+Data
+K-Line, CAN Bus
+
+OBD protocols
+ISO 9141-2 (5 baud init, 10.4 kbaud)
+ISO 14230-4 KWP (5 baud init, 10.4 kbaud)
+ISO 14230-4 KWP (fast init, 10.4 kbaud)
+ISO 15765-4 CAN (11 bit ID, 250 kbaud)
+ISO 15765-4 CAN (11 bit ID, 500 kbaud)
+ISO 15765-4 CAN (29 bit ID, 250 kbaud)
+ISO 15765-4 CAN (29 bit ID, 500 kbaud)
+SAE J1939 CAN(29 bit ID, 250 kbaud)
+SAE J1939 CAN(29 bit ID, 500 kbaud)
+
+Feature
+
+Voice monitoring range
+N/A
+
+Sensors
+Accelerometer
+
+Scenarios
+Vehicle movement alert, Ignition detection, Speeding, Collision, Geo-fence entry/exit, Vehicle battery detection, Power supply disconnection
+
+Driving behavior analysis (DBA)
+Harsh acceleration, Harsh braking, Harsh cornering, Collision
+
+Bluetooth
+BLE 4.2
+
+Configuration support
+SMS, TrackSolid Pro, PC Tools
+
+Certification
+FCC
+
+Optional Configuration*
+
+OBDII sensor
+.   https://www.jimiiot.com/en/products/consumer-product/r001: Applications
+
+Personal Fitness Tracking
+
+
+Continuous Medical Monitoring
+
+
+Employee Health Management
+
+
+Material
+
+Bluetooth
+BLE 5.0
+
+Battery
+16mAh LiPo battery
+
+Charging
+Magnetic charging cable
+
+IP rating
+IP68
+
+Material
+Stainless steel
+
+Color
+Black, or rose gold with silver
+
+Inner diameter
+#6, #7, #8, #9, #10, #11, #12, #13
+
+Dimensions
+8.5 × 2.4mm
+
+Weight
+Approx. 4.5g (depending inner diameter size)
+
+Standard Packing
+
+Smart ring
+1
+
+Charging cable
+1
+ -
+ https://www.jimiiot.com/en/products/consumer-product/r002:
+Applications
+
+Personal Fitness & Wellness
+
+
+Continuous Health Monitoring
+
+
+Corporate Wellness Programs
+
+
+Standard Configuration
+
+Bluetooth
+BLE 5.3
+
+Battery
+18mAh LiPo battery
+
+Charging
+Magnetic charging cable
+
+IP rating
+IP68
+
+Material
+Ceramics + Resin
+
+Color
+Black, White
+
+Inner diameter
+#7,#8,#9,#10, #11, #12,#13
+
+Thickness
+2.7mm
+
+Weight
+Approx. 4.2g (depending inner diameter size)
+
+Operating temperature
+–20℃ to +45℃
+
+Operating humidity
+10% to 90%, non-condensing
+
+-
+https://www.jimiiot.com/en/products/consumer-product/hl365s:
+Applications
+
+Home Security
+
+
+Elderly Care Monitoring
+
+
+On-Demand Security Setup
+
+
+Standard Configuration
+
+Communication Standard
+4G Cat.1
+
+Frequency
+HL365_CN:
+FDD-LTE:B1/B3/B5/B8
+TDD-LTEE:B34/B38/B39/B40/B41
+
+HL365S_EU
+FDD-LTE:B1/B3/B5/B8/B20/B28
+TDD-LTE:B38/B40/B41
+
+Overall Dimensions
+58.8 × 81.4 × 45.3 mm
+
+Camera Unit Dimensions
+42 × 42 × 59 mm
+
+Bracket Dimensions
+45.3× 43× 47 mm
+
+Housing Material
+ABS+PC
+
+Weight
+110g
+
+LED Indication
+Cellular (Blue), Status (Green), Power (Red)
+
+Video Resolution
+1920×1080 HD
+
+Wide-Angle Lens
+130°
+
+Night Vision Distance
+6m
+
+Audio Pickup Range
+6m
+
+PIR Detection
+Detection range up to 6 m, 100° detection angle
+
+AI Algorithm
+Supports human-figure detection and motion detection
+
+Smart Alerts
+Push notifications and zone-based alerts
+
+Cloud Service
+Supports cloud storage
+
+SD Card Slot
+MicroSD (TF) card, up to 128GB (optional)
+
+Battery Capacity
+2400mAh
+
+Power Port
+Type-C
+
+Operating Temperature
+=A57
+
+Operating Humidity
+5%–95% RH (non-condensing)
+
+
+-
+https://www.jimiiot.com/en/products/accessories/kf043u:
+Measurement
+
+Product Type
+Wireless BLE type
+
+Measuring Medium
+Gasoline, Diesel, Lubricating oil, Coolant
+
+Measurement Range
+30mm – 1000mm
+
+Measurement Accuracy
+99.5% (tested with 0# diesel at 25°C)
+
+Response Time
+1 second
+
+Resolution
+0.1 mm
+
+Feature
+
+Bluetooth
+BLE 5.0
+
+Output Interface
+ -
+https://www.jimiiot.com/en/products/accessories/kj806:
+Basic Specifications
+
+Dimensions
+Dimensions
+
+Weight
+37.5g
+
+IP rating
+N/A
+
+Sensor(s)
+G-sensor (motion sensor)
+
+LED
+1* Blue
+
+OTA
+Supported
+
+Operating Temperature
+-20℃ to 70℃
+
+Operating Humidity
+0–95%, non-condensing
+
+Electrical Specifications
+
+Operating Voltage
+DC 9–30V
+
+Standby Current
+3mA @ 12V DC / 4mA @ 24V DC
+
+Triggered Current
+37mA @ 12V DC / 21mA @ 24V DC
+
+Maximum Load Current
+5A @ 30V
+
+Max Switch Voltage
+30V DC
+
+Max Switch Current
+NO @ 5A / NC @ 5A
+
+Max Switch Power
+NO @ 150W / NC @ 150W
+
+Bluetooth Specifications
+
+Bluetooth Version
+BLE 5.0
+
+Broadcast Power
+-8dBm to 7dBm (0dBm by default)
+
+Effective Range
+50m
+
+Interface
+
+Digital I/O(s)
+2* Output, 1* Input
+
+Voltage Detection
+0–30V
+
+Serial Port(s)
+1* TTL
+
+-
+https://www.jimiiot.com/en/products/accessories/kz081v:
+Standard Configuration
+
+Input voltage
+9V to 33V DC
+
+Output voltage
+5.4V DC
+
+Max output current
+3A
+
+Operating temperature
+-20℃ to 70℃
+
+Operating humidity
+0–95%, non-condensing
+
+Dimensions
+97*29*19mm
+
+Weight
+80g
+
+-
+https://www.jimiiot.com/en/products/accessories/ci03:
+-
+https://www.jimiiot.com/en/products/accessories/ci04:
+-
+https://www.jimiiot.com/en/products/accessories/cd02:
+-
+https://www.jimiiot.com/en/products/accessories/ci05f:
+-
+https://www.jimiiot.com/en/products/accessories/ci06f:
+-
+https://www.jimiiot.com/en/products/accessories/cf02f:
+-
+https://www.jimiiot.com/en/products/accessories/ce-01:
+-
+https://www.jimiiot.com/en/products/accessories/ce02:
+-
+https://www.jimiiot.com/en/products/accessories/ce04:
+-
+https://www.jimiiot.com/en/products/accessories/cf01f:
+-
+https://www.jimiiot.com/en/products/accessories/ci01:
+-
+https://www.jimiiot.com/en/products/accessories/kf041s:
+Measurement
+
+Product type
+Wired cut-off
+
+Measuring medium
+Gasoline/diesel/lubricating oil/coolant
+
+Probe length
+1000mm
+
+Measurement range
+0–1000mm
+
+Measurement accuracy
+≤0.5% FS
+
+Response time
+1 second
+
+Resolution
+0.1mm
+
+Feature
+
+Bluetooth
+N/A
+
+Output interface
+RS485
+
+Transmission distance
+95cm (power cable) + 200cm (extension cable)
+
+Operating Environment
+
+Operating temperature
+-40℃ to 75℃
+
+Storage temperature
+-40℃ to 75℃
+
+Humidity
+5% to 95% (non-condensing)
+
+Physical Specification
+
+Overall structure
+Column type
+
+Body material
+Aluminum alloy
+
+Weight
+761g (extension cable included)
+
+Installation method
+Five-hole flange, top-mounted
+
+Flange size
+Outer diameter 70mm, Inner diameter 20mm
+
+Power
+
+Battery
+N/A
+
+Input Voltage
+5–36V
+
+-
+https://www.jimiiot.com/en/products/accessories/k7800p:
+Standard Configuration
+
+Bluetooth
+BLE 4.2, 2.4GHz
+
+Transmission distance (open area)
+50m
+
+Battery
+1000mAh Li-MnO2 battery
+
+Service life
+> 3 years
+
+Temperature range
+-20℃ to +70℃
+
+Temperature error
+±0.5℃ (10℃ to 50℃); ±2℃ (≤10℃ or ≥50℃)
+
+Humidity range
+0% RH to 100% RH
+
+Humidity error
+±2.5% RH (0% RH to 90% RH); ±3.5%RH (>90% RH)
+
+Operating temperature
+-20℃ to +70℃
+
+Storage temperature
+-40℃ to +60℃
+
+IP rating
+IP65
+
+LED indication
+Red (working status)
+
+Side button
+To change working mode
+
+Sensors
+Light sensor, Hall effect door sensor, Environmental sensor
+
+Compatibility
+VL103 series, VL802 series, and LL303
+
+Device dimensions
+40 × 40 × 15mm (BLE sensor); 65 × 32 × 25mm (door sensor)
+
+-
+https://www.jimiiot.com/en/products/accessories/kc208s:
+Standard Configuration
+
+Bluetooth
+BLE 5.0, 2.4GHz
+
+Transmission distance (open area)
+30m
+
+Battery
+225mAh CR2032
+
+Service life
+3 years (under normal ambient conditions, 10 presses per day)
+
+Operating temperature
+-20℃ to +60℃
+
+Storage temperature
+-20℃ to +60℃
+
+IP rating
+IP65
+
+LED indication
+Red (working status)
+
+Button number
+4 buttons
+
+Button mode
+Long press/Short press
+
+Button command
+8 events
+
+Compatibility
+VL103 series / VL802 series
+
+Device dimensions
+60mm x 37.5mm x 11.5mm
+
+Device weight
+12g
+
+Certification
+CE, FCC
+
+-
+https://www.jimiiot.com/en/products/accessories/kf201s:
+Measurement
+
+Product type
+Bluetooth cut-off
+
+Measuring medium
+Gasoline/diesel/lubricating oil/coolant
+
+Probe length
+1000mm
+
+Measurement range
+0–1000mm
+
+Measurement accuracy
+≤ 1% FS
+
+Response time
+1 second
+
+Resolution
+0.5mm
+
+Feature
+
+Bluetooth
+BLE 5.0
+
+Output interface
+N/A
+
+Transmission distance
+50m (unobstructed)
+
+Operating Environment
+
+Operating temperature
+-40℃ to 75℃
+
+Storage temperature
+-40℃ to 75℃
+
+Humidity
+5% to 95% (non-condensing)
+
+Physical Specification
+
+Overall structure
+Column type
+
+Body material
+Aluminum alloy
+
+Weight
+719g
+
+Installation method
+Five-hole flange, top-mounted
+
+Flange size
+Outer diameter 70mm, Inner diameter 20mm
+
+Power
+
+Battery
+4000mAh
+
+Input Voltage
+N/A
+
+-
+https://www.jimiiot.com/en/products/accessories/kf281s:
+Measurement
+
+Product type
+Bluetooth cut-off
+
+Measuring medium
+Gasoline/diesel/lubricating oil/coolant
+
+Probe length
+1000mm
+
+Measurement range
+0–1000mm
+
+Measurement accuracy
+≤ 1% FS
+
+Response time
+1 second
+
+Resolution
+0.5mm
+
+Feature
+
+Bluetooth
+BLE 5.0
+
+Output interface
+N/A
+
+Transmission distance
+50m (unobstructed Bluetooth)
+95cm (power cable) + 200cm (extension cable)
+
+Operating Environment
+
+Operating temperature
+-40℃ to 75℃
+
+Storage temperature
+-40℃ to 75℃
+
+Humidity
+5% to 95% (non-condensing)
+
+Physical Specification
+
+Overall structure
+Column type
+
+Body material
+Aluminum alloy
+
+Weight
+579g (extension cable included)
+
+Installation method
+Five-hole flange, top-mounted
+
+Flange size
+Outer diameter 70mm, Inner diameter 20mm
+
+Power
+
+Battery
+N/A
+
+Input Voltage
+5–36V
+
+-
+https://www.jimiiot.com/en/products/accessories/jcm0700:
+Applications
+
+Logistics Service
+
+
+Hazmat Trucking
+
+
+Passenger Transport Service
+
+
+School Bus Service
+
+
+Standard Configuration
+
+Screen Size
+7 inch
+
+Backlight
+LED
+
+Backlight Brightness
+500 cd/cm²
+
+Video System
+PSL format
+
+Video signal
+CVBS(JC450Pro、JC451)/AHD
+
+Video Input
+2 channels
+
+Input
+4-PIN aviation Plug / RCA socket
+
+Power Input
+9–30V
+
+IP Rating
+IPX4
+
+Operating Temperature
+-20℃ to 60℃
+
+Storage Temperature
+-30℃ to 70℃
+
+Dimensions
+181 × 121 × 52 mm
+
+Material
+PC + ABS
+
+Standard Accessories
+Power cable, mounting bracket, screws, aviation-to-AV adapter cable
+
+Compatibility
+JC450Pro, JC451 (requires optional I/O expansion cable)

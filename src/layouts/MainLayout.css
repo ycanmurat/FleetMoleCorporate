@@ -22,8 +22,22 @@
   z-index: 1;
 }
 
+.main-content .container {
+  padding-inline: 80px;
+}
+
+@media (max-width: 960px) {
+  .main-content .container {
+    padding-inline: 48px;
+  }
+}
+
 @media (max-width: 640px) {
   .main-content {
     --page-top-offset: calc(var(--header-offset) + 0.72rem);
+  }
+
+  .main-content .container {
+    padding-inline: 20px;
   }
 }

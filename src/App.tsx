@@ -1,12 +1,12 @@
 import { Navigate, Outlet, Route, Routes, useParams } from 'react-router-dom';
 import MainLayout from './layouts/MainLayout';
 import { DEFAULT_LOCALE, isLocale } from './config/site';
-import AuthPage from './pages/AuthPage';
 import ContactPage from './pages/ContactPage';
 import Home from './pages/Home';
 import InfoPage from './pages/InfoPage';
 import NotFoundPage from './pages/NotFoundPage';
 import ServicesLandingPage from './pages/ServicesLandingPage';
+import ProductSiteAuthPage from './product-sites/ProductSiteAuthPage';
 import ProductSiteContact from './product-sites/ProductSiteContact';
 import ProductSiteHome from './product-sites/ProductSiteHome';
 import ProductSiteNotFound from './product-sites/ProductSiteNotFound';
@@ -28,6 +28,13 @@ const LocalizedOutlet = () => {
   return <Outlet />;
 };
 
+const LegacyAuthRedirect = ({ target }: { target: 'login' | 'register' | 'forgot-password' }) => {
+  const { locale } = useParams();
+  const safeLocale = isLocale(locale) ? locale : DEFAULT_LOCALE;
+
+  return <Navigate to={`/${safeLocale}/rent/${target}`} replace />;
+};
+
 const App = () => {
   return (
     <Routes>
@@ -36,6 +43,9 @@ const App = () => {
       <Route path=":locale" element={<LocalizedOutlet />}>
         <Route path=":productSlug" element={<ProductSiteRoute />}>
           <Route index element={<ProductSiteHome />} />
+          <Route path="login" element={<ProductSiteAuthPage mode="login" />} />
+          <Route path="register" element={<ProductSiteAuthPage mode="register" />} />
+          <Route path="forgot-password" element={<ProductSiteAuthPage mode="forgotPassword" />} />
           <Route path="contact" element={<ProductSiteContact />} />
           <Route path="products" element={<ProductSiteProducts />} />
           <Route path="products/compare" element={<ProductSiteCompare />} />
@@ -48,9 +58,9 @@ const App = () => {
 
         <Route element={<MainLayout />}>
           <Route index element={<Home />} />
-          <Route path="login" element={<AuthPage mode="login" />} />
-          <Route path="forgot-password" element={<AuthPage mode="forgotPassword" />} />
-          <Route path="register" element={<AuthPage mode="register" />} />
+          <Route path="login" element={<LegacyAuthRedirect target="login" />} />
+          <Route path="forgot-password" element={<LegacyAuthRedirect target="forgot-password" />} />
+          <Route path="register" element={<LegacyAuthRedirect target="register" />} />
           <Route path="contact" element={<ContactPage />} />
           <Route path="services" element={<ServicesLandingPage />} />
           <Route path="services/:pageSlug" element={<InfoPage section="services" />} />

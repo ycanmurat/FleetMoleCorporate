@@ -9,6 +9,7 @@ import ProductSiteProductDetail from './ProductSiteProductDetail';
 import ProductSiteCompare from './ProductSiteCompare';
 import ProductSiteContactsAdmin from './ProductSiteContactsAdmin';
 import ProductSiteDemo from './ProductSiteDemo';
+import ProductSiteAuthPage from './ProductSiteAuthPage';
 import ProductSiteLegalPage from './ProductSiteLegalPage';
 
 const LocalizedSiteLayout = () => {
@@ -28,6 +29,9 @@ const ProductSiteApp = () => {
 
       <Route path=":locale" element={<LocalizedSiteLayout />}>
         <Route index element={<ProductSiteHome />} />
+        <Route path="login" element={<ProductSiteAuthPage mode="login" />} />
+        <Route path="register" element={<ProductSiteAuthPage mode="register" />} />
+        <Route path="forgot-password" element={<ProductSiteAuthPage mode="forgotPassword" />} />
         <Route path="contact" element={<ProductSiteContact />} />
         <Route path="products" element={<ProductSiteProducts />} />
         <Route path="products/compare" element={<ProductSiteCompare />} />

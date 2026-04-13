@@ -94,9 +94,6 @@ export const getCorporatePrerenderRoutes = (): PrerenderRoute[] => {
       { path: `/${locale}`, locale, indexable: true },
       { path: `/${locale}/contact`, locale, indexable: true },
       { path: `/${locale}/services`, locale, indexable: true },
-      { path: `/${locale}/login`, locale, indexable: false },
-      { path: `/${locale}/register`, locale, indexable: false },
-      { path: `/${locale}/forgot-password`, locale, indexable: false },
     );
 
     CONTENT_SECTIONS.forEach((section) => {
@@ -112,6 +109,9 @@ export const getCorporatePrerenderRoutes = (): PrerenderRoute[] => {
     PRODUCTS.forEach((product) => {
       routes.push(
         { path: `/${locale}/${product.slug}`, locale, indexable: true },
+        { path: `/${locale}/${product.slug}/login`, locale, indexable: false },
+        { path: `/${locale}/${product.slug}/register`, locale, indexable: false },
+        { path: `/${locale}/${product.slug}/forgot-password`, locale, indexable: false },
         { path: `/${locale}/${product.slug}/contact`, locale, indexable: true },
       );
 
@@ -158,6 +158,9 @@ export const getProductSitePrerenderRoutes = (productSlug: ProductSlug): Prerend
   SUPPORTED_LOCALES.forEach((locale) => {
     routes.push(
       { path: `/${locale}`, locale, indexable: true },
+      { path: `/${locale}/login`, locale, indexable: false },
+      { path: `/${locale}/register`, locale, indexable: false },
+      { path: `/${locale}/forgot-password`, locale, indexable: false },
       { path: `/${locale}/contact`, locale, indexable: true },
     );
 

@@ -13,7 +13,6 @@ import { useProductSitePathMode } from './ProductSiteRuntimeContext';
 const ProductSiteHeader = () => {
   const headerRef = useRef<HTMLElement | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
   const { product, content } = useProductSite();
   const { lang, toggleLang, toggleTheme, isDark } = useApp();
@@ -23,15 +22,6 @@ const ProductSiteHeader = () => {
   useEffect(() => {
     setMobileOpen(false);
   }, [location.pathname, location.hash]);
-
-  useEffect(() => {
-    const onScroll = () => setIsScrolled(window.scrollY > 14);
-
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
 
   useEffect(() => {
     const syncHeaderOffset = () => {
@@ -59,16 +49,20 @@ const ProductSiteHeader = () => {
       observer.disconnect();
       window.removeEventListener('resize', syncHeaderOffset);
     };
-  }, [isScrolled, lang, mobileOpen, product.slug]);
+  }, [lang, mobileOpen, product.slug]);
 
   const corporatePath = getCorporateSitePath(lang);
   const productHomePath = getProductSitePath(product.slug, lang, '/', pathMode);
   const productCatalogPath = getProductSitePath(product.slug, lang, '/products', pathMode);
+  const productLoginPath = getProductSitePath(product.slug, lang, '/login', pathMode);
+  const productRegisterPath = getProductSitePath(product.slug, lang, '/register', pathMode);
   const resolveHref = (href: string) =>
     href.startsWith('#')
       ? `${productHomePath}#${href.slice(1)}`
       : getProductSitePath(product.slug, lang, href, pathMode);
   const isCatalogRoute = location.pathname === productCatalogPath || location.pathname.startsWith(`${productCatalogPath}/`);
+  const isLoginRoute = location.pathname === productLoginPath;
+  const isRegisterRoute = location.pathname === productRegisterPath;
 
   const isActive = (href: string) => {
     if (href.startsWith('#')) {
@@ -79,7 +73,7 @@ const ProductSiteHeader = () => {
   };
 
   return (
-    <header ref={headerRef} className={`ps-header ${isScrolled ? 'is-scrolled' : ''}`}>
+    <header ref={headerRef} className="ps-header">
       <div className="container">
         <div className="ps-header-shell glass-panel">
           <div className="ps-brand-stack">
@@ -119,6 +113,20 @@ const ProductSiteHeader = () => {
             </nav>
 
             <div className="ps-header-actions">
+              <div className="ps-header-auth">
+                <Link
+                  to={productLoginPath}
+                  className={`ps-header-auth-link ${isLoginRoute ? 'is-active' : ''}`}
+                >
+                  {lang === 'tr' ? 'Giriş' : 'Login'}
+                </Link>
+                <Link
+                  to={productRegisterPath}
+                  className={`ps-header-auth-cta ${isRegisterRoute ? 'is-active' : ''}`}
+                >
+                  {lang === 'tr' ? 'Kayıt Ol' : 'Register'}
+                </Link>
+              </div>
               {showProductCatalog && !isCatalogRoute ? (
                 <Link to={productCatalogPath} className="ps-header-cta">
                   {lang === 'tr' ? 'Ürünler' : 'Products'}
@@ -146,6 +154,22 @@ const ProductSiteHeader = () => {
                 transition={{ duration: 0.24, ease: [0.22, 1, 0.36, 1] }}
               >
                 <div className="ps-mobile-links">
+                  <div className="ps-mobile-auth">
+                    <Link
+                      to={productLoginPath}
+                      className={`ps-mobile-auth-link ${isLoginRoute ? 'is-active' : ''}`}
+                      onClick={() => setMobileOpen(false)}
+                    >
+                      {lang === 'tr' ? 'Giriş Yap' : 'Sign In'}
+                    </Link>
+                    <Link
+                      to={productRegisterPath}
+                      className={`ps-mobile-auth-link ps-mobile-auth-link--primary ${isRegisterRoute ? 'is-active' : ''}`}
+                      onClick={() => setMobileOpen(false)}
+                    >
+                      {lang === 'tr' ? 'Kayıt Ol' : 'Register'}
+                    </Link>
+                  </div>
                   {content.menu.map((item) =>
                     item.href.startsWith('#') ? (
                       <a

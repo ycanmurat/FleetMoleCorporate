@@ -81,7 +81,7 @@ const ProductSiteContact = () => {
               </div>
 
               <Link to={corporatePath} className="ps-contact-corporate">
-                {lang === 'tr' ? 'FleetMole kurumsal siteye dön' : 'Back to FleetMole corporate'}
+                {lang === 'tr' ? 'FleetMole Kurumsal' : 'FleetMole Corporate'}
               </Link>
             </div>
 
