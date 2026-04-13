@@ -42,43 +42,31 @@ const HERO_UI = {
   tr: {
     tabsLabel: 'Hero ürün sekmeleri',
     autoPlay: '10 sn otomatik akış',
-    paused: 'Akış duraklatıldı',
     explore: 'Ürünü İncele',
-    filePrefix: 'urun-akisi',
     previous: 'Önceki ürün',
     next: 'Sonraki ürün',
     flowLabel: 'Ürün sliderı',
     activeLabel: 'Aktif ürün',
-    stageLabel: 'Canlı senaryo',
-    detailLabel: 'Detay katmanı',
   },
   en: {
     tabsLabel: 'Hero product tabs',
     autoPlay: '10s autoplay',
-    paused: 'Flow paused',
     explore: 'Explore Product',
-    filePrefix: 'product-flow',
     previous: 'Previous product',
     next: 'Next product',
     flowLabel: 'Product slider',
     activeLabel: 'Active product',
-    stageLabel: 'Live scenario',
-    detailLabel: 'Detail layer',
   },
 } satisfies Record<
   Locale,
   {
     tabsLabel: string;
     autoPlay: string;
-    paused: string;
     explore: string;
-    filePrefix: string;
     previous: string;
     next: string;
     flowLabel: string;
     activeLabel: string;
-    stageLabel: string;
-    detailLabel: string;
   }
 >;
 
@@ -841,28 +829,6 @@ const Home = () => {
                 </div>
 
                 <div className="hero-stage-detail-shell">
-                  <div className="hero-stage-head">
-                    <div className="hero-stage-meta">
-                      <div className="hero-stage-kicker">
-                        <span className="hero-stage-kicker-icon" aria-hidden="true">
-                          <Layers3 size={14} />
-                        </span>
-                        <span>{heroUi.stageLabel}</span>
-                      </div>
-
-                      <div className="hero-stage-dots">
-                        <span className="api-dot blue" />
-                        <span className="api-dot teal" />
-                        <span className="api-dot violet" />
-                        <span className="hero-stage-file">{`fleetmole-${heroProduct.slug}.${heroUi.filePrefix}`}</span>
-                      </div>
-                    </div>
-                    <div className="hero-stage-badge">
-                      <span className={`hero-stage-badge-dot ${heroPaused ? 'paused' : ''}`} />
-                      <span>{heroPaused ? heroUi.paused : heroUi.detailLabel}</span>
-                    </div>
-                  </div>
-
                   <div className="hero-stage-body">
                     <AnimatePresence initial={false} mode="wait">
                       <motion.div

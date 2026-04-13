@@ -374,10 +374,10 @@ export const getPresentationFeatureCards = (product: HardwareProduct): ProductFe
 
   const specSummaryTr = keySpecs.length
     ? keySpecs.map(item => `${getLocalizedTechnicalText(item.label, 'tr')}: ${getLocalizedTechnicalText(item.value, 'tr')}`).join(' • ')
-    : `${product.name} için teknik veri alanı yeni içerik turunda daha da genişletilecektir.`;
+    : `${product.name} için teknik çerçeve; kategori konumu, ürün açıklaması ve mevcut veri alanları üzerinden özetlenmiştir.`;
   const specSummaryEn = keySpecs.length
     ? keySpecs.map(item => `${item.label.en}: ${item.value.en}`).join(' • ')
-    : `Technical data for ${product.name} will be expanded further in the next content pass.`;
+    : `The technical snapshot for ${product.name} is summarized through its category position, product description, and currently available data fields.`;
 
   return [
     featureCard(

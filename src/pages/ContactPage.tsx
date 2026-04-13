@@ -124,7 +124,7 @@ const ContactPage = () => {
               defaultProduct="corporate"
               productOptions={productOptions}
               siteScope="corporate"
-              title={lang === 'tr' ? 'Talep Formu' : 'Inquiry Form'}
+              title={lang === 'tr' ? 'Kurumsal Talep Formu' : 'Corporate Inquiry Form'}
               lead={
                 lang === 'tr'
                   ? 'Konu ve ürün seçimiyle başlayan talepler doğru ekipte daha hızlı açılır.'

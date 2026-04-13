@@ -28,9 +28,14 @@
 
 .inquiry-form__intro {
   display: grid;
-  gap: 0.72rem;
-  padding: 1.35rem 1.35rem 1rem;
+  gap: 0.68rem;
+  padding: 1.28rem 1.35rem 1rem;
   border-bottom: 1px solid color-mix(in srgb, var(--inquiry-accent) 12%, var(--border-light));
+}
+
+.inquiry-form__intro-head {
+  display: grid;
+  gap: 0.42rem;
 }
 
 .inquiry-form__eyebrow {
@@ -52,10 +57,10 @@
   font-size: clamp(1.5rem, 2.5vw, 2rem);
   line-height: 1.04;
   letter-spacing: -0.05em;
+  text-wrap: balance;
 }
 
-.inquiry-form__intro p,
-.inquiry-form__footer p {
+.inquiry-form__intro p {
   margin: 0;
   color: var(--text-muted);
   line-height: 1.72;
@@ -144,14 +149,9 @@
 .inquiry-form__footer {
   display: flex;
   align-items: flex-end;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 1rem;
   padding-top: 0.2rem;
-}
-
-.inquiry-form__footer p {
-  max-width: 34rem;
-  font-size: 0.88rem;
 }
 
 .inquiry-form__submit {
@@ -180,7 +180,19 @@
 
 .inquiry-form--product .inquiry-form__intro,
 .inquiry-form--tracker .inquiry-form__intro {
-  padding-bottom: 1.08rem;
+  gap: 0.62rem;
+  padding-bottom: 1rem;
+}
+
+.inquiry-form--product .inquiry-form__intro h2,
+.inquiry-form--tracker .inquiry-form__intro h2 {
+  font-size: clamp(1.42rem, 2vw, 1.82rem);
+}
+
+.inquiry-form--product .inquiry-form__eyebrow,
+.inquiry-form--tracker .inquiry-form__eyebrow {
+  padding: 0.42rem 0.68rem;
+  font-size: 0.7rem;
 }
 
 @keyframes inquiry-spin {
@@ -238,7 +250,6 @@
 
 .dark .inquiry-form__field span,
 .dark .inquiry-form__intro p,
-.dark .inquiry-form__footer p,
 .dark .inquiry-form__status {
   color: color-mix(in srgb, var(--text-main) 74%, #cbd5e1);
 }

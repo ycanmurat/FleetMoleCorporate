@@ -8,6 +8,13 @@ export interface ServiceLandingMetric {
   label: LocalizedText;
 }
 
+export interface ServiceLandingFlowStep {
+  icon: 'capture' | 'route' | 'service' | 'report';
+  phase: LocalizedText;
+  title: LocalizedText;
+  body: LocalizedText;
+}
+
 export interface ServiceLandingStep {
   title: LocalizedText;
   body: LocalizedText;
@@ -76,36 +83,68 @@ export const SERVICES_LANDING_CONTENT = {
     tr: 'Ekiple Görüşün',
     en: 'Talk to the Team',
   },
-  metrics: [
+  heroPanelEyebrow: {
+    tr: 'Operasyon Özeti',
+    en: 'Operational Snapshot',
+  },
+  heroPanelTitle: {
+    tr: 'Uçtan uca servis çizgisi',
+    en: 'End-to-end service line',
+  },
+  heroPanelBody: {
+    tr: 'Talebin açıldığı andan kapanış raporuna kadar aynı iş omurgasında kalan hizmet akışı.',
+    en: 'A service flow that stays on the same execution backbone from intake to closeout reporting.',
+  },
+  heroFlow: [
     {
-      value: { tr: '10 Servis', en: '10 Services' },
-      label: {
-        tr: 'Resmi Hizmetlerimiz alanındaki operasyon başlıkları',
-        en: 'Operational service lines listed under the official Services section',
+      icon: 'capture',
+      phase: { tr: 'Başlangıç', en: 'Intake' },
+      title: {
+        tr: 'Talep ve olay açılışı',
+        en: 'Request and incident intake',
+      },
+      body: {
+        tr: 'Kaza, arıza, bakım, lastik ya da yol yardım ihtiyacı tek kayıt altında açılır; ilk veri herkes için aynı kalır.',
+        en: 'Claims, breakdowns, maintenance, tyre work, or roadside requests are opened in one record so the first dataset stays consistent for everyone.',
       },
     },
     {
-      value: { tr: '24/7', en: '24/7' },
-      label: {
-        tr: 'Asistans, saha yönlendirme ve olay yönetimi yaklaşımı',
-        en: 'Assistance, field dispatch, and incident response approach',
+      icon: 'route',
+      phase: { tr: 'Karar', en: 'Decision' },
+      title: {
+        tr: 'Servis eşleştirme ve yönlendirme',
+        en: 'Service matching and dispatch',
+      },
+      body: {
+        tr: 'Konum, SLA, kapasite ve araç tipine göre en uygun servis noktası, eksper ya da tedarikçi devreye alınır.',
+        en: 'The best-fit workshop, assessor, or supplier is engaged based on location, SLA, capacity, and vehicle type.',
       },
     },
     {
-      value: { tr: 'Tek Akış', en: 'One Flow' },
-      label: {
-        tr: 'Talep, onay, tedarikçi ve raporlama katmanını birleştiren yapı',
-        en: 'A structure that unifies request, approval, supplier, and reporting layers',
+      icon: 'service',
+      phase: { tr: 'İcra', en: 'Execution' },
+      title: {
+        tr: 'Saha, onay ve teslim takibi',
+        en: 'Field, approval, and delivery tracking',
+      },
+      body: {
+        tr: 'Onarım, ikame, parça, teslim ve kalite adımları aynı iş çizgisinde izlenir; ekipler dağınık kanal kullanmaz.',
+        en: 'Repair, replacement, parts, delivery, and quality steps are monitored on the same work line so teams do not fall back to fragmented channels.',
       },
     },
     {
-      value: { tr: 'Çift Dilli', en: 'Bilingual' },
-      label: {
-        tr: 'Türkçe ve İngilizce kullanılabilir kurumsal landing kurgusu',
-        en: 'Enterprise landing architecture available in Turkish and English',
+      icon: 'report',
+      phase: { tr: 'Kapanış', en: 'Closure' },
+      title: {
+        tr: 'Maliyet, hız ve tekrar risk raporu',
+        en: 'Cost, speed, and repeat-risk reporting',
+      },
+      body: {
+        tr: 'Kapanan iş yalnızca tamamlanmış sayılmaz; maliyet, süre, memnuniyet ve tekrar eden nedenler yönetime görünür hale gelir.',
+        en: 'Closed work is not simply marked complete; cost, cycle time, satisfaction, and repeat causes become visible to management.',
       },
     },
-  ] satisfies ServiceLandingMetric[],
+  ] satisfies ServiceLandingFlowStep[],
   processTitle: {
     tr: 'Servis operasyonu nasıl akıyor?',
     en: 'How does the service operation flow?',

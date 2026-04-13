@@ -1,4 +1,4 @@
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowDown, ArrowRight, BarChart3, BellRing, Route, Sparkles, Wrench } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import ProductWordmark from '../components/ProductWordmark/ProductWordmark';
 import SeoHead from '../components/Seo/SeoHead';
@@ -11,6 +11,13 @@ import {
 import { getProductBySlug } from '../data/products';
 import { SERVICES_LANDING_CONTENT } from '../data/servicesContent';
 import './ServicesLandingPage.css';
+
+const HERO_FLOW_ICONS = {
+  capture: BellRing,
+  route: Route,
+  service: Wrench,
+  report: BarChart3,
+} as const;
 
 const ServicesLandingPage = () => {
   const { lang, localizePath } = useApp();
@@ -67,17 +74,48 @@ const ServicesLandingPage = () => {
 
             <aside className="services-hero-panel glass-panel">
               <div className="services-panel-head">
-                <span>{lang === 'tr' ? 'Operasyon Özeti' : 'Operational Snapshot'}</span>
-                <strong>{section.label[lang]}</strong>
+                <span>{SERVICES_LANDING_CONTENT.heroPanelEyebrow[lang]}</span>
+                <strong>{SERVICES_LANDING_CONTENT.heroPanelTitle[lang]}</strong>
+                <p>{SERVICES_LANDING_CONTENT.heroPanelBody[lang]}</p>
               </div>
 
-              <div className="services-metrics">
-                {SERVICES_LANDING_CONTENT.metrics.map((metric) => (
-                  <article key={metric.label.tr} className="services-metric">
-                    <strong>{metric.value[lang]}</strong>
-                    <span>{metric.label[lang]}</span>
-                  </article>
-                ))}
+              <div className="services-flow">
+                {SERVICES_LANDING_CONTENT.heroFlow.map((step, index) => {
+                  const Icon = HERO_FLOW_ICONS[step.icon];
+
+                  return (
+                    <div key={step.title.tr} className="services-flow-segment">
+                      <article className="services-flow-step">
+                        <span className="services-flow-step-icon" aria-hidden="true">
+                          <Icon size={18} />
+                        </span>
+
+                        <div className="services-flow-step-copy">
+                          <span className="services-flow-step-phase">{step.phase[lang]}</span>
+                          <strong>{step.title[lang]}</strong>
+                          <p>{step.body[lang]}</p>
+                        </div>
+                      </article>
+
+                      {index < SERVICES_LANDING_CONTENT.heroFlow.length - 1 ? (
+                        <div className="services-flow-connector" aria-hidden="true">
+                          <span className="services-flow-connector-line" />
+                          <ArrowDown size={14} />
+                        </div>
+                      ) : null}
+                    </div>
+                  );
+                })}
+              </div>
+
+              <div className="services-flow-footer">
+                <strong>{lang === 'tr' ? 'Tek operasyon çizgisi' : 'One operational line'}</strong>
+                <div className="services-flow-tags">
+                  <span>{lang === 'tr' ? 'Hasar' : 'Claims'}</span>
+                  <span>{lang === 'tr' ? 'Bakım' : 'Maintenance'}</span>
+                  <span>{lang === 'tr' ? 'İkame' : 'Replacement'}</span>
+                  <span>{lang === 'tr' ? 'Tedarikçi' : 'Supplier'}</span>
+                </div>
               </div>
             </aside>
           </div>

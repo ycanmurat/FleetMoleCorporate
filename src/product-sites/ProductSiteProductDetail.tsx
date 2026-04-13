@@ -309,8 +309,8 @@ const ProductSiteProductDetail = () => {
                   ) : (
                     <div className="ps-product-detail-empty">
                       {lang === 'tr'
-                        ? 'Bu ürün için detaylı özellik maddeleri bir sonraki içerik turunda eklenecek.'
-                        : 'Detailed feature bullets for this product will be added in the next content pass.'}
+                        ? 'Bu ürün için öne çıkan teknik başlıklar ürün özeti ve spesifikasyon sekmelerinde sunuluyor.'
+                        : 'Key technical points for this product are presented in the overview and specifications tabs.'}
                     </div>
                   )}
                 </div>

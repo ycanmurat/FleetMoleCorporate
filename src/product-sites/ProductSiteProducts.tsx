@@ -311,8 +311,8 @@ const ProductSiteProducts = () => {
                             {hasDownloads
                               ? `${downloads.length} ${lang === 'tr' ? 'doküman' : downloads.length === 1 ? 'document' : 'documents'}`
                               : lang === 'tr'
-                                ? 'Yakında'
-                                : 'Soon'}
+                                ? 'Talep Üzerine'
+                                : 'On Request'}
                           </span>
                         </div>
 
@@ -333,8 +333,8 @@ const ProductSiteProducts = () => {
                         ) : (
                           <p className="ps-premium-download-placeholder">
                             {lang === 'tr'
-                              ? 'Bu ürünün indirme linki yakında eklenecek.'
-                              : 'Download links for this product will be added soon.'}
+                              ? 'Bu ürün için indirilebilir doküman bağlantısı katalogda yayınlanmıyor. İlgili belgeyi talep formu üzerinden isteyebilirsiniz.'
+                              : 'Download links are not published in the catalog for this product. You can request the relevant document through the inquiry form.'}
                           </p>
                         )}
                       </div>

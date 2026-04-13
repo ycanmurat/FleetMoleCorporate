@@ -35,6 +35,7 @@ export const readContactFormSubmissions = (): ContactFormSubmission[] => {
 
 interface ContactInquiryFormProps {
   accentColor: string;
+  eyebrow?: string;
   className?: string;
   defaultProduct: string;
   lead?: string;
@@ -46,6 +47,7 @@ interface ContactInquiryFormProps {
 
 const ContactInquiryForm = ({
   accentColor,
+  eyebrow,
   className = '',
   defaultProduct,
   lead,
@@ -84,13 +86,13 @@ const ContactInquiryForm = ({
         lang === 'tr'
           ? 'Talebiniz kaydedildi. İlgili ekip en kısa sürede sizinle iletişime geçecek.'
           : 'Your inquiry has been recorded. The relevant team will contact you shortly.',
-      note:
-        lang === 'tr'
-          ? 'Form kayıtları bu yerel ortamda saklanır. Canlı entegrasyon eklendiğinde aynı alan yapısı korunabilir.'
-          : 'Submissions are stored locally in this environment. The same field structure can be kept when a live integration is added.',
     }),
     [lang, lead, title],
   );
+  const introEyebrow = eyebrow?.trim();
+  const showEyebrow =
+    Boolean(introEyebrow) &&
+    introEyebrow!.toLocaleLowerCase(lang) !== labels.title.trim().toLocaleLowerCase(lang);
 
   const handleFieldChange =
     (field: keyof typeof formData) =>
@@ -144,8 +146,10 @@ const ContactInquiryForm = ({
       style={{ '--inquiry-accent': accentColor } as CSSProperties}
     >
       <div className="inquiry-form__intro">
-        <span className="inquiry-form__eyebrow">{labels.title}</span>
-        <h2>{labels.title}</h2>
+        <div className="inquiry-form__intro-head">
+          {showEyebrow ? <span className="inquiry-form__eyebrow">{introEyebrow}</span> : null}
+          <h2>{labels.title}</h2>
+        </div>
         <p>{labels.lead}</p>
       </div>
 
@@ -228,7 +232,6 @@ const ContactInquiryForm = ({
         </label>
 
         <div className="inquiry-form__footer">
-          <p>{labels.note}</p>
           <button className="btn-primary inquiry-form__submit" disabled={status === 'submitting'} type="submit">
             {status === 'submitting' ? <LoaderCircle size={18} className="inquiry-form__spinner" /> : <SendHorizonal size={18} />}
             <span>{labels.submit}</span>
