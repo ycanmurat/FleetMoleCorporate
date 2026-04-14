@@ -13,6 +13,8 @@ export interface SeoHeadConfig {
   themeColor?: string;
   alternates?: Partial<Record<Locale | 'x-default', string>>;
   schema?: Record<string, unknown> | Array<Record<string, unknown>>;
+  articlePublishedTime?: string;
+  articleModifiedTime?: string;
 }
 
 export interface ResolvedSeoAlternate {
@@ -33,6 +35,8 @@ export interface ResolvedSeoPayload {
   faviconType: string;
   alternates: ResolvedSeoAlternate[];
   schema?: Record<string, unknown> | Array<Record<string, unknown>>;
+  articlePublishedTime?: string;
+  articleModifiedTime?: string;
 }
 
 const escapeHtml = (value: string) =>
@@ -43,7 +47,7 @@ const escapeHtml = (value: string) =>
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#39;');
 
-const localeToOgLocale = (locale: Locale) => (locale === 'tr' ? 'tr_TR' : 'en_US');
+export const localeToOgLocale = (locale: Locale) => (locale === 'tr' ? 'tr_TR' : 'en_US');
 
 const toAbsoluteAssetUrl = (value: string) =>
   value.startsWith('http') || value.startsWith('data:') ? value : toAbsoluteUrl(value);
@@ -72,6 +76,8 @@ export const resolveSeoPayload = ({
   themeColor = '#203A74',
   alternates,
   schema,
+  articlePublishedTime,
+  articleModifiedTime,
 }: SeoHeadConfig): ResolvedSeoPayload => ({
   title,
   description,
@@ -88,6 +94,8 @@ export const resolveSeoPayload = ({
     hrefLang: hrefLang as Locale | 'x-default',
   })),
   schema,
+  articlePublishedTime,
+  articleModifiedTime,
 });
 
 export const serializeSeoHead = (payload: ResolvedSeoPayload) => {
@@ -103,6 +111,7 @@ export const serializeSeoHead = (payload: ResolvedSeoPayload) => {
   const tags = [
     `<title>${escapeHtml(payload.title)}</title>`,
     `<meta name="application-name" content="${escapeHtml(SITE_NAME)}" />`,
+    `<meta name="apple-mobile-web-app-title" content="${escapeHtml(SITE_NAME)}" />`,
     `<meta name="description" content="${escapeHtml(payload.description)}" />`,
     `<meta name="robots" content="${escapeHtml(payload.robots)}" />`,
     `<meta name="theme-color" content="${escapeHtml(payload.themeColor)}" />`,
@@ -120,6 +129,7 @@ export const serializeSeoHead = (payload: ResolvedSeoPayload) => {
     `<meta name="twitter:card" content="summary_large_image" />`,
     `<meta name="twitter:title" content="${escapeHtml(payload.title)}" />`,
     `<meta name="twitter:description" content="${escapeHtml(payload.description)}" />`,
+    `<meta name="twitter:url" content="${escapeHtml(payload.canonicalUrl)}" />`,
     `<meta name="twitter:image" content="${escapeHtml(payload.imageUrl)}" />`,
     `<meta name="twitter:image:alt" content="${escapeHtml(payload.title)}" />`,
     `<link rel="canonical" href="${escapeHtml(payload.canonicalUrl)}" />`,
@@ -129,6 +139,18 @@ export const serializeSeoHead = (payload: ResolvedSeoPayload) => {
         `<link rel="alternate" hreflang="${escapeHtml(entry.hrefLang)}" href="${escapeHtml(entry.href)}" data-seo="alternate" />`,
     ),
   ];
+
+  if (payload.type === 'article' && payload.articlePublishedTime) {
+    tags.push(
+      `<meta property="article:published_time" content="${escapeHtml(payload.articlePublishedTime)}" />`,
+    );
+  }
+
+  if (payload.type === 'article' && payload.articleModifiedTime) {
+    tags.push(
+      `<meta property="article:modified_time" content="${escapeHtml(payload.articleModifiedTime)}" />`,
+    );
+  }
 
   if (schemaJson) {
     tags.push(`<script type="application/ld+json" data-seo="schema">${schemaJson}</script>`);

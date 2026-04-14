@@ -388,14 +388,23 @@
 .services-card-products {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.7rem;
+  gap: 0.95rem;
   align-items: center;
-  padding-top: 0.1rem;
+  padding-top: 0.25rem;
 }
 
 .services-card-wordmark,
 .services-integration-wordmark {
   width: auto;
+  max-width: 100%;
+}
+
+.services-card-wordmark {
+  flex-shrink: 0;
+}
+
+.services-integration-wordmark {
+  margin-bottom: 0.2rem;
 }
 
 .services-process-card,

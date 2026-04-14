@@ -1,11 +1,12 @@
 import { useEffect, useState, type FormEvent } from 'react';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import ProductMark from '../components/ProductMark/ProductMark';
 import ProductWordmark from '../components/ProductWordmark/ProductWordmark';
 import SeoHead from '../components/Seo/SeoHead';
 import { getProductFaviconPath, getProductSitePath } from '../config/productSites';
 import { useApp } from '../context/AppContext';
+import { isProductAuthEnabled } from '../data/products';
 import { toAbsoluteUrl } from '../lib/i18n';
 import { useProductSite } from './ProductSiteContext';
 import { useProductSitePathMode } from './ProductSiteRuntimeContext';
@@ -33,6 +34,10 @@ const ProductSiteAuthPage = ({ mode }: ProductSiteAuthPageProps) => {
   const forgotPasswordPath = getProductSitePath(product.slug, lang, '/forgot-password', pathMode);
   const currentPath = isLogin ? loginPath : isRegister ? registerPath : forgotPasswordPath;
   const focusPoints = product.benefits[lang].slice(0, 3);
+
+  if (!isProductAuthEnabled(product.slug)) {
+    return <Navigate to={productHomePath} replace />;
+  }
 
   useEffect(() => {
     setSubmitted(false);

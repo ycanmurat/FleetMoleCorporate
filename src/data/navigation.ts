@@ -63,15 +63,15 @@ const services: ContentSection = {
     en: 'Services',
   },
   eyebrow: {
-    tr: 'Operasyon Servisleri',
+    tr: 'Operasyon Hizmetleri',
     en: 'Operational Services',
   },
   title: {
-    tr: 'Sahadaki her iş akışını daha kontrollü hale getiren servis katmanları.',
+    tr: 'Sahadaki her iş akışını daha kontrollü hale getiren hizmet katmanları.',
     en: 'Service layers that make every field workflow more controlled.',
   },
   description: {
-    tr: 'FleetMole servis başlıkları; bakım, hasar, ikame, eğitim ve tedarik zinciri süreçlerini tek operasyon omurgasına bağlamak için kurgulandı.',
+    tr: 'FleetMole hizmet başlıkları; bakım, hasar, ikame, eğitim ve tedarik zinciri süreçlerini tek operasyon omurgasına bağlamak için kurgulandı.',
     en: 'FleetMole service lines are designed to connect maintenance, damage, replacement, training, and supplier workflows to one operating backbone.',
   },
   accent: '#20ABE3',
@@ -88,7 +88,7 @@ const services: ContentSection = {
         tr: [
           'Dosya, fotoğraf ve ekspertiz akışını tek yerde toplar',
           'Onarım, değer kaybı ve rücu aşamalarını aynı senaryoda izler',
-          'Maliyet ve servis performansını yönetim seviyesinde görünür kılar',
+          'Maliyet ve hizmet performansını yönetim seviyesinde görünür kılar',
         ],
         en: [
           'Brings files, photos, and inspection records into one stream',
@@ -109,7 +109,7 @@ const services: ContentSection = {
       highlights: {
         tr: [
           'Bakım takvimi ve kilometre tetiklerini otomatik yönetir',
-          'Servis yönlendirmelerini SLA ve onay kurallarıyla standardize eder',
+          'Hizmet yönlendirmelerini SLA ve onay kurallarıyla standardize eder',
           'Bakım maliyetlerini araç ve tedarikçi bazında izler',
         ],
         en: [
@@ -147,7 +147,7 @@ const services: ContentSection = {
       slug: 'tedarikci-lojistik-yonetimi',
       title: { tr: 'Tedarikçi Lojistik Yönetimi', en: 'Supplier Logistics Management' },
       description: {
-        tr: 'Servis ve tedarik ağının kapasite, bölge, kontrat ve kalite standardını yönetilebilir kılar.',
+        tr: 'Hizmet ve tedarik ağının kapasite, bölge, kontrat ve kalite standardını yönetilebilir kılar.',
         en: 'Makes supplier and service capacity, regional coverage, contracts, and quality standards manageable.',
       },
       highlights: {
@@ -235,7 +235,7 @@ const services: ContentSection = {
       slug: 'asistans-hizmetleri',
       title: { tr: 'Asistans Hizmetleri', en: 'Assistance Services' },
       description: {
-        tr: 'Yol yardımı ve acil destek süreçlerini daha kontrollü ve izlenebilir bir servis planına dönüştürür.',
+        tr: 'Yol yardımı ve acil destek süreçlerini daha kontrollü ve izlenebilir bir hizmet planına dönüştürür.',
         en: 'Turns roadside assistance and urgent support into a more controlled and traceable service plan.',
       },
       highlights: {

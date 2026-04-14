@@ -24,9 +24,11 @@ const outDir = path.resolve(process.cwd(), outDirArg);
 const seoTagPatterns = [
   /<title>[\s\S]*?<\/title>\s*/i,
   /<meta[^>]+name="application-name"[^>]*>\s*/gi,
+  /<meta[^>]+name="apple-mobile-web-app-title"[^>]*>\s*/gi,
   /<meta[^>]+name="description"[^>]*>\s*/gi,
   /<meta[^>]+name="robots"[^>]*>\s*/gi,
   /<meta[^>]+name="theme-color"[^>]*>\s*/gi,
+  /<meta[^>]+property="article:[^"]+"[^>]*>\s*/gi,
   /<meta[^>]+property="og:[^"]+"[^>]*>\s*/gi,
   /<meta[^>]+name="twitter:[^"]+"[^>]*>\s*/gi,
   /<link[^>]+rel="canonical"[^>]*>\s*/gi,

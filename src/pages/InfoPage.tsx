@@ -142,6 +142,10 @@ const InfoPage = ({ section }: InfoPageProps) => {
         description={pageDescription}
         pathname={localizePath(getContentPath(section, page.slug))}
         locale={lang}
+        image={activeNewsArticle?.heroImage}
+        type={activeNewsArticle ? 'article' : 'website'}
+        articlePublishedTime={activeNewsArticle?.publishedAtIso}
+        articleModifiedTime={activeNewsArticle?.publishedAtIso}
         alternates={{
           tr: getContentPath(section, page.slug),
           en: getContentPath(section, page.slug),

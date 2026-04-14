@@ -587,6 +587,8 @@ export const PRODUCT_MAP = Object.fromEntries(
   PRODUCTS.map((product) => [product.slug, product]),
 ) as Record<ProductSlug, ProductData>;
 
+const PRODUCT_AUTH_ENABLED_SLUGS = new Set<ProductSlug>(['rent']);
+
 const PRODUCT_SLUG_ALIASES: Record<string, ProductSlug> = {
   ai: 'smart',
 };
@@ -599,3 +601,6 @@ export const getProductBySlug = (slug?: string) => {
   const normalizedSlug = (PRODUCT_SLUG_ALIASES[slug] ?? slug) as ProductSlug;
   return normalizedSlug in PRODUCT_MAP ? PRODUCT_MAP[normalizedSlug] : undefined;
 };
+
+export const isProductAuthEnabled = (productSlug: ProductSlug) =>
+  PRODUCT_AUTH_ENABLED_SLUGS.has(productSlug);

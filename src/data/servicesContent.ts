@@ -60,23 +60,23 @@ export interface ServicePageDetail {
 
 export const SERVICES_LANDING_CONTENT = {
   heroEyebrow: {
-    tr: 'Kurumsal Servis Katmanı',
+    tr: 'Kurumsal Hizmet Katmanı',
     en: 'Enterprise Service Layer',
   },
   heroTitle: {
-    tr: 'Hasardan bakıma, asistanstan saha raporlamasına kadar tüm hizmet akışlarını tek operasyon çizgisinde yönetin.',
+    tr: 'Hasardan bakıma, asistandan saha raporlamasına kadar tüm hizmet akışlarını tek operasyon çizgisinde yönetin.',
     en: 'Manage every service flow, from claims and maintenance to assistance and field reporting, on one operational line.',
   },
   heroLead: {
-    tr: 'FleetMole Hizmetlerimiz alanı; resmi sitedeki servis kapsamını dijital operasyon bakışıyla yeniden kurgular. Amaç yalnızca talep toplamak değil, kurumların sahadaki servis kararlarını daha hızlı, daha görünür ve daha ölçülebilir hale getirmektir.',
+    tr: 'FleetMole Hizmetlerimiz alanı; resmi sitedeki hizmet kapsamını dijital operasyon bakışıyla yeniden kurgular. Amaç yalnızca talep toplamak değil, kurumların sahadaki hizmet kararlarını daha hızlı, daha görünür ve daha ölçülebilir hale getirmektir.',
     en: 'The FleetMole Services area reframes the official service scope through a digital operations lens. The goal is not only to collect demand, but to make service decisions faster, more visible, and easier to measure.',
   },
   heroBody: {
-    tr: 'Bakım, hasar, lastik, ikame, tedarikçi, güvenli sürüş ve telematik odaklı servisler; Manager, Partner, Rent, Tracker, Tyre, Trader ve AI ürünleriyle bağlantılı çalışacak şekilde tasarlanır.',
+    tr: 'Bakım, hasar, lastik, ikame, tedarikçi, güvenli sürüş ve telematik odaklı hizmetler; Manager, Partner, Rent, Tracker, Tyre, Trader ve AI ürünleriyle bağlantılı çalışacak şekilde tasarlanır.',
     en: 'Maintenance, damage, tyre, replacement, supplier, safe-driving, and telematics services are designed to work in connection with Manager, Partner, Rent, Tracker, Tyre, Trader, and AI.',
   },
   primaryCta: {
-    tr: 'Servis Kapsamını İnceleyin',
+    tr: 'Hizmet Kapsamını İnceleyin',
     en: 'Explore Service Scope',
   },
   secondaryCta: {
@@ -88,7 +88,7 @@ export const SERVICES_LANDING_CONTENT = {
     en: 'Operational Snapshot',
   },
   heroPanelTitle: {
-    tr: 'Uçtan uca servis çizgisi',
+    tr: 'Uçtan uca hizmet çizgisi',
     en: 'End-to-end service line',
   },
   heroPanelBody: {
@@ -112,11 +112,11 @@ export const SERVICES_LANDING_CONTENT = {
       icon: 'route',
       phase: { tr: 'Karar', en: 'Decision' },
       title: {
-        tr: 'Servis eşleştirme ve yönlendirme',
+        tr: 'Hizmet eşleştirme ve yönlendirme',
         en: 'Service matching and dispatch',
       },
       body: {
-        tr: 'Konum, SLA, kapasite ve araç tipine göre en uygun servis noktası, eksper ya da tedarikçi devreye alınır.',
+        tr: 'Konum, SLA, kapasite ve araç tipine göre en uygun hizmet noktası, eksper ya da tedarikçi devreye alınır.',
         en: 'The best-fit workshop, assessor, or supplier is engaged based on location, SLA, capacity, and vehicle type.',
       },
     },
@@ -146,11 +146,11 @@ export const SERVICES_LANDING_CONTENT = {
     },
   ] satisfies ServiceLandingFlowStep[],
   processTitle: {
-    tr: 'Servis operasyonu nasıl akıyor?',
+    tr: 'Hizmet operasyonu nasıl akıyor?',
     en: 'How does the service operation flow?',
   },
   processDescription: {
-    tr: 'FleetMole servis yaklaşımı, olay oluştuğu andan rapora kadar tek tek kopuk görevler değil; veriyle bağlanan bir operasyon zinciri olarak ele alınır.',
+    tr: 'FleetMole hizmet yaklaşımı, olay oluştuğu andan rapora kadar tek tek kopuk görevler değil; veriyle bağlanan bir operasyon zinciri olarak ele alınır.',
     en: 'The FleetMole service approach treats the workflow from the moment an event occurs to the final report as one connected operational chain, not a set of disconnected tasks.',
   },
   process: [
@@ -170,7 +170,7 @@ export const SERVICES_LANDING_CONTENT = {
         en: '2. Smart routing and coordination',
       },
       body: {
-        tr: 'SLA, konum, kapasite, araç segmenti ve servis standardı gibi kriterlere göre en doğru servis noktası veya tedarikçi eşleştirilir.',
+        tr: 'SLA, konum, kapasite, araç segmenti ve hizmet standardı gibi kriterlere göre en doğru hizmet noktası veya tedarikçi eşleştirilir.',
         en: 'The best-fit workshop or supplier is matched through criteria such as SLA, location, capacity, vehicle segment, and service standard.',
       },
     },
@@ -186,11 +186,11 @@ export const SERVICES_LANDING_CONTENT = {
     },
   ] satisfies ServiceLandingStep[],
   integrationTitle: {
-    tr: 'Servisleri ürün ekosistemiyle birlikte çalışacak şekilde kurgulayın.',
+    tr: 'Hizmetleri ürün ekosistemiyle birlikte çalışacak şekilde kurgulayın.',
     en: 'Design services to operate together with the product ecosystem.',
   },
   integrationDescription: {
-    tr: 'Resmi sitedeki hizmetler, FleetMole ürünleriyle birlikte okunduğunda daha net değer üretir. Aşağıdaki entegrasyon katmanları servis süreçlerini veri, onay ve karar desteğiyle güçlendirir.',
+    tr: 'Resmi sitedeki hizmetler, FleetMole ürünleriyle birlikte okunduğunda daha net değer üretir. Aşağıdaki entegrasyon katmanları hizmet süreçlerini veri, onay ve karar desteğiyle güçlendirir.',
     en: 'The services published on the official site become more valuable when read together with FleetMole products. The integration layers below strengthen service execution with data, approvals, and decision support.',
   },
   integrations: [
@@ -208,7 +208,7 @@ export const SERVICES_LANDING_CONTENT = {
     {
       product: 'partner',
       title: {
-        tr: 'Tedarikçi ve servis ağı kontrolü',
+        tr: 'Tedarikçi ve hizmet ağı kontrolü',
         en: 'Supplier and service-network control',
       },
       body: {
@@ -234,7 +234,7 @@ export const SERVICES_LANDING_CONTENT = {
         en: 'Replacement and mobility continuity',
       },
       body: {
-        tr: 'Servis, hasar veya operasyon yoğunluğu oluştuğunda ikame araç ve kısa dönem ihtiyaçları aynı akışta yönetir.',
+        tr: 'Bakım, hasar veya operasyon yoğunluğu oluştuğunda ikame araç ve kısa dönem ihtiyaçları aynı akışta yönetir.',
         en: 'Handles replacement vehicles and short-term mobility needs in the same flow whenever service, damage, or demand peaks occur.',
       },
     },
@@ -251,7 +251,7 @@ export const SERVICES_LANDING_CONTENT = {
     },
   ] satisfies ServiceLandingIntegration[],
   ctaTitle: {
-    tr: 'Servis yapınızı FleetMole operasyon omurgasına göre yeniden tasarlayın.',
+    tr: 'Hizmet yapınızı FleetMole operasyon omurgasına göre yeniden tasarlayın.',
     en: 'Rebuild your service structure around the FleetMole operations backbone.',
   },
   ctaBody: {
@@ -272,7 +272,7 @@ export const SERVICE_PAGE_DETAILS = {
     },
     intro: {
       tr: [
-        'Araç kazaları kurumlar için yalnızca servis ihtiyacı doğurmaz; operasyon temposunu düşüren, maliyetleri artıran ve müşteri memnuniyetini riske atan çok katmanlı bir sürece dönüşür. Hasarın yanlış analiz edilmesi, onarım tarafındaki gecikmeler veya sigorta akışındaki kopukluklar kısa sürede görünür verimsizlik yaratır.',
+        'Araç kazaları kurumlar için yalnızca operasyonel müdahale ihtiyacı doğurmaz; operasyon temposunu düşüren, maliyetleri artıran ve müşteri memnuniyetini riske atan çok katmanlı bir sürece dönüşür. Hasarın yanlış analiz edilmesi, onarım tarafındaki gecikmeler veya sigorta akışındaki kopukluklar kısa sürede görünür verimsizlik yaratır.',
         'FleetMole, kaza anından itibaren tüm süreci uçtan uca koordine eder. Hasar ihbarı, ekspertiz, onarım takibi, sigorta yazışmaları ve onay akışları aynı merkezi platform üzerinden yürütülür; böylece tüm paydaşlar eşzamanlı veriyle çalışır ve manuel takip yükü ortadan kalkar.',
         'Sürücünün sürece sürekli müdahil olmasına gerek kalmadan tüm adımlar sistematik biçimde ilerler. FleetMole Manager ile portföy genelindeki hasarlar tek merkezden izlenir; FleetMole Partner ve Rent ile de ikame mobilite aynı senaryoya bağlanarak operasyonel süreklilik korunur.',
       ],
@@ -307,7 +307,7 @@ export const SERVICE_PAGE_DETAILS = {
           en: 'Digital Approval',
         },
         label: {
-          tr: 'Operasyon, servis, sigorta ve yönetim ekipleri aynı karar çizgisinde eşzamanlı ilerler.',
+          tr: 'Operasyon, hizmet, sigorta ve yönetim ekipleri aynı karar çizgisinde eşzamanlı ilerler.',
           en: 'Operations, workshops, insurers, and management teams move on the same approval line.',
         },
       },
@@ -347,7 +347,7 @@ export const SERVICE_PAGE_DETAILS = {
           en: 'Align repair and insurance execution',
         },
         body: {
-          tr: 'Servis, ekspertiz ve sigorta tarafı ayrı ayrı e-posta zincirleriyle değil; ortak bir süreç omurgasıyla çalışır.',
+          tr: 'Hizmet ekipleri, ekspertiz ve sigorta tarafı ayrı ayrı e-posta zincirleriyle değil; ortak bir süreç omurgasıyla çalışır.',
           en: 'Workshops, inspectors, and insurers operate through one shared process backbone instead of fragmented email threads.',
         },
       },
@@ -357,7 +357,7 @@ export const SERVICE_PAGE_DETAILS = {
           en: 'Turn portfolio risk into reporting insight',
         },
         body: {
-          tr: 'Hasar frekansı, maliyet paterni ve servis performansı düzenli raporlandığında yenileme döneminde daha güçlü pazarlık zemini oluşur.',
+          tr: 'Hasar frekansı, maliyet paterni ve hizmet performansı düzenli raporlandığında yenileme döneminde daha güçlü pazarlık zemini oluşur.',
           en: 'When claim frequency, cost patterns, and workshop performance are reported consistently, renewal negotiations become materially stronger.',
         },
       },
@@ -397,7 +397,7 @@ export const SERVICE_PAGE_DETAILS = {
           en: 'Repair, insurer, and routing coordination',
         },
         body: {
-          tr: 'Onarım kararı, servis yönlendirmesi ve sigorta yazışmaları ortak bir onay akışıyla ilerleyerek zaman kaybını düşürür.',
+          tr: 'Onarım kararı, hizmet yönlendirmesi ve sigorta yazışmaları ortak bir onay akışıyla ilerleyerek zaman kaybını düşürür.',
           en: 'Repair decisions, workshop routing, and insurer coordination advance through a shared approval flow that reduces delay.',
         },
       },
@@ -407,7 +407,7 @@ export const SERVICE_PAGE_DETAILS = {
           en: 'Closure, reporting, and renewal insight',
         },
         body: {
-          tr: 'Dosya tamamlandığında maliyet, süre, servis kalitesi ve geri kazanım etkisi raporlanarak gelecek poliçe kararları beslenir.',
+          tr: 'Dosya tamamlandığında maliyet, süre, hizmet kalitesi ve geri kazanım etkisi raporlanarak gelecek poliçe kararları beslenir.',
           en: 'Once the case is closed, cost, speed, workshop quality, and recovery impact are reported to support future policy decisions.',
         },
       },
@@ -423,7 +423,7 @@ export const SERVICE_PAGE_DETAILS = {
     commandPoints: {
       tr: [
         'Sürücünün sürece müdahalesini minimuma indirirken operasyon görünürlüğünü artırır.',
-        'FleetMole Manager ile hasar yoğunluğu, maliyet paternleri ve servis performansı portföy seviyesinde raporlanır.',
+        'FleetMole Manager ile hasar yoğunluğu, maliyet paternleri ve hizmet performansı portföy seviyesinde raporlanır.',
         'FleetMole Partner ve Rent altyapısı sayesinde hasar döneminde ikame mobilite aynı senaryoda korunur.',
       ],
       en: [
@@ -458,7 +458,7 @@ export const SERVICE_PAGE_DETAILS = {
           en: 'Repair, insurer, and approval orchestration',
         },
         body: {
-          tr: 'Servis yönlendirmesi, onarım kararı, tedarikçi koordinasyonu ve sigorta yazışmaları tek dijital karar çizgisi üzerinde ilerler.',
+          tr: 'Hizmet yönlendirmesi, onarım kararı, tedarikçi koordinasyonu ve sigorta yazışmaları tek dijital karar çizgisi üzerinde ilerler.',
           en: 'Workshop routing, repair decisions, supplier coordination, and insurer communication move on one digital decision line.',
         },
       },
@@ -477,7 +477,7 @@ export const SERVICE_PAGE_DETAILS = {
   'mekanik-bakim-yonetimi': {
     intro: {
       tr: [
-        'FleetMole’un resmi bakım tanımı, periyodik bakım ile arıza yönetimini tek takvim üzerinde birleştirir. Özellikle bakım bilgisi kurum içinde dağınık kaldığında servis planlaması ciddi zaman ve maliyet kaybı yaratır.',
+        'FleetMole’un resmi bakım tanımı, periyodik bakım ile arıza yönetimini tek takvim üzerinde birleştirir. Özellikle bakım bilgisi kurum içinde dağınık kaldığında bakım planlaması ciddi zaman ve maliyet kaybı yaratır.',
         'Manager ile Tracker birlikte çalıştığında kilometre, zaman ve telemetri temelli tetikler otomatik hale gelir; böylece geciken bakım, plansız arıza ve yüksek onarım faturaları proaktif biçimde azaltılır.',
       ],
       en: [
@@ -500,7 +500,7 @@ export const SERVICE_PAGE_DETAILS = {
           en: 'Interval and mileage triggers',
         },
         body: {
-          tr: 'Her araç için marka, model ve kullanım yoğunluğuna göre servis periyotları tanımlanır; bakım bildirimi manuel takibe ihtiyaç duymadan oluşur.',
+          tr: 'Her araç için marka, model ve kullanım yoğunluğuna göre bakım periyotları tanımlanır; bakım bildirimi manuel takibe ihtiyaç duymadan oluşur.',
           en: 'Service intervals are defined for each vehicle by make, model, and usage intensity so maintenance notifications can be created without manual tracking.',
         },
       },
@@ -516,11 +516,11 @@ export const SERVICE_PAGE_DETAILS = {
       },
       {
         title: {
-          tr: 'Servis performansı ve maliyet görünürlüğü',
+          tr: 'Hizmet performansı ve maliyet görünürlüğü',
           en: 'Workshop performance and cost visibility',
         },
         body: {
-          tr: 'Bakım talepleri, onay süreleri, servis kalitesi ve tamamlanma performansı aynı panelde izlenerek tedarikçi kalitesi karşılaştırılabilir hale gelir.',
+          tr: 'Bakım talepleri, onay süreleri, hizmet kalitesi ve tamamlanma performansı aynı panelde izlenerek tedarikçi kalitesi karşılaştırılabilir hale gelir.',
           en: 'Maintenance requests, approval times, workshop quality, and completion performance are monitored on one panel so supplier quality becomes comparable.',
         },
       },
@@ -542,7 +542,7 @@ export const SERVICE_PAGE_DETAILS = {
       en: 'Enterprise control points for tyre operations',
     },
     cardsDescription: {
-      tr: 'Bu servis, resmi sitede anlatılan değişim ve saklama süreçlerini daha karar verdiren bir işletim modeline taşır.',
+      tr: 'Bu hizmet, resmi sitede anlatılan değişim ve saklama süreçlerini daha karar verdiren bir işletim modeline taşır.',
       en: 'This service turns the official tyre-change and storage scope into a more decision-ready operating model.',
     },
     cards: [
@@ -582,7 +582,7 @@ export const SERVICE_PAGE_DETAILS = {
     intro: {
       tr: [
         'FleetMole’un resmi hizmet metni, tedarikçi yönetimini yalnızca sözleşme veya fiyat karşılaştırması değil; kalite, teslim hızı ve saha koordinasyonunun birlikte ölçüldüğü bir ağ disiplini olarak tanımlar.',
-        'Partner platformu üzerinden yapılan bu yapılandırma, servis noktası seçimi, parça tedariği, bölgesel kapsama ve lojistik performansını aynı çatı altında değerlendirerek daha güçlü müzakere avantajı üretir.',
+        'Partner platformu üzerinden yapılan bu yapılandırma, hizmet noktası seçimi, parça tedariği, bölgesel kapsama ve lojistik performansını aynı çatı altında değerlendirerek daha güçlü müzakere avantajı üretir.',
       ],
       en: [
         'The official FleetMole service narrative frames supplier management not just as contract or price comparison, but as a network discipline where quality, delivery speed, and field coordination are measured together.',
@@ -614,7 +614,7 @@ export const SERVICE_PAGE_DETAILS = {
           en: 'Regional coverage and routing',
         },
         body: {
-          tr: 'Arıza veya bakım ihtiyacında sistem en uygun servis noktasını kapasite ve lokasyon verisine göre seçerek zaman kaybını azaltır.',
+          tr: 'Arıza veya bakım ihtiyacında sistem en uygun hizmet noktasını kapasite ve lokasyon verisine göre seçerek zaman kaybını azaltır.',
           en: 'During maintenance or failure events, the system selects the best-fit service point using capacity and location data to reduce time loss.',
         },
       },
@@ -633,7 +633,7 @@ export const SERVICE_PAGE_DETAILS = {
   'ikame-arac-yonetimi': {
     intro: {
       tr: [
-        'Resmi site içeriği ikame araç hizmetini, araç servise girdiği anda mobiliteyi kesintisiz sürdürmeye odaklı bir çözüm olarak konumlandırır. Özellikle sahada aktif ekiplerde araçsız kalma süresi operasyonel verimliliği doğrudan düşürür.',
+        'Resmi site içeriği ikame araç hizmetini, araç bakım veya onarım sürecine girdiği anda mobiliteyi kesintisiz sürdürmeye odaklı bir çözüm olarak konumlandırır. Özellikle sahada aktif ekiplerde araçsız kalma süresi operasyonel verimliliği doğrudan düşürür.',
         'FleetMole Rent ile ikame talebi otomatik oluşturulur; araç havuzu, segment uygunluğu ve tedarikçi kapasitesi birlikte değerlendirilerek teslim ve iade adımları dijital kayıt altına alınır.',
       ],
       en: [
@@ -656,7 +656,7 @@ export const SERVICE_PAGE_DETAILS = {
           en: 'Automatic replacement requests',
         },
         body: {
-          tr: 'Araç servise alındığı anda ikame ihtiyacı dijital olarak doğar ve operasyon ekibi manuel takip yükü olmadan süreci başlatır.',
+          tr: 'Araç bakım veya onarım sürecine alındığı anda ikame ihtiyacı dijital olarak doğar ve operasyon ekibi manuel takip yükü olmadan süreci başlatır.',
           en: 'The moment a vehicle is taken into service, the replacement need is generated digitally so operations can launch the flow without manual coordination overhead.',
         },
       },
@@ -893,8 +893,8 @@ export const SERVICE_PAGE_DETAILS = {
   'arac-takip-ve-raporlama': {
     intro: {
       tr: [
-        'Resmi Hizmetlerimiz alanı araç takip ve raporlamayı anlık görünürlük sağlayan bir operasyon servisi olarak konumlandırır. FleetMole Tracker ürün sayfası ise bu yaklaşımı telemetri, sürüş skoru, geo-fence ve tahmine dayalı bakım modülleriyle detaylandırır.',
-        'Bu servis, lokasyon bilgisi toplamanın ötesinde; araç kullanımını karar destek raporlarına dönüştürmek, riskli sürüşü erken görmek ve saha verisini bakım ya da operasyon aksiyonuna çevirmek için tasarlanır.',
+        'Resmi Hizmetlerimiz alanı araç takip ve raporlamayı anlık görünürlük sağlayan bir operasyon hizmeti olarak konumlandırır. FleetMole Tracker ürün sayfası ise bu yaklaşımı telemetri, sürüş skoru, geo-fence ve tahmine dayalı bakım modülleriyle detaylandırır.',
+        'Bu hizmet, lokasyon bilgisi toplamanın ötesinde; araç kullanımını karar destek raporlarına dönüştürmek, riskli sürüşü erken görmek ve saha verisini bakım ya da operasyon aksiyonuna çevirmek için tasarlanır.',
       ],
       en: [
         'The official Services section positions vehicle tracking and reporting as an operational service that creates real-time visibility. The FleetMole Tracker product page expands that model with telemetry, driver scoring, geo-fence, and predictive maintenance modules.',
@@ -902,7 +902,7 @@ export const SERVICE_PAGE_DETAILS = {
       ],
     },
     cardsTitle: {
-      tr: 'Araç takip servisinin karar verdiren katmanları',
+      tr: 'Araç takip hizmetinin karar verdiren katmanları',
       en: 'Decision-driving layers of the tracking service',
     },
     cardsDescription: {
@@ -936,7 +936,7 @@ export const SERVICE_PAGE_DETAILS = {
           en: 'Reporting and maintenance triggering',
         },
         body: {
-          tr: 'Toplanan veri grafiksel raporlara dönüştürülür; önleyici ve tahmine dayalı bakım kararları aynı servis katmanı içinde beslenir.',
+          tr: 'Toplanan veri grafiksel raporlara dönüştürülür; önleyici ve tahmine dayalı bakım kararları aynı hizmet katmanı içinde beslenir.',
           en: 'The collected data is transformed into graphical reporting so preventive and predictive maintenance decisions can be fed by the same service layer.',
         },
       },

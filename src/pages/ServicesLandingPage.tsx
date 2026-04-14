@@ -161,7 +161,7 @@ const ServicesLandingPage = () => {
                             key={product.slug}
                             product={product}
                             className="services-card-wordmark"
-                            height={20}
+                            height={28}
                             alt=""
                           />,
                         ] : [];
@@ -211,7 +211,7 @@ const ServicesLandingPage = () => {
 
                 return (
                   <article key={integration.product} className="services-integration-card glass-panel">
-                    <ProductWordmark product={product} height={28} alt="" className="services-integration-wordmark" />
+                    <ProductWordmark product={product} height={36} alt="" className="services-integration-wordmark" />
                     <h3>{integration.title[lang]}</h3>
                     <p>{integration.body[lang]}</p>
                   </article>

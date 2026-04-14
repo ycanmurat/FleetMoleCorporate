@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
+import AnalyticsManager from '../components/Analytics/AnalyticsManager';
 import { AppProvider } from '../context/AppContext';
 import { type ProductSlug } from '../data/products';
 import '../index.css';
@@ -19,6 +20,7 @@ export const mountProductSite = (productSlug: ProductSlug) => {
   ReactDOM.createRoot(rootElement).render(
     <React.StrictMode>
       <BrowserRouter>
+        <AnalyticsManager />
         <AppProvider>
           <ProductSiteRuntimeProvider mode="standalone">
             <ProductSiteProvider productSlug={productSlug}>

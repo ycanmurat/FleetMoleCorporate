@@ -4,6 +4,7 @@ import ProductWordmark from '../components/ProductWordmark/ProductWordmark';
 import { getProductSitePath } from '../config/productSites';
 import { useApp } from '../context/AppContext';
 import { COMPANY_INFO, getCompanyAddress } from '../data/company';
+import { isProductAuthEnabled } from '../data/products';
 import { getProductSiteLegalPages } from './legalContent';
 import { getCorporateSitePath } from './siteConfig';
 import { useProductSite } from './ProductSiteContext';
@@ -14,6 +15,7 @@ const ProductSiteFooter = () => {
   const { product, content } = useProductSite();
   const pathMode = useProductSitePathMode();
   const legalPages = getProductSiteLegalPages(product);
+  const showProductAuth = isProductAuthEnabled(product.slug);
   const productHomePath = getProductSitePath(product.slug, lang, '/', pathMode);
   const productLoginPath = getProductSitePath(product.slug, lang, '/login', pathMode);
   const productRegisterPath = getProductSitePath(product.slug, lang, '/register', pathMode);
@@ -32,7 +34,6 @@ const ProductSiteFooter = () => {
             <ProductWordmark
               product={product}
               className="product-site-footer-wordmark"
-              height={32}
               alt={product.name}
             />
             <p>{product.summary[lang]}</p>
@@ -106,17 +107,19 @@ const ProductSiteFooter = () => {
             </ul>
           </section>
 
-          <section className="product-site-footer-panel">
-            <h2>{lang === 'tr' ? 'Erişim' : 'Access'}</h2>
-            <div className="product-site-footer-actions product-site-footer-actions--auth">
-              <Link to={productLoginPath} className="btn-outline">
-                {lang === 'tr' ? 'Giriş' : 'Login'}
-              </Link>
-              <Link to={productRegisterPath} className="btn-primary">
-                {lang === 'tr' ? 'Kayıt Ol' : 'Register'}
-              </Link>
-            </div>
-          </section>
+          {showProductAuth ? (
+            <section className="product-site-footer-panel">
+              <h2>{lang === 'tr' ? 'Erişim' : 'Access'}</h2>
+              <div className="product-site-footer-actions product-site-footer-actions--auth">
+                <Link to={productLoginPath} className="btn-outline">
+                  {lang === 'tr' ? 'Giriş' : 'Login'}
+                </Link>
+                <Link to={productRegisterPath} className="btn-primary">
+                  {lang === 'tr' ? 'Kayıt Ol' : 'Register'}
+                </Link>
+              </div>
+            </section>
+          ) : null}
         </div>
 
         <div className="product-site-footer-bottom">

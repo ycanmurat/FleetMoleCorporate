@@ -7,7 +7,7 @@ import { serializeSeoHead, type ResolvedSeoPayload } from '../components/Seo/seo
 import { SITE_URL, SUPPORTED_LOCALES, type Locale } from '../config/site';
 import { AppProvider } from '../context/AppContext';
 import { CONTENT_SECTIONS } from '../data/navigation';
-import { PRODUCTS, getProductBySlug, type ProductSlug } from '../data/products';
+import { PRODUCTS, getProductBySlug, isProductAuthEnabled, type ProductSlug } from '../data/products';
 import { stripLocaleFromPath, toAbsoluteUrl } from '../lib/i18n';
 import ProductSiteApp from '../product-sites/ProductSiteApp';
 import { ProductSiteProvider } from '../product-sites/ProductSiteContext';
@@ -109,11 +109,16 @@ export const getCorporatePrerenderRoutes = (): PrerenderRoute[] => {
     PRODUCTS.forEach((product) => {
       routes.push(
         { path: `/${locale}/${product.slug}`, locale, indexable: true },
-        { path: `/${locale}/${product.slug}/login`, locale, indexable: false },
-        { path: `/${locale}/${product.slug}/register`, locale, indexable: false },
-        { path: `/${locale}/${product.slug}/forgot-password`, locale, indexable: false },
         { path: `/${locale}/${product.slug}/contact`, locale, indexable: true },
       );
+
+      if (isProductAuthEnabled(product.slug)) {
+        routes.push(
+          { path: `/${locale}/${product.slug}/login`, locale, indexable: false },
+          { path: `/${locale}/${product.slug}/register`, locale, indexable: false },
+          { path: `/${locale}/${product.slug}/forgot-password`, locale, indexable: false },
+        );
+      }
 
       getProductSiteLegalPages(product).forEach((page) => {
         routes.push({
@@ -158,11 +163,16 @@ export const getProductSitePrerenderRoutes = (productSlug: ProductSlug): Prerend
   SUPPORTED_LOCALES.forEach((locale) => {
     routes.push(
       { path: `/${locale}`, locale, indexable: true },
-      { path: `/${locale}/login`, locale, indexable: false },
-      { path: `/${locale}/register`, locale, indexable: false },
-      { path: `/${locale}/forgot-password`, locale, indexable: false },
       { path: `/${locale}/contact`, locale, indexable: true },
     );
+
+    if (isProductAuthEnabled(product.slug)) {
+      routes.push(
+        { path: `/${locale}/login`, locale, indexable: false },
+        { path: `/${locale}/register`, locale, indexable: false },
+        { path: `/${locale}/forgot-password`, locale, indexable: false },
+      );
+    }
 
     getProductSiteLegalPages(product).forEach((page) => {
       routes.push({

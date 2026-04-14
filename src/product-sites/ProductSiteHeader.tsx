@@ -6,6 +6,7 @@ import ProductRail from '../components/ProductRail/ProductRail';
 import ProductWordmark from '../components/ProductWordmark/ProductWordmark';
 import { getProductSitePath } from '../config/productSites';
 import { useApp } from '../context/AppContext';
+import { isProductAuthEnabled } from '../data/products';
 import { getCorporateSitePath } from './siteConfig';
 import { useProductSite } from './ProductSiteContext';
 import { useProductSitePathMode } from './ProductSiteRuntimeContext';
@@ -18,6 +19,7 @@ const ProductSiteHeader = () => {
   const { lang, toggleLang, toggleTheme, isDark } = useApp();
   const pathMode = useProductSitePathMode();
   const showProductCatalog = product.slug === 'tracker';
+  const showProductAuth = isProductAuthEnabled(product.slug);
 
   useEffect(() => {
     setMobileOpen(false);
@@ -113,20 +115,22 @@ const ProductSiteHeader = () => {
             </nav>
 
             <div className="ps-header-actions">
-              <div className="ps-header-auth">
-                <Link
-                  to={productLoginPath}
-                  className={`ps-header-auth-link ${isLoginRoute ? 'is-active' : ''}`}
-                >
-                  {lang === 'tr' ? 'Giriş' : 'Login'}
-                </Link>
-                <Link
-                  to={productRegisterPath}
-                  className={`ps-header-auth-cta ${isRegisterRoute ? 'is-active' : ''}`}
-                >
-                  {lang === 'tr' ? 'Kayıt Ol' : 'Register'}
-                </Link>
-              </div>
+              {showProductAuth ? (
+                <div className="ps-header-auth">
+                  <Link
+                    to={productLoginPath}
+                    className={`ps-header-auth-link ${isLoginRoute ? 'is-active' : ''}`}
+                  >
+                    {lang === 'tr' ? 'Giriş' : 'Login'}
+                  </Link>
+                  <Link
+                    to={productRegisterPath}
+                    className={`ps-header-auth-cta ${isRegisterRoute ? 'is-active' : ''}`}
+                  >
+                    {lang === 'tr' ? 'Kayıt Ol' : 'Register'}
+                  </Link>
+                </div>
+              ) : null}
               {showProductCatalog && !isCatalogRoute ? (
                 <Link to={productCatalogPath} className="ps-header-cta">
                   {lang === 'tr' ? 'Ürünler' : 'Products'}
@@ -154,22 +158,24 @@ const ProductSiteHeader = () => {
                 transition={{ duration: 0.24, ease: [0.22, 1, 0.36, 1] }}
               >
                 <div className="ps-mobile-links">
-                  <div className="ps-mobile-auth">
-                    <Link
-                      to={productLoginPath}
-                      className={`ps-mobile-auth-link ${isLoginRoute ? 'is-active' : ''}`}
-                      onClick={() => setMobileOpen(false)}
-                    >
-                      {lang === 'tr' ? 'Giriş Yap' : 'Sign In'}
-                    </Link>
-                    <Link
-                      to={productRegisterPath}
-                      className={`ps-mobile-auth-link ps-mobile-auth-link--primary ${isRegisterRoute ? 'is-active' : ''}`}
-                      onClick={() => setMobileOpen(false)}
-                    >
-                      {lang === 'tr' ? 'Kayıt Ol' : 'Register'}
-                    </Link>
-                  </div>
+                  {showProductAuth ? (
+                    <div className="ps-mobile-auth">
+                      <Link
+                        to={productLoginPath}
+                        className={`ps-mobile-auth-link ${isLoginRoute ? 'is-active' : ''}`}
+                        onClick={() => setMobileOpen(false)}
+                      >
+                        {lang === 'tr' ? 'Giriş Yap' : 'Sign In'}
+                      </Link>
+                      <Link
+                        to={productRegisterPath}
+                        className={`ps-mobile-auth-link ps-mobile-auth-link--primary ${isRegisterRoute ? 'is-active' : ''}`}
+                        onClick={() => setMobileOpen(false)}
+                      >
+                        {lang === 'tr' ? 'Kayıt Ol' : 'Register'}
+                      </Link>
+                    </div>
+                  ) : null}
                   {content.menu.map((item) =>
                     item.href.startsWith('#') ? (
                       <a
